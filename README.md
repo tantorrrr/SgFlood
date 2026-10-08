@@ -173,3 +173,10 @@ Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 
 - **Open-Meteo, RainViewer và tile OpenStreetMap chỉ cho phép dùng phi thương mại / lưu lượng nhẹ.** Triển khai thật cần gói trả phí hoặc tile server riêng.
 - Radar RainViewer chỉ có ~2 giờ quá khứ, độ phân giải tối đa zoom 7.
 - Chế độ demo cục bộ không chia sẻ báo cáo giữa các thiết bị; giới hạn tần suất phía client chỉ mang tính minh hoạ.
+
+## Deploy (Cloudflare Pages)
+
+- Pages → Connect to Git → repo này. Framework preset **None**, build command **để trống**, output directory **`public`**. Mỗi lần push lên `main` là tự deploy.
+- `public/_headers`: cache dài cho `roads.json` và `data/minor/*`; code, `config.js` và dữ liệu cập nhật hằng ngày luôn revalidate (file không có hash).
+- Supabase → Authentication → URL Configuration: thêm domain `*.pages.dev` (hoặc domain riêng).
+- Dữ liệu hằng ngày: `.github/workflows/daily-data.yml` (10:30 giờ VN, chạy tay được qua *Run workflow*) chạy `fetch:tide`, `fetch:news`, `enrich` rồi commit `public/data/tide-phuan.json` và `news-floods.json`. Secrets cần thêm: `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (thiếu thì bước tương ứng bỏ qua). `data/cache` được giữ giữa các lần chạy bằng `actions/cache`.

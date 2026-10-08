@@ -32,7 +32,7 @@ npm run fetch:news        # hằng ngày, cần ANTHROPIC_API_KEY
 npm run enrich            # hằng ngày, cần SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY
 npm run build:data        # dựng lại đường lớn + đường nhỏ (Overpass, lâu)
 ```
-- Cron: `scripts/register-cron.ps1`. **Chưa đăng ký**, người nhận phải tự chạy.
+- Cron: GitHub Actions `.github/workflows/daily-data.yml` (cần thêm Secrets), hoặc chạy local bằng `scripts/register-cron.ps1` (chưa đăng ký).
 - `data/cache/` (~30MB) không nằm trong repo, build lại sẽ tự tải.
 
 ## Cấu hình và bí mật
@@ -60,7 +60,7 @@ npm run build:data        # dựng lại đường lớn + đường nhỏ (Over
    - Không dùng địa hình (FABDEM bỏ 2026-10-08): đoạn không phải điểm kinh niên có độ nhạy mưa phẳng 0.1, không có luật triều.
    - Cống ngăn triều Tân Thuận/Phú Định có thể vận hành từ 10/2026 (chưa xác minh) và sẽ làm đổi các điểm ngập triều.
 7. **UX:** chú thích trên mobile che marker. Console còn vài lỗi 404/422 vô hại chưa truy ra nguồn.
-8. **Production:** deploy tĩnh (GitHub Pages/Vercel) + Supabase.
+8. **Production:** Cloudflare Pages (output `public`, xem README → Deploy) + Supabase. Trước khi public: bật Turnstile, đổi tile OSM sang MapTiler/Stadia.
 
 ## License và giới hạn dữ liệu
 - **Open-Meteo free, RainViewer, OSM tiles:** phi thương mại hoặc lưu lượng nhẹ.

@@ -1,0 +1,20 @@
+# Cloudflare Pages headers. Files are not content-hashed, so code and daily data must revalidate;
+# the big road layers change only on a manual rebuild and can be cached.
+
+/data/roads.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/data/minor/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/data/tide-phuan.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+/data/news-floods.json
+  Cache-Control: public, max-age=0, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+/config.js
+  Cache-Control: public, max-age=0, must-revalidate

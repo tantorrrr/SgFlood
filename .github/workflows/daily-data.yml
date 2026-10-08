@@ -1,0 +1,63 @@
+# Daily data refresh: Phú An tide (KTTV bulletin, ~09:00 VN), press scan (Claude Haiku), report enrichment.
+# Commits changed public/data/*.json; Cloudflare Pages redeploys on push.
+# Secrets (repo Settings → Secrets → Actions): ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY.
+# Missing secrets are fine: fetch-news / enrich log "skipped" and exit 0.
+name: daily-data
+
+on:
+  schedule:
+    - cron: '30 3 * * *' # 10:30 Asia/Ho_Chi_Minh
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-data
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Seen-URL list and downloaded bulletins live in data/cache (gitignored); keep them between runs.
+      - uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: data-cache-${{ github.run_id }}
+          restore-keys: data-cache-
+
+      - name: Tide (Phú An)
+        run: npm run fetch:tide
+        continue-on-error: true
+
+      - name: Press scan
+        run: npm run fetch:news
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: Enrich reports
+        run: npm run enrich
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+
+      - name: Commit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/tide-phuan.json public/data/news-floods.json
+          git diff --cached --quiet && { echo "no data change"; exit 0; }
+          git commit -m "feat: daily data refresh $(date -u +%F)"
+          git push
