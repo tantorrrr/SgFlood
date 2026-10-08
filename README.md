@@ -117,6 +117,8 @@ Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 
 
 ## Báo ngập quá khứ (báo muộn)
 
+- **Báo một chạm bằng GPS**: bấm "Báo ngập" → lấy vị trí thiết bị (8 giây, chấp nhận vị trí cũ ≤ 60 giây), mở sheet tại đó với marker kéo được + vòng sai số; bị từ chối/lỗi/ngoài vùng → quay về chạm chọn trên bản đồ (từ chối được nhớ trong phiên). Snapshot ghi `gps: { accuracyM, distanceM, at }` (chỉ để tham khảo) hoặc `null`; sửa báo cáo không tự lấy GPS.
+
 - Khi timeline đang ở quá khứ, nút báo ngập / "Không ngập" báo cho đúng giờ đó; sheet có ô chọn giờ (bước 15 phút, trong 48 giờ qua, mặc định giờ timeline hoặc "Bây giờ"). Timeline ở tương lai thì nhảy về hiện tại như cũ.
 - Báo cáo **muộn** khi `created_at − observed_at > 15 phút`: tối đa 3 báo cáo muộn / người / 24 giờ (`late_limited`, áp cả ở trigger và chế độ cục bộ), ngoài giới hạn 1/60 giây, 10/giờ.
 - Hiệu lực (TTL 6–12 giờ, `crowd.REPORT_TTL_H` + 1 giờ/xác nhận, tối đa `REPORT_TTL_MAX_H`) tính từ `observed_at`. Hết TTL, báo cáo còn hiện mờ thêm `FADE_H = 24` giờ (vòng nét đứt nhạt, marker xám, "đã báo lúc HH:mm"): không ghi đè dự báo, không tính cụm nóng, nên báo muộn chỉ ảnh hưởng mốc "bây giờ" nếu còn trong TTL. Báo muộn có `confidence = net` (báo thường `1 + net`) → cần ≥ 1 xác nhận mới ghi đè dự báo, trừ khi bật `crowd.LATE_SELF_CONFIRM` (mặc định bật, xem "Cold start"). Marker viền nét đứt, popup "Báo muộn · gửi lúc …", nút vote "Đúng, lúc đó ngập" / "Không đúng".

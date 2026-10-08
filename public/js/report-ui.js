@@ -1,10 +1,16 @@
 import { LEVELS, fmtAgo, fmtDateTime, fmtTime, escapeHtml, cellTrigger } from './format.js';
 import { reportState, observedMs, editBlock, BACKDATE_MS, LATE_MS, MAX_EDITS, INFLUENCE_M } from './reports.js';
 import { toast } from './toast.js';
+import { GPS_OPTIONS, GPS_ZOOM, gpsDecision, gpsMeta } from './gps.js';
 
 const L = window.L;
 const STEP_MS = 15 * 60_000;
 const FADED = '#b0bec5';
+const DENIED_KEY = 'hcmflood.gpsDenied';
+const session = {
+  get(k) { try { return sessionStorage.getItem(k); } catch { return null; } },
+  set(k, v) { try { sessionStorage.setItem(k, v); } catch { /* storage blocked */ } },
+};
 const EDIT_BLOCKED = {
   has_votes: 'Đã có người xác nhận — chỉ có thể rút báo cáo',
   edit_limit: `Đã sửa tối đa ${MAX_EDITS} lần — chỉ có thể rút báo cáo`,
@@ -25,8 +31,9 @@ function weatherAtReport(snap) {
 }
 
 export class ReportUI {
-  constructor(map, { onSubmit, onEdit, onWithdraw, onVote, beforeReport, defaultTime }) {
+  constructor(map, { bbox, onSubmit, onEdit, onWithdraw, onVote, beforeReport, defaultTime }) {
     this.map = map;
+    this.bbox = bbox;
     this.onSubmit = onSubmit;
     this.onEdit = onEdit;
     this.onWithdraw = onWithdraw;
@@ -35,6 +42,8 @@ export class ReportUI {
     this.defaultTime = defaultTime;
     this.at = document.getElementById('sheet-at');
     this.lateNote = document.getElementById('late-note');
+    this.lateGps = document.getElementById('late-gps');
+    this.locateHint = document.getElementById('locate-hint');
     this.at.addEventListener('change', () => this.showLateNote());
     // Own pane + SVG renderer: the road layer's canvas would otherwise swallow clicks on markers.
     map.createPane('reports').style.zIndex = 450;
@@ -51,10 +60,14 @@ export class ReportUI {
     this.pending = null;
     this.picking = false;
     this.editing = null; // { report, marker } while editing an own report
+    this.gps = null; // { fix, marker, circle } while a new report is placed from a device fix
+    this.locating = 0; // id of the in-flight geolocation request (0 = none)
+    this.keep = null; // { level, at } carried over when switching from GPS to map picking
 
-    document.getElementById('report-btn').addEventListener('click', () => this.startPicking());
+    document.getElementById('report-btn').addEventListener('click', () => this.startReport());
+    document.getElementById('locate-skip').addEventListener('click', () => this.startPicking());
+    document.getElementById('late-gps-pick').addEventListener('click', () => this.pickInstead());
     document.getElementById('pick-cancel').addEventListener('click', () => this.reset());
-    document.getElementById('pick-geo').addEventListener('click', () => this.useMyLocation());
     document.getElementById('sheet-cancel').addEventListener('click', () => this.reset());
     this.sheet.addEventListener('submit', (e) => {
       e.preventDefault();
@@ -62,7 +75,7 @@ export class ReportUI {
       if (level == null) return;
       const at = this.at.value ? +this.at.value : null;
       if (this.editing) this.saveEdit(+level, at);
-      else this.submit(this.pending, +level, at);
+      else this.submit(this.pending, +level, at, gpsMeta(this.gps?.fix, this.pending));
     });
     map.on('click', (e) => {
       if (this.editing) this.editing.marker.setLatLng(e.latlng);
@@ -71,33 +84,65 @@ export class ReportUI {
   }
 
   startPicking() {
+    const keep = this.keep;
     this.beforeReport();
     this.reset();
+    this.keep = keep;
     this.picking = true;
     this.hint.hidden = false;
     this.map.getContainer().classList.add('picking');
   }
 
-  useMyLocation() {
-    if (!navigator.geolocation) return toast('Trình duyệt không hỗ trợ định vị', 'error');
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const latlng = L.latLng(pos.coords.latitude, pos.coords.longitude);
-        this.map.setView(latlng, Math.max(this.map.getZoom(), 15));
-        this.openSheet(latlng);
-      },
-      () => toast('Không lấy được vị trí — hãy chạm lên bản đồ', 'error'),
-      { enableHighAccuracy: true, timeout: 10_000 },
-    );
+  // "Báo ngập": try the device position first; any failure falls back to map picking (never blocks).
+  startReport() {
+    this.beforeReport();
+    this.reset();
+    if (!navigator.geolocation || session.get(DENIED_KEY)) {
+      if (!navigator.geolocation) toast(gpsDecision(null).message);
+      return this.startPicking();
+    }
+    const id = this.locating = Date.now();
+    this.locateHint.hidden = false;
+    const done = (result) => {
+      if (this.locating !== id) return; // skipped or superseded
+      this.locating = 0;
+      this.locateHint.hidden = true;
+      const d = gpsDecision(result, this.bbox);
+      if (d.fix) return this.openAtFix(d.fix);
+      if (d.fallback === 'denied') session.set(DENIED_KEY, '1');
+      toast(d.message);
+      this.startPicking();
+    };
+    navigator.geolocation.getCurrentPosition(done, done, GPS_OPTIONS);
+  }
+
+  openAtFix(fix) {
+    const latlng = L.latLng(fix.lat, fix.lng);
+    this.map.flyTo(latlng, Math.max(this.map.getZoom(), GPS_ZOOM));
+    this.openSheet(latlng);
+    const circle = L.circle(latlng, { radius: fix.accuracyM, interactive: false, color: '#1e88e5', weight: 1, fillOpacity: 0.1 }).addTo(this.map);
+    const marker = L.marker(latlng, { draggable: true, autoPan: true }).addTo(this.map);
+    marker.on('dragend', () => { this.pending = marker.getLatLng(); });
+    this.gps = { fix, marker, circle };
+    this.showLateNote();
+  }
+
+  // Late report placed from GPS: drop the fix and pick on the map, keeping level/time.
+  pickInstead() {
+    const level = new FormData(this.sheet).get('level');
+    this.keep = { level, at: this.at.value };
+    this.startPicking();
   }
 
   openSheet(latlng, level = null) {
+    const keep = this.keep;
     this.beforeReport();
     this.reset();
     this.pending = latlng;
     this.sheet.reset();
+    level ??= keep?.level;
     if (level != null) this.sheet.querySelector(`input[value="${level}"]`).checked = true;
-    this.fillTimes(this.defaultTime());
+    this.fillTimes(keep?.at ? +keep.at : this.defaultTime());
     this.sheet.hidden = false;
   }
 
@@ -139,10 +184,11 @@ export class ReportUI {
     const t = +this.at.value;
     this.lateNote.hidden = !(t && this.timeRef - t > LATE_MS);
     if (!this.lateNote.hidden) this.lateNote.textContent = `Báo muộn cho ${fmtDateTime(t)}`;
+    this.lateGps.hidden = !(t && this.gps && !this.editing);
   }
 
-  async submit(latlng, level, observedAt) {
-    const ok = await this.onSubmit(latlng, level, observedAt);
+  async submit(latlng, level, observedAt, gps) {
+    const ok = await this.onSubmit(latlng, level, observedAt, gps);
     if (ok) this.reset();
   }
 
@@ -154,6 +200,13 @@ export class ReportUI {
     this.map.getContainer().classList.remove('picking');
     this.editing?.marker.remove();
     this.editing = null;
+    this.locating = 0;
+    this.locateHint.hidden = true;
+    this.gps?.marker.remove();
+    this.gps?.circle.remove();
+    this.gps = null;
+    this.keep = null;
+    this.lateGps.hidden = true;
     this.submitBtn.textContent = 'Gửi';
     this.editNote.hidden = true;
   }

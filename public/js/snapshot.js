@@ -125,7 +125,7 @@ export function tideAt(weather, t) {
 const settle = (p) => p.then((value) => ({ value }), (err) => ({ error: err.message || String(err) }));
 
 // Never rejects and resolves within TIMEOUT_MS; failed sources become null with an error note.
-export async function captureSnapshot({ lat, lng }, { weather, observedAt, createdAt = null }) {
+export async function captureSnapshot({ lat, lng }, { weather, observedAt, createdAt = null, gps = null }) {
   const now = Date.now();
   const t = observedAt ?? now;
   const ctrl = new AbortController();
@@ -148,6 +148,7 @@ export async function captureSnapshot({ lat, lng }, { weather, observedAt, creat
     features: models.value?.features ?? null,
     radar: radar.value ?? null,
     tide: tideAt(weather, t),
+    gps, // { accuracyM, distanceM, at } when a device fix was used (informational only), else null
   };
   if (models.error) snap.modelsError = models.error;
   if (radar.error) snap.radarError = radar.error;

@@ -218,10 +218,10 @@ async function main() {
   // Timeline in the past → report for that hour; otherwise for now.
   const pastTime = () => (current < nowIdx ? times[current] : null);
 
-  async function submitReport(latlng, level, observedAt) {
+  async function submitReport(latlng, level, observedAt, gps = null) {
     if (current > nowIdx) timeline.set(nowIdx);
     try {
-      const snapshot = await captureSnapshot(latlng, { weather, observedAt });
+      const snapshot = await captureSnapshot(latlng, { weather, observedAt, gps });
       await store.createReport({ lat: latlng.lat, lng: latlng.lng, level, snapshot, observedAt });
       toast('Đã gửi báo cáo. Cảm ơn bạn!', 'success');
       await refreshReports();
@@ -248,6 +248,7 @@ async function main() {
   }
 
   const reportUI = new ReportUI(map, {
+    bbox: roads.bbox,
     beforeReport: () => current > nowIdx && timeline.set(nowIdx),
     defaultTime: () => pastTime(),
     onSubmit: submitReport,

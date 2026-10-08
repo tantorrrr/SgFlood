@@ -53,14 +53,21 @@
   <div id="pick-hint" class="sheet" hidden>
     <p>Chạm lên bản đồ để chọn vị trí ngập</p>
     <div class="row">
-      <button id="pick-geo">Dùng vị trí của tôi</button>
       <button id="pick-cancel" class="ghost">Hủy</button>
+    </div>
+  </div>
+
+  <div id="locate-hint" class="sheet" hidden>
+    <p>Đang lấy vị trí…</p>
+    <div class="row">
+      <button id="locate-skip">Chọn trên bản đồ</button>
     </div>
   </div>
 
   <form id="report-sheet" class="sheet" hidden>
     <p>Tình trạng tại đây lúc <select name="at" id="sheet-at"></select></p>
     <p id="late-note" class="muted" hidden></p>
+    <p id="late-gps" class="muted" hidden>Báo muộn? Vị trí hiện tại có thể không phải chỗ ngập. <button type="button" id="late-gps-pick" class="link">Chọn trên bản đồ</button></p>
     <p id="edit-note" class="muted" hidden>Kéo điểm đánh dấu hoặc chạm bản đồ để đổi vị trí.</p>
     <label class="band"><input type="radio" name="level" value="0" required><span class="chip l0">Không ngập / đã rút</span></label>
     <label class="band"><input type="radio" name="level" value="1"><span class="chip l1">Đọng nước (&lt;10cm)</span></label>
