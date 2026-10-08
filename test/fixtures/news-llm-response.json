@@ -1,0 +1,9 @@
+{
+  "id": "msg_fixture",
+  "type": "message",
+  "role": "assistant",
+  "model": "claude-haiku-5-5",
+  "stop_reason": "end_turn",
+  "content": [{ "type": "text", "text": "{\"mentions\":[{\"street\":\"Lê Văn A\",\"from\":\"Bé\",\"to\":\"Cờ\",\"cross\":null,\"ward\":\"X\",\"oldDistrict\":null,\"observedAt\":\"2026-10-07T17:00:00+07:00\",\"depthCm\":40,\"signals\":[\"chet_may\",\"dat_bo\"],\"cause\":\"rain\",\"quote\":\"Đoạn từ đường Bé đến đường Cờ, nhiều xe máy chết máy, người dân phải dắt bộ bì bõm trong nước.\"},{\"street\":\"Lê Văn A\",\"from\":null,\"to\":null,\"cross\":\"Cờ\",\"ward\":null,\"oldDistrict\":null,\"observedAt\":null,\"depthCm\":null,\"signals\":[\"ket_xe\"],\"cause\":null,\"quote\":\"giao lộ Lê Văn A - Cờ kẹt xe\"},{\"street\":\"Dê\",\"from\":null,\"to\":null,\"cross\":null,\"ward\":null,\"oldDistrict\":null,\"observedAt\":null,\"depthCm\":10,\"signals\":[],\"cause\":\"rain\",\"quote\":\"đường Dê ngập nhẹ\"},{\"street\":\"Lê Văn A\",\"from\":null,\"to\":null,\"cross\":null,\"ward\":null,\"oldDistrict\":null,\"observedAt\":null,\"depthCm\":null,\"signals\":[\"ket_xe\"],\"cause\":null,\"quote\":\"Lê Văn A kẹt xe\"}]}" }],
+  "usage": { "input_tokens": 1200, "output_tokens": 300 }
+}

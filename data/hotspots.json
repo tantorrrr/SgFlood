@@ -1,0 +1,3395 @@
+[
+  {
+    "id": "bt-vo-van-kiet-ho-hoc-lam",
+    "title": "Giao lộ Võ Văn Kiệt – Hồ Học Lãm",
+    "area": "Phường An Lạc (Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Ngập do mưa: Giao lộ Võ Văn Kiệt – Hồ Học Lãm (phường An Lạc)"
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "khiến 12 tuyến đường bị ngập sâu gồm: Hồ Học Lãm, Tên Lửa, Phan Anh, Quang Trung, Phạm Văn Chiêu"
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Võ Văn Kiệt",
+        "Hồ Học Lãm"
+      ],
+      "radiusM": 200,
+      "near": [
+        10.722624,
+        106.61191
+      ]
+    }
+  },
+  {
+    "id": "bt-le-duc-anh-ho-hoc-lam",
+    "title": "Giao lộ Lê Đức Anh – Hồ Học Lãm",
+    "area": "Phường An Lạc (Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lê Đức Anh - Hồ Học Lãm."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Lê Đức Anh",
+        "Hồ Học Lãm"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.735781,
+        106.602561
+      ]
+    }
+  },
+  {
+    "id": "bth-ung-van-khiem",
+    "title": "Ung Văn Khiêm (Nguyễn Gia Trí → Điện Biên Phủ)",
+    "area": "Phường Thạnh Mỹ Tây (Bình Thạnh cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Ung Văn Khiêm (phường Thạnh Mỹ Tây)"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Ung Văn Khiêm, từ Nguyễn Gia Trí đến Điện Biên Phủ."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Ung Văn Khiêm",
+      "from": "Nguyễn Gia Trí",
+      "to": "Điện Biên Phủ",
+      "near": [
+        10.803369,
+        106.720053
+      ]
+    }
+  },
+  {
+    "id": "hm-song-hanh-ql22",
+    "title": "Song hành Quốc lộ 22 (Đỗ Mười → Bà Triệu)",
+    "area": "Xã Bà Điểm / Hóc Môn",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Song hành Quốc lộ 22 (xã Bà Điểm)"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường song hành Quốc lộ 22, từ Đỗ Mười đến Bà Triệu."
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, song hành Quốc lộ 22, Bà Triệu, Phan Huy Ích, Phan Văn Hớn và Nguyễn Văn Quá"
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Song Hành Quốc Lộ 22",
+      "from": {
+        "point": [
+          10.844503,
+          106.617337
+        ],
+        "label": "giao Đỗ Mười"
+      },
+      "to": {
+        "point": [
+          10.878933,
+          106.592739
+        ],
+        "label": "giao Bà Triệu"
+      },
+      "near": [
+        10.861718,
+        106.605038
+      ]
+    },
+    "maxKm": 5.5
+  },
+  {
+    "id": "td-duong-van-cam-cho-thu-duc",
+    "title": "Dương Văn Cam (khu vực chợ Thủ Đức)",
+    "area": "Phường Thủ Đức / Linh Xuân (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Dương Văn Cam, Kha Vạn Cân, Đặng Thị Rành, Tâm Tâm Xã (khu vực chợ Thủ Đức)"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chợ Thủ Đức."
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Hồ Học Lãm, Quốc Lộ 1A, Đặng Thị Rành, Dương Văn Cam, Kha Vạn Cân"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Dương Văn Cam",
+      "point": [
+        10.849508,
+        106.75357
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "td-kha-van-can-cho-thu-duc",
+    "title": "Kha Vạn Cân (khu vực chợ Thủ Đức)",
+    "area": "Phường Thủ Đức / Linh Xuân (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Dương Văn Cam, Kha Vạn Cân, Đặng Thị Rành, Tâm Tâm Xã (khu vực chợ Thủ Đức)"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chợ Thủ Đức."
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Hồ Học Lãm, Quốc Lộ 1A, Đặng Thị Rành, Dương Văn Cam, Kha Vạn Cân"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Kha Vạn Cân",
+      "point": [
+        10.850168,
+        106.754286
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "td-dang-thi-ranh-cho-thu-duc",
+    "title": "Đặng Thị Rành (khu vực chợ Thủ Đức)",
+    "area": "Phường Thủ Đức / Linh Xuân (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Dương Văn Cam, Kha Vạn Cân, Đặng Thị Rành, Tâm Tâm Xã (khu vực chợ Thủ Đức)"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chợ Thủ Đức."
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Hồ Học Lãm, Quốc Lộ 1A, Đặng Thị Rành, Dương Văn Cam, Kha Vạn Cân"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Đặng Thị Rành",
+      "point": [
+        10.850803,
+        106.753318
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "td-tam-tam-xa-cho-thu-duc",
+    "title": "Tâm Tâm Xã (khu vực chợ Thủ Đức)",
+    "area": "Phường Thủ Đức / Linh Xuân (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Dương Văn Cam, Kha Vạn Cân, Đặng Thị Rành, Tâm Tâm Xã (khu vực chợ Thủ Đức)"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chợ Thủ Đức."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Tâm Tâm Xã",
+      "point": [
+        10.850232,
+        106.75272
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q7-tran-xuan-soan",
+    "title": "Trần Xuân Soạn (Huỳnh Tấn Phát → Lâm Văn Bền)",
+    "area": "Phường Tân Thuận (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Trần Xuân Soạn (phường Tân Thuận)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "12 vị trí ngập sâu khoảng 0,15-0,3m như đường Calmette, đường Bình Quới, đường Trần Xuân Soạn, đường Huỳnh Tấn Phát"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Trần Xuân Soạn, từ Huỳnh Tấn Phát đến Lâm Văn Bền."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Trần Xuân Soạn",
+      "from": "Huỳnh Tấn Phát",
+      "to": "Lâm Văn Bền",
+      "near": [
+        10.753874,
+        106.718555
+      ]
+    }
+  },
+  {
+    "id": "q7-pham-huu-lau",
+    "title": "Phạm Hữu Lầu (Huỳnh Tấn Phát → cầu Phước Long)",
+    "area": "Phường Tân Mỹ (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Phạm Hữu Lầu (phường Tân Mỹ)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "đường Lê Văn Lương, đường Đào Sư Tích, đường Phạm Hữu Lầu, đường Nguyễn Bình; Quốc lộ 50"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Phạm Hữu Lầu, từ giao lộ Huỳnh Tấn Phát đến cầu Phước Long."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Phạm Hữu Lầu",
+      "from": "Huỳnh Tấn Phát",
+      "to": {
+        "point": [
+          10.703774,
+          106.727319
+        ],
+        "label": "hướng cầu Phước Long – điểm cuối đoạn OSM liền mạch, cách chân cầu ~280 m"
+      },
+      "near": [
+        10.704486,
+        106.732454
+      ]
+    }
+  },
+  {
+    "id": "nb-nguyen-binh",
+    "title": "Nguyễn Bình (Huỳnh Tấn Phát → cầu Mương Chuối)",
+    "area": "Xã Nhà Bè (Nhà Bè cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Nguyễn Bình (xã Nhà Bè)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "đường Lê Văn Lương, đường Đào Sư Tích, đường Phạm Hữu Lầu, đường Nguyễn Bình; Quốc lộ 50"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Bình, từ giao lộ Huỳnh Tấn Phát đến cầu Mương Chuối."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Nguyễn Bình",
+      "from": "Huỳnh Tấn Phát",
+      "to": {
+        "point": [
+          10.67246,
+          106.728138
+        ],
+        "label": "cầu Mương Chuối"
+      },
+      "near": [
+        10.675369,
+        106.74089
+      ]
+    },
+    "maxKm": 3.5
+  },
+  {
+    "id": "q7-huynh-tan-phat-pham-huu-lau",
+    "title": "Giao lộ Huỳnh Tấn Phát – Phạm Hữu Lầu",
+    "area": "Phường Tân Mỹ (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Huỳnh Tấn Phát (phường Phú Thuận)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "12 vị trí ngập sâu khoảng 0,15-0,3m như đường Calmette, đường Bình Quới, đường Trần Xuân Soạn, đường Huỳnh Tấn Phát"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Huỳnh Tấn Phát: Giao Phạm Hữu Lầu."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Huỳnh Tấn Phát",
+        "Phạm Hữu Lầu"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.705198,
+        106.73759
+      ]
+    }
+  },
+  {
+    "id": "q7-huynh-tan-phat-hoang-quoc-viet",
+    "title": "Giao lộ Huỳnh Tấn Phát – Hoàng Quốc Việt",
+    "area": "Phường Tân Mỹ (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Huỳnh Tấn Phát (phường Phú Thuận)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "12 vị trí ngập sâu khoảng 0,15-0,3m như đường Calmette, đường Bình Quới, đường Trần Xuân Soạn, đường Huỳnh Tấn Phát"
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao Hoàng Quốc Việt."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Huỳnh Tấn Phát",
+        "Hoàng Quốc Việt"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.714294,
+        106.736956
+      ]
+    }
+  },
+  {
+    "id": "q7-huynh-tan-phat-phu-thuan",
+    "title": "Giao lộ Huỳnh Tấn Phát – Phú Thuận",
+    "area": "Phường Tân Mỹ (Quận 7 cũ)",
+    "cause": "both",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Huỳnh Tấn Phát - Phú Thuận."
+      },
+      {
+        "url": "https://www.sggp.org.vn/tphcm-trieu-cuong-dang-cao-nhieu-tuyen-duong-ngap-sau-post822156.html",
+        "date": "2025-11-06",
+        "quote": "khả năng triều cường gây ngập sâu tại giao lộ Huỳnh Tấn Phát - Phú Thuận"
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Huỳnh Tấn Phát",
+        "Phú Thuận"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.730778,
+        106.732005
+      ]
+    }
+  },
+  {
+    "id": "nb-le-van-luong-cau-rach-tom",
+    "title": "Lê Văn Lương (~250 m trước cầu Rạch Tôm, hướng đi Tây Ninh)",
+    "area": "Xã Hiệp Phước (Nhà Bè cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Khoảng 250m trước công trình cầu Rạch Tôm, hướng từ TP.HCM đi Tây Ninh."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lê Văn Lương",
+      "point": [
+        10.674948,
+        106.698453
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "q7-nguyen-thi-thap-le-van-luong",
+    "title": "Giao lộ Nguyễn Thị Thập – Lê Văn Lương",
+    "area": "Phường Tân Hưng (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Nguyễn Thị Thập - Lê Văn Lương."
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "đường Lê Văn Lương, đường Đào Sư Tích, đường Phạm Hữu Lầu, đường Nguyễn Bình; Quốc lộ 50"
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Nguyễn Thị Thập",
+        "Lê Văn Lương"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.739904,
+        106.703566
+      ]
+    }
+  },
+  {
+    "id": "q7-nguyen-thi-thap-tan-my",
+    "title": "Giao lộ Nguyễn Thị Thập – Tân Mỹ",
+    "area": "Phường Tân Mỹ (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Thị Thập: Giao lộ Nguyễn Thị Thập - Tân Mỹ."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Nguyễn Thị Thập",
+        "Tân Mỹ"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.738198,
+        106.718315
+      ]
+    }
+  },
+  {
+    "id": "q7-nguyen-luong-bang-hoang-quoc-viet",
+    "title": "Giao lộ Nguyễn Lương Bằng – Hoàng Quốc Việt",
+    "area": "Phường Tân Mỹ (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Lương Bằng: Giao Hoàng Quốc Việt, hướng từ Phạm Hữu Lầu về Nguyễn Lương Bằng."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Nguyễn Lương Bằng",
+        "Hoàng Quốc Việt"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.713114,
+        106.731432
+      ]
+    }
+  },
+  {
+    "id": "q7-nguyen-huu-tho",
+    "title": "Nguyễn Hữu Thọ (Phạm Hữu Lầu → cầu Rạch Đỉa 2)",
+    "area": "Xã Nhà Bè / Phường Tân Hưng",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Hữu Thọ, từ giao lộ Phạm Hữu Lầu đến cầu Rạch Dĩa 2 (hướng từ xã Nhà Bè vào trung tâm)."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Nguyễn Hữu Thọ",
+      "from": "Phạm Hữu Lầu",
+      "to": {
+        "point": [
+          10.720978,
+          106.701556
+        ],
+        "label": "hướng cầu Rạch Đỉa 2 – điểm cuối đoạn OSM liền mạch, cách chân cầu ~290 m"
+      },
+      "near": [
+        10.708614,
+        106.709969
+      ]
+    },
+    "maxKm": 4.0
+  },
+  {
+    "id": "q7-nguyen-van-quy-cau-phu-my",
+    "title": "Nguyễn Văn Quỳ (hai bên hông cầu Phú Mỹ)",
+    "area": "Phường Tân Thuận (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Văn Quỳ, hai bên hông cầu Phú Mỹ."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Văn Quỳ",
+      "point": [
+        10.741044,
+        106.736366
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "q7-ben-nghe-so-4",
+    "title": "Bến Nghé (trước số 4)",
+    "area": "Phường Tân Thuận (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Bến Nghé, số 4 (Tân Thuận)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Bến Nghé",
+      "point": [
+        10.755887,
+        106.729749
+      ],
+      "radiusM": 200
+    }
+  },
+  {
+    "id": "tt-mai-chi-tho-new-city",
+    "title": "Mai Chí Thọ (trước chung cư New City)",
+    "area": "Phường An Khánh (Thủ Thiêm, Quận 2 cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Mai Chí Thọ, trước chung cư New City."
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "Quốc lộ 50, đường Nguyễn Văn Hưởng, Võ Nguyên Giáp, Mai Chí Thọ ngập từ 0,1-0,25m."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Mai Chí Thọ",
+      "point": [
+        10.780478,
+        106.736094
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "tt-r12-chan-cau-ba-son",
+    "title": "R12 (dưới chân cầu Ba Son)",
+    "area": "Phường An Khánh (Thủ Thiêm)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường R12, dưới chân cầu Ba Son."
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "khu dân cư An Phú và đường R12 chân cầu Thủ Thiêm"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "R12",
+      "point": [
+        10.778193,
+        106.712546
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "td-chan-cau-rach-chiec",
+    "title": "Võ Nguyên Giáp – chân cầu Rạch Chiếc",
+    "area": "Phường An Khánh (Thủ Đức cũ)",
+    "cause": "both",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chân cầu Rạch Chiếc, hướng ra ga Metro Rạch Chiếc (P. An Khánh)."
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chân cầu Rạch Chiếc, hướng từ Võ Nguyên Giáp đi RMK (làn xe máy)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Võ Nguyên Giáp",
+      "point": [
+        10.810171,
+        106.756209
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q6-vo-van-kiet-pham-phu-thu-binh-tien",
+    "title": "Võ Văn Kiệt (Phạm Phú Thứ → Bình Tiên)",
+    "area": "Phường Bình Tiên (Quận 6 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Võ Văn Kiệt, từ Phạm Phú Thứ đến Bình Tiên."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Võ Văn Kiệt",
+      "from": "Phạm Phú Thứ",
+      "to": "Bình Tiên",
+      "near": [
+        10.740779,
+        106.64478
+      ]
+    }
+  },
+  {
+    "id": "q6-pham-phu-thu",
+    "title": "Phạm Phú Thứ (Võ Văn Kiệt → Phạm Văn Chí)",
+    "area": "Phường Bình Tiên (Quận 6 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Phạm Phú Thứ, từ Võ Văn Kiệt đến Phạm Văn Chí."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Phạm Phú Thứ",
+      "from": "Võ Văn Kiệt",
+      "to": "Phạm Văn Chí",
+      "near": [
+        10.742397,
+        106.645089
+      ]
+    }
+  },
+  {
+    "id": "q6-tran-van-kieu-duong-32",
+    "title": "Giao lộ Trần Văn Kiểu – đường số 32",
+    "area": "Phường Bình Phú (Quận 6 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Trần Văn Kiểu - đường 32."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Trần Văn Kiểu",
+        "Đường số 32"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.740883,
+        106.627908
+      ]
+    }
+  },
+  {
+    "id": "q5-tran-hung-dao",
+    "title": "Trần Hưng Đạo (Nguyễn Biểu → Nguyễn Tri Phương)",
+    "area": "Phường An Đông / Chợ Quán (Quận 5 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Trần Hưng Đạo, từ Nguyễn Biểu đến Nguyễn Tri Phương."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Trần Hưng Đạo",
+      "from": "Nguyễn Biểu",
+      "to": "Nguyễn Tri Phương",
+      "near": [
+        10.754361,
+        106.676553
+      ]
+    },
+    "maxKm": 3.5
+  },
+  {
+    "id": "td-lien-phuong-bung-ong-thoan",
+    "title": "Giao lộ Liên Phường – Bưng Ông Thoàn",
+    "area": "Phường Long Trường (Quận 9 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Liên Phường - Bưng Ông Thoàn."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Liên Phường",
+        "Bưng Ông Thoàn"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.804722,
+        106.799753
+      ]
+    }
+  },
+  {
+    "id": "bc-le-kha-phieu-hung-nhon-duong-dinh-cuc",
+    "title": "Lê Khả Phiêu – song hành (Hưng Nhơn → Dương Đình Cúc)",
+    "area": "Xã Tân Nhựt (Bình Chánh cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lê Khả Phiêu: Đoạn song hành, hướng từ Hưng Nhơn về Dương Đình Cúc."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Lê Khả Phiêu",
+      "from": "Hưng Nhơn",
+      "to": "Dương Đình Cúc",
+      "near": [
+        10.708804,
+        106.598448
+      ]
+    }
+  },
+  {
+    "id": "bc-le-kha-phieu-hoang-dao-thuy",
+    "title": "Giao lộ Lê Khả Phiêu – Hoàng Đạo Thúy",
+    "area": "Bình Chánh cũ (giáp Bình Tân)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao Hoàng Đạo Thúy, hướng từ Nguyễn Văn Linh đi cầu Bình Điền."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Lê Khả Phiêu",
+        "Hoàng Đạo Thúy"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.696777,
+        106.596845
+      ]
+    }
+  },
+  {
+    "id": "tb-ly-thuong-kiet-387-nguyen-thai-binh",
+    "title": "Lý Thường Kiệt (số 387 → cổng THPT Nguyễn Thái Bình)",
+    "area": "Phường Tân Hòa (Tân Bình cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lý Thường Kiệt, đoạn từ số 387 đến cổng trường Nguyễn Thái Bình."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Lý Thường Kiệt",
+      "from": {
+        "point": [
+          10.781814,
+          106.654903
+        ],
+        "label": "số 387 (nội suy giữa số 361 và 409 trên OSM)"
+      },
+      "to": {
+        "point": [
+          10.780051,
+          106.655405
+        ],
+        "label": "cổng THPT Nguyễn Thái Bình (913-915)"
+      },
+      "near": [
+        10.780933,
+        106.655154
+      ]
+    }
+  },
+  {
+    "id": "tb-nga-tu-bay-hien",
+    "title": "Ngã tư Bảy Hiền",
+    "area": "Phường Tân Sơn Nhất (Tân Bình cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Ngã tư Bảy Hiền."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Cách Mạng Tháng Tám",
+        "Lý Thường Kiệt",
+        "Trường Chinh",
+        "Hoàng Văn Thụ"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.792834,
+        106.653421
+      ]
+    }
+  },
+  {
+    "id": "bt-tinh-lo-10",
+    "title": "Tỉnh lộ 10 (Tên Lửa nhánh nhỏ → Lê Đức Anh)",
+    "area": "Phường Tân Tạo / Bình Trị Đông (Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Tỉnh lộ 10, từ Tên Lửa nhỏ ra Lê Đức Anh."
+      },
+      {
+        "url": "https://tuoitre.vn/neu-mua-lon-30-phut-tai-tphcm-nguoi-dan-luu-y-nhung-doan-duong-de-ngap-nuoc-nao-10026092311590247.htm",
+        "date": "2026-09-23",
+        "quote": "Tỉnh Lộ 10 (phường Bình Trị Đông)"
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Tỉnh Lộ 10",
+      "from": {
+        "point": [
+          10.757222,
+          106.605931
+        ],
+        "label": "Tên Lửa (nhánh nhỏ, tertiary trên OSM)"
+      },
+      "to": "Lê Đức Anh",
+      "near": [
+        10.756806,
+        106.598906
+      ]
+    }
+  },
+  {
+    "id": "bc-tran-dai-nghia-le-kha-phieu",
+    "title": "Trần Đại Nghĩa (nhánh từ số 4 đến Lê Khả Phiêu)",
+    "area": "Xã Tân Nhựt / Phường An Lạc (Bình Chánh – Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Trần Đại Nghĩa, nhánh từ số 4 đến giáp Lê Khả Phiêu."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Trần Đại Nghĩa",
+        "Lê Khả Phiêu"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.722317,
+        106.600849
+      ]
+    }
+  },
+  {
+    "id": "hm-le-quang-dao-vo-thi-hoi-nguyen-thi-soc",
+    "title": "Lê Quang Đạo (Võ Thị Hồi → Nguyễn Thị Sóc)",
+    "area": "Xã Xuân Thới Sơn (Hóc Môn cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lê Quang Đạo: Từ giao lộ Võ Thị Hồi đến giao lộ Nguyễn Thị Sóc."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Lê Quang Đạo",
+      "from": "Võ Thị Hồi",
+      "to": "Nguyễn Thị Sóc",
+      "near": [
+        10.86442,
+        106.600672
+      ]
+    },
+    "maxKm": 3.5
+  },
+  {
+    "id": "hm-le-quang-dao-tran-van-muoi",
+    "title": "Giao lộ Lê Quang Đạo – Trần Văn Mười",
+    "area": "Xã Xuân Thới Sơn (Hóc Môn cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Lê Quang Đạo - Trần Văn Mười."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Lê Quang Đạo",
+        "Trần Văn Mười"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.877704,
+        106.591283
+      ]
+    }
+  },
+  {
+    "id": "hm-tran-van-muoi",
+    "title": "Trần Văn Mười (Lê Quang Đạo → Xuân Thới 2)",
+    "area": "Xã Xuân Thới Sơn (Hóc Môn cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Trần Văn Mười, từ Lê Quang Đạo đến Xuân Thới 2."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Trần Văn Mười",
+      "from": "Lê Quang Đạo",
+      "to": "Xuân Thới 2",
+      "near": [
+        10.874245,
+        106.590099
+      ]
+    }
+  },
+  {
+    "id": "hm-nguyen-anh-thu",
+    "title": "Nguyễn Ảnh Thủ (Lê Quang Đạo → Đồng Tâm)",
+    "area": "Xã Bà Điểm / Phường Trung Mỹ Tây (Hóc Môn – Quận 12 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Ảnh Thủ, từ Lê Quang Đạo đến Đồng Tâm."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Nguyễn Ảnh Thủ",
+      "from": "Lê Quang Đạo",
+      "to": "Đồng Tâm",
+      "near": [
+        10.858911,
+        106.609652
+      ]
+    }
+  },
+  {
+    "id": "hm-ba-trieu",
+    "title": "Bà Triệu, Hóc Môn (Quang Trung → song hành QL22)",
+    "area": "Xã Hóc Môn (Hóc Môn cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Bà Triệu, từ giao lộ Quang Trung đến giao lộ Song Hành."
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, song hành Quốc lộ 22, Bà Triệu, Phan Huy Ích, Phan Văn Hớn và Nguyễn Văn Quá"
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Bà Triệu",
+      "from": "Quang Trung",
+      "to": "Song Hành Quốc Lộ 22",
+      "near": [
+        10.883657,
+        106.594513
+      ]
+    }
+  },
+  {
+    "id": "hm-trung-nu-vuong",
+    "title": "Trưng Nữ Vương, Hóc Môn (Quang Trung → Đỗ Văn Dậy)",
+    "area": "Xã Hóc Môn (Hóc Môn cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Trưng Nữ Vương, từ giao lộ Quang Trung đến giao lộ Đỗ Văn Dậy."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Trưng Nữ Vương",
+      "from": "Quang Trung",
+      "to": "Đỗ Văn Dậy",
+      "near": [
+        10.89119,
+        106.597145
+      ]
+    }
+  },
+  {
+    "id": "td-do-muoi-cau-binh-phuoc",
+    "title": "Đỗ Mười (hai bên cầu Bình Phước)",
+    "area": "Phường Hiệp Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Hai bên cầu Bình Phước, trước số 2 (P. Hiệp Bình)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Đỗ Mười",
+      "point": [
+        10.861632,
+        106.717096
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "td-do-muoi-cho-dau-moi-thu-duc",
+    "title": "Đỗ Mười (trước chợ đầu mối nông sản Thủ Đức)",
+    "area": "Phường Tam Bình / Hiệp Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Trước chợ đầu mối nông sản Thủ Đức, đoạn số 113 (P. Hiệp Bình)."
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Trước số 139 (P. Tam Bình)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Đỗ Mười",
+      "point": [
+        10.86788,
+        106.728699
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "td-do-muoi-duong-so-17",
+    "title": "Giao lộ Đỗ Mười – đường số 17",
+    "area": "Phường Linh Xuân (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Đỗ Mười - đường 17."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Đỗ Mười",
+        "Đường số 17"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.867092,
+        106.787573
+      ]
+    }
+  },
+  {
+    "id": "td-nga-tu-binh-phuoc",
+    "title": "Ngã tư / vòng xoay Bình Phước (dưới cầu vượt)",
+    "area": "Phường Hiệp Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Vòng xoay Bình Phước."
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Hai bên ngã tư Bình Phước (dưới cầu vượt)."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Quốc Lộ 13",
+        "Vòng xoay Ngã tư Bình Phước",
+        "Đỗ Mười"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.865268,
+        106.723886
+      ]
+    }
+  },
+  {
+    "id": "td-vo-nguyen-giap-cau-trang-rach-chiec",
+    "title": "Võ Nguyên Giáp (cầu Trắng → cầu Rạch Chiếc)",
+    "area": "Phường An Khánh (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Võ Nguyên Giáp: Đoạn từ Cầu Trắng đến điểm quay đầu (làn hỗn hợp)."
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đoạn từ điểm quay đầu về cầu Rạch Chiếc."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Võ Nguyên Giáp",
+      "from": {
+        "point": [
+          10.800484,
+          106.736543
+        ],
+        "label": "cầu Trắng"
+      },
+      "to": {
+        "point": [
+          10.810171,
+          106.756209
+        ],
+        "label": "chân cầu Rạch Chiếc"
+      },
+      "near": [
+        10.805328,
+        106.746376
+      ]
+    },
+    "maxKm": 10.0
+  },
+  {
+    "id": "td-vo-truong-toan-song-hanh-vng",
+    "title": "Giao Võ Trường Toản – song hành Võ Nguyên Giáp",
+    "area": "Phường An Khánh (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao Võ Trường Toản với song hành Võ Nguyên Giáp."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Song Hành Võ Nguyên Giáp",
+        "Võ Trường Toản"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.803194,
+        106.748158
+      ]
+    }
+  },
+  {
+    "id": "tt-mai-chi-tho-to-huu",
+    "title": "Giao lộ Mai Chí Thọ – Tố Hữu",
+    "area": "Phường An Khánh (Thủ Thiêm)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Mai Chí Thọ: Giao lộ Tố Hữu - Mai Chí Thọ."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Mai Chí Thọ",
+        "Tố Hữu"
+      ],
+      "radiusM": 200,
+      "near": [
+        10.771232,
+        106.716863
+      ]
+    }
+  },
+  {
+    "id": "tt-mai-chi-tho-luong-dinh-cua",
+    "title": "Giao lộ Mai Chí Thọ – Lương Định Của",
+    "area": "Phường Bình Trưng (Quận 2 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Mai Chí Thọ - Lương Định Của."
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Hướng từ Cầu vượt A đến giao lộ Lương Định Của."
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Tại các điểm ngập cục bộ như chân cầu Ba Son, đường Lương Định Của, Bình Quới"
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Mai Chí Thọ",
+        "Lương Định Của"
+      ],
+      "radiusM": 200,
+      "near": [
+        10.792174,
+        106.751362
+      ]
+    }
+  },
+  {
+    "id": "td-to-ngoc-van-pham-van-dong",
+    "title": "Giao lộ Tô Ngọc Vân – Phạm Văn Đồng",
+    "area": "Phường Linh Xuân (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Tô Ngọc Vân: Giao Phạm Văn Đồng."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Tô Ngọc Vân",
+        "Phạm Văn Đồng"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.853474,
+        106.751344
+      ]
+    }
+  },
+  {
+    "id": "td-to-ngoc-van-linh-dong",
+    "title": "Giao lộ Tô Ngọc Vân – Linh Đông",
+    "area": "Phường Hiệp Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao Linh Đông."
+      },
+      {
+        "url": "https://thanhnien.vn/nhung-tuyen-duong-nao-o-tphcm-he-mua-lon-la-ngap-185261004175107092.htm",
+        "date": "2026-10-05",
+        "quote": "\"rốn ngập\" thuộc 3 tuyến đường quen thuộc là: Tô Ngọc Vân - Linh Đông – Lý Tế Xuyên"
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Tô Ngọc Vân",
+        "Linh Đông"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.856785,
+        106.750017
+      ]
+    }
+  },
+  {
+    "id": "td-to-ngoc-van-duong-so-35",
+    "title": "Giao lộ Tô Ngọc Vân – đường số 35 (Linh Tây)",
+    "area": "Phường Tam Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao đường 35 (Linh Tây)."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Tô Ngọc Vân",
+        "Đường số 35"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.858923,
+        106.748581
+      ]
+    }
+  },
+  {
+    "id": "td-pham-van-dong-linh-dong",
+    "title": "Giao lộ Phạm Văn Đồng – Linh Đông",
+    "area": "Phường Hiệp Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Phạm Văn Đồng - Linh Đông."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Phạm Văn Đồng",
+        "Linh Đông"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.841421,
+        106.74375
+      ]
+    }
+  },
+  {
+    "id": "td-vo-chi-cong-duong-so-5",
+    "title": "Võ Chí Công – đường số 5",
+    "area": "Phường Cát Lái (Quận 2 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Võ Chí Công - đường số 5."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Võ Chí Công",
+      "point": [
+        10.775711,
+        106.780154
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "td-do-xuan-hop-tay-hoa",
+    "title": "Giao lộ Đỗ Xuân Hợp – Tây Hòa",
+    "area": "Phường Phước Long (Quận 9 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Đỗ Xuân Hợp - Tây Hòa."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Đỗ Xuân Hợp",
+        "Tây Hòa"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.824435,
+        106.769223
+      ]
+    }
+  },
+  {
+    "id": "q8-ta-quang-buu",
+    "title": "Tạ Quang Bửu (Võ Liêm Sơn → Cao Lỗ)",
+    "area": "Phường Chánh Hưng (Quận 8 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Tạ Quang Bửu, từ Võ Liêm Sơn đến Cao Lỗ."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Tạ Quang Bửu",
+      "from": "Võ Liêm Sơn",
+      "to": "Cao Lỗ",
+      "near": [
+        10.739876,
+        106.676138
+      ]
+    }
+  },
+  {
+    "id": "td-le-van-viet",
+    "title": "Lê Văn Việt (Đình Phong Phú → Lã Xuân Oai)",
+    "area": "Phường Tăng Nhơn Phú (Quận 9 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lê Văn Việt, từ giao lộ Đình Phong Phú đến giao lộ Lã Xuân Oai."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Lê Văn Việt",
+      "from": "Đình Phong Phú",
+      "to": "Lã Xuân Oai",
+      "near": [
+        10.844749,
+        106.783816
+      ]
+    }
+  },
+  {
+    "id": "q7-d1-d6-nguyen-van-linh",
+    "title": "Đường D1 (giao D6 → nối Nguyễn Văn Linh, gồm cầu chui RMIT)",
+    "area": "Phường Tân Hưng (Quận 7 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường D1, từ giao lộ D1-D6 đến điểm nối vào Nguyễn Văn Linh (gồm cầu chui RMIT)."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Hoàng Trọng Mậu",
+      "from": {
+        "point": [
+          10.732962,
+          106.694162
+        ],
+        "label": "đầu nam cầu D1 (cầu D1 cách giao D6 ~140 m)"
+      },
+      "to": {
+        "point": [
+          10.728843,
+          106.690866
+        ],
+        "label": "nối Nguyễn Văn Linh (Dạ cầu Ông Lớn)"
+      },
+      "near": [
+        10.730902,
+        106.692514
+      ]
+    }
+  },
+  {
+    "id": "q7-d6",
+    "title": "Đường D6 (Nguyễn Hữu Thọ → giao D1-D6)",
+    "area": "Phường Tân Hưng (Quận 7 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường D6, từ Nguyễn Hữu Thọ đến giao lộ D1–D6."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "D6",
+      "from": "Nguyễn Hữu Thọ",
+      "to": "Hoàng Trọng Mậu",
+      "near": [
+        10.733662,
+        106.697393
+      ]
+    }
+  },
+  {
+    "id": "gv-nguyen-van-khoi",
+    "title": "Nguyễn Văn Khối (Lê Văn Thọ → UBND P. Thông Tây Hội)",
+    "area": "Phường Thông Tây Hội (Gò Vấp cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Văn Khối, từ Lê Văn Thọ đến trước UBND P. Thông Tây Hội."
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, song hành Quốc lộ 22, Bà Triệu, Phan Huy Ích, Phan Văn Hớn và Nguyễn Văn Quá"
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Phan Anh, Lê Đức Thọ, Quang Trung, Nguyễn Văn Khối (Cây Trâm), Hồ Học Lãm"
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Nguyễn Văn Khối",
+      "from": "Lê Văn Thọ",
+      "to": {
+        "point": [
+          10.842565,
+          106.654651
+        ],
+        "label": "UBND phường Thông Tây Hội (175 Nguyễn Văn Khối)"
+      },
+      "near": [
+        10.842579,
+        106.655906
+      ]
+    }
+  },
+  {
+    "id": "q8-pham-the-hien-hem-2695-le-boi",
+    "title": "Phạm Thế Hiển (hẻm 2695 → Lê Bôi)",
+    "area": "Phường Phú Định (Quận 8 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Phạm Thế Hiển: Đoạn từ hẻm 2695 đến giao lộ Lê Bôi."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Phạm Thế Hiển",
+      "from": {
+        "point": [
+          10.724917,
+          106.636301
+        ],
+        "label": "hẻm 2695"
+      },
+      "to": "Lê Bôi",
+      "near": [
+        10.718524,
+        106.632115
+      ]
+    }
+  },
+  {
+    "id": "q8-pham-the-hien-cau-ba-tang",
+    "title": "Phạm Thế Hiển (chân cầu Bà Tàng, trước số 2377)",
+    "area": "Phường Bình Đông (Quận 8 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chân cầu Bà Tàng, trước số 2377."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phạm Thế Hiển",
+      "point": [
+        10.730702,
+        106.639964
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "bc-trinh-quang-nghi",
+    "title": "Trịnh Quang Nghị (Nguyễn Văn Linh → cầu Ba Tơ)",
+    "area": "Xã Bình Hưng / Phường Bình Đông (Bình Chánh – Quận 8 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Trịnh Quang Nghị, từ Nguyễn Văn Linh đến cầu Ba Tơ."
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Trịnh Quang Nghị",
+      "from": "Nguyễn Văn Linh",
+      "to": {
+        "point": [
+          10.704982,
+          106.628702
+        ],
+        "label": "cầu Ba Tơ"
+      },
+      "near": [
+        10.703798,
+        106.631349
+      ]
+    }
+  },
+  {
+    "id": "bt-binh-tri-dong-chien-luoc",
+    "title": "Giao lộ Bình Trị Đông – Chiến Lược",
+    "area": "Phường Bình Trị Đông (Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Bình Trị Đông - Chiến Lược."
+      },
+      {
+        "url": "https://thanhnien.vn/nhung-tuyen-duong-nao-o-tphcm-he-mua-lon-la-ngap-185261004175107092.htm",
+        "date": "2026-10-05",
+        "quote": "Mã Lò, Bình Trị Đông, Chiến Lược, tỉnh lộ 10"
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Bình Trị Đông",
+        "Chiến Lược"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.761407,
+        106.610003
+      ]
+    }
+  },
+  {
+    "id": "nb-nguyen-binh-le-van-luong",
+    "title": "Giao lộ Nguyễn Bình – Lê Văn Lương",
+    "area": "Xã Nhà Bè / Hiệp Phước (Nhà Bè cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Nguyễn Bình - Lê Văn Lương (xã Hiệp Phước)."
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Nguyễn Bình",
+        "Lê Văn Lương"
+      ],
+      "radiusM": 250,
+      "near": [
+        10.681064,
+        106.70008
+      ]
+    }
+  },
+  {
+    "id": "bc-quoc-lo-50",
+    "title": "Quốc lộ 50 (Nguyễn Văn Linh → phía bắc, hướng \"cầu Chánh Hưng\")",
+    "area": "Xã Bình Hưng / Phường Bình Đông (Bình Chánh – Quận 8 cũ)",
+    "cause": "both",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Quốc lộ 50, đoạn từ Nguyễn Văn Linh về cầu Chánh Hưng."
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "Quốc lộ 50, đường Nguyễn Văn Hưởng, Võ Nguyên Giáp, Mai Chí Thọ ngập từ 0,1-0,25m."
+      },
+      {
+        "url": "https://thanhnien.vn/nhung-tuyen-duong-nao-o-tphcm-he-mua-lon-la-ngap-185261004175107092.htm",
+        "date": "2026-10-05",
+        "quote": "Cụm phường Bình Đông và xã Bình Hưng mới có các đường như quốc lộ 50"
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Quốc lộ 50",
+      "from": "Nguyễn Văn Linh",
+      "to": {
+        "point": [
+          10.739111,
+          106.656192
+        ],
+        "label": "đầu phía bắc Quốc lộ 50 trên OSM (kênh Đôi)"
+      },
+      "near": [
+        10.729298,
+        106.65595
+      ]
+    },
+    "maxKm": 3.0
+  },
+  {
+    "id": "gv-le-duc-tho",
+    "title": "Lê Đức Thọ (Phạm Văn Chiêu → Cầu Cụt)",
+    "area": "Phường An Hội Đông (Gò Vấp cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, song hành Quốc lộ 22, Bà Triệu, Phan Huy Ích, Phan Văn Hớn và Nguyễn Văn Quá"
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "cải tạo hệ thống thoát nước đường Lê Đức Thọ (từ Phạm Văn Chiêu- đến Cầu Cụt)"
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Lê Đức Thọ",
+      "from": "Phạm Văn Chiêu",
+      "to": {
+        "point": [
+          10.855115,
+          106.655734
+        ],
+        "label": "Cầu Cụt"
+      },
+      "near": [
+        10.85379,
+        106.658173
+      ]
+    }
+  },
+  {
+    "id": "gv-quang-trung",
+    "title": "Quang Trung, Gò Vấp (Phạm Văn Chiêu → cầu Chợ Cầu)",
+    "area": "Phường An Hội Tây (Gò Vấp cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "khiến 12 tuyến đường bị ngập sâu gồm: Hồ Học Lãm, Tên Lửa, Phan Anh, Quang Trung, Phạm Văn Chiêu"
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "cải tạo hệ thống thoát nước đường Quang Trung (từ Phạm Văn Chiêu đến cầu Chợ Cầu)"
+      }
+    ],
+    "geometry": {
+      "type": "between",
+      "street": "Quang Trung",
+      "from": "Phạm Văn Chiêu",
+      "to": {
+        "point": [
+          10.845791,
+          106.637881
+        ],
+        "label": "hướng cầu Chợ Cầu – cách cầu ~130 m (OSM tách đoạn tại cầu)"
+      },
+      "near": [
+        10.845069,
+        106.639021
+      ]
+    }
+  },
+  {
+    "id": "q7-nguyen-van-linh-cau-ong-lon",
+    "title": "Nguyễn Văn Linh (trước công trình sửa cầu Ông Lớn, hướng Phạm Hùng → Nguyễn Hữu Thọ)",
+    "area": "Phường Tân Hưng (Quận 7 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đoạn trước công trình sửa chữa cầu Ông Lớn, hướng từ Phạm Hùng đi Nguyễn Hữu Thọ (cả làn SF và SM)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Văn Linh",
+      "point": [
+        10.728416,
+        106.688437
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q7-nguyen-van-linh-pham-van-nghi",
+    "title": "Nguyễn Văn Linh (làn SF từ Phạm Văn Nghị, hướng cầu Cả Cấm)",
+    "area": "Phường Tân Hưng (Quận 7 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Làn SF, từ giao lộ Phạm Văn Nghị đến cầu Cả Cấm."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Văn Linh",
+      "point": [
+        10.728485,
+        106.706787
+      ],
+      "radiusM": 200
+    }
+  },
+  {
+    "id": "q7-hoang-trong-mau",
+    "title": "Hoàng Trọng Mậu (từ giao D6, hướng cầu D1/Him Lam)",
+    "area": "Phường Tân Hưng (Quận 7 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Hoàng Trọng Mậu, từ giao lộ D6 đến cầu D1 Him Lam."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Hoàng Trọng Mậu",
+      "point": [
+        10.734064,
+        106.694894
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "bt-ma-lo-huong-lo-2",
+    "title": "Mã Lò (đến Hương lộ 2)",
+    "area": "Phường Bình Trị Đông (Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Mã Lò, từ Mã Lò đến Hương lộ 2."
+      },
+      {
+        "url": "https://thanhnien.vn/tphcm-len-ke-hoach-giai-quyet-50-diem-ngap-nang-185261004224119279.htm",
+        "date": "2026-10-05",
+        "quote": "Mã Lò (phường Bình Trị Đông), Tỉnh lộ 10, Tên Lửa (phường An Lạc)"
+      }
+    ],
+    "geometry": {
+      "type": "junction",
+      "streets": [
+        "Mã Lò",
+        "Hương Lộ 2"
+      ],
+      "radiusM": 300,
+      "near": [
+        10.765311,
+        106.603887
+      ]
+    }
+  },
+  {
+    "id": "td-nguyen-xien-cau-go-cong",
+    "title": "Nguyễn Xiển (số 581 Vinhomes Grand Park → cầu Gò Công)",
+    "area": "Phường Long Bình (Quận 9 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Xiển, từ số 581 (khu Vinhomes Grand Park) đến cầu Gò Công."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Xiển",
+      "point": [
+        10.835042,
+        106.830052
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "bth-cu-xa-thanh-da-lo-f",
+    "title": "Bờ kè Lô F, cư xá Thanh Đa",
+    "area": "Phường Bình Quới (Bình Thạnh cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Bờ kè Lô F, cư xá Thanh Đa (P. Bình Quới)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Thanh Đa",
+      "point": [
+        10.818479,
+        106.719057
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "q6-chan-cau-lo-gom",
+    "title": "Chân cầu Lò Gốm",
+    "area": "Phường Bình Tiên (Quận 6 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Chân cầu Lò Gốm."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lò Gốm",
+      "point": [
+        10.734785,
+        106.634801
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "td-nguyen-duy-trinh-binh-trung",
+    "title": "Nguyễn Duy Trinh (đoạn Liên đoàn Lao động → Nhà thiếu nhi)",
+    "area": "Phường Bình Trưng (Quận 2 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/nhung-diem-ngap-nao-o-tphcm-duoc-dua-vao-ke-hoach-giai-quyet-ngap-nam-2026-100260911182314895.htm",
+        "date": "2026-09-11",
+        "quote": "Nguyễn Duy Trinh có kế hoạch duy tu, sửa chữa hệ thống thoát nước đoạn từ Liên đoàn Lao động đến Nhà thiếu nhi."
+      },
+      {
+        "url": "https://tuoitre.vn/neu-mua-lon-30-phut-tai-tphcm-nguoi-dan-luu-y-nhung-doan-duong-de-ngap-nuoc-nao-10026092311590247.htm",
+        "date": "2026-09-23",
+        "quote": "đường Nguyễn Duy Trinh (phường Bình Trưng Tây)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Duy Trinh",
+      "point": [
+        10.787795,
+        106.76207
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "td-la-xuan-oai",
+    "title": "Lã Xuân Oai (khu vực chợ Tăng Nhơn Phú A)",
+    "area": "Phường Tăng Nhơn Phú (Quận 9 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/nhung-diem-ngap-nao-o-tphcm-duoc-dua-vao-ke-hoach-giai-quyet-ngap-nam-2026-100260911182314895.htm",
+        "date": "2026-09-11",
+        "quote": "dự án nạo vét các tuyến rạch thoát nước khu vực chợ Tăng Nhơn Phú A"
+      },
+      {
+        "url": "https://tuoitre.vn/neu-mua-lon-30-phut-tai-tphcm-nguoi-dan-luu-y-nhung-doan-duong-de-ngap-nuoc-nao-10026092311590247.htm",
+        "date": "2026-09-23",
+        "quote": "đường Lã Xuân Oai (phường Tăng Nhơn Phú A)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lã Xuân Oai",
+      "point": [
+        10.844216,
+        106.787696
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "gv-pham-van-chieu",
+    "title": "Phạm Văn Chiêu (đoạn qua P. An Hội Đông)",
+    "area": "Phường An Hội Đông (Gò Vấp cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Phạm Văn Chiêu (phường An Hội Đông)"
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "khiến 12 tuyến đường bị ngập sâu gồm: Hồ Học Lãm, Tên Lửa, Phan Anh, Quang Trung, Phạm Văn Chiêu"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phạm Văn Chiêu",
+      "point": [
+        10.852466,
+        106.660611
+      ],
+      "radiusM": 350
+    }
+  },
+  {
+    "id": "gv-phan-huy-ich-an-hoi-tay",
+    "title": "Phan Huy Ích (đoạn qua P. An Hội Tây)",
+    "area": "Phường An Hội Tây (Gò Vấp cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Phan Huy Ích (phường An Hội Tây)"
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, song hành Quốc lộ 22, Bà Triệu, Phan Huy Ích, Phan Văn Hớn và Nguyễn Văn Quá"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phan Huy Ích",
+      "point": [
+        10.838535,
+        106.636845
+      ],
+      "radiusM": 450
+    }
+  },
+  {
+    "id": "tb-phan-huy-ich-tan-son",
+    "title": "Phan Huy Ích (đoạn qua P. Tân Sơn)",
+    "area": "Phường Tân Sơn (Tân Bình cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://thanhnien.vn/tphcm-len-ke-hoach-giai-quyet-50-diem-ngap-nang-185261004224119279.htm",
+        "date": "2026-10-05",
+        "quote": "Tại đường Phan Huy Ích đoạn qua phường Tân Sơn, có vị trí ngập nặng gần 1 m"
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "tại tuyến đường Phan Huy Ích, tình hình ngập năm nay ghi nhận diễn biến nghiêm trọng hơn so với các năm trước"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phan Huy Ích",
+      "point": [
+        10.827421,
+        106.63164
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "hm-phan-van-hon-ba-diem",
+    "title": "Phan Văn Hớn (đoạn qua xã Bà Điểm)",
+    "area": "Xã Bà Điểm (Hóc Môn cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/nhung-diem-ngap-nao-o-tphcm-duoc-dua-vao-ke-hoach-giai-quyet-ngap-nam-2026-100260911182314895.htm",
+        "date": "2026-09-11",
+        "quote": "Đường Phan Văn Hớn, đoạn qua xã Bà Điểm, được xác định là điểm ngập nặng."
+      },
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Phan Văn Hớn, Nguyễn Văn Quá (xã Đông Hưng Thuận)"
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, song hành Quốc lộ 22, Bà Triệu, Phan Huy Ích, Phan Văn Hớn và Nguyễn Văn Quá"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phan Văn Hớn",
+      "point": [
+        10.844937,
+        106.59393
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "q12-nguyen-van-qua",
+    "title": "Nguyễn Văn Quá (đoạn qua P. Đông Hưng Thuận)",
+    "area": "Phường Đông Hưng Thuận (Quận 12 cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Phan Văn Hớn, Nguyễn Văn Quá (xã Đông Hưng Thuận)"
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, song hành Quốc lộ 22, Bà Triệu, Phan Huy Ích, Phan Văn Hớn và Nguyễn Văn Quá"
+      },
+      {
+        "url": "https://thanhnien.vn/tphcm-len-ke-hoach-giai-quyet-50-diem-ngap-nang-185261004224119279.htm",
+        "date": "2026-10-05",
+        "quote": "khu vực Gò Vấp cũ và sân bay Tân Sơn Nhất, đường Nguyễn Văn Quá"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Văn Quá",
+      "point": [
+        10.842127,
+        106.63064
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "td-tinh-lo-43",
+    "title": "Tỉnh lộ 43 (đoạn qua P. Tam Bình)",
+    "area": "Phường Tam Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Tỉnh lộ 43, Lê Thị Hoa (phường Tam Bình)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Tỉnh Lộ 43",
+      "point": [
+        10.881858,
+        106.729312
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "td-le-thi-hoa",
+    "title": "Lê Thị Hoa (đoạn qua P. Tam Bình)",
+    "area": "Phường Tam Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Tỉnh lộ 43, Lê Thị Hoa (phường Tam Bình)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lê Thị Hoa",
+      "point": [
+        10.877138,
+        106.740822
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "nb-dao-su-tich",
+    "title": "Đào Sư Tích (đoạn qua xã Nhà Bè)",
+    "area": "Xã Nhà Bè (Nhà Bè cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Đào Sư Tích (xã Nhà Bè)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "đường Lê Văn Lương, đường Đào Sư Tích, đường Phạm Hữu Lầu, đường Nguyễn Bình; Quốc lộ 50"
+      },
+      {
+        "url": "https://www.sggp.org.vn/tphcm-trieu-cuong-dang-cao-nhieu-tuyen-duong-ngap-sau-post822156.html",
+        "date": "2025-11-06",
+        "quote": "đường Đào Sư Tích (xã Nhà Bè)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Đào Sư Tích",
+      "point": [
+        10.701881,
+        106.687019
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "nb-le-van-luong-nha-be",
+    "title": "Lê Văn Lương (đoạn qua xã Nhà Bè)",
+    "area": "Xã Nhà Bè (Nhà Bè cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lê Văn Lương: Đoạn qua xã Nhà Bè."
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "đường Lê Văn Lương, đường Đào Sư Tích, đường Phạm Hữu Lầu, đường Nguyễn Bình; Quốc lộ 50"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lê Văn Lương",
+      "point": [
+        10.706152,
+        106.703393
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "td-nguyen-van-huong",
+    "title": "Nguyễn Văn Hưởng (Thảo Điền)",
+    "area": "Phường An Khánh (Quận 2 cũ)",
+    "cause": "both",
+    "years": [
+      2024,
+      2025,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Nguyễn Văn Hưởng (phường An Khánh)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "Quốc lộ 50, đường Nguyễn Văn Hưởng, Võ Nguyên Giáp, Mai Chí Thọ ngập từ 0,1-0,25m."
+      },
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Văn Hưởng."
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Bạch Đằng, Thảo Điền, Quốc Hương, Nguyễn Văn Hưởng"
+      },
+      {
+        "url": "https://thanhnien.vn/nhung-tuyen-duong-nao-o-tphcm-he-mua-lon-la-ngap-185261004175107092.htm",
+        "date": "2026-10-05",
+        "quote": "Nơi đây có đường Quốc Hương, Nguyễn Văn Hưởng, Tống Hữu Định bị ngập nặng."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Văn Hưởng",
+      "point": [
+        10.810806,
+        106.730768
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "td-vo-nguyen-giap-phuoc-long",
+    "title": "Võ Nguyên Giáp (đoạn qua P. Phước Long)",
+    "area": "Phường Phước Long (Quận 9 cũ)",
+    "cause": "tide",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/so-xay-dung-tphcm-diem-danh-34-ron-ngap-2529419.html",
+        "date": "2026-06-25",
+        "quote": "Võ Nguyên Giáp (phường Phước Long)"
+      },
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "Quốc lộ 50, đường Nguyễn Văn Hưởng, Võ Nguyên Giáp, Mai Chí Thọ ngập từ 0,1-0,25m."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Võ Nguyên Giáp",
+      "point": [
+        10.82886,
+        106.762399
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "q1-calmette",
+    "title": "Calmette",
+    "area": "Phường Bến Thành (Quận 1 cũ)",
+    "cause": "tide",
+    "years": [
+      2025
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "12 vị trí ngập sâu khoảng 0,15-0,3m như đường Calmette, đường Bình Quới, đường Trần Xuân Soạn, đường Huỳnh Tấn Phát"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Calmette",
+      "point": [
+        10.767328,
+        106.699712
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "bth-binh-quoi",
+    "title": "Bình Quới (bán đảo Thanh Đa)",
+    "area": "Phường Bình Quới (Bình Thạnh cũ)",
+    "cause": "both",
+    "years": [
+      2025,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://daibieunhandan.vn/tp-ho-chi-minh-23-tuyen-duong-co-nguy-co-ngap-do-trieu-cuong-vuot-muc-bao-dong-10399345.html",
+        "date": "2025-12-05",
+        "quote": "12 vị trí ngập sâu khoảng 0,15-0,3m như đường Calmette, đường Bình Quới, đường Trần Xuân Soạn, đường Huỳnh Tấn Phát"
+      },
+      {
+        "url": "https://tuoitre.vn/neu-mua-lon-30-phut-tai-tphcm-nguoi-dan-luu-y-nhung-doan-duong-de-ngap-nuoc-nao-10026092311590247.htm",
+        "date": "2026-09-23",
+        "quote": "đường Bình Quới (phường Bình Quới, ngập do triều cường)"
+      },
+      {
+        "url": "https://tuoitre.vn/neu-mua-lon-30-phut-tai-tphcm-nguoi-dan-luu-y-nhung-doan-duong-de-ngap-nuoc-nao-10026092311590247.htm",
+        "date": "2026-09-23",
+        "quote": "các điểm ngập ở mức độ vừa do mưa bao gồm đường Bình Quới (phường Bình Quới)"
+      },
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "Tại các điểm ngập cục bộ như chân cầu Ba Son, đường Lương Định Của, Bình Quới"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Bình Quới",
+      "point": [
+        10.822583,
+        106.730723
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "q12-ha-huy-giap",
+    "title": "Hà Huy Giáp (đoạn qua P. An Phú Đông)",
+    "area": "Phường An Phú Đông (Quận 12 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Hà Huy Giáp (P. An Phú Đông)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Hà Huy Giáp",
+      "point": [
+        10.866188,
+        106.67997
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "nb-le-thi-tam",
+    "title": "Lê Thị Tám",
+    "area": "Xã Hiệp Phước (Nhà Bè cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lê Thị Tám (xã Hiệp Phước)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lê Thị Tám",
+      "point": [
+        10.678583,
+        106.706369
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q5-phan-phu-tien",
+    "title": "Phan Phú Tiên",
+    "area": "Phường Chợ Lớn (Quận 5 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Phan Phú Tiên."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phan Phú Tiên",
+      "point": [
+        10.751616,
+        106.665635
+      ],
+      "radiusM": 250
+    }
+  },
+  {
+    "id": "q6-go-cong",
+    "title": "Gò Công",
+    "area": "Phường Chợ Lớn (Quận 6 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Gò Công."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Gò Công",
+      "point": [
+        10.748764,
+        106.655079
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q6-mai-xuan-thuong",
+    "title": "Mai Xuân Thưởng",
+    "area": "Phường Bình Tiên (Quận 6 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Mai Xuân Thưởng."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Mai Xuân Thưởng",
+      "point": [
+        10.747334,
+        106.648246
+      ],
+      "radiusM": 450
+    }
+  },
+  {
+    "id": "q5-cao-dat",
+    "title": "Cao Đạt",
+    "area": "Phường Chợ Quán (Quận 5 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Cao Đạt."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Cao Đạt",
+      "point": [
+        10.754189,
+        106.682339
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q5-an-binh",
+    "title": "An Bình",
+    "area": "Phường An Đông (Quận 5 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường An Bình."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "An Bình",
+      "point": [
+        10.751058,
+        106.672937
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q5-nguyen-bieu",
+    "title": "Nguyễn Biểu",
+    "area": "Phường Chợ Quán (Quận 5 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Biểu."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Biểu",
+      "point": [
+        10.754708,
+        106.684125
+      ],
+      "radiusM": 450
+    }
+  },
+  {
+    "id": "q8-duong-ba-trac",
+    "title": "Dương Bá Trạc",
+    "area": "Phường Chánh Hưng (Quận 8 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Dương Bá Trạc."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Dương Bá Trạc",
+      "point": [
+        10.745639,
+        106.689466
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "td-nguyen-duy-trinh-long-truong",
+    "title": "Nguyễn Duy Trinh (khu vực cây xăng Kim Long 813)",
+    "area": "Phường Long Trường (Quận 9 cũ)",
+    "cause": "tide",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Nguyễn Duy Trinh, cây xăng Kim Long 813 (P. Long Trường)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Duy Trinh",
+      "point": [
+        10.791821,
+        106.802709
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "bth-dang-thuy-tram",
+    "title": "Đặng Thùy Trâm",
+    "area": "Phường Bình Lợi Trung (Bình Thạnh cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Đặng Thùy Trâm (P. Bình Lợi Trung)."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Đặng Thùy Trâm",
+      "point": [
+        10.828249,
+        106.703007
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "td-ly-te-xuyen",
+    "title": "Lý Tế Xuyên",
+    "area": "Phường Hiệp Bình (Thủ Đức cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Đường Lý Tế Xuyên."
+      },
+      {
+        "url": "https://thanhnien.vn/nhung-tuyen-duong-nao-o-tphcm-he-mua-lon-la-ngap-185261004175107092.htm",
+        "date": "2026-10-05",
+        "quote": "\"rốn ngập\" thuộc 3 tuyến đường quen thuộc là: Tô Ngọc Vân - Linh Đông – Lý Tế Xuyên"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lý Tế Xuyên",
+      "point": [
+        10.856091,
+        106.745787
+      ],
+      "radiusM": 450
+    }
+  },
+  {
+    "id": "td-thao-dien",
+    "title": "Thảo Điền (khu Thảo Điền – Quốc Hương)",
+    "area": "Phường An Khánh (Quận 2 cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Thảo Điền - Quốc Hương."
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Bạch Đằng, Thảo Điền, Quốc Hương, Nguyễn Văn Hưởng"
+      },
+      {
+        "url": "https://thanhnien.vn/tphcm-len-ke-hoach-giai-quyet-50-diem-ngap-nang-185261004224119279.htm",
+        "date": "2026-10-05",
+        "quote": "6 khu vực ngập nặng được ưu tiên giải quyết gồm Thảo Điền - Quốc Hương - Nguyễn Văn Hưởng"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Thảo Điền",
+      "point": [
+        10.805215,
+        106.736239
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "td-quoc-huong",
+    "title": "Quốc Hương (khu Thảo Điền – Quốc Hương)",
+    "area": "Phường An Khánh (Quận 2 cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://hochiminhcity.gov.vn/vi/web/hcm/w/canh-sat-giao-thong-canh-bao-122-iem-ngap-nuoc-tren-ia-ban-tpho-chi-minh",
+        "date": "2026-10-06",
+        "quote": "Giao lộ Thảo Điền - Quốc Hương."
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Bạch Đằng, Thảo Điền, Quốc Hương, Nguyễn Văn Hưởng"
+      },
+      {
+        "url": "https://thanhnien.vn/tphcm-len-ke-hoach-giai-quyet-50-diem-ngap-nang-185261004224119279.htm",
+        "date": "2026-10-05",
+        "quote": "6 khu vực ngập nặng được ưu tiên giải quyết gồm Thảo Điền - Quốc Hương - Nguyễn Văn Hưởng"
+      },
+      {
+        "url": "https://thanhnien.vn/nhung-tuyen-duong-nao-o-tphcm-he-mua-lon-la-ngap-185261004175107092.htm",
+        "date": "2026-10-05",
+        "quote": "đường Quốc Hương như trở thành biển nước"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Quốc Hương",
+      "point": [
+        10.807139,
+        106.730952
+      ],
+      "radiusM": 450
+    }
+  },
+  {
+    "id": "tb-truong-son",
+    "title": "Trường Sơn (đoạn qua P. Tân Sơn Hòa)",
+    "area": "Phường Tân Sơn Hòa (Tân Bình cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/neu-mua-lon-30-phut-tai-tphcm-nguoi-dan-luu-y-nhung-doan-duong-de-ngap-nuoc-nao-10026092311590247.htm",
+        "date": "2026-09-23",
+        "quote": "đường Trường Sơn (phường Tân Sơn Hòa)"
+      },
+      {
+        "url": "https://thanhnien.vn/tphcm-len-ke-hoach-giai-quyet-50-diem-ngap-nang-185261004224119279.htm",
+        "date": "2026-10-05",
+        "quote": "khu vực Gò Vấp cũ và sân bay Tân Sơn Nhất"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Trường Sơn",
+      "point": [
+        10.81071,
+        106.665001
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "bt-ten-lua",
+    "title": "Tên Lửa (đoạn qua P. An Lạc)",
+    "area": "Phường An Lạc (Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "khiến 12 tuyến đường bị ngập sâu gồm: Hồ Học Lãm, Tên Lửa, Phan Anh, Quang Trung, Phạm Văn Chiêu"
+      },
+      {
+        "url": "https://thanhnien.vn/tphcm-len-ke-hoach-giai-quyet-50-diem-ngap-nang-185261004224119279.htm",
+        "date": "2026-10-05",
+        "quote": "Mã Lò (phường Bình Trị Đông), Tỉnh lộ 10, Tên Lửa (phường An Lạc)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Tên Lửa",
+      "point": [
+        10.748405,
+        106.611748
+      ],
+      "radiusM": 500
+    }
+  },
+  {
+    "id": "tp-phan-anh",
+    "title": "Phan Anh",
+    "area": "Phường Phú Thạnh (Tân Phú cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+        "date": "2026-10-01",
+        "quote": "khiến 12 tuyến đường bị ngập sâu gồm: Hồ Học Lãm, Tên Lửa, Phan Anh, Quang Trung, Phạm Văn Chiêu"
+      },
+      {
+        "url": "https://tphcm.chinhphu.vn/tphcm-con-18-tuyen-duong-ngap-do-mua-trieu-cuong-101240509172253234.htm",
+        "date": "2024-05-09",
+        "quote": "Phan Anh, Lê Đức Thọ, Quang Trung, Nguyễn Văn Khối (Cây Trâm), Hồ Học Lãm"
+      },
+      {
+        "url": "https://thanhnien.vn/nhung-tuyen-duong-nao-o-tphcm-he-mua-lon-la-ngap-185261004175107092.htm",
+        "date": "2026-10-05",
+        "quote": "Phan Anh (đoạn từ Tân Hòa Đông đến Rạch Bàu Trâu)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phan Anh",
+      "point": [
+        10.766982,
+        106.623092
+      ],
+      "radiusM": 500
+    }
+  }
+]

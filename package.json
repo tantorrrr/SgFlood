@@ -1,0 +1,16 @@
+{
+  "name": "hcmflood",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build:data": "node scripts/build-roads.mjs && node scripts/build-minor.mjs",
+    "build:minor": "node scripts/build-minor.mjs",
+    "fetch:tide": "node scripts/fetch-tide.mjs",
+    "fetch:news": "node scripts/fetch-news.mjs",
+    "enrich": "node scripts/enrich-reports.mjs",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Bản đồ ngập TP.HCM</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="config.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <div id="map"></div>
+  <div id="banner" hidden></div>
+
+  <aside id="panel">
+    <header>
+      <h1>Dự báo ngập</h1>
+      <button id="panel-toggle" aria-label="Thu gọn / mở rộng">☰</button>
+    </header>
+    <div class="panel-body">
+      <p id="fc-crowd" class="muted"></p>
+      <div class="segmented">
+        <button data-hours="6" class="active">6 giờ</button>
+        <button data-hours="12">12 giờ</button>
+        <button data-hours="24">24 giờ</button>
+      </div>
+      <ul id="fc-list"></ul>
+      <fieldset class="layers">
+        <label><input type="checkbox" id="tg-hotspots" checked> Điểm ngập kinh niên</label>
+        <label><input type="checkbox" id="tg-rain" checked> Lớp mưa (ECMWF)</label>
+        <label><input type="checkbox" id="tg-radar"> Radar RainViewer</label>
+        <label><input type="checkbox" id="tg-news" checked> Báo chí</label>
+        <label><input type="checkbox" id="tg-clusters" checked> Cụm báo cáo cộng đồng</label>
+        <label><input type="checkbox" id="tg-heat"> Bản đồ nhiệt báo cáo</label>
+        <small id="radar-note" class="muted"></small>
+      </fieldset>
+      <p class="disclaimer">Dự báo heuristic từ mưa (ECMWF qua Open-Meteo) + triều + điểm ngập kinh niên, chưa hiệu chỉnh. Chỉ tham khảo.</p>
+      <button id="export-btn" class="ghost">Xuất dữ liệu (JSON)</button>
+    </div>
+  </aside>
+
+  <div id="legend">
+    <span><i class="sw l1"></i>&lt;10cm</span>
+    <span><i class="sw l2"></i>10–30cm</span>
+    <span><i class="sw l3"></i>&gt;30cm</span>
+    <span><i class="sw dry"></i>Điểm kinh niên</span>
+  </div>
+
+  <button id="report-btn">Báo ngập</button>
+
+  <div id="pick-hint" class="sheet" hidden>
+    <p>Chạm lên bản đồ để chọn vị trí ngập</p>
+    <div class="row">
+      <button id="pick-geo">Dùng vị trí của tôi</button>
+      <button id="pick-cancel" class="ghost">Hủy</button>
+    </div>
+  </div>
+
+  <form id="report-sheet" class="sheet" hidden>
+    <p>Tình trạng tại đây lúc <select name="at" id="sheet-at"></select></p>
+    <p id="late-note" class="muted" hidden></p>
+    <p id="edit-note" class="muted" hidden>Kéo điểm đánh dấu hoặc chạm bản đồ để đổi vị trí.</p>
+    <label class="band"><input type="radio" name="level" value="0" required><span class="chip l0">Không ngập / đã rút</span></label>
+    <label class="band"><input type="radio" name="level" value="1"><span class="chip l1">Đọng nước (&lt;10cm)</span></label>
+    <label class="band"><input type="radio" name="level" value="2"><span class="chip l2">Ngập 10–30cm</span></label>
+    <label class="band"><input type="radio" name="level" value="3"><span class="chip l3">Ngập sâu &gt;30cm</span></label>
+    <div class="row">
+      <button type="submit" id="sheet-submit">Gửi</button>
+      <button type="button" id="sheet-cancel" class="ghost">Hủy</button>
+    </div>
+  </form>
+
+  <section id="timeline">
+    <div class="tl-top">
+      <button id="tl-play" aria-label="Phát / dừng">▶</button>
+      <span id="tl-label"></span>
+      <button id="tl-now" class="ghost">Bây giờ</button>
+    </div>
+    <div class="tl-legend">
+      <span><i class="lg-rain"></i>mưa TB</span>
+      <span><i class="lg-tide"></i>triều Phú An</span>
+      <span><i class="lg-alert"></i>báo động I/II/III</span>
+      <span><i class="lg-peak"></i>đỉnh dự báo KTTV</span>
+    </div>
+    <div class="tl-track">
+      <div id="tl-tip" hidden></div>
+      <canvas id="tl-chart"></canvas>
+      <input type="range" id="tl-slider" aria-label="Thời gian">
+      <div id="tl-ticks"></div>
+    </div>
+  </section>
+
+  <div id="toasts" aria-live="polite"></div>
+</body>
+</html>
