@@ -50,7 +50,7 @@ function createMap() {
   L.control.zoom({ position: 'topright' }).addTo(map);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Mưa/triều: <a href="https://open-meteo.com">Open-Meteo</a> (ECMWF) · Triều Phú An: Đài KTTV Nam Bộ · Địa hình: <a href="https://doi.org/10.5523/bris.s5hqmjcdj8yo2ibzi9b4ew3sn">FABDEM</a> (CC BY-NC-SA 4.0)',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Mưa/triều: <a href="https://open-meteo.com">Open-Meteo</a> (ECMWF) · Triều Phú An: Đài KTTV Nam Bộ',
   }).addTo(map);
   return map;
 }
@@ -194,7 +194,6 @@ async function main() {
     const lines = [
       `Mưa 3 giờ ≈ ${d.reason.R3.toFixed(1)} mm`,
       d.reason.pa == null ? 'Triều: không có dữ liệu' : `Triều Phú An ≈ ${d.reason.pa.toFixed(2)} m (${alertText(d.reason.pa)})`,
-      d.reason.z == null ? 'Cao độ nền: không có (cầu / thiếu dữ liệu)' : `Cao độ nền ≈ ${d.reason.z.toFixed(2)} m (FABDEM, Hòn Dấu)`,
     ];
     if (d.reason.analog) lines.push(analogText(d.reason.analog));
     if (h) lines.push(hotspotHtml(h));

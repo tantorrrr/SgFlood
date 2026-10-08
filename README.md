@@ -9,7 +9,7 @@ Web app tĩnh hiển thị nguy cơ ngập đường phố TP.HCM theo timeline 
 
 ```bash
 npm start          # http://localhost:5173
-npm test           # node:test cho logic thuần (risk, triều Phú An, DTM/TIFF, parser bản tin, report TTL/fade/override, rate limit, ô lịch sử + ngưỡng theo ô, radar màu → mm/h, enrich)
+npm test           # node:test cho logic thuần (risk, triều Phú An, parser bản tin, report TTL/fade/override, rate limit, ô lịch sử + ngưỡng theo ô, radar màu → mm/h, enrich)
 npm run fetch:tide # cập nhật public/data/tide-phuan.json (chạy hằng ngày)
 npm run fetch:news # quét báo chí → public/data/news-floods.json (chạy hằng ngày, cần ANTHROPIC_API_KEY)
 ```
@@ -22,15 +22,14 @@ Khi `public/config.js` để trống `supabaseUrl`/`supabaseAnonKey`, app chạy
 
 ```bash
 npm run build:data              # dùng cache trong data/cache/ nếu có
-node scripts/build-roads.mjs --refresh   # ép tải lại Overpass (tile DTM giữ trong cache)
+node scripts/build-roads.mjs --refresh   # ép tải lại Overpass
 ```
 
 Script làm các bước:
 
 1. Tải đường chính (motorway → tertiary) từ Overpass theo 4 ô bbox + các đường được nhắc tới trong `data/hotspots.json` (kể cả đường làm đầu mút/giao lộ). Overpass hay trả 504/429 → tự retry (5s/15s/30s) và thử mirror `overpass.kumi.systems`.
 2. Đơn giản hoá hình học (Douglas–Peucker 5 m), cắt way thành đoạn ≤ 400 m (đường có điểm ngập: ≤ 100 m để tô đúng đoạn).
-3. Địa hình FABDEM v1-2 (`scripts/lib/dtm.mjs`, nguồn tách riêng để sau đổi sang DeltaDTM): tile `N10E106_FABDEM_V1-2.tif` (14.4 MB) được lấy bằng HTTP Range từ zip 1.7 GB của Đại học Bristol (đọc EOCD → central directory → đúng entry), cache ở `data/cache/`. Mỗi đoạn có `z` = cao độ **thấp nhất** lấy mẫu mỗi 30 m dọc đoạn (m, hệ Hòn Dấu = EGM2008 − 0.89). Đoạn là cầu (`bridge=*` trên OSM) có `z = null` vì mẫu sẽ rơi xuống mặt sông. Xuất thêm `public/data/dtm.bin` (Int16 cm, 1″ ≈ 30 m, cắt đúng bbox, ~1.6 MB) + `dtm.json`; frontend chỉ tải khi chụp snapshot báo cáo. Script in phân bố z (p5/p50/p95) và z tại điểm kiểm tra.
-4. Gán điểm ngập kinh niên theo hình học của từng điểm (`scripts/lib/hotspot-geom.mjs`):
+3. Gán điểm ngập kinh niên theo hình học của từng điểm (`scripts/lib/hotspot-geom.mjs`):
    - `between`: đoạn của một đường giữa 2 đầu mút (giao lộ thật trên OSM hoặc toạ độ mốc tra từ OSM).
    - `junction`: các đoạn quanh giao lộ trong `radiusM`.
    - `near`: đoạn của một đường quanh 1 điểm, dùng khi nguồn không ghi đoạn cụ thể (`status: "uncertain"`).
@@ -42,7 +41,7 @@ Cuối cùng script in bảng id / số đoạn / km. Không tìm được giao 
 `npm run build:minor` (`scripts/build-minor.mjs`, chạy sau `build-roads`; `npm run build:data` chạy cả hai):
 
 - Overpass `residential | unclassified | living_street` + `service`/`pedestrian` có tên, chia bbox thành ô 0.02° (~2.2 km, 12×13 ô, id `<hàng>-<cột>` tính từ góc tây nam, `public/js/tiles.js`). Mỗi ô 1 request, cache `data/cache/minor-<ô>.json`, 2 request song song. Ô lỗi → log và build fail ở cuối; chạy lại chỉ tải các ô còn thiếu.
-- Bỏ way đã có trong `roads.json` (theo OSM id). Simplify 3 m, cắt ≤ 150 m (≤ 100 m nếu trùng tên đường của điểm ngập), `z` = min DTM như đường lớn (cầu → `null`). Hình học điểm ngập được giải trên đường lớn rồi áp thêm cho đường nhỏ cùng tên: chỉ thêm đoạn, không đổi đoạn của đường lớn.
+- Bỏ way đã có trong `roads.json` (theo OSM id). Simplify 3 m, cắt ≤ 150 m (≤ 100 m nếu trùng tên đường của điểm ngập). Hình học điểm ngập được giải trên đường lớn rồi áp thêm cho đường nhỏ cùng tên: chỉ thêm đoạn, không đổi đoạn của đường lớn.
 - Output `public/data/minor/<ô>.json` (`segs` cùng format `roads.json`, id dạng `m<ô>-<n>`) + `index.json` (ô, bbox, số đoạn, size). Mỗi đoạn thuộc ô chứa midpoint của nó.
 
 Frontend (`public/js/minor-roads.js`): tải ô khi zoom ≥ 15 cho các ô giao viewport + 1 ô biên, và luôn tải ô chứa báo cáo gần đây / điểm lịch sử (ô §18) ở mọi zoom. Ô đã tải được giữ lại. Đoạn mới nối vào cùng mảng đoạn + BucketIndex; dự báo chỉ tính cho đoạn mới (`Forecast.addSegments`, log `console.debug` thời gian mỗi ô). Đường nhỏ chỉ vẽ khi mức ≥ 1 hoặc là điểm ngập, nét mảnh hơn 1 px. Panel không liệt kê đường nhỏ trừ khi là điểm ngập hoặc có analog.
@@ -112,11 +111,7 @@ Schema gồm bảng `reports`, `votes`, view `reports_with_votes` (96 giờ gầ
 
 `risk = max(sRain · smoothstep(3, 25, R3), sTide · smoothstep(1.40, 1.95, PA(t)))`, trong đó `R3` là lượng mưa 3 giờ có trọng số tại tâm đoạn đường, `PA(t)` là mực nước Phú An (hệ Hòn Dấu), `sRain`/`sTide` là độ nhạy:
 - Điểm ngập kinh niên: 0.95 theo nguyên nhân (mưa/triều/cả hai).
-- Đoạn khác, mưa: `0.1 + 0.35·(1 − smoothstep(1.0, 3.0, z))` (z = cao độ nền FABDEM thấp nhất của đoạn).
-- Đoạn không phải điểm ngập kinh niên, triều: **mặc định tắt** (`S_TIDE_LOW = 0`).
-  - Lý do theo dữ liệu: các tuyến ngập triều kinh niên có cao độ trung vị ≈ 2.0 m, cao hơn đỉnh kỷ lục 1.78 m. Trong khi đó 16% đoạn đường có `z ≤ 1.2 m` nhưng không nằm trong danh sách ngập nào.
-  - Nước triều vào đường chủ yếu qua cống chảy ngược, có đê bao, và sai số DTM ở đô thị khoảng 0.6 m, nên cao độ không dự báo được ngập triều ở đây.
-  - Bật thử bằng `S_TIDE_LOW = 0.45`: đoạn có `z ≤ 1.2` và `z < PA(t)` sẽ lên tối đa mức 1.
+- Đoạn khác: mưa `S_RAIN_BASE = 0.1` (phẳng), triều 0. Không dùng địa hình: FABDEM đã bỏ ngày 2026-10-08 vì giá trị dự báo thấp (cao độ trung vị các điểm ngập kinh niên ≈ trung vị mọi đoạn đường).
 
 Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 0.25 khô, < 0.5 đọng nước, < 0.75 ngập 10–30cm, còn lại ngập sâu. Báo cáo của người dân (đang hiệu lực, TTL 6–12 giờ tuỳ số xác nhận) ghi đè dự báo trong bán kính 60 m (`INFLUENCE_M`). Hằng số nằm trong `public/config.js` (`model`).
 
@@ -164,7 +159,6 @@ Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 
   - Mưa ECMWF IFS + GFS tại điểm báo (Open-Meteo `past_days=3`, cắt 6 giờ trước → 3 giờ sau `observedAt`) và đặc trưng tính sẵn `p1`, `R3`, `p6sum` (cùng công thức R3 với mô hình).
   - Radar RainViewer (zoom 7, scheme 2 "Universal Blue", tile không làm mượt `0_0`): mọi frame trong 60 phút trước `observedAt` tại điểm → `radar.frames[{time, rgba, dBZ, mmH}]`, `radar.maxMmH`. Màu → dBZ theo bảng chính thức của RainViewer (<https://www.rainviewer.com/api/color-schemes.html>, `public/js/radar-rate.js`), rồi Marshall–Palmer `R = (10^(dBZ/10)/200)^(1/1.6)`. `null` + `radarError: "out_of_range"` nếu ngoài 2 giờ qua, `null` nếu trình duyệt chặn đọc canvas (CORS).
   - Triều: mực nước Vũng Tàu (Open-Meteo) tại giờ `observedAt` và trễ 3 giờ, `phuAn` = PA(observedAt), `phuAnSource` (`om+3h−bias` hoặc `…+bulletin` nếu đã khớp dự báo chính thức), `bias`, `alert` (`<I`/`I`/`II`/`III`), `latestObservedPeak` (đỉnh thực đo gần nhất ≤ `observedAt`).
-  - Địa hình: `terrain.z` tại điểm báo từ `dtm.bin` (FABDEM, Hòn Dấu; `null` nếu lỗi).
 - Popup báo cáo hiển thị "Thời tiết lúc ngập".
 - **Vòng lặp học tối thiểu**: xem "Lịch sử theo ô" — các lần ngập/khô cũ (kể cả 2 năm trước) đặt ngưỡng mưa/triều cho ô ~150 m quanh đó.
 - Nút **Xuất dữ liệu (JSON)** cuối panel tải reports + votes + snapshot để phân tích/train sau.
@@ -175,7 +169,6 @@ Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 
 - **Mô hình heuristic, chưa hiệu chỉnh** với dữ liệu ngập thực tế. Chỉ dùng để tham khảo.
 - **ECMWF IFS ~9 km** làm mượt mưa đối lưu: các cơn giông cục bộ (rất phổ biến ở TP.HCM) thường bị dự báo thấp hơn và lệch vị trí/thời gian.
 - **Triều Phú An suy từ Open-Meteo** (trễ 3 giờ − bias) và chỉ khớp đỉnh dự báo chính thức theo ngày; `fetch-tide` phải chạy hằng ngày, nếu không app dùng bias mặc định 0.60.
-- **DTM FABDEM v1-2 — license CC BY-NC-SA 4.0 (phi thương mại)**. Dùng thương mại phải đổi sang DeltaDTM (CC BY 4.0) / GEDTM30 hoặc mua license. Sai số FABDEM ở đô thị ~0.6–0.7 m (RMSE); lún nền (TP.HCM vài cm/năm) chưa tính. Offset EGM2008 → Hòn Dấu lấy theo tài liệu (0.86–0.89 m, dùng 0.89), **chưa đo đối chiếu mốc**.
 - Điểm ngập kinh niên: 42/107 điểm là `uncertain`, vì nguồn chỉ ghi tên đường hoặc mốc không có trên OSM. Một số đầu mút là cầu phải lùi về cuối đoạn OSM liền mạch (khoảng 130–290 m), vì way cầu mang tên khác.
 - **Open-Meteo, RainViewer và tile OpenStreetMap chỉ cho phép dùng phi thương mại / lưu lượng nhẹ.** Triển khai thật cần gói trả phí hoặc tile server riêng.
 - Radar RainViewer chỉ có ~2 giờ quá khứ, độ phân giải tối đa zoom 7.

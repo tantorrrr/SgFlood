@@ -33,5 +33,6 @@ Not verified: `schema.sql` / `SupabaseStore` / Realtime against a real Supabase 
 - Terrain: FABDEM (CC BY-NC-SA) replaces the Copernicus DSM. Off-hotspot tide rule disabled after audit (tide hotspots median z 2.0 m > 1.78 m record; 16% of segments ≤ 1.2 m).
 - Snapshot: terrain z + Phú An estimate + alert level verified in browser.
 - Open: 2 of 14 recent bulletins (6-column layout) not parsed; FABDEM license is non-commercial.
+- 2026-10-08: FABDEM terrain removed entirely (user decision: low predictive value). Off-hotspot susceptibility is the flat S_RAIN_BASE.
 
 Known POC limitations: hotspot matching by street name + radius is coarse (e.g. Võ Văn Kiệt matches 81 segments); legend can cover markers on mobile; heuristic thresholds uncalibrated.

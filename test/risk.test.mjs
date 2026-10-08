@@ -6,7 +6,7 @@ import { BucketIndex } from '../public/js/geo.js';
 
 const MODEL = {
   RAIN_START: 3, RAIN_FULL: 25, TIDE_START: 1.4, TIDE_FULL: 1.95, HOTSPOT_S: 0.95,
-  S_RAIN_BASE: 0.1, S_RAIN_LOW: 0.35, Z_LOW: 1.0, Z_HIGH: 3.0, Z_TIDE: 1.2, S_TIDE_LOW: 0.45,
+  S_RAIN_BASE: 0.1,
   ANALOG_RAIN_MIN: 8, ANALOG_NEAR_RATIO: 0.7, ANALOG_TIDE_TOL: 0.05,
 };
 const GRID = { rows: 2, cols: 2, lats: [10, 11], lngs: [106, 107] };
@@ -44,52 +44,34 @@ test('levelOf thresholds', () => {
   assert.equal(levelOf(0.75), 3);
 });
 
-test('rain hotspot floods under heavy rain, high ground does not, low ground ponds', () => {
+test('rain hotspot floods under heavy rain, off-hotspot roads stay at the flat base', () => {
   const w = weather([uniform(30)]);
-  const hot = segmentRisk({ z: 5 }, [10.5, 106.5], { cause: 'rain' }, w, 0, MODEL);
+  const hot = segmentRisk([10.5, 106.5], { cause: 'rain' }, w, 0, MODEL);
   assert.equal(hot.level, 3);
   assert.equal(hot.cause, 'rain');
-  assert.equal(segmentRisk({ z: 5 }, [10.5, 106.5], undefined, w, 0, MODEL).level, 0);
-  assert.equal(segmentRisk({ z: null }, [10.5, 106.5], undefined, w, 0, MODEL).level, 0);
-  const low = segmentRisk({ z: 0.5 }, [10.5, 106.5], undefined, w, 0, MODEL);
-  assert.equal(low.level, 1);
-  assert.equal(low.reason.z, 0.5);
+  assert.equal(segmentRisk([10.5, 106.5], undefined, w, 0, MODEL).level, 0);
 });
 
-test('terrain rain susceptibility: 0.45 below Z_LOW, 0.1 above Z_HIGH, smooth between', () => {
-  const s = (z) => susceptibility({ z }, undefined, MODEL).sRain;
-  assert.ok(Math.abs(s(0.2) - 0.45) < 1e-9);
-  assert.ok(Math.abs(s(1.0) - 0.45) < 1e-9);
-  assert.ok(Math.abs(s(2.0) - 0.275) < 1e-9);
-  assert.ok(Math.abs(s(3.0) - 0.1) < 1e-9);
-  assert.equal(s(null), 0.1);
-  assert.equal(susceptibility({ z: 0 }, { cause: 'both' }, MODEL).sRain, 0.95);
+test('susceptibility: hotspot cause gets HOTSPOT_S, otherwise flat rain base and no tide', () => {
+  assert.deepEqual(susceptibility(undefined, MODEL), { sRain: 0.1, sTide: 0 });
+  assert.deepEqual(susceptibility({ cause: 'rain' }, MODEL), { sRain: 0.95, sTide: 0 });
+  assert.deepEqual(susceptibility({ cause: 'tide' }, MODEL), { sRain: 0.1, sTide: 0.95 });
+  assert.deepEqual(susceptibility({ cause: 'both' }, MODEL), { sRain: 0.95, sTide: 0.95 });
 });
 
-test('terrain tide susceptibility only for low ground below the current Phú An level', () => {
-  const t = (z, pa) => susceptibility({ z }, undefined, MODEL, pa).sTide;
-  assert.equal(t(1.0, 1.5), 0.45);
-  assert.equal(t(1.2, 1.5), 0.45);
-  assert.equal(t(1.21, 1.6), 0); // above Z_TIDE
-  assert.equal(t(1.0, 0.9), 0); // tide below ground
-  assert.equal(t(1.0, null), 0);
-  assert.equal(t(null, 1.8), 0);
-  assert.equal(susceptibility({ z: 9 }, { cause: 'tide' }, MODEL, 0).sTide, 0.95);
-});
-
-test('tide uses the Phú An level at t; off-hotspot low ground is capped at level 1', () => {
+test('tide uses the Phú An level at t and only floods tide hotspots', () => {
   const w = weather([uniform(0), uniform(0), uniform(0)], [1.0, 1.7, 2.0]);
-  const tide = segmentRisk({ z: 3 }, [10.5, 106.5], { cause: 'tide' }, w, 2, MODEL);
+  const tide = segmentRisk([10.5, 106.5], { cause: 'tide' }, w, 2, MODEL);
   assert.equal(tide.level, 3);
   assert.equal(tide.cause, 'tide');
   assert.equal(tide.reason.pa, 2.0);
-  assert.equal(segmentRisk({ z: 3 }, [10.5, 106.5], { cause: 'tide' }, w, 0, MODEL).level, 0); // below BĐ I
-  assert.equal(segmentRisk({ z: 3 }, [10.5, 106.5], { cause: 'rain' }, w, 2, MODEL).level, 0);
-  assert.equal(segmentRisk({ z: 0.8 }, [10.5, 106.5], undefined, w, 2, MODEL).level, 1);
-  assert.equal(segmentRisk({ z: 0.8 }, [10.5, 106.5], undefined, weather([uniform(0)]), 0, MODEL).reason.pa, null);
+  assert.equal(segmentRisk([10.5, 106.5], { cause: 'tide' }, w, 0, MODEL).level, 0); // below BĐ I
+  assert.equal(segmentRisk([10.5, 106.5], { cause: 'rain' }, w, 2, MODEL).level, 0);
+  assert.equal(segmentRisk([10.5, 106.5], undefined, w, 2, MODEL).level, 0);
+  assert.equal(segmentRisk([10.5, 106.5], undefined, weather([uniform(0)]), 0, MODEL).reason.pa, null);
 });
 
-const SEGS = [{ z: 5, n: 'Nguyễn Hữu Cảnh', c: [[10.5, 106.499], [10.5, 106.501]] }, { z: 5, c: [[10.52, 106.499], [10.52, 106.501]] }];
+const SEGS = [{ n: 'Nguyễn Hữu Cảnh', c: [[10.5, 106.499], [10.5, 106.501]] }, { c: [[10.52, 106.499], [10.52, 106.501]] }];
 const segIndex = (segs) => {
   const index = new BucketIndex();
   segs.forEach((s, i) => index.add(i, s.c));
@@ -108,8 +90,8 @@ test('bug §14: past flood at R3 = 1 mm now forecasts its level when forecast R3
   const near = segmentAnalogs(cells, SEGS, segIndex(SEGS));
   assert.deepEqual([...near.keys()], [0]);
   const w = weather([uniform(8)]);
-  assert.equal(segmentRisk(SEGS[0], [10.5, 106.5], undefined, w, 0, MODEL).level, 0); // heuristic alone
-  const hit = segmentRisk(SEGS[0], [10.5, 106.5], undefined, w, 0, MODEL, near.get(0));
+  assert.equal(segmentRisk([10.5, 106.5], undefined, w, 0, MODEL).level, 0); // heuristic alone
+  const hit = segmentRisk([10.5, 106.5], undefined, w, 0, MODEL, near.get(0));
   assert.equal(hit.level, 2);
   assert.equal(hit.cause, 'rain');
   assert.equal(hit.reason.analog.count, 1);
@@ -118,13 +100,13 @@ test('bug §14: past flood at R3 = 1 mm now forecasts its level when forecast R3
 
 test('heavy forecast rain: max(heuristic, cell)', () => {
   const tiny = cellsOf([pastReport({ level: 1, snapshot: { features: { ecmwf_ifs: { R3: 0 } } } })]);
-  assert.equal(segmentRisk(SEGS[0], [10.5, 106.5], { cause: 'rain' }, weather([uniform(30)]), 0, MODEL, tiny).level, 3);
+  assert.equal(segmentRisk([10.5, 106.5], { cause: 'rain' }, weather([uniform(30)]), 0, MODEL, tiny).level, 3);
 });
 
 test('tide cell drives segmentRisk with cause tide', () => {
   const cells = cellsOf([pastReport({ snapshot: { features: { ecmwf_ifs: { R3: 0.5 } }, tide: { phuAn: 1.6 } } })]);
   const near = segmentAnalogs(cells, SEGS, segIndex(SEGS)).get(0);
-  const at = (pa) => segmentRisk(SEGS[0], [10.5, 106.5], undefined, weather([uniform(0)], [pa]), 0, MODEL, near);
+  const at = (pa) => segmentRisk([10.5, 106.5], undefined, weather([uniform(0)], [pa]), 0, MODEL, near);
   assert.equal(at(1.55).level, 2);
   assert.equal(at(1.55).cause, 'tide');
   assert.equal(at(1.54).level, 0);

@@ -19,10 +19,9 @@ function weatherAtReport(snap) {
   const tide = typeof snap.tide?.phuAn === 'number'
     ? `Phú An ${snap.tide.phuAn.toFixed(2)} m${snap.tide.alert && snap.tide.alert !== '<I' ? ` (BĐ ${snap.tide.alert})` : ''}`
     : typeof snap.tide?.seaLevel === 'number' ? `Vũng Tàu ${snap.tide.seaLevel.toFixed(2)} m` : '—';
-  const z = typeof snap.terrain?.z === 'number' ? ` · Cao độ nền ${snap.terrain.z.toFixed(2)} m` : '';
   return `<div class="snap"><b>Thời tiết lúc ngập</b>
     <div>Mưa 3h ECMWF: ${r3('ecmwf_ifs')} · GFS: ${r3('gfs_global')}</div>
-    <div>Radar: ${radar} · Triều: ${tide}${z}</div></div>`;
+    <div>Radar: ${radar} · Triều: ${tide}</div></div>`;
 }
 
 export class ReportUI {

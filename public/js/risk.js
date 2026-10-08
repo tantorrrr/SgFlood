@@ -48,26 +48,20 @@ export function levelOf(risk) {
   return LEVEL_THRESHOLDS.filter((th) => risk >= th).length;
 }
 
-// z: lowest terrain along the segment (m, Hòn Dấu), null for bridges / no data. pa: Phú An level (m, Hòn Dấu).
-export function susceptibility(seg, hotspot, model, pa = null) {
+// Hotspot segments get HOTSPOT_S for their cause; everything else a flat rain base and no tide term.
+export function susceptibility(hotspot, model) {
   const cause = hotspot?.cause;
-  const z = seg.z ?? null;
-  const sRain = cause === 'rain' || cause === 'both'
-    ? model.HOTSPOT_S
-    : z == null ? model.S_RAIN_BASE : model.S_RAIN_BASE + model.S_RAIN_LOW * (1 - smoothstep(model.Z_LOW, model.Z_HIGH, z));
-  // Conservative off-hotspot tide term (dykes and tide gates make a "bathtub" model wrong): at most level 1.
-  const sTide = cause === 'tide' || cause === 'both'
-    ? model.HOTSPOT_S
-    : z != null && pa != null && z <= model.Z_TIDE && z < pa ? model.S_TIDE_LOW : 0;
+  const sRain = cause === 'rain' || cause === 'both' ? model.HOTSPOT_S : model.S_RAIN_BASE;
+  const sTide = cause === 'tide' || cause === 'both' ? model.HOTSPOT_S : 0;
   return { sRain, sTide };
 }
 
-export function segmentRisk(seg, mid, hotspot, weather, ti, model, analogs = []) {
+export function segmentRisk(mid, hotspot, weather, ti, model, analogs = []) {
   const R3 = rain3h(weather, mid, ti);
   const pa = phuAnAt(weather, ti);
   const rainF = smoothstep(model.RAIN_START, model.RAIN_FULL, R3);
   const tideF = pa == null ? 0 : smoothstep(model.TIDE_START, model.TIDE_FULL, pa);
-  const s = susceptibility(seg, hotspot, model, pa);
+  const s = susceptibility(hotspot, model);
   const rainRisk = s.sRain * rainF;
   const tideRisk = s.sTide * tideF;
   const risk = Math.max(rainRisk, tideRisk);
@@ -78,7 +72,7 @@ export function segmentRisk(seg, mid, hotspot, weather, ti, model, analogs = [])
     risk,
     level: byAnalog ? hit.level : heuristic,
     cause: byAnalog ? hit.cause : tideRisk > rainRisk ? 'tide' : 'rain',
-    reason: { R3, pa, z: seg.z ?? null, hotspot: hotspot ?? null, analog: hit },
+    reason: { R3, pa, hotspot: hotspot ?? null, analog: hit },
   };
 }
 

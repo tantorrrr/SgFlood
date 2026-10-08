@@ -176,6 +176,8 @@ Mục đích: tích luỹ cặp (lượng mưa/triều tại thời điểm, m�
 Research (đã kiểm, script mẫu ở `<scratchpad>/research-tide-dtm/scripts/`, dữ liệu ở `dl/`): xem báo cáo trong conversation; tóm tắt các số dùng ở dưới.
 
 ### 10a. Terrain — FABDEM v1-2 (CC BY-NC-SA 4.0, phi thương mại; POC chấp nhận vì Open-Meteo free cũng phi thương mại)
+> **ĐÃ BỎ 2026-10-08** (user decision: low predictive value — chronic hotspot z median ≈ all-road median). Toàn bộ FABDEM/DTM (build, `z`, `dtm.bin`, snapshot `terrain`, popup) đã gỡ; off-hotspot dùng `S_RAIN_BASE` phẳng, không có luật triều. Nội dung dưới giữ làm lịch sử.
+
 - Build (`scripts/build-dtm.mjs` hoặc module trong build-roads): tải tile `N10E106_FABDEM_V1-2.tif` bằng HTTP Range từ zip `https://data.bris.ac.uk/datasets/s5hqmjcdj8yo2ibzi9b4ew3sn/N10E100-N20E110_FABDEM_V1-2.zip` (EOCD → central directory → entry stored, method 0; offset local header ~33,103,661, size 14,427,858 — đọc từ CD, không hardcode). Cache `data/cache/`. Decode: TIFF tiled 256, Deflate (`inflateSync`), predictor 2 trên uint32 words, float32, nodata −9999, PixelIsPoint, tâm pixel (i,j) = (106 + i/3600, 11 − j/3600), EGM2008.
 - Đổi datum: `z_HonDau = z_EGM2008 − DTM_DATUM_OFFSET` (0.89, hằng số trong build, ghi vào metadata).
 - Nguồn DTM phải là module tách riêng (`source: fabdem`) để sau thay DeltaDTM (CC BY 4.0, 4TU đang 503) mà không đụng phần còn lại.
@@ -199,13 +201,15 @@ Research (đã kiểm, script mẫu ở `<scratchpad>/research-tide-dtm/scripts/
   - Timeline chart: đường triều vẽ theo PA, thêm 3 vạch ngang mảnh BĐ I/II/III + chấm cho đỉnh dự báo chính thức. Popup segment: "Triều Phú An ≈ x m (BĐ II)".
 
 ### 10c. Model dùng địa hình (thay `ep`)
+> **ĐÃ BỎ 2026-10-08** (user decision: low predictive value — chronic hotspot z median ≈ all-road median). Toàn bộ FABDEM/DTM (build, `z`, `dtm.bin`, snapshot `terrain`, popup) đã gỡ; off-hotspot dùng `S_RAIN_BASE` phẳng, không có luật triều. Nội dung dưới giữ làm lịch sử.
+
 - Mưa, đoạn không phải hotspot: `sRain = 0.1 + 0.35·(1 − smoothstep(Z_LOW=1.0, Z_HIGH=3.0, z))`.
 - Triều, đoạn không phải hotspot (bảo thủ, tránh mô hình "bồn tắm" vì có đê bao/cống ngăn triều): `sTide = 0.45` nếu `z ≤ Z_TIDE=1.2` và `z < PA(t)`, ngược lại 0 → tối đa mức 1 "đọng nước". Hằng số trong `config.js`.
 - Hotspot giữ nguyên 0.95 theo cause.
 - Popup: "Cao độ nền ≈ z m (FABDEM, Hòn Dấu)".
 
 ### 10d. Snapshot báo cáo (bổ sung cho §7b)
-- `terrain: { source:"FABDEM v1-2", datum:"Hòn Dấu (EGM2008 − 0.89)", z }` — z tại điểm báo từ `dtm.bin` (lazy load, nearest pixel), `null` nếu lỗi.
+- (Đã bỏ 2026-10-08, xem §10a) `terrain: { source:"FABDEM v1-2", datum:"Hòn Dấu (EGM2008 − 0.89)", z }` — z tại điểm báo từ `dtm.bin` (lazy load, nearest pixel), `null` nếu lỗi.
 - `tide` thêm: `phuAn` (PA(t) tại giờ báo), `phuAnSource` ("om+3h−bias" | "om+3h−bias+bulletin"), `bias`, `alert` ("<I" | "I" | "II" | "III"), `latestObservedPeak` (từ tide-phuan.json).
 - Giữ `seaLevel` Vũng Tàu cũ để so sánh.
 
@@ -283,7 +287,7 @@ Sửa (`risk.js`, hàm thuần + test):
   - Overpass `highway ~ residential|unclassified|living_street|service(chỉ khi có name)|pedestrian(có name)` trong bbox.
   - Chia bbox thành ô 0.02° (~2.2 km), mỗi ô 1 request có cache `data/cache/minor-<tile>.json`. Retry/backoff như build chính; ô fail thì log rõ, build fail ở cuối (chạy lại sẽ chỉ tải ô thiếu).
   - Bỏ way đã có trong roads.json (theo OSM id).
-  - Mỗi segment: simplify 3 m, cắt ≤ 150 m, `z` = min DTM như đường lớn (bridge → null).
+  - Mỗi segment: simplify 3 m, cắt ≤ 150 m (`z` đã bỏ 2026-10-08, xem §10a).
   - Hotspot geometry (§4b) cũng áp cho đường nhỏ nếu tên khớp. Đường nhỏ không đổi kết quả của hotspot đã match ở đường lớn; chỉ thêm piece.
   - Output `public/data/minor/<tileId>.json` (format giống `roads.segs`, id segment không trùng đường lớn, ví dụ prefix số lớn hoặc string `m<tile>-<n>`) + `public/data/minor/index.json` (danh sách tile, bbox, số segment, size).
   - In tổng số segment, tổng size, ô lớn nhất.

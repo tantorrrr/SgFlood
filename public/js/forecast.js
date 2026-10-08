@@ -53,7 +53,7 @@ export class Forecast {
 
   detail(ti, i) {
     const seg = this.segs[i];
-    return segmentRisk(seg, this.mids[i], this.hotspots.get(seg.hs), this.weather, ti, this.model, this.segAnalogs.get(i));
+    return segmentRisk(this.mids[i], this.hotspots.get(seg.hs), this.weather, ti, this.model, this.segAnalogs.get(i));
   }
 
   // Cells firing at their own point at hour ti (drawn even with no road nearby): [{ analog, level, cause, n, m, threshold, srcs }].

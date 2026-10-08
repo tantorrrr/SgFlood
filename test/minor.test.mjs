@@ -8,7 +8,7 @@ import { groupCells, prepareCell } from '../public/js/cells.js';
 const BBOX = [10.66, 106.58, 10.9, 106.84];
 const MODEL = {
   RAIN_START: 3, RAIN_FULL: 25, TIDE_START: 1.4, TIDE_FULL: 1.95, HOTSPOT_S: 0.95,
-  S_RAIN_BASE: 0.1, S_RAIN_LOW: 0.35, Z_LOW: 1.0, Z_HIGH: 3.0, Z_TIDE: 1.2, S_TIDE_LOW: 0.45,
+  S_RAIN_BASE: 0.1,
   ANALOG_RAIN_MIN: 8, ANALOG_NEAR_RATIO: 0.7, ANALOG_TIDE_TOL: 0.05,
 };
 

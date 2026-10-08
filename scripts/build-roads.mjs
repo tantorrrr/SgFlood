@@ -1,18 +1,13 @@
 import { readFile, writeFile, stat } from 'node:fs/promises';
 import { pathLengthM, midpoint } from '../public/js/geo.js';
 import { normalizeName } from './lib/hotspot-geom.mjs';
-import { loadDtm, minAlong, cropGrid, DTM_DATUM_OFFSET } from './lib/dtm.mjs';
-import { ROOT, CACHE, BBOX, HEADERS, loadWays, simplify, splitPath, resolveHotspots, matchHotspot, round } from './lib/osm.mjs';
+import { ROOT, BBOX, loadWays, simplify, splitPath, resolveHotspots, matchHotspot, round } from './lib/osm.mjs';
 
 const OUT = new URL('public/data/roads.json', ROOT);
-const DTM_BIN = new URL('public/data/dtm.bin', ROOT);
-const DTM_JSON = new URL('public/data/dtm.json', ROOT);
 const SIMPLIFY_M = 5;
 const PIECE_MAX_M = 400;
 const HOTSPOT_PIECE_MAX_M = 100;
 const WARN_KM = 2.5;
-const Z_SAMPLE_M = 30;
-const CHECK_POINTS = [['Nguyễn Hữu Cảnh', 10.789, 106.718, 1.6], ['Bến Thành', 10.772, 106.698, 5.3]];
 
 function report(hotspots, segs) {
   const km = new Map(hotspots.map((h) => [h.id, { pieces: 0, m: 0 }]));
@@ -33,13 +28,6 @@ function report(hotspots, segs) {
   if (failed) process.exitCode = 1;
 }
 
-function terrainReport(segs, dtm) {
-  const zs = segs.map((s) => s.z).filter((z) => z != null).sort((a, b) => a - b);
-  const q = (p) => zs[Math.min(zs.length - 1, Math.floor(p * zs.length))].toFixed(2);
-  console.log(`Segment z (${dtm.datum}, min every ${Z_SAMPLE_M} m): p5 ${q(0.05)}  p50 ${q(0.5)}  p95 ${q(0.95)}  |  null (bridge/no data): ${segs.length - zs.length}`);
-  for (const [name, lat, lng, expect] of CHECK_POINTS) console.log(`  check ${name} (${lat}, ${lng}): z ${dtm.at(lat, lng)?.toFixed(2)} m (expected ≈ ${expect})`);
-}
-
 async function main() {
   const hotspots = JSON.parse(await readFile(new URL('data/hotspots.json', ROOT), 'utf8'));
 
@@ -48,9 +36,6 @@ async function main() {
   console.log(`  ${ways.length} ways`);
   const resolved = resolveHotspots(hotspots, ways);
   const hotspotNames = new Set(resolved.flatMap((r) => [...r.names]));
-
-  console.log('Loading DTM…');
-  const dtm = await loadDtm({ cacheDir: CACHE, headers: HEADERS });
 
   const segs = [];
   for (const way of ways) {
@@ -61,9 +46,7 @@ async function main() {
       const c = piece.map(([lat, lng]) => [round(lat), round(lng)]);
       const mid = midpoint(c);
       if (mid[0] < BBOX.s || mid[0] > BBOX.n || mid[1] < BBOX.w || mid[1] > BBOX.e) continue;
-      // Bridges sit above the terrain: sampling them would return the river/canal surface.
-      const z = way.tags.bridge && way.tags.bridge !== 'no' ? null : minAlong(c, dtm.at, Z_SAMPLE_M);
-      const seg = { i: segs.length, n: way.tags.name ?? way.tags.ref ?? '', h: way.tags.highway, c, z };
+      const seg = { i: segs.length, n: way.tags.name ?? way.tags.ref ?? '', h: way.tags.highway, c };
       const hs = matchHotspot(name, mid, resolved);
       if (hs) seg.hs = hs;
       segs.push(seg);
@@ -75,18 +58,12 @@ async function main() {
     bbox: [BBOX.s, BBOX.w, BBOX.n, BBOX.e],
     builtAt: new Date().toISOString(),
     hotspots,
-    dtm: { source: dtm.label, datum: dtm.datum, offset: DTM_DATUM_OFFSET, sampleM: Z_SAMPLE_M, stat: 'min' },
-    segs: segs.map(({ i, n, h, c, z, hs }) => (hs ? { i, n, h, c, z, hs } : { i, n, h, c, z })),
+    segs: segs.map(({ i, n, h, c, hs }) => (hs ? { i, n, h, c, hs } : { i, n, h, c })),
   };
   await writeFile(OUT, JSON.stringify(out));
   const { size } = await stat(OUT);
 
-  const grid = cropGrid(dtm, out.bbox);
-  await writeFile(DTM_BIN, Buffer.from(grid.data.buffer));
-  await writeFile(DTM_JSON, JSON.stringify(grid.meta, null, 2));
-
-  console.log(`\nSegments: ${segs.length}  |  roads.json: ${(size / 1024 / 1024).toFixed(2)} MB  |  dtm.bin: ${grid.meta.width}×${grid.meta.height} = ${(grid.data.byteLength / 1024 / 1024).toFixed(2)} MB`);
-  terrainReport(segs, dtm);
+  console.log(`\nSegments: ${segs.length}  |  roads.json: ${(size / 1024 / 1024).toFixed(2)} MB`);
   report(hotspots, segs);
 }
 

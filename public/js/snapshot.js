@@ -1,6 +1,5 @@
 import { weightedR3 } from './risk.js';
 import { LATE_MS } from './reports.js';
-import { loadDtm, dtmValueAt } from './dtm.js';
 import { alertLevel, latestPeakBefore } from './tide.js';
 import { rgbaToDbz, dbzToMmH } from './radar-rate.js';
 
@@ -123,10 +122,6 @@ export function tideAt(weather, t) {
   };
 }
 
-async function captureTerrain(lat, lng) {
-  return { source: 'FABDEM v1-2', datum: 'Hòn Dấu (EGM2008 − 0.89)', z: dtmValueAt(await loadDtm(), lat, lng) };
-}
-
 const settle = (p) => p.then((value) => ({ value }), (err) => ({ error: err.message || String(err) }));
 
 // Never rejects and resolves within TIMEOUT_MS; failed sources become null with an error note.
@@ -136,10 +131,9 @@ export async function captureSnapshot({ lat, lng }, { weather, observedAt, creat
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), TIMEOUT_MS);
   const timeout = new Promise((resolve) => ctrl.signal.addEventListener('abort', () => resolve({ error: 'timeout' })));
-  const [models, radar, terrain] = await Promise.all([
+  const [models, radar] = await Promise.all([
     Promise.race([settle(captureModels(lat, lng, ctrl.signal, t)), timeout]),
     Promise.race([settle(captureRadar(lat, lng, ctrl.signal, t)), timeout]),
-    Promise.race([settle(captureTerrain(lat, lng)), timeout]),
   ]);
   clearTimeout(timer);
   const snap = {
@@ -154,10 +148,8 @@ export async function captureSnapshot({ lat, lng }, { weather, observedAt, creat
     features: models.value?.features ?? null,
     radar: radar.value ?? null,
     tide: tideAt(weather, t),
-    terrain: terrain.value ?? { source: 'FABDEM v1-2', datum: 'Hòn Dấu (EGM2008 − 0.89)', z: null },
   };
   if (models.error) snap.modelsError = models.error;
   if (radar.error) snap.radarError = radar.error;
-  if (terrain.error) snap.terrainError = terrain.error;
   return snap;
 }

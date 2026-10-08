@@ -5,17 +5,15 @@ import { existsSync } from 'node:fs';
 import { midpoint, pathLengthM } from '../public/js/geo.js';
 import { TILE_DEG, tileId, tileBbox, gridTiles } from '../public/js/tiles.js';
 import { normalizeName } from './lib/hotspot-geom.mjs';
-import { loadDtm, minAlong } from './lib/dtm.mjs';
-import { ROOT, CACHE, BBOX, HEADERS, REFRESH, cached, overpassAt, loadWays, simplify, splitPath, resolveHotspots, matchHotspot, round } from './lib/osm.mjs';
+import { ROOT, CACHE, BBOX, REFRESH, cached, overpassAt, loadWays, simplify, splitPath, resolveHotspots, matchHotspot, round } from './lib/osm.mjs';
 
 const OUT_DIR = new URL('public/data/minor/', ROOT);
 const SIMPLIFY_M = 3;
 const PIECE_MAX_M = 150;
 const HOTSPOT_PIECE_MAX_M = 100;
-const Z_SAMPLE_M = 30;
 const BLOCK = 3; // output tiles per block side: one Overpass request covers 0.06° × 0.06°
 const MAX_STRIKES = 3;
-const KEEP_TAGS = ['name', 'ref', 'highway', 'bridge'];
+const KEEP_TAGS = ['name', 'ref', 'highway'];
 const OVERPASS_ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.private.coffee/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 const BBOX_ARR = [BBOX.s, BBOX.w, BBOX.n, BBOX.e];
 
@@ -108,9 +106,6 @@ async function main() {
   }
   console.log(`  ${ways.length} minor ways`);
 
-  console.log('Loading DTM…');
-  const dtm = await loadDtm({ cacheDir: CACHE, headers: HEADERS });
-
   const byTile = new Map();
   const hsPieces = new Map();
   for (const way of ways) {
@@ -123,8 +118,7 @@ async function main() {
       if (mid[0] < BBOX.s || mid[0] > BBOX.n || mid[1] < BBOX.w || mid[1] > BBOX.e) continue;
       const tile = tileId(BBOX_ARR, mid[0], mid[1]);
       const segs = byTile.get(tile) ?? [];
-      const z = way.tags.bridge && way.tags.bridge !== 'no' ? null : minAlong(c, dtm.at, Z_SAMPLE_M);
-      const seg = { i: `m${tile}-${segs.length}`, n: way.tags.name ?? way.tags.ref ?? '', h: way.tags.highway, c, z };
+      const seg = { i: `m${tile}-${segs.length}`, n: way.tags.name ?? way.tags.ref ?? '', h: way.tags.highway, c };
       const hs = matchHotspot(name, mid, resolved);
       if (hs) {
         seg.hs = hs;

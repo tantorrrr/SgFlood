@@ -10,7 +10,6 @@ Web app tĩnh: Leaflet + OSM, không build step, không dependency npm. Backend:
 - **Dự báo (heuristic, chưa hiệu chỉnh):**
   - Mưa: ECMWF qua Open-Meteo.
   - Triều: trạm Phú An, hiệu chỉnh từ 558 đỉnh thực đo (lag 3h, bias 0.60m).
-  - Địa hình: FABDEM.
   - 107 điểm ngập kinh niên lấy từ bài gốc (CSGT, Sở Xây dựng).
   - Ngưỡng theo ô 150m học từ lịch sử báo cáo và báo chí.
 - **Người dân báo cáo:**
@@ -18,11 +17,11 @@ Web app tĩnh: Leaflet + OSM, không build step, không dependency npm. Backend:
   - Báo được cho giờ hiện tại hoặc trong 48h qua.
   - Sửa được khi chưa ai vote; rút báo cáo bất kỳ lúc nào.
   - Vote ✅/❌.
-  - Snapshot kèm mỗi báo cáo: ECMWF, GFS, radar (mm/h), triều, cao độ.
+  - Snapshot kèm mỗi báo cáo: ECMWF, GFS, radar (mm/h), triều.
 - **Hiển thị báo cáo:** hiệu lực 6h, mỗi xác nhận +1h, tối đa 12h. Hết hiệu lực thì hiện mờ thêm 24h.
 - **Cụm điểm nóng** (1 nguồn là đủ, chỉnh được trong config) và **heatmap** (mặc định tắt).
 - **Lớp báo chí:** quét RSS 8 báo → Claude Haiku bóc thông tin → chỉ giữ ngập nặng (dắt bộ / chết máy / kẹt xe / >30cm) → khớp vào đoạn đường.
-- **Test:** `npm test` → 111/111 pass.
+- **Test:** `npm test` → 105/105 pass.
 
 ## Chạy
 ```bash
@@ -58,13 +57,12 @@ npm run build:data        # dựng lại đường lớn + đường nhỏ (Over
 5. **Điểm ngập kinh niên dạng giao lộ vẫn dùng bán kính 250m** (tô rộng 1.4–2.8km do có làn song song). Báo chí đã giảm xuống 120m/60m.
 6. **Model:** mọi ngưỡng đều heuristic.
    - ECMWF 9km làm mượt mưa giông.
-   - Cao độ không dự báo được ngập triều, nên luật triều cho đoạn không phải điểm kinh niên đang tắt (`S_TIDE_LOW = 0`).
+   - Không dùng địa hình (FABDEM bỏ 2026-10-08): đoạn không phải điểm kinh niên có độ nhạy mưa phẳng 0.1, không có luật triều.
    - Cống ngăn triều Tân Thuận/Phú Định có thể vận hành từ 10/2026 (chưa xác minh) và sẽ làm đổi các điểm ngập triều.
 7. **UX:** chú thích trên mobile che marker. Console còn vài lỗi 404/422 vô hại chưa truy ra nguồn.
 8. **Production:** deploy tĩnh (GitHub Pages/Vercel) + Supabase.
 
 ## License và giới hạn dữ liệu
-- **FABDEM** (`public/data/dtm.bin`, `z` trong `roads.json`): CC BY-NC-SA 4.0, chỉ phi thương mại, share-alike. Dùng thương mại thì đổi sang DeltaDTM (CC BY 4.0).
 - **Open-Meteo free, RainViewer, OSM tiles:** phi thương mại hoặc lưu lượng nhẹ.
 - **Báo chí:** chỉ lưu link + trích dẫn ≤ 25 chữ.
 
