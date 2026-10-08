@@ -118,7 +118,7 @@ Schema gồm bảng `reports`, `votes`, view `reports_with_votes` (96 giờ gầ
   - Nước triều vào đường chủ yếu qua cống chảy ngược, có đê bao, và sai số DTM ở đô thị khoảng 0.6 m, nên cao độ không dự báo được ngập triều ở đây.
   - Bật thử bằng `S_TIDE_LOW = 0.45`: đoạn có `z ≤ 1.2` và `z < PA(t)` sẽ lên tối đa mức 1.
 
-Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 0.25 khô, < 0.5 đọng nước, < 0.75 ngập 10–30cm, còn lại ngập sâu. Báo cáo của người dân (đang hiệu lực, TTL 6–12 giờ tuỳ số xác nhận) ghi đè dự báo trong bán kính 200 m. Hằng số nằm trong `public/config.js` (`model`).
+Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 0.25 khô, < 0.5 đọng nước, < 0.75 ngập 10–30cm, còn lại ngập sâu. Báo cáo của người dân (đang hiệu lực, TTL 6–12 giờ tuỳ số xác nhận) ghi đè dự báo trong bán kính 60 m (`INFLUENCE_M`). Hằng số nằm trong `public/config.js` (`model`).
 
 ## Báo ngập quá khứ (báo muộn)
 
@@ -132,8 +132,8 @@ Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 
 - Không còn giới hạn 30 ngày. View Supabase `flood_cells` (security_invoker, theo RLS như các view khác) gộp báo cáo hợp lệ (không rút, không bị phủ nhận, có snapshot) + `news_reports` của 730 ngày theo ô ~150 m (lưới 0.00135°, cùng công thức với `public/js/cells.js`). Mỗi ô: `cell_id, lat, lng, events`, mỗi event `{t, level, net, Rh, RhSrc, PAh, cause, source, radarMmH}`. Chế độ cục bộ gộp y hệt từ localStorage. Tin báo chí trong `news-floods.json` được gộp thêm (trùng id thì giữ 1); mưa/triều của tin lấy từ dữ liệu thời tiết đã tải nếu bài nằm trong 48 giờ qua.
 - `Rh` = **Rh_eff** = max(ECMWF R3, GFS R3, radar max mm/h × 1 giờ, `r3_obs` bổ sung sau sự kiện), `RhSrc` ghi nguồn thắng (`ecmwf`/`gfs`/`radar`/`obs`). `PAh` = triều Phú An trong snapshot. Event là triều nếu `PAh ≥ TIDE_START` và `Rh < ANALOG_RAIN_MIN` (tin báo: theo `cause` của bài).
 - Ngưỡng theo ô (thay analog từng báo cáo): `Tcell` = phân vị 25% `Rh_eff` của các lần ngập do mưa, sàn `ANALOG_RAIN_MIN = 8 mm`. Khi R3 dự báo ≥ `Tcell` → mức = trung vị (cận dưới) mức các lần ngập có `Rh_eff ≤ R3` (không có → mức nhỏ nhất); từ `ANALOG_NEAR_RATIO (0.7)` × `Tcell` → thấp hơn 1 mức. **Mẫu âm**: số lần khô (báo "Không ngập") có `Rh_eff ≥ R3` nhiều hơn số lần ngập có `Rh_eff ≤ R3` → hạ 1 mức. Triều tương tự trên `PAh` (sàn `TIDE_START`, kích hoạt từ ngưỡng − `ANALOG_TIDE_TOL (0.05 m)`). Mức cuối = max(heuristic, ô). Hằng số trong `public/config.js` (`model`).
-- Đoạn đường trong 200 m quanh tâm ô nhận ngưỡng của ô; popup/panel ghi "Ô này ngập n/m lần khi mưa 3h ≥ X mm (nguồn: radar/ECMWF/thực đo)" (n = lần ngập có `Rh_eff ≥ X`, m = mọi lần ngập + khô có `Rh_eff ≥ X`).
-- Ở giờ hiện tại/tương lai, ô kích hoạt vẽ vòng 200 m nét đứt, fill nhạt, màu theo mức dự báo (kể cả khi không có đường nào gần); tooltip nằm trên chấm nhỏ ở tâm. Panel dự báo liệt kê "Điểm từng ngập (người dân báo / báo chí)" kèm tên đường gần nhất trong 500 m.
+- Đoạn đường trong 60 m quanh vị trí các lần báo trong ô nhận ngưỡng của ô; popup/panel ghi "Ô này ngập n/m lần khi mưa 3h ≥ X mm (nguồn: radar/ECMWF/thực đo)" (n = lần ngập có `Rh_eff ≥ X`, m = mọi lần ngập + khô có `Rh_eff ≥ X`).
+- Ở giờ hiện tại/tương lai, ô kích hoạt vẽ vòng 60 m nét đứt, fill nhạt, màu theo mức dự báo (kể cả khi không có đường nào gần); tooltip nằm trên chấm nhỏ ở tâm. Panel dự báo liệt kê "Điểm từng ngập (người dân báo / báo chí)" kèm tên đường gần nhất trong 500 m.
 - **Bổ sung sau sự kiện** (`scripts/enrich-reports.mjs`, `npm run enrich`, chạy trong cron hằng ngày): chỉ chạy khi có env `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` (không có → bỏ qua, log rõ). Báo cáo 2–10 ngày tuổi chưa có dòng trong `report_enrichment` → R3 tại điểm/giờ ngập từ Open-Meteo Archive (ERA5), nếu ERA5 chưa có thì Historical Forecast API → upsert `report_enrichment(report_id, r3_obs, source, fetched_at)` (anon/auth chỉ đọc, ghi bằng service role). `flood_cells` dùng max(Rh_eff, r3_obs).
 
 ## Sửa / rút báo cáo của chính mình
@@ -148,7 +148,7 @@ Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 
 
 - `public/config.js` → `crowd = { MIN_CONFIDENCE: 1, LATE_SELF_CONFIRM: true, ANALOG_MIN_NET: 0 }`: một báo cáo tự xác nhận chính nó (kể cả báo muộn, `confidence = 1 + net`) nên ghi đè màu đường ngay, và mọi báo ngập không bị phủ nhận đều dùng làm analog lịch sử. Khi đủ người dùng: đặt `LATE_SELF_CONFIRM: false`, `ANALOG_MIN_NET: 1`. Báo cáo "Không ngập" cần `confidence ≥ MIN_CONFIDENCE + 1`.
 - Báo cáo bị phủ nhận (`denies ≥ confirms + 2`) luôn bị ẩn và loại khỏi mọi tính toán.
-- Mỗi báo cáo đang hiệu lực tô vòng tròn 200 m (bán kính ảnh hưởng) màu theo mức, nằm dưới lớp đường, không bấm được; báo muộn viền nét đứt. Đoạn đường do người dân xác nhận có viền trắng dày + nét đậm hơn đoạn dự báo.
+- Mỗi báo cáo đang hiệu lực tô vòng tròn 60 m (bán kính ảnh hưởng `INFLUENCE_M`) màu theo mức, nằm dưới lớp đường, không bấm được; báo muộn viền nét đứt. Đoạn đường do người dân xác nhận có viền trắng dày + nét đậm hơn đoạn dự báo.
 
 ## Cụm cộng đồng + heatmap (§17)
 - `public/js/clusters.js` (thuần, test ở `test/clusters.test.mjs`): gom báo cáo (+ tin báo chí, mỗi bài = 1 nguồn) bán kính 150 m, greedy theo mật độ, đếm **nguồn khác nhau** (mỗi user_id = 1).

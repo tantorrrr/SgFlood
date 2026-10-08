@@ -4,7 +4,7 @@ import { HeatmapLayer } from './heatmap-layer.js';
 
 const L = window.L;
 const HOT_COLOR = '#D85A30';
-const RING_M = 200;
+const RING_M = 60; // matches INFLUENCE_M
 
 export class CrowdOverlay {
   constructor(map, clusterOpts = {}, crowd = {}) {

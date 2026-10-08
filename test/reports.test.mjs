@@ -56,10 +56,10 @@ test('dry report caps level at 1 only with confidence >= 2', () => {
   assert.equal(applyCrowd(0, []).level, 0);
 });
 
-test('crowdEffects reaches segments within 200 m only', () => {
+test('crowdEffects reaches segments within INFLUENCE_M (60 m) only', () => {
   const segs = [
     { c: [[10.78, 106.699], [10.78, 106.701]] },
-    { c: [[10.7815, 106.699], [10.7815, 106.701]] },
+    { c: [[10.7804, 106.699], [10.7804, 106.701]] }, // ~45 m
     { c: [[10.79, 106.699], [10.79, 106.701]] },
   ];
   const index = new BucketIndex();

@@ -1,7 +1,7 @@
 import { pointToPathM } from './geo.js';
 import { cellLevel } from './cells.js';
 
-export const ANALOG_RADIUS_M = 200;
+export const ANALOG_RADIUS_M = 60; // matches INFLUENCE_M
 export const ANALOG_AREA_M = 500;
 export const LEVEL_THRESHOLDS = [0.25, 0.5, 0.75];
 
@@ -90,14 +90,19 @@ function bestAnalog(analogs, R3, pa, model) {
   return { ...best, count: hits.length };
 }
 
-// Analogs within ANALOG_RADIUS_M of each segment i ≥ from.
+// Analogs within ANALOG_RADIUS_M of each segment i ≥ from, measured from the cell's actual event
+// locations (the cell centre can sit ~75 m off the reported street, more than the radius).
 export function segmentAnalogs(analogs, segs, index, from = 0) {
   const out = new Map();
   for (const a of analogs) {
-    for (const i of index.near(a.lat, a.lng)) {
-      if (i < from || pointToPathM([a.lat, a.lng], segs[i].c) > ANALOG_RADIUS_M) continue;
-      out.set(i, [...(out.get(i) ?? []), a]);
+    const pts = a.events?.length ? a.events.map((e) => [e.lat, e.lng]) : [[a.lat, a.lng]];
+    const hit = new Set();
+    for (const p of pts) {
+      for (const i of index.near(p[0], p[1])) {
+        if (i >= from && !hit.has(i) && pointToPathM(p, segs[i].c) <= ANALOG_RADIUS_M) hit.add(i);
+      }
     }
+    for (const i of hit) out.set(i, [...(out.get(i) ?? []), a]);
   }
   return out;
 }
