@@ -3,6 +3,11 @@ import { sourceLabel } from './clusters.js';
 
 const CAUSE_LABEL = { rain: 'mưa', tide: 'triều' };
 const MAX_ROWS = 40;
+const PANEL_KEY = 'hcmflood.panelOpen';
+
+function readPanelOpen() {
+  try { return localStorage.getItem(PANEL_KEY) === '1'; } catch { return false; }
+}
 
 export class Panel {
   constructor(root, { onPick, onWindowChange }) {
@@ -11,8 +16,12 @@ export class Panel {
     this.crowd = root.querySelector('#fc-crowd');
     this.hours = 6;
     this.rows = [];
-    if (window.matchMedia('(max-width: 720px)').matches) root.classList.add('collapsed');
-    root.querySelector('#panel-toggle').addEventListener('click', () => root.classList.toggle('collapsed'));
+    // Collapsed by default on every screen; remember the user's last choice.
+    root.classList.toggle('collapsed', !readPanelOpen());
+    root.querySelector('#panel-toggle').addEventListener('click', () => {
+      const open = root.classList.toggle('collapsed') === false;
+      try { localStorage.setItem(PANEL_KEY, open ? '1' : '0'); } catch { /* storage blocked: stays session-only */ }
+    });
     root.querySelectorAll('[data-hours]').forEach((btn) => btn.addEventListener('click', () => {
       this.hours = +btn.dataset.hours;
       root.querySelectorAll('[data-hours]').forEach((b) => b.classList.toggle('active', b === btn));
