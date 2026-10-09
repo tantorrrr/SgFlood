@@ -21,8 +21,8 @@ test('transparent / missing pixel = no echo', () => {
   assert.equal(rgbaToMmH([0, 0, 0, 0]), 0);
 });
 
-test('near colours (canvas rounding) snap to the closest entry', () => {
-  assert.equal(rgbaToDbz([1, 162, 225, 254]), 20);
+test('near colours are no longer snapped (exact match only)', () => {
+  assert.equal(rgbaToDbz([1, 162, 225, 254]), null);
 });
 
 test('Marshall–Palmer: R = (10^(dBZ/10) / 200)^(1/1.6)', () => {
@@ -31,4 +31,25 @@ test('Marshall–Palmer: R = (10^(dBZ/10) / 200)^(1/1.6)', () => {
   assert.ok(Math.abs(dbzToMmH(50) - 48.62) < 0.01);
   assert.equal(dbzToMmH(null), 0);
   assert.ok(Math.abs(rgbaToMmH([255, 238, 0, 255]) - 5.62) < 0.01);
+});
+
+test('radar: exact table colours only — off-table or wrong-alpha pixels are no echo', async () => {
+  const { rgbaToDbz, rgbaToMmH } = await import('../public/js/radar-rate.js');
+  assert.equal(rgbaToDbz([206, 192, 134, 150]), null);
+  assert.equal(rgbaToMmH([206, 192, 134, 150]), 0);
+  assert.equal(rgbaToDbz([206, 192, 135, 255]), null); // right RGB, wrong alpha
+  assert.equal(rgbaToDbz([206, 192, 135, 150]), 10); // official partial-alpha entry still decodes
+});
+
+test('radarAccumMm: Σ rate × frame spacing (default 10 min), windowed to the hour before t', async () => {
+  const { radarAccumMm } = await import('../public/js/radar-rate.js');
+  const t0 = 1_790_000_000;
+  const frames = [1.33, 48.62, 23.68, 99.85, 48.62, 1.33].map((mmH, i) => ({ time: t0 + i * 600, mmH }));
+  assert.equal(radarAccumMm(frames), 37.24);
+  assert.equal(radarAccumMm(frames, (t0 + 3000) * 1000), 37.24);
+  assert.equal(radarAccumMm(frames, (t0 + 1200) * 1000), 12.27); // only the first 3 frames ≤ t
+  assert.equal(radarAccumMm([{ time: t0, mmH: 6 }]), 1);
+  assert.equal(radarAccumMm([{ time: t0, mmH: 6 }, { time: t0 + 300, mmH: 6 }]), 1); // 5-min spacing
+  assert.equal(radarAccumMm([]), null);
+  assert.equal(radarAccumMm(undefined), null);
 });

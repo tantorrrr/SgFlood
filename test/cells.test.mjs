@@ -20,19 +20,19 @@ test('cellOf: ~150 m grid, same id for points in one cell, centre of the cell', 
   assert.notEqual(cellOf(a.lat + CELL_DEG, a.lng).cell_id, a.cell_id);
 });
 
-test('rhEff = max(ECMWF R3, GFS R3, radar max × 1 h, enrichment), with its source', () => {
-  assert.deepEqual(rhEff({ ecmwf: 3, gfs: 5, radarMmH: 12, r3Obs: null }), { Rh: 12, src: 'radar' });
+test('rhEff = max(ECMWF R3, GFS R3, radar 1-h accumulation, enrichment), with its source', () => {
+  assert.deepEqual(rhEff({ ecmwf: 3, gfs: 5, radarMm: 12, r3Obs: null }), { Rh: 12, src: 'radar' });
   assert.deepEqual(rhEff({ ecmwf: 3, gfs: 5 }), { Rh: 5, src: 'gfs' });
-  assert.deepEqual(rhEff({ ecmwf: 3, gfs: 5, radarMmH: 1, r3Obs: 20 }), { Rh: 20, src: 'obs' });
+  assert.deepEqual(rhEff({ ecmwf: 3, gfs: 5, radarMm: 1, r3Obs: 20 }), { Rh: 20, src: 'obs' });
   assert.deepEqual(rhEff({ ecmwf: 4, gfs: 4 }), { Rh: 4, src: 'gfs' }); // ties: obs > radar > gfs > ecmwf (as in SQL)
   assert.deepEqual(rhEff({}), { Rh: null, src: null });
 });
 
 test('reportEvent reads the snapshot (radar maxMmH included); groupCells dedupes by source + id', () => {
   const r = { id: 'r', lat: 10.78, lng: 106.7, level: 2, confirms: 2, denies: 1, observed_at: '2026-10-01T03:00:00.000Z',
-    snapshot: { features: { ecmwf_ifs: { R3: 2 }, gfs_global: { R3: 'x' } }, radar: { maxMmH: 6.5 }, tide: { phuAn: 1.2 } } };
+    snapshot: { features: { ecmwf_ifs: { R3: 2 }, gfs_global: { R3: 'x' } }, radar: { maxMmH: 9, accumMm: 6.5 }, tide: { phuAn: 1.2 } } };
   const e = reportEvent(r);
-  assert.deepEqual(e, { id: 'r', source: 'report', lat: 10.78, lng: 106.7, t: '2026-10-01T03:00:00.000Z', level: 2, net: 1, Rh: 6.5, RhSrc: 'radar', PAh: 1.2, cause: null, radarMmH: 6.5,
+  assert.deepEqual(e, { id: 'r', source: 'report', lat: 10.78, lng: 106.7, t: '2026-10-01T03:00:00.000Z', level: 2, net: 1, Rh: 6.5, RhSrc: 'radar', PAh: 1.2, cause: null, radarMmH: 9,
     uid: null, enriched: false, r3Obs: null, paObs: null, RhClient: 6.5 });
   const cells = groupCells([e, { ...e }, { ...e, source: 'news' }, null, { ...e, id: 'far', lat: 10.8 }]);
   assert.deepEqual(cells.map((c) => c.events.length), [2, 1]);
@@ -126,4 +126,14 @@ test('cellTrigger: floor above every recorded Rh reads as history, not "0/0"', a
   const { cellTrigger } = await import('../public/js/format.js');
   const text = cellTrigger({ cause: 'rain', n: 0, m: 0, total: 1, threshold: 8, srcs: ['gfs'] });
   assert.equal(text, 'Ô này từng ngập 1 lần với mưa 3h thấp hơn; dự báo từ ngưỡng tối thiểu 8.0 mm (nguồn: GFS)');
+});
+
+test('reportEvent: old snapshot without accumMm → radar term from frames (Σ mmH × 10 min), not the peak rate', () => {
+  const mm = [1.33, 48.62, 23.68, 99.85, 48.62, 1.33];
+  const frames = mm.map((mmH, i) => ({ time: 1_790_000_000 + i * 600, mmH }));
+  const r = { id: 'o', lat: 10.78, lng: 106.7, level: 2, observed_at: '2026-10-01T03:00:00.000Z', snapshot: { radar: { maxMmH: 99.85, frames } } };
+  const e = reportEvent(r);
+  assert.equal(e.Rh, 37.24);
+  assert.equal(e.RhSrc, 'radar');
+  assert.equal(e.radarMmH, 99.85);
 });

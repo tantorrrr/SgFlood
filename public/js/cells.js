@@ -1,6 +1,7 @@
 // §18 long-term history per ~150 m cell (pure). Reports + press articles → events → cells (same grid as the
 // Supabase view `flood_cells`) → per-cell thresholds that replace the per-report analogs of §14.
 import { isDenied, isWithdrawn, observedMs } from './reports.js';
+import { radarAccumMm } from './radar-rate.js';
 
 export const CELL_DEG = 0.00135; // ~150 m; keep in sync with supabase/schema.sql flood_cells
 export const HISTORY_DAYS = 730;
@@ -12,11 +13,11 @@ export function cellOf(lat, lng) {
   return { cell_id: `${i}:${j}`, lat: +((i + 0.5) * CELL_DEG).toFixed(6), lng: +((j + 0.5) * CELL_DEG).toFixed(6) };
 }
 
-// Effective rain of an event: the largest of ECMWF R3, GFS R3, radar max mm/h × 1 h and the post-event
+// Effective rain of an event: the largest of ECMWF R3, GFS R3, radar accumulation over the hour before (radarMm, mm) and the post-event
 // re-analysis R3 (enrich-reports.mjs), with its source. Ties go to obs, radar, gfs, ecmwf (same order as the SQL view).
-export function rhEff({ ecmwf = null, gfs = null, radarMmH = null, r3Obs = null }) {
+export function rhEff({ ecmwf = null, gfs = null, radarMm = null, r3Obs = null }) {
   let best = { Rh: null, src: null };
-  for (const [src, v] of [['obs', r3Obs], ['radar', radarMmH], ['gfs', gfs], ['ecmwf', ecmwf]]) {
+  for (const [src, v] of [['obs', r3Obs], ['radar', radarMm], ['gfs', gfs], ['ecmwf', ecmwf]]) {
     if (isNum(v) && (best.Rh == null || v > best.Rh)) best = { Rh: v, src };
   }
   return best;
@@ -32,8 +33,10 @@ export function reportEvent(r, enrichment = null) {
   const s = r.snapshot;
   const enr = typeof enrichment === 'number' ? { r3_obs: enrichment } : enrichment;
   const r3Obs = num(enr?.r3_obs);
-  const radarMmH = num(s.radar?.maxMmH);
-  const client = { ecmwf: num(s.features?.ecmwf_ifs?.R3), gfs: num(s.features?.gfs_global?.R3), radarMmH };
+  const radarMmH = num(s.radar?.maxMmH); // peak rate, display only
+  // Old snapshots have no accumMm: rebuild it from the stored frames (already limited to the hour before observed_at).
+  const radarMm = num(s.radar?.accumMm) ?? num(radarAccumMm(s.radar?.frames));
+  const client = { ecmwf: num(s.features?.ecmwf_ifs?.R3), gfs: num(s.features?.gfs_global?.R3), radarMm };
   const { Rh, src } = rhEff({ ...client, r3Obs });
   return {
     id: r.id, source: 'report', lat: r.lat, lng: r.lng, t: new Date(observedMs(r)).toISOString(), level: r.level,

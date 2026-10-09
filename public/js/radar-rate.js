@@ -16,19 +16,30 @@ const UNIVERSAL_BLUE = (
 const MIN_DBZ = -10;
 const TABLE = UNIVERSAL_BLUE.map((hex, i) => ({ dbz: MIN_DBZ + i, rgba: [0, 2, 4, 6].map((k) => parseInt(hex.slice(k, k + 2), 16)) }));
 
-// Nearest table colour (squared RGBA distance; ties → lower dBZ). Transparent → null (no echo).
+// Exact table colour (all four RGBA channels, incl. the official partial alphas of −10..14 dBZ) → lowest matching dBZ.
+// Anything else (transparent, anti-aliased/blended or unknown pixels) → null (no echo): never guess a nearest colour.
 export function rgbaToDbz(rgba) {
   if (!rgba || !(rgba[3] > 0)) return null;
-  let best = null;
-  let bestD = Infinity;
-  for (const { dbz, rgba: c } of TABLE) {
-    const d = c.reduce((s, v, i) => s + (v - rgba[i]) ** 2, 0);
-    if (d < bestD) [best, bestD] = [dbz, d];
-  }
-  return best;
+  const hit = TABLE.find(({ rgba: c }) => c.every((v, i) => v === rgba[i]));
+  return hit ? hit.dbz : null;
 }
 
 // Marshall–Palmer Z = 200 R^1.6 → R = (10^(dBZ/10) / 200)^(1/1.6) mm/h.
 export const dbzToMmH = (dbz) => (dbz == null ? 0 : ((10 ** (dbz / 10)) / 200) ** (1 / 1.6));
 
 export const rgbaToMmH = (rgba) => dbzToMmH(rgbaToDbz(rgba));
+
+const FRAME_S = 600; // RainViewer default frame spacing (10 min)
+// Hourly accumulation (mm) from rate frames [{ time (epoch s), mmH }]: Σ mmH × interval h, where each frame's interval is
+// the spacing to the next frame (last frame: spacing to the previous one; default 10 min). With `t` (epoch ms), only
+// frames in [t − 60 min, t] count. Non-numeric mmH counts as 0. No frames → null.
+export function radarAccumMm(frames, t = null) {
+  const fs = (frames ?? []).filter((f) => Number.isFinite(f?.time) && (t == null || (f.time * 1000 <= t && f.time * 1000 >= t - 3600e3)))
+    .sort((a, b) => a.time - b.time);
+  if (!fs.length) return null;
+  const sum = fs.reduce((acc, f, i) => {
+    const dt = i + 1 < fs.length ? fs[i + 1].time - f.time : i > 0 ? f.time - fs[i - 1].time : FRAME_S;
+    return acc + (Number.isFinite(f.mmH) ? f.mmH : 0) * Math.min(dt > 0 ? dt : FRAME_S, 3600) / 3600;
+  }, 0);
+  return Math.round(sum * 100) / 100;
+}

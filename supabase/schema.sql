@@ -304,7 +304,10 @@ $$;
 -- §18 long-term history per ~150 m cell (grid 0.00135°, same as public/js/cells.js), last 730 days:
 -- valid reports (not withdrawn, not denied, with a snapshot) + news_reports. Each event:
 -- {id, source, lat, lng, t, level, net, Rh, RhSrc, PAh, cause, radarMmH, trust, evidence[, outlet]} where
--- Rh = Rh_eff = max(ECMWF R3, GFS R3, radar max mm/h × 1 h, enrichment r3_obs) and RhSrc names the winner.
+-- Rh = Rh_eff = max(ECMWF R3, GFS R3, radar 1-h accumulation mm, enrichment r3_obs) and RhSrc names the winner.
+-- Radar term = snapshot radar.accumMm (client: Σ mmH × actual frame spacing, 60 min before observed_at) when present,
+-- else Σ radar.frames[*].mmH / 6 for old snapshots (ASSUMES 10-min RainViewer frames; frames are already the hour
+-- before observed_at). Mirror of public/js/cells.js reportEvent / radar-rate.js radarAccumMm. radarMmH = peak rate (display).
 -- Reports carry cause null (the client applies the rain/tide rule); news events carry no weather of their own.
 --
 -- §19b trust — MIRROR of public/js/trust.js evidenceOf (keep thresholds, distance formula and order identical;
@@ -323,7 +326,11 @@ with report_ev as (
     (count(v.*) filter (where v.value = 1) - count(v.*) filter (where v.value = -1))::int as net,
     public.jsonb_num(r.snapshot, '{features,ecmwf_ifs,R3}') as ecmwf,
     public.jsonb_num(r.snapshot, '{features,gfs_global,R3}') as gfs,
-    public.jsonb_num(r.snapshot, '{radar,maxMmH}') as radar,
+    coalesce(public.jsonb_num(r.snapshot, '{radar,accumMm}'),
+      (select round((sum(coalesce(public.jsonb_num(f, '{mmH}'), 0)) / 6)::numeric, 2)::double precision
+         from jsonb_array_elements(case when jsonb_typeof(r.snapshot #> '{radar,frames}') = 'array'
+                                        then r.snapshot #> '{radar,frames}' else '[]'::jsonb end) f)) as radar,
+    public.jsonb_num(r.snapshot, '{radar,maxMmH}') as radar_max,
     public.jsonb_num(r.snapshot, '{tide,phuAn}') as pa,
     e.r3_obs, e.pa_obs, (e.report_id is not null) as enriched
   from public.reports r
@@ -364,7 +371,7 @@ events as (
     'id', id, 'source', 'report', 'lat', lat, 'lng', lng, 't', observed_at, 'level', level, 'net', net,
     'Rh', rh,
     'RhSrc', case when rh is null then null when rh = r3_obs then 'obs' when rh = radar then 'radar' when rh = gfs then 'gfs' else 'ecmwf' end,
-    'PAh', pa, 'cause', null, 'radarMmH', radar,
+    'PAh', pa, 'cause', null, 'radarMmH', radar_max,
     'trust', case when evidence in ('obs_rain', 'obs_tide', 'corroborated') then 'trusted'
                   when evidence in ('client_rain', 'client_tide') then 'provisional' else 'untrusted' end,
     'evidence', evidence) as ev

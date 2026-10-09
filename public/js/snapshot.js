@@ -1,7 +1,7 @@
 import { weightedR3 } from './risk.js';
 import { LATE_MS } from './reports.js';
 import { alertLevel, latestPeakBefore } from './tide.js';
-import { rgbaToDbz, dbzToMmH } from './radar-rate.js';
+import { rgbaToDbz, dbzToMmH, radarAccumMm } from './radar-rate.js';
 
 const TIMEOUT_MS = 6000;
 const MODELS = ['ecmwf_ifs', 'gfs_global'];
@@ -40,13 +40,14 @@ export function radarFramesBefore(past, t) {
   return past.filter((f) => f.time * 1000 <= t && f.time * 1000 >= t - RADAR_LOOKBACK_MS);
 }
 
-// Decoded frames → { frames: [{ time, rgba, dBZ, mmH }], maxMmH }.
-export function radarRates(frames) {
+// Decoded frames → { frames: [{ time, rgba, dBZ, mmH }], maxMmH (peak rate, display), accumMm (Σ rate × interval, mm) }.
+// `t` (epoch ms, observed_at) limits accumMm to the 60 min before it.
+export function radarRates(frames, t = null) {
   const out = frames.map(({ time, rgba }) => {
     const dBZ = rgbaToDbz(rgba);
     return { time, rgba, dBZ, mmH: Math.round(dbzToMmH(dBZ) * 100) / 100 };
   });
-  return { frames: out, maxMmH: out.length ? Math.max(...out.map((f) => f.mmH)) : null };
+  return { frames: out, maxMmH: out.length ? Math.max(...out.map((f) => f.mmH)) : null, accumMm: radarAccumMm(out, t) };
 }
 
 async function captureModels(lat, lng, signal, now) {
@@ -95,11 +96,11 @@ async function captureRadar(lat, lng, signal, t) {
     ctx.drawImage(img, 0, 0);
     return { time: frames[i].time, rgba: [...ctx.getImageData(px, py, 1, 1).data] }; // throws SecurityError if tainted
   });
-  const { frames: decoded, maxMmH } = radarRates(pixels);
+  const { frames: decoded, maxMmH, accumMm } = radarRates(pixels, t);
   const latest = decoded.at(-1);
   return {
     source: 'rainviewer', scheme: RADAR_SCHEME, options: RADAR_OPTIONS, z: RADAR_Z, x, y, px, py,
-    frameTime: latest.time, rgba: latest.rgba, frames: decoded, maxMmH,
+    frameTime: latest.time, rgba: latest.rgba, frames: decoded, maxMmH, accumMm,
   };
 }
 

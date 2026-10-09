@@ -2,6 +2,7 @@ import { LEVELS, fmtAgo, fmtDateTime, fmtTime, escapeHtml, cellTrigger } from '.
 import { reportState, observedMs, editBlock, BACKDATE_MS, LATE_MS, MAX_EDITS, INFLUENCE_M } from './reports.js';
 import { toast } from './toast.js';
 import { GPS_OPTIONS, GPS_ZOOM, gpsDecision, gpsMeta } from './gps.js';
+import { radarAccumMm } from './radar-rate.js';
 
 const L = window.L;
 const STEP_MS = 15 * 60_000;
@@ -19,8 +20,9 @@ const EDIT_BLOCKED = {
 function weatherAtReport(snap) {
   if (!snap) return '';
   const r3 = (m) => (typeof snap.features?.[m]?.R3 === 'number' ? `${snap.features[m].R3.toFixed(1)} mm` : '—');
+  const accum = snap.radar ? (typeof snap.radar.accumMm === 'number' ? snap.radar.accumMm : radarAccumMm(snap.radar.frames)) : null;
   const radar = !snap.radar ? 'không có dữ liệu'
-    : typeof snap.radar.maxMmH === 'number' ? (snap.radar.maxMmH > 0 ? `tối đa ${snap.radar.maxMmH.toFixed(1)} mm/h trong 1 giờ trước` : 'không mưa')
+    : typeof snap.radar.maxMmH === 'number' ? (snap.radar.maxMmH > 0 ? `tối đa ${snap.radar.maxMmH.toFixed(1)} mm/h trong 1 giờ trước${accum != null ? ` (≈ ${accum.toFixed(1)} mm/giờ)` : ''}` : 'không mưa')
       : snap.radar.rgba[3] > 0 ? 'có mưa' : 'không mưa';
   const tide = typeof snap.tide?.phuAn === 'number'
     ? `Phú An ${snap.tide.phuAn.toFixed(2)} m${snap.tide.alert && snap.tide.alert !== '<I' ? ` (BĐ ${snap.tide.alert})` : ''}`
