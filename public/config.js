@@ -3,7 +3,7 @@ window.FLOOD_CONFIG = {
   supabaseUrl: 'https://pepwrkramglgktxpxtmn.supabase.co',
   supabaseAnonKey: 'sb_publishable_S03u2asi-vU3yZO1x7dgRg_NDAhiR2_',
   // §19a Cloudflare Turnstile site key (public). Empty = no captcha on anonymous sign-in. Setup order: see README.
-  turnstileSiteKey: '',
+  turnstileSiteKey: '0x4AAAAAAFSISfBcq-K0-9c2', // public site key (Cloudflare Turnstile widget SgFlood)
 
   // Crowd trust. Cold start (few users): a report confirms itself, late ones too, and any
   // non-denied past flood counts as a historical analog. With many users set
