@@ -25,14 +25,20 @@ export function rhEff({ ecmwf = null, gfs = null, radarMmH = null, r3Obs = null 
 export const num = (v) => (isNum(v) ? v : null);
 
 // Valid report (not withdrawn/denied, has a snapshot) → event; mirrors the report half of flood_cells.
-export function reportEvent(r, r3Obs = null) {
+// enrichment: report_enrichment row {r3_obs, pa_obs} (or a bare r3_obs number), null = not enriched yet.
+// uid/enriched/r3Obs/paObs/RhClient are internal inputs for trust.js withTrust (which strips them).
+export function reportEvent(r, enrichment = null) {
   if (!r.snapshot || isWithdrawn(r) || isDenied(r)) return null;
   const s = r.snapshot;
+  const enr = typeof enrichment === 'number' ? { r3_obs: enrichment } : enrichment;
+  const r3Obs = num(enr?.r3_obs);
   const radarMmH = num(s.radar?.maxMmH);
-  const { Rh, src } = rhEff({ ecmwf: num(s.features?.ecmwf_ifs?.R3), gfs: num(s.features?.gfs_global?.R3), radarMmH, r3Obs });
+  const client = { ecmwf: num(s.features?.ecmwf_ifs?.R3), gfs: num(s.features?.gfs_global?.R3), radarMmH };
+  const { Rh, src } = rhEff({ ...client, r3Obs });
   return {
     id: r.id, source: 'report', lat: r.lat, lng: r.lng, t: new Date(observedMs(r)).toISOString(), level: r.level,
     net: (r.confirms ?? 0) - (r.denies ?? 0), Rh, RhSrc: src, PAh: num(s.tide?.phuAn), cause: null, radarMmH,
+    uid: r.user_id ?? null, enriched: enr != null, r3Obs, paObs: num(enr?.pa_obs), RhClient: rhEff(client).Rh,
   };
 }
 
@@ -97,7 +103,8 @@ function sideLevel(s, x, reach, near) {
   const above = s.floods.filter((e) => e[s.key] >= s.T);
   const srcs = [...new Set(s.floods.map((e) => e.RhSrc).filter(Boolean))];
   const total = s.floods.length;
-  return { level, threshold: s.T, n: above.length, m: above.length + s.dry.filter((v) => v >= s.T).length, total, srcs };
+  const verified = above.filter((e) => e.trust === 'trusted').length; // §19b: server-side evidence or press
+  return { level, threshold: s.T, n: above.length, verified, m: above.length + s.dry.filter((v) => v >= s.T).length, total, srcs };
 }
 
 // Level a cell forecasts for rain R3 / Phú An pa (0 = none). Rain: full from Tcell = max(p25 Rh_eff, ANALOG_RAIN_MIN),

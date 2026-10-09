@@ -3,6 +3,8 @@
 // Historical Forecast API while ERA5 still lags) → r3_obs = same weighted R3 as the app. Talks to Supabase REST
 // with the service-role key; `fetch` is injected so tests run on mocks.
 import { rainFeatures } from '../../public/js/snapshot.js';
+import { paObservedAt } from '../../public/js/tide.js';
+// §19b also pa_obs = observed Phú An at observed_at from tide-phuan.json (`tide`, injected; read from the repo by the cron).
 
 const DAY = 86_400_000;
 export const MIN_AGE_DAYS = 2;
@@ -32,7 +34,7 @@ async function json(fetchFn, url, init) {
   return res.status === 204 ? null : res.json();
 }
 
-export async function enrichReports({ url, key, now = Date.now(), fetch: fetchFn = fetch, log = console.log }) {
+export async function enrichReports({ url, key, now = Date.now(), fetch: fetchFn = fetch, log = console.log, tide = null }) {
   const headers = { apikey: key, Authorization: `Bearer ${key}` };
   const from = new Date(now - MAX_AGE_DAYS * DAY).toISOString();
   const to = new Date(now - MIN_AGE_DAYS * DAY).toISOString();
@@ -51,7 +53,7 @@ export async function enrichReports({ url, key, now = Date.now(), fetch: fetchFn
     for (const [source, base] of SOURCES) {
       try {
         const r3 = r3FromHourly((await json(fetchFn, rainUrl(base, r, t))).hourly, t);
-        if (r3 != null) { row = { report_id: r.id, r3_obs: r3, source: `open-meteo ${source}`, fetched_at: new Date(now).toISOString() }; break; }
+        if (r3 != null) { row = { report_id: r.id, r3_obs: r3, pa_obs: paObservedAt(tide?.observed, t), source: `open-meteo ${source}`, fetched_at: new Date(now).toISOString() }; break; }
       } catch (err) {
         log(`  ${r.id} ${source}: ${err.message}`);
       }

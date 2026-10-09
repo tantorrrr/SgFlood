@@ -2,6 +2,8 @@ window.FLOOD_CONFIG = {
   // Leave empty to run in local demo mode (reports stored in this browser only).
   supabaseUrl: 'https://pepwrkramglgktxpxtmn.supabase.co',
   supabaseAnonKey: 'sb_publishable_S03u2asi-vU3yZO1x7dgRg_NDAhiR2_',
+  // §19a Cloudflare Turnstile site key (public). Empty = no captcha on anonymous sign-in. Setup order: see README.
+  turnstileSiteKey: '',
 
   // Crowd trust. Cold start (few users): a report confirms itself, late ones too, and any
   // non-denied past flood counts as a historical analog. With many users set
@@ -18,6 +20,14 @@ window.FLOOD_CONFIG = {
     REPORT_TTL_H: 6,
     REPORT_TTL_MAX_H: 12,
     FADE_H: 24,
+    // §19b learning gate (display is unaffected): a report feeds history thresholds only with evidence —
+    // server rain/tide (r3_obs ≥ EVIDENCE_RAIN_MM / Phú An pa_obs ≥ EVIDENCE_TIDE_M), another user's report or a news
+    // item within CORROBORATE_M and ±CORROBORATE_H, or (until enriched) the same thresholds on its client snapshot.
+    // Mirrored in supabase/schema.sql flood_cells — change both.
+    EVIDENCE_RAIN_MM: 3,
+    EVIDENCE_TIDE_M: 1.4,
+    CORROBORATE_M: 150,
+    CORROBORATE_H: 3,
   },
 
   // Heuristic model constants — NOT calibrated against observed flooding depth.

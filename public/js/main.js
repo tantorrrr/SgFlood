@@ -13,8 +13,10 @@ import { CrowdOverlay } from './crowd-overlay.js';
 import { NewsLayer, newsEvent, withWeather } from './news-layer.js';
 import { ReportUI } from './report-ui.js';
 import { toast } from './toast.js';
+import { captchaToken } from './captcha.js';
 import { captureSnapshot } from './snapshot.js';
 import { groupCells, prepareCell } from './cells.js';
+import { TRUST_DEFAULTS, isLearnable } from './trust.js';
 import { alertLevel } from './tide.js';
 import { LEVELS, escapeHtml, cellTrigger } from './format.js';
 
@@ -31,7 +33,23 @@ const ERRORS = {
   edit_limit: 'Đã sửa tối đa 5 lần — chỉ có thể rút báo cáo.',
   withdrawn: 'Báo cáo đã được rút.',
   storage: 'Trình duyệt không cho lưu dữ liệu cục bộ.',
+  captcha: 'Chưa xác minh được bạn không phải bot — bản đồ vẫn xem được, nhưng chưa thể báo/xác nhận.',
 };
+
+// §19a: captcha sign-in failed/timed out → toast with "Thử lại"; viewing keeps working, writes are blocked.
+function captchaRetryToast(store) {
+  toast(ERRORS.captcha, 'error', {
+    label: 'Thử lại',
+    onClick: async () => {
+      try {
+        await store.signIn();
+        toast('Đã xác minh. Bạn có thể báo ngập.', 'success');
+      } catch {
+        captchaRetryToast(store);
+      }
+    },
+  });
+}
 
 function banner(text) {
   const el = document.getElementById('banner');
@@ -55,10 +73,13 @@ function createMap() {
   return map;
 }
 
+const TRUST_CFG = { ...TRUST_DEFAULTS, ...CONFIG.crowd };
+
 async function initStore() {
-  const store = createStore(CONFIG, localStorage);
+  const store = createStore(CONFIG, localStorage, captchaToken);
   try {
     await store.init();
+    if (store.authError) captchaRetryToast(store);
     if (store.mode === 'local') banner('Chế độ demo cục bộ — chưa kết nối Supabase. Báo cáo chỉ lưu trên trình duyệt này.');
     return store;
   } catch {
@@ -130,14 +151,16 @@ async function main() {
   async function refreshReports() {
     try {
       // Independent sources: a missing history view must not hide live reports (and vice versa).
-      const [recentRes, cellsRes] = await Promise.allSettled([store.listReports({ sinceMs: Date.now() - RECENT_MS }), store.listCells()]);
+      const [recentRes, cellsRes] = await Promise.allSettled([store.listReports({ sinceMs: Date.now() - RECENT_MS }), store.listCells(TRUST_CFG)]);
       if (recentRes.status === 'rejected') toast('Không tải được báo cáo mới.', 'error');
       if (cellsRes.status === 'rejected') toast('Không tải được lịch sử ngập (đã chạy lại supabase/schema.sql chưa?).', 'error');
       const recent = recentRes.value ?? reports;
       const cells = cellsRes.value ?? [];
       reports = recent;
       // §18 history: server/local cells + press file (deduped by id), press weather filled from the loaded window.
-      const merged = groupCells([...newsEventList, ...cells.flatMap((c) => c.events)])
+      // §19b: press is always trusted evidence; server/local events already carry trust.
+      const press = newsEventList.map((e) => (e.trust ? e : { ...e, trust: 'trusted', evidence: 'press' }));
+      const merged = groupCells([...press, ...cells.flatMap((c) => c.events)])
         .map((c) => ({ ...c, events: c.events.map((e) => withWeather(e, weather)) }));
       const events = merged.flatMap((c) => c.events);
       const history = events.filter((e) => e.source === 'report')
@@ -145,7 +168,8 @@ async function main() {
       crowdOverlay.setData({ recent, history });
       // Tiles around every report/history point load at any zoom so the area around a report is coloured.
       minor.loadPoints([...recent, ...events].map((r) => [r.lat, r.lng]));
-      const analogs = merged.map((c) => prepareCell(c, CONFIG.model, CONFIG.crowd.ANALOG_MIN_NET)).filter(Boolean);
+      // §19b: every event stays on the map (above); only evidence-backed ones (trusted/provisional) are learned from.
+      const analogs = merged.map((c) => prepareCell({ ...c, events: c.events.filter(isLearnable) }, CONFIG.model, CONFIG.crowd.ANALOG_MIN_NET)).filter(Boolean);
       const key = JSON.stringify(analogs);
       if (key !== analogKey) {
         analogKey = key;
@@ -227,7 +251,8 @@ async function main() {
       await refreshReports();
       return true;
     } catch (err) {
-      toast(ERRORS[err.code] ?? 'Gửi báo cáo thất bại, thử lại sau.', 'error');
+      if (err.code === 'captcha') captchaRetryToast(store);
+      else toast(ERRORS[err.code] ?? 'Gửi báo cáo thất bại, thử lại sau.', 'error');
       return false;
     }
   }
@@ -242,7 +267,8 @@ async function main() {
       await refreshReports();
       return true;
     } catch (err) {
-      toast(ERRORS[err.code] ?? 'Không lưu được báo cáo, thử lại sau.', 'error');
+      if (err.code === 'captcha') captchaRetryToast(store);
+      else toast(ERRORS[err.code] ?? 'Không lưu được báo cáo, thử lại sau.', 'error');
       return false;
     }
   }
@@ -259,7 +285,8 @@ async function main() {
         toast('Đã rút báo cáo.', 'success');
         await refreshReports();
       } catch (err) {
-        toast(ERRORS[err.code] ?? 'Không rút được báo cáo.', 'error');
+        if (err.code === 'captcha') captchaRetryToast(store);
+      else toast(ERRORS[err.code] ?? 'Không rút được báo cáo.', 'error');
       }
     },
     onVote: async (id, value) => {
@@ -267,7 +294,8 @@ async function main() {
         await store.vote(id, value);
         await refreshReports();
       } catch (err) {
-        toast(ERRORS[err.code] ?? 'Không gửi được xác nhận.', 'error');
+        if (err.code === 'captcha') captchaRetryToast(store);
+      else toast(ERRORS[err.code] ?? 'Không gửi được xác nhận.', 'error');
       }
     },
   });

@@ -1,5 +1,6 @@
 import { checkObservedAt, checkEditObservedAt, editBlock, isLate, isWithdrawn, observedMs } from './reports.js';
 import { reportEvent, groupCells, HISTORY_DAYS } from './cells.js';
+import { withTrust } from './trust.js';
 
 const MINUTE = 60_000;
 const HOUR = 60 * MINUTE;
@@ -60,10 +61,10 @@ export class LocalStore {
     return this.withVotes(sinceMs);
   }
 
-  // Same shape as the Supabase view flood_cells (no post-event enrichment locally).
-  async listCells() {
+  // Same shape as the Supabase view flood_cells incl. §19b trust (no post-event enrichment locally).
+  async listCells(trustCfg) {
     const since = this.now() - HISTORY_MS;
-    return groupCells((await this.withVotes(since)).filter((r) => observedMs(r) >= since).map((r) => reportEvent(r)));
+    return groupCells(withTrust((await this.withVotes(since)).filter((r) => observedMs(r) >= since).map((r) => reportEvent(r)), trustCfg));
   }
 
   async exportAll() {
@@ -154,29 +155,55 @@ export class LocalStore {
 }
 
 export class SupabaseStore {
-  constructor(url, anonKey) {
+  // getCaptcha(siteKey) → token; injected so tests need no DOM (main.js passes captcha.js captchaToken).
+  constructor(url, anonKey, { turnstileSiteKey = '', getCaptcha = null } = {}) {
     this.url = url;
     this.anonKey = anonKey;
+    this.siteKey = turnstileSiteKey;
+    this.getCaptcha = getCaptcha;
     this.mode = 'supabase';
+    this.userId = null;
   }
 
   async init() {
     const { createClient } = await import(SUPABASE_ESM);
     this.client = createClient(this.url, this.anonKey);
-    let { data: { session } } = await this.client.auth.getSession();
-    if (!session) {
-      const { data, error } = await this.client.auth.signInAnonymously();
-      if (error) throw new StoreError('auth');
-      session = data.session;
+    const { data: { session } } = await this.client.auth.getSession();
+    if (session) { this.userId = session.user.id; return; }
+    if (!this.siteKey) return this.signIn(); // no captcha: unchanged behaviour (failure → caller falls back to local)
+    // §19a captcha: failure keeps the store read-only (map works; report/vote ask to retry via signIn()).
+    try {
+      await this.signIn();
+    } catch (err) {
+      this.authError = err;
     }
-    this.userId = session.user.id;
+  }
+
+  // Anonymous sign-in, with a Turnstile token when a site key is configured.
+  async signIn() {
+    let options;
+    if (this.siteKey) {
+      try {
+        options = { captchaToken: await this.getCaptcha(this.siteKey) };
+      } catch {
+        throw new StoreError('captcha');
+      }
+    }
+    const { data, error } = await this.client.auth.signInAnonymously(options ? { options } : undefined);
+    if (error) throw new StoreError(this.siteKey ? 'captcha' : 'auth');
+    this.userId = data.session.user.id;
+    this.authError = null;
+  }
+
+  requireAuth() {
+    if (!this.userId) throw new StoreError('captcha');
   }
 
   async listReports({ sinceMs = Date.now() - RECENT_MS } = {}) {
     const since = new Date(sinceMs).toISOString();
     const [reports, votes] = await Promise.all([
       this.client.from('reports_with_votes').select('*').gte('created_at', since),
-      this.client.from('votes').select('report_id,value').eq('user_id', this.userId).gte('created_at', since),
+      this.userId ? this.client.from('votes').select('report_id,value').eq('user_id', this.userId).gte('created_at', since) : { data: [] },
     ]);
     if (reports.error || votes.error) throw new StoreError('network');
     const myVotes = new Map(votes.data.map((v) => [v.report_id, v.value]));
@@ -209,6 +236,7 @@ export class SupabaseStore {
   }
 
   async createReport({ lat, lng, level, snapshot = null, observedAt = null }) {
+    this.requireAuth();
     const row = { lat, lng, level, snapshot };
     if (observedAt != null) row.observed_at = new Date(observedAt).toISOString();
     const { data, error } = await this.client.from('reports').insert(row).select().single();
@@ -217,6 +245,7 @@ export class SupabaseStore {
   }
 
   async editReport(id, { lat, lng, level, observedAt, snapshot }) {
+    this.requireAuth();
     const row = { lat, lng, level, observed_at: new Date(observedAt).toISOString() };
     if (snapshot !== undefined) row.snapshot = snapshot;
     const { data, error } = await this.client.from('reports').update(row).eq('id', id).select().single();
@@ -226,11 +255,13 @@ export class SupabaseStore {
 
   // The trigger replaces this value with now(); the client only flags the withdrawal.
   async withdrawReport(id) {
+    this.requireAuth();
     const { error } = await this.client.from('reports').update({ withdrawn_at: new Date().toISOString() }).eq('id', id);
     if (error) throw new StoreError(errorCode(error.message));
   }
 
   async vote(reportId, value) {
+    this.requireAuth();
     const { error } = await this.client
       .from('votes')
       .upsert({ report_id: reportId, user_id: this.userId, value }, { onConflict: 'report_id,user_id' });
@@ -238,8 +269,8 @@ export class SupabaseStore {
   }
 }
 
-export function createStore(config, storage) {
+export function createStore(config, storage, getCaptcha = null) {
   return config.supabaseUrl && config.supabaseAnonKey
-    ? new SupabaseStore(config.supabaseUrl, config.supabaseAnonKey)
+    ? new SupabaseStore(config.supabaseUrl, config.supabaseAnonKey, { turnstileSiteKey: config.turnstileSiteKey, getCaptcha })
     : new LocalStore(storage);
 }

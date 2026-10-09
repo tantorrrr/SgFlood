@@ -359,6 +359,31 @@ Dữ liệu dự báo từ lịch sử:
 - Radar: bảng "Universal Blue" (scheme 2) từ https://www.rainviewer.com/api/color-schemes.html, tile không làm mượt `0_0` để màu khớp đúng bảng; `public/js/radar-rate.js`.
 - Enrich: Open-Meteo Archive (ERA5) trước, Historical Forecast nếu ERA5 chưa có; `scripts/lib/enrich.mjs`, `npm run enrich`.
 
+## 19. Chống spam: Turnstile + "chỉ học khi có bằng chứng" (2026-10-09)
+### 19a. Cloudflare Turnstile cho anonymous sign-in
+- `config.js`: `turnstileSiteKey: ''` (public key). Rỗng → hành vi cũ (không captcha).
+- Có key:
+  - Load `https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit` khi cần sign-in. Không có session thì render widget (`appearance: 'interaction-only'`, ngôn ngữ vi) vào 1 container nhỏ, lấy token → `supabase.auth.signInAnonymously({ options: { captchaToken } })`.
+  - Lỗi/timeout → toast + nút "Thử lại", app vẫn xem được, chỉ chặn báo/vote.
+  - Session có sẵn → không gọi captcha.
+- Thứ tự bật (README): (1) tạo widget Turnstile, hostname = domain production + `localhost`; (2) điền site key vào config, deploy; (3) Supabase → Auth → Attack Protection → bật Captcha, provider Turnstile, dán secret key. Làm ngược thứ tự → mọi sign-in mới fail.
+- CSP/headers: không cần đổi (`_headers` không có CSP).
+
+### 19b. Tách hiển thị và học
+- Hiển thị: giữ nguyên (1 báo cáo là hiện, theo config crowd).
+- Học (lịch sử `flood_cells` → ngưỡng ô) chỉ dùng event **trusted**:
+  - news → trusted.
+  - report có **bằng chứng phía server** (không tin snapshot client):
+    - `report_enrichment.r3_obs ≥ EVIDENCE_RAIN_MM` (3 mm), hoặc
+    - `report_enrichment.pa_obs ≥ 1.40` (BĐ I). Enrich mới tính `pa_obs` = mực Phú An tại `observed_at` từ `tide-phuan.json` (thực đo + đường hiệu chỉnh); file được đọc trong repo khi chạy cron.
+  - report được **xác nhận chéo**: ≥ 1 report khác (user khác, không withdrawn/moderated/denied) hoặc 1 news trong 150 m và ±3 h.
+  - Chưa enrich (report < 2 ngày hoặc cron chưa chạy) và chưa xác nhận chéo → **provisional**: được học **chỉ nếu** snapshot client có bằng chứng (`Rh_eff ≥ 3` hoặc `PAh ≥ 1.40`). Enrich xong thì kết quả server thay thế (spoof snapshot chỉ sống tới lần enrich).
+  - Report khô (level 0) cũng cần cùng điều kiện mới thành mẫu âm.
+  - Các trường hợp còn lại → `untrusted`: không học, vẫn hiển thị khi còn TTL.
+- Server: view `flood_cells` trả mỗi event thêm `trust: 'trusted'|'provisional'|'untrusted'` + `evidence` (`'obs_rain'|'obs_tide'|'corroborated'|'press'|'client_rain'|'client_tide'|null`). Client lọc `trust !== 'untrusted'`. LocalStore áp cùng luật (pure function chung trong `public/js/trust.js`, SQL mirror cùng ngưỡng).
+- Popup/panel ô: ghi số lần ngập đã kiểm chứng, ví dụ "ngập 3/4 lần (2 kiểm chứng thực đo)". Event untrusted không tính.
+- Config: `crowd.EVIDENCE_RAIN_MM = 3`, `crowd.EVIDENCE_TIDE_M = 1.40`, `crowd.CORROBORATE_M = 150`, `crowd.CORROBORATE_H = 3`.
+
 ## 9. Verify (bắt buộc trước khi báo xong)
 - `node --test` pass (risk: smoothstep biên, bilinear, R3, level thresholds; reportState: TTL, ẩn khi bị deny, override; rate limit LocalStore).
 - Chạy build thật (mạng) → `public/data/roads.json` có thật, in thống kê hotspot match. Hotspot nào 0 segment → sửa streets/center/radius cho match.

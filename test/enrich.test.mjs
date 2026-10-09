@@ -35,8 +35,11 @@ test('enrichReports: only 2–10 day old, not yet enriched; ERA5 first, Historic
     if (url.startsWith(SOURCES[0][1])) return reply(hourly(date, date === '2026-10-03' ? 2 : null)); // ERA5 lags for b
     return reply(hourly(date, 1));
   };
-  const rows = await enrichReports({ url: 'https://x.supabase.co', key: 'service', now: NOW, fetch: fakeFetch, log: () => {} });
+  const tide = { observed: [{ t: '2026-10-03T12:00:00+07:00', h: 1.2 }, { t: '2026-10-03T17:00:00+07:00', h: 1.6 }] };
+  const rows = await enrichReports({ url: 'https://x.supabase.co', key: 'service', now: NOW, fetch: fakeFetch, log: () => {}, tide });
   assert.deepEqual(rows.map((r) => [r.report_id, r.r3_obs, r.source]), [['a', 3.8, 'open-meteo era5'], ['b', 1.9, 'open-meteo historical-forecast']]);
+  assert.equal(rows[0].pa_obs > 1.2 && rows[0].pa_obs < 1.6, true, 'pa_obs from observed tide at 14:40');
+  assert.equal(rows[1].pa_obs, null, 'outside the observed record');
   const list = calls[0].url;
   assert.match(list, new RegExp(`observed_at=gte\.${new Date(NOW - 10 * DAY).toISOString()}`));
   assert.match(list, new RegExp(`observed_at=lte\.${new Date(NOW - 2 * DAY).toISOString()}`));

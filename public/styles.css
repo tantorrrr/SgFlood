@@ -124,6 +124,8 @@ button.ghost { background: transparent; }
 .toast { background: #263238; color: #fff; padding: 8px 14px; border-radius: 8px; font-size: 14px; box-shadow: var(--shadow); max-width: calc(100vw - 32px); }
 .toast.error { background: #c62828; }
 .toast.success { background: #2e7d32; }
+.toast button.link { color: #fff; font-weight: 600; }
+#captcha { position: absolute; top: 96px; left: 50%; transform: translateX(-50%); z-index: 1300; }
 
 @media (max-width: 720px) {
   #panel { top: auto; left: var(--safe-l); right: var(--safe-r); width: auto; bottom: var(--tl-h); max-height: 45vh; border-radius: 12px 12px 0 0; }

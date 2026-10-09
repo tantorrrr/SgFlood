@@ -32,7 +32,8 @@ test('reportEvent reads the snapshot (radar maxMmH included); groupCells dedupes
   const r = { id: 'r', lat: 10.78, lng: 106.7, level: 2, confirms: 2, denies: 1, observed_at: '2026-10-01T03:00:00.000Z',
     snapshot: { features: { ecmwf_ifs: { R3: 2 }, gfs_global: { R3: 'x' } }, radar: { maxMmH: 6.5 }, tide: { phuAn: 1.2 } } };
   const e = reportEvent(r);
-  assert.deepEqual(e, { id: 'r', source: 'report', lat: 10.78, lng: 106.7, t: '2026-10-01T03:00:00.000Z', level: 2, net: 1, Rh: 6.5, RhSrc: 'radar', PAh: 1.2, cause: null, radarMmH: 6.5 });
+  assert.deepEqual(e, { id: 'r', source: 'report', lat: 10.78, lng: 106.7, t: '2026-10-01T03:00:00.000Z', level: 2, net: 1, Rh: 6.5, RhSrc: 'radar', PAh: 1.2, cause: null, radarMmH: 6.5,
+    uid: null, enriched: false, r3Obs: null, paObs: null, RhClient: 6.5 });
   const cells = groupCells([e, { ...e }, { ...e, source: 'news' }, null, { ...e, id: 'far', lat: 10.8 }]);
   assert.deepEqual(cells.map((c) => c.events.length), [2, 1]);
 });
@@ -49,7 +50,7 @@ test('one event: Tcell = max(Rh, ANALOG_RAIN_MIN); level − 1 from 0.7·Tcell',
   assert.equal(at(c, 9.99).level, 1);
   assert.equal(at(c, 7).level, 1);
   assert.equal(at(c, 6.9).level, 0);
-  assert.deepEqual(at(c, 10), { level: 2, threshold: 10, n: 1, m: 1, total: 1, srcs: ['ecmwf'], cause: 'rain' });
+  assert.deepEqual(at(c, 10), { level: 2, threshold: 10, n: 1, verified: 0, m: 1, total: 1, srcs: ['ecmwf'], cause: 'rain' });
   // Light-rain flood: floored at ANALOG_RAIN_MIN (false-alarm guard).
   const light = cell([ev(2, 1)]);
   assert.equal(light.rain.T, 8);

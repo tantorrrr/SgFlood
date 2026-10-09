@@ -2,7 +2,8 @@
 --
 -- Before using the app:
 --   1. Authentication → Sign In / Providers → enable "Allow anonymous sign-ins".
---   2. Production: enable CAPTCHA protection (Cloudflare Turnstile) for anonymous sign-ins.
+--   2. Production: enable CAPTCHA protection (Cloudflare Turnstile) for anonymous sign-ins — ONLY after the site key
+--      is deployed in public/config.js (README §19a order), otherwise every new sign-in fails.
 
 create extension if not exists pgcrypto;
 
@@ -278,6 +279,9 @@ create table if not exists public.report_enrichment (
   fetched_at timestamptz not null default now()
 );
 
+-- §19b observed Phú An level (m, Hòn Dấu) at observed_at, from public/data/tide-phuan.json bulletins.
+alter table public.report_enrichment add column if not exists pa_obs double precision;
+
 alter table public.report_enrichment enable row level security;
 
 drop policy if exists report_enrichment_select on public.report_enrichment;
@@ -299,42 +303,79 @@ $$;
 
 -- §18 long-term history per ~150 m cell (grid 0.00135°, same as public/js/cells.js), last 730 days:
 -- valid reports (not withdrawn, not denied, with a snapshot) + news_reports. Each event:
--- {id, source, lat, lng, t, level, net, Rh, RhSrc, PAh, cause, radarMmH[, outlet]} where
+-- {id, source, lat, lng, t, level, net, Rh, RhSrc, PAh, cause, radarMmH, trust, evidence[, outlet]} where
 -- Rh = Rh_eff = max(ECMWF R3, GFS R3, radar max mm/h × 1 h, enrichment r3_obs) and RhSrc names the winner.
 -- Reports carry cause null (the client applies the rain/tide rule); news events carry no weather of their own.
+--
+-- §19b trust — MIRROR of public/js/trust.js evidenceOf (keep thresholds, distance formula and order identical;
+-- the numbers are FLOOD_CONFIG.crowd EVIDENCE_RAIN_MM = 3, EVIDENCE_TIDE_M = 1.40, CORROBORATE_M = 150, CORROBORATE_H = 3):
+--   news → 'press'; r3_obs ≥ 3 → 'obs_rain'; pa_obs ≥ 1.40 → 'obs_tide';
+--   another user's valid report (this CTE already drops withdrawn/denied) or a news item within 150 m
+--   (equirectangular, 111320 m/°) and ±3 h → 'corroborated';
+--   only when NOT enriched (no report_enrichment row): snapshot max(ECMWF, GFS, radar) ≥ 3 → 'client_rain',
+--   snapshot Phú An ≥ 1.40 → 'client_tide'; else null.
+--   trust = press/obs_*/corroborated → 'trusted', client_* → 'provisional', null → 'untrusted' (client does not learn).
 create or replace view public.flood_cells
 with (security_invoker = true) as
 with report_ev as (
   select
-    r.id, r.lat, r.lng, r.observed_at, r.level,
+    r.id, r.user_id, r.lat, r.lng, r.observed_at, r.level,
     (count(v.*) filter (where v.value = 1) - count(v.*) filter (where v.value = -1))::int as net,
     public.jsonb_num(r.snapshot, '{features,ecmwf_ifs,R3}') as ecmwf,
     public.jsonb_num(r.snapshot, '{features,gfs_global,R3}') as gfs,
     public.jsonb_num(r.snapshot, '{radar,maxMmH}') as radar,
     public.jsonb_num(r.snapshot, '{tide,phuAn}') as pa,
-    e.r3_obs
+    e.r3_obs, e.pa_obs, (e.report_id is not null) as enriched
   from public.reports r
   left join public.votes v on v.report_id = r.id
   left join public.report_enrichment e on e.report_id = r.id
   where r.withdrawn_at is null and r.snapshot is not null and r.observed_at > now() - interval '730 days'
-  group by r.id, e.r3_obs
+  group by r.id, e.report_id, e.r3_obs, e.pa_obs
   having count(v.*) filter (where v.value = -1) < count(v.*) filter (where v.value = 1) + 2
+),
+news_ev as (
+  select n.id, p.lat, p.lng, coalesce(n.observed_at, n.published_at) as t, n.level, n.cause, n.sources
+  from public.news_reports n
+  cross join lateral (select public.jsonb_num(n.geometry, '{point,0}') as lat, public.jsonb_num(n.geometry, '{point,1}') as lng) p
+  where p.lat is not null and p.lng is not null and coalesce(n.observed_at, n.published_at) > now() - interval '730 days'
+),
+report_tr as (
+  select x.*, greatest(x.ecmwf, x.gfs, x.radar, x.r3_obs) as rh,
+    case
+      when x.enriched and x.r3_obs >= 3 then 'obs_rain'
+      when x.enriched and x.pa_obs >= 1.40 then 'obs_tide'
+      when exists (
+        select 1 from report_ev o
+        where o.id <> x.id and o.user_id <> x.user_id
+          and abs(extract(epoch from o.observed_at - x.observed_at)) <= 3 * 3600
+          and sqrt(power((o.lat - x.lat) * 111320, 2) + power((o.lng - x.lng) * 111320 * cos(radians(x.lat)), 2)) <= 150
+      ) or exists (
+        select 1 from news_ev n
+        where abs(extract(epoch from n.t - x.observed_at)) <= 3 * 3600
+          and sqrt(power((n.lat - x.lat) * 111320, 2) + power((n.lng - x.lng) * 111320 * cos(radians(x.lat)), 2)) <= 150
+      ) then 'corroborated'
+      when not x.enriched and greatest(x.ecmwf, x.gfs, x.radar) >= 3 then 'client_rain'
+      when not x.enriched and x.pa >= 1.40 then 'client_tide'
+    end as evidence
+  from report_ev x
 ),
 events as (
   select lat, lng, jsonb_build_object(
     'id', id, 'source', 'report', 'lat', lat, 'lng', lng, 't', observed_at, 'level', level, 'net', net,
     'Rh', rh,
     'RhSrc', case when rh is null then null when rh = r3_obs then 'obs' when rh = radar then 'radar' when rh = gfs then 'gfs' else 'ecmwf' end,
-    'PAh', pa, 'cause', null, 'radarMmH', radar) as ev
-  from (select *, greatest(ecmwf, gfs, radar, r3_obs) as rh from report_ev) x
+    'PAh', pa, 'cause', null, 'radarMmH', radar,
+    'trust', case when evidence in ('obs_rain', 'obs_tide', 'corroborated') then 'trusted'
+                  when evidence in ('client_rain', 'client_tide') then 'provisional' else 'untrusted' end,
+    'evidence', evidence) as ev
+  from report_tr
   union all
-  select p.lat, p.lng, jsonb_build_object(
-    'id', n.id, 'source', 'news', 'lat', p.lat, 'lng', p.lng, 't', coalesce(n.observed_at, n.published_at), 'level', n.level,
+  select n.lat, n.lng, jsonb_build_object(
+    'id', n.id, 'source', 'news', 'lat', n.lat, 'lng', n.lng, 't', n.t, 'level', n.level,
     'net', null, 'Rh', null, 'RhSrc', null, 'PAh', null, 'cause', n.cause, 'radarMmH', null,
+    'trust', 'trusted', 'evidence', 'press',
     'outlet', (select string_agg(distinct s ->> 'outlet', ', ') from jsonb_array_elements(n.sources) s))
-  from public.news_reports n
-  cross join lateral (select public.jsonb_num(n.geometry, '{point,0}') as lat, public.jsonb_num(n.geometry, '{point,1}') as lng) p
-  where p.lat is not null and p.lng is not null and coalesce(n.observed_at, n.published_at) > now() - interval '730 days'
+  from news_ev n
 ),
 celled as (
   select floor(lat / 0.00135)::bigint as ci, floor(lng / 0.00135)::bigint as cj, ev from events

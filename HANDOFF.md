@@ -1,6 +1,6 @@
 # HANDOFF — Bản đồ ngập TP.HCM (POC)
 
-Cập nhật: 2026-10-08. Chi tiết thiết kế xem `tasks/spec.md` (§1–§18). Hướng dẫn chạy chi tiết xem `README.md`. Bài học rút ra xem `tasks/lessons.md`.
+Cập nhật: 2026-10-09. Chi tiết thiết kế xem `tasks/spec.md` (§1–§19). Hướng dẫn chạy chi tiết xem `README.md`. Bài học rút ra xem `tasks/lessons.md`.
 
 ## Sản phẩm hiện có
 Web app tĩnh: Leaflet + OSM, không build step, không dependency npm. Backend: Supabase.
@@ -21,7 +21,8 @@ Web app tĩnh: Leaflet + OSM, không build step, không dependency npm. Backend:
 - **Hiển thị báo cáo:** hiệu lực 6h, mỗi xác nhận +1h, tối đa 12h. Hết hiệu lực thì hiện mờ thêm 24h.
 - **Cụm điểm nóng** (1 nguồn là đủ, chỉnh được trong config) và **heatmap** (mặc định tắt).
 - **Lớp báo chí:** quét RSS 8 báo → Claude Haiku bóc thông tin → chỉ giữ ngập nặng (dắt bộ / chết máy / kẹt xe / >30cm) → khớp vào đoạn đường.
-- **Test:** `npm test` → 105/105 pass.
+- **Chống spam (§19):** Turnstile cho anonymous sign-in (bật bằng `turnstileSiteKey`, đang rỗng = tắt); ngưỡng ô chỉ học từ event có bằng chứng (`public/js/trust.js`, mirror SQL trong `flood_cells`), báo cáo không bằng chứng vẫn hiển thị.
+- **Test:** `npm test` → 114/114 pass.
 
 ## Chạy
 ```bash
@@ -39,7 +40,8 @@ npm run build:data        # dựng lại đường lớn + đường nhỏ (Over
 - `public/config.js`: Supabase URL + **publishable key** (được phép lộ, đã có RLS bảo vệ). Repo đang PUBLIC nên key này công khai.
 - **Không** commit service role key hoặc Anthropic key. Đặt bằng `setx` trên máy chạy cron.
 - Schema: `supabase/schema.sql` (idempotent). Đã chạy trên project hiện tại. Mỗi lần sửa schema phải chạy lại trong SQL Editor.
-- Bật Anonymous sign-ins trong Supabase. Khi public thì nên bật thêm captcha (Turnstile).
+- Bật Anonymous sign-ins trong Supabase. Turnstile: CHƯA bật — làm theo README theo thứ tự widget → site key + deploy → secret vào Supabase.
+- §19 cần chạy lại `supabase/schema.sql` (thêm `report_enrichment.pa_obs`, `flood_cells` có `trust/evidence`). Chưa chạy lại thì client coi mọi event server là trusted (như cũ).
 
 ## Trạng thái dữ liệu thật (2026-10-08)
 - Supabase có 1 báo cáo hợp lệ (07/10 19:00, gần Nguyễn Thái Sơn, 10–30cm) và 1 báo cáo test đã rút (`withdrawn_at`), có thể xoá cứng trong dashboard.
