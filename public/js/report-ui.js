@@ -58,11 +58,13 @@ export class ReportUI {
     this.hint = document.getElementById('pick-hint');
     this.sheet = document.getElementById('report-sheet');
     this.submitBtn = document.getElementById('sheet-submit');
+    this.cancelBtn = document.getElementById('sheet-cancel');
     this.editNote = document.getElementById('edit-note');
     this.pending = null;
     this.picking = false;
     this.editing = null; // { report, marker } while editing an own report
-    this.gps = null; // { fix, marker, circle } while a new report is placed from a device fix
+    this.pin = null; // draggable marker for the pending location of a new report
+    this.gps = null; // { fix, circle } while a new report is placed from a device fix
     this.locating = 0; // id of the in-flight geolocation request (0 = none)
     this.keep = null; // { level, at } carried over when switching from GPS to map picking
 
@@ -70,7 +72,8 @@ export class ReportUI {
     document.getElementById('locate-skip').addEventListener('click', () => this.startPicking());
     document.getElementById('late-gps-pick').addEventListener('click', () => this.pickInstead());
     document.getElementById('pick-cancel').addEventListener('click', () => this.reset());
-    document.getElementById('sheet-cancel').addEventListener('click', () => this.reset());
+    // New report: "Chọn vị trí khác" goes back to map picking (keeping level/time); the pick hint's Hủy exits.
+    this.cancelBtn.addEventListener('click', () => (this.editing ? this.reset() : this.pickInstead()));
     this.sheet.addEventListener('submit', (e) => {
       e.preventDefault();
       const level = new FormData(this.sheet).get('level');
@@ -81,6 +84,7 @@ export class ReportUI {
     });
     map.on('click', (e) => {
       if (this.editing) this.editing.marker.setLatLng(e.latlng);
+      else if (this.pin) this.movePin(e.latlng);
       else if (this.picking) this.openSheet(e.latlng);
     });
   }
@@ -123,13 +127,11 @@ export class ReportUI {
     this.map.flyTo(latlng, Math.max(this.map.getZoom(), GPS_ZOOM));
     this.openSheet(latlng);
     const circle = L.circle(latlng, { radius: fix.accuracyM, interactive: false, color: '#1e88e5', weight: 1, fillOpacity: 0.1 }).addTo(this.map);
-    const marker = L.marker(latlng, { draggable: true, autoPan: true }).addTo(this.map);
-    marker.on('dragend', () => { this.pending = marker.getLatLng(); });
-    this.gps = { fix, marker, circle };
+    this.gps = { fix, circle };
     this.showLateNote();
   }
 
-  // Late report placed from GPS: drop the fix and pick on the map, keeping level/time.
+  // Drop the current location (GPS fix or tapped point) and pick on the map again, keeping level/time.
   pickInstead() {
     const level = new FormData(this.sheet).get('level');
     this.keep = { level, at: this.at.value };
@@ -145,7 +147,15 @@ export class ReportUI {
     level ??= keep?.level;
     if (level != null) this.sheet.querySelector(`input[value="${level}"]`).checked = true;
     this.fillTimes(keep?.at ? +keep.at : this.defaultTime());
+    this.editNote.hidden = false;
     this.sheet.hidden = false;
+    this.pin = L.marker(latlng, { draggable: true, autoPan: true }).addTo(this.map);
+    this.pin.on('dragend', () => { this.pending = this.pin.getLatLng(); });
+  }
+
+  movePin(latlng) {
+    this.pin.setLatLng(latlng);
+    this.pending = latlng;
   }
 
   // Edit an own report: draggable marker (or tap the map) for position, sheet prefilled with level + time.
@@ -160,6 +170,7 @@ export class ReportUI {
     const observed = observedMs(r);
     this.fillTimes(observed === created ? null : observed, created);
     this.submitBtn.textContent = 'Lưu';
+    this.cancelBtn.textContent = 'Hủy';
     this.editNote.hidden = false;
     this.sheet.hidden = false;
   }
@@ -204,12 +215,14 @@ export class ReportUI {
     this.editing = null;
     this.locating = 0;
     this.locateHint.hidden = true;
-    this.gps?.marker.remove();
+    this.pin?.remove();
+    this.pin = null;
     this.gps?.circle.remove();
     this.gps = null;
     this.keep = null;
     this.lateGps.hidden = true;
     this.submitBtn.textContent = 'Gửi';
+    this.cancelBtn.textContent = 'Chọn vị trí khác';
     this.editNote.hidden = true;
   }
 
