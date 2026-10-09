@@ -16,11 +16,15 @@ const UNIVERSAL_BLUE = (
 const MIN_DBZ = -10;
 const TABLE = UNIVERSAL_BLUE.map((hex, i) => ({ dbz: MIN_DBZ + i, rgba: [0, 2, 4, 6].map((k) => parseInt(hex.slice(k, k + 2), 16)) }));
 
-// Exact table colour (all four RGBA channels, incl. the official partial alphas of −10..14 dBZ) → lowest matching dBZ.
-// Anything else (transparent, anti-aliased/blended or unknown pixels) → null (no echo): never guess a nearest colour.
+// Table colour → lowest matching dBZ. Opaque entries must match exactly. The official partial-alpha entries
+// (−10..14 dBZ) may drift ±PREMULT_TOL per RGB channel: canvas getImageData un-premultiplies alpha and rounds
+// (e.g. official 206,192,135,α150 reads back as 206,192,134,α150). Alpha itself must match.
+// Anything else (transparent, blended or unknown pixels) → null (no echo): never guess a nearest colour.
+const PREMULT_TOL = 2;
 export function rgbaToDbz(rgba) {
   if (!rgba || !(rgba[3] > 0)) return null;
-  const hit = TABLE.find(({ rgba: c }) => c.every((v, i) => v === rgba[i]));
+  const tol = rgba[3] < 255 ? PREMULT_TOL : 0;
+  const hit = TABLE.find(({ rgba: c }) => c[3] === rgba[3] && c.slice(0, 3).every((v, i) => Math.abs(v - rgba[i]) <= tol));
   return hit ? hit.dbz : null;
 }
 

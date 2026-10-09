@@ -33,12 +33,14 @@ test('Marshall–Palmer: R = (10^(dBZ/10) / 200)^(1/1.6)', () => {
   assert.ok(Math.abs(rgbaToMmH([255, 238, 0, 255]) - 5.62) < 0.01);
 });
 
-test('radar: exact table colours only — off-table or wrong-alpha pixels are no echo', async () => {
+test('radar: opaque colours exact; partial-alpha colours tolerate ±2 canvas rounding; others are no echo', async () => {
   const { rgbaToDbz, rgbaToMmH } = await import('../public/js/radar-rate.js');
-  assert.equal(rgbaToDbz([206, 192, 134, 150]), null);
-  assert.equal(rgbaToMmH([206, 192, 134, 150]), 0);
+  assert.equal(rgbaToDbz([206, 192, 135, 150]), 10); // official partial-alpha entry
+  assert.equal(rgbaToDbz([206, 192, 134, 150]), 10); // same entry after un-premultiply rounding
+  assert.equal(rgbaToDbz([206, 192, 130, 150]), null); // beyond tolerance
   assert.equal(rgbaToDbz([206, 192, 135, 255]), null); // right RGB, wrong alpha
-  assert.equal(rgbaToDbz([206, 192, 135, 150]), 10); // official partial-alpha entry still decodes
+  assert.equal(rgbaToDbz([0, 86, 136, 255]), null); // opaque: exact only
+  assert.equal(rgbaToMmH([10, 10, 10, 255]), 0);
 });
 
 test('radarAccumMm: Σ rate × frame spacing (default 10 min), windowed to the hour before t', async () => {
