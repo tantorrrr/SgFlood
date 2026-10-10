@@ -90,3 +90,11 @@ test('tideParams falls back to defaults when the file is missing or older than 3
   assert.deepEqual(old.forecast, []);
   assert.equal(tideParams(null, now).stale, true);
 });
+
+test('paPeakBefore: highest Phu An level within the lookback window (peak inside, or interpolated edges)', async () => {
+  const { paPeakBefore } = await import('../public/js/tide.js');
+  const obs = [{ t: '2026-10-10T16:00:00+07:00', h: 1.65, kind: 'peak' }, { t: '2026-10-10T22:30:00+07:00', h: -1.2, kind: 'low' }];
+  assert.equal(paPeakBefore(obs, Date.parse('2026-10-10T18:00:00+07:00')), 1.65); // peak 2 h earlier
+  const later = paPeakBefore(obs, Date.parse('2026-10-10T21:00:00+07:00')); // window 18:00–21:00, falling
+  assert.ok(later < 1.65 && later > 0);
+});

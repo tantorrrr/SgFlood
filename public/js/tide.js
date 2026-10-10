@@ -103,6 +103,19 @@ export function tideParams(json, now = Date.now(), defaults = DEFAULT_TIDE) {
 // §19b Observed Phú An level at t (server-side evidence for scripts/lib/enrich.mjs): cosine interpolation between the
 // two observed extremes (peaks/lows of tide-phuan.json `observed`) around t; null when t is outside the observed
 // record or the extremes are more than maxGapH apart (missing bulletin).
+// Peak observed Phú An level over the lookback window before t (streets stay flooded after the peak): a peak/low
+// event inside the window counts directly, plus the interpolated levels at both window ends.
+export function paPeakBefore(observed, t, lookbackH = 3) {
+  const from = t - lookbackH * HOUR;
+  const vals = [paObservedAt(observed, from), paObservedAt(observed, t)];
+  for (const e of observed ?? []) {
+    const et = Date.parse(e.t);
+    if (et >= from && et <= t) vals.push(e.h);
+  }
+  const known = vals.filter((v) => v != null);
+  return known.length ? Math.max(...known) : null;
+}
+
 export function paObservedAt(observed, t, maxGapH = 9) {
   let a = null;
   let b = null;

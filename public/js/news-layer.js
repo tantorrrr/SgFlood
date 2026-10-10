@@ -26,16 +26,18 @@ export function newsEvent(r) {
 // Press events (from the file or flood_cells) get rain 3 h / Phú An from the loaded weather when it covers their hour.
 const TIDE_LOOKBACK_H = 3;
 
+// Fill weather from the loaded window: press events get rain + tide; reports keep their own rain (snapshot /
+// enrichment) but their tide becomes the peak of the TIDE_LOOKBACK_H hours before (streets stay flooded after
+// the peak; the instant value at report time understates the level that flooded them).
 export function withWeather(ev, weather) {
-  if (ev.source !== 'news' || ev.Rh != null) return ev;
   const ti = weather.times.indexOf(Math.floor(Date.parse(ev.t) / HOUR) * HOUR);
   if (ti < 0) return ev;
-  // Streets stay flooded for hours after the tide peaks, and reporters often note the time on the way down:
-  // the event's tide level is the highest Phú An level of the TIDE_LOOKBACK_H hours before it, not the instant value.
   const pas = [];
   for (let k = Math.max(0, ti - TIDE_LOOKBACK_H); k <= ti; k++) pas.push(phuAnAt(weather, k));
   const known = pas.filter((v) => v != null);
-  return { ...ev, Rh: rain3h(weather, [ev.lat, ev.lng], ti), RhSrc: 'ecmwf', PAh: known.length ? Math.max(...known) : null };
+  const peak = known.length ? Math.max(...known) : null;
+  if (ev.source === 'news') return ev.Rh != null ? ev : { ...ev, Rh: rain3h(weather, [ev.lat, ev.lng], ti), RhSrc: 'ecmwf', PAh: peak };
+  return peak == null ? ev : { ...ev, PAh: Math.max(peak, ev.PAh ?? -Infinity) };
 }
 
 function popupHtml(r) {
