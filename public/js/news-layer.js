@@ -24,11 +24,18 @@ export function newsEvent(r) {
 }
 
 // Press events (from the file or flood_cells) get rain 3 h / Phú An from the loaded weather when it covers their hour.
+const TIDE_LOOKBACK_H = 3;
+
 export function withWeather(ev, weather) {
   if (ev.source !== 'news' || ev.Rh != null) return ev;
   const ti = weather.times.indexOf(Math.floor(Date.parse(ev.t) / HOUR) * HOUR);
   if (ti < 0) return ev;
-  return { ...ev, Rh: rain3h(weather, [ev.lat, ev.lng], ti), RhSrc: 'ecmwf', PAh: phuAnAt(weather, ti) };
+  // Streets stay flooded for hours after the tide peaks, and reporters often note the time on the way down:
+  // the event's tide level is the highest Phú An level of the TIDE_LOOKBACK_H hours before it, not the instant value.
+  const pas = [];
+  for (let k = Math.max(0, ti - TIDE_LOOKBACK_H); k <= ti; k++) pas.push(phuAnAt(weather, k));
+  const known = pas.filter((v) => v != null);
+  return { ...ev, Rh: rain3h(weather, [ev.lat, ev.lng], ti), RhSrc: 'ecmwf', PAh: known.length ? Math.max(...known) : null };
 }
 
 function popupHtml(r) {
