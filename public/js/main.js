@@ -79,7 +79,7 @@ async function initStore() {
   const store = createStore(CONFIG, localStorage, captchaToken);
   try {
     await store.init();
-    if (store.authError) captchaRetryToast(store);
+    store.ready?.catch(() => captchaRetryToast(store));
     if (store.mode === 'local') banner('Chế độ demo cục bộ — chưa kết nối Supabase. Báo cáo chỉ lưu trên trình duyệt này.');
     return store;
   } catch {
@@ -362,6 +362,7 @@ async function main() {
   loadMinorView();
   store.subscribe(refreshReports);
   setInterval(refreshReports, POLL_MS);
+  store.ready?.then(refreshReports, () => {}); // own votes load once the background sign-in finishes
 }
 
 main().catch((err) => {

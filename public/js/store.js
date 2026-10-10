@@ -171,12 +171,12 @@ export class SupabaseStore {
     const { data: { session } } = await this.client.auth.getSession();
     if (session) { this.userId = session.user.id; return; }
     if (!this.siteKey) return this.signIn(); // no captcha: unchanged behaviour (failure → caller falls back to local)
-    // §19a captcha: failure keeps the store read-only (map works; report/vote ask to retry via signIn()).
-    try {
-      await this.signIn();
-    } catch (err) {
+    // §19a captcha runs in the background: an interactive challenge must not hold up the map/timeline.
+    // Until it resolves the store is read-only; failure leaves authError (report/vote offer a retry via signIn()).
+    this.ready = this.signIn().catch((err) => {
       this.authError = err;
-    }
+      throw err;
+    });
   }
 
   // Anonymous sign-in, with a Turnstile token when a site key is configured.
@@ -195,7 +195,9 @@ export class SupabaseStore {
     this.authError = null;
   }
 
-  requireAuth() {
+  // Writes wait for an in-flight background sign-in instead of failing while the captcha is still running.
+  async requireAuth() {
+    if (!this.userId && this.ready) await this.ready.catch(() => {});
     if (!this.userId) throw new StoreError('captcha');
   }
 
@@ -236,7 +238,7 @@ export class SupabaseStore {
   }
 
   async createReport({ lat, lng, level, snapshot = null, observedAt = null }) {
-    this.requireAuth();
+    await this.requireAuth();
     const row = { lat, lng, level, snapshot };
     if (observedAt != null) row.observed_at = new Date(observedAt).toISOString();
     const { data, error } = await this.client.from('reports').insert(row).select().single();
@@ -245,7 +247,7 @@ export class SupabaseStore {
   }
 
   async editReport(id, { lat, lng, level, observedAt, snapshot }) {
-    this.requireAuth();
+    await this.requireAuth();
     const row = { lat, lng, level, observed_at: new Date(observedAt).toISOString() };
     if (snapshot !== undefined) row.snapshot = snapshot;
     const { data, error } = await this.client.from('reports').update(row).eq('id', id).select().single();
@@ -255,13 +257,13 @@ export class SupabaseStore {
 
   // The trigger replaces this value with now(); the client only flags the withdrawal.
   async withdrawReport(id) {
-    this.requireAuth();
+    await this.requireAuth();
     const { error } = await this.client.from('reports').update({ withdrawn_at: new Date().toISOString() }).eq('id', id);
     if (error) throw new StoreError(errorCode(error.message));
   }
 
   async vote(reportId, value) {
-    this.requireAuth();
+    await this.requireAuth();
     const { error } = await this.client
       .from('votes')
       .upsert({ report_id: reportId, user_id: this.userId, value }, { onConflict: 'report_id,user_id' });

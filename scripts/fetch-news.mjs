@@ -4,7 +4,8 @@
 // Run daily: `npm run fetch:news`. Needs env ANTHROPIC_API_KEY for the LLM stage.
 // Options: --hours N (RSS window, default 24) · --dump-candidates <dir> (write {url,outlet,publishedAt,text} per
 // article as <sha1(url)>.json, then exit) · --llm-responses <dir> (read <sha1(url)>.json instead of calling the API) ·
-// --ignore-seen (re-process articles already in the seen-cache; their records replace earlier ones with the same id).
+// --ignore-seen (re-process articles already in the seen-cache; their records replace earlier ones with the same id) ·
+// --url <article> (repeatable: process these articles directly instead of scanning RSS, e.g. a link someone shared).
 import { existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
@@ -16,7 +17,7 @@ const OUT = new URL('public/data/news-floods.json', ROOT);
 const ROADS = new URL('public/data/roads.json', ROOT);
 const MINOR = new URL('public/data/minor/', ROOT);
 const SEEN = new URL('news-seen.json', CACHE);
-const { values: OPTS } = parseArgs({ options: { hours: { type: 'string', default: '24' }, 'dump-candidates': { type: 'string' }, 'llm-responses': { type: 'string' }, 'ignore-seen': { type: 'boolean', default: false } } });
+const { values: OPTS } = parseArgs({ options: { hours: { type: 'string', default: '24' }, 'dump-candidates': { type: 'string' }, 'llm-responses': { type: 'string' }, 'ignore-seen': { type: 'boolean', default: false }, url: { type: 'string', multiple: true } } });
 const HOURS = Number(OPTS.hours);
 const WINDOW_MS = HOURS * 3_600_000;
 const iso = (ms) => new Date(ms + 7 * 3_600_000).toISOString().replace(/\.\d+Z$/, '+07:00');
@@ -42,6 +43,15 @@ async function scanFeeds(seen, now) {
     for (const it of hits) if (!seen[it.link] && !byLink.has(it.link)) byLink.set(it.link, { ...it, outlet: f.outlet });
   });
   return { scanned, candidates: [...byLink.values()] };
+}
+
+// Ad-hoc article: outlet from the host, published time from the page's article meta (fallback: now).
+async function directArticle(url, now) {
+  const html = await get(url);
+  const meta = html.match(/<meta[^>]+(?:property|name|itemprop)=["'](?:article:published_time|datePublished|pubdate)["'][^>]*content=["']([^"']+)["']/i);
+  const published = Date.parse(meta?.[1] ?? '');
+  const host = new URL(url).hostname.replace(/^www\./, '');
+  return { url, outlet: host, publishedAt: iso(Number.isFinite(published) ? published : now), text: articleText(html) };
 }
 
 async function loadNetwork() {
@@ -72,12 +82,25 @@ async function main() {
   const now = Date.now();
   const seen = Object.fromEntries(Object.entries(await readJson(SEEN, {})).filter(([, at]) => withinDays(now)({ publishedAt: at })));
 
-  console.log(`Scanning RSS (last ${HOURS} h)…`);
-  const { scanned, candidates } = await scanFeeds(OPTS['ignore-seen'] ? {} : seen, now);
-  console.log(`  ${scanned} recent items, ${candidates.length} new keyword candidate(s)`);
-  candidates.forEach((c) => console.log(`    [${c.outlet}] ${c.title}`));
-
   const articles = [];
+  const direct = OPTS.url ?? [];
+  let scanned = 0;
+  let candidates = [];
+  if (direct.length) {
+    console.log(`Direct article(s): ${direct.length} (RSS scan skipped)`);
+    for (const url of direct) {
+      try {
+        articles.push(await directArticle(url, now));
+      } catch (err) {
+        console.warn(`  article ${url}: ${err.message}`);
+      }
+    }
+  } else {
+    console.log(`Scanning RSS (last ${HOURS} h)…`);
+    ({ scanned, candidates } = await scanFeeds(OPTS['ignore-seen'] ? {} : seen, now));
+    console.log(`  ${scanned} recent items, ${candidates.length} new keyword candidate(s)`);
+    candidates.forEach((c) => console.log(`    [${c.outlet}] ${c.title}`));
+  }
   for (const c of candidates) {
     try {
       articles.push({ url: c.link, outlet: c.outlet, publishedAt: iso(c.publishedAt), text: articleText(await get(c.link)) });
