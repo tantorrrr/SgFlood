@@ -5,7 +5,7 @@ import { LEVELS, escapeHtml, fmtDateTime } from './format.js';
 
 const HOUR = 3600_000;
 export const NEWS_TTL_MS = 3 * HOUR;
-export const SIGNAL_LABELS = { dat_bo: 'Dắt bộ', chet_may: 'Chết máy', ket_xe: 'Kẹt xe', sau_30cm: 'Sâu >30cm' };
+export const SIGNAL_LABELS = { dat_bo: 'Dắt bộ', chet_may: 'Chết máy', ket_xe: 'Kẹt xe', sau_30cm: 'Sâu >30cm', nua_banh: 'Nửa bánh xe' };
 const ICON_SVG = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M2 3h10v9.5a1.5 1.5 0 0 0 1.5 1.5H3.5A1.5 1.5 0 0 1 2 12.5zm11 3h1.5v6.5a1 1 0 0 1-2 0V6zM4 5v3h6V5zm0 4.5v1h6v-1zm0 2v1h6v-1z"/></svg>';
 
 // Article time when the paper gives one, else the publish time (same rule as the backend dedupe/retention).

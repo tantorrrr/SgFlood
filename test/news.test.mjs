@@ -193,3 +193,12 @@ test('dedupe real cases: D5×XVNT reported next day without a time; junction pai
   // Same pair two days apart stays separate.
   assert.equal(dedupe([vne, { ...tn, publishedAt: '2026-10-09T08:37:00+07:00' }]).length, 2);
 });
+
+test('nua_banh counts as heavy (level 2); street-only mention reuses the chronic hotspot geometry', async () => {
+  const { mentionGeometry } = await import('../scripts/lib/news.mjs');
+  assert.equal(isHeavy({ signals: ['nua_banh'] }), true);
+  assert.equal(levelOf({ signals: ['nua_banh'], depthCm: null }), 2);
+  const g = { type: 'between', street: 'Nguyễn Bình', from: 'A', to: 'B', near: [10.7, 106.7] };
+  assert.deepEqual(mentionGeometry({ street: 'Đường Nguyễn Bình', signals: ['nua_banh'] }, () => [], [{ id: 'nb', geometry: g }]), g);
+  assert.throws(() => mentionGeometry({ street: 'Khác', signals: ['nua_banh'] }, () => [], [{ id: 'nb', geometry: g }]), /no cross street/);
+});

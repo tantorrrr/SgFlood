@@ -59,7 +59,7 @@ async function loadNetwork() {
   const index = await readJson(new URL('index.json', MINOR), { tiles: [] });
   for (const t of index.tiles) segs.push(...(await readJson(new URL(`${t.id}.json`, MINOR))).segs);
   console.log(`Road network: ${segs.length} pieces (${index.tiles.length} minor tiles)`);
-  return buildNetwork(segs);
+  return { ...buildNetwork(segs), hotspots: await readJson(new URL('data/hotspots.json', ROOT), []) };
 }
 
 async function upsertSupabase(records) {

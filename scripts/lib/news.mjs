@@ -19,7 +19,7 @@ export const FEEDS = [
 
 const FLOOD_WORDS = ['ngập', 'triều cường', 'mưa lớn', 'dắt bộ', 'chết máy', 'nước dâng'];
 const PLACE_WORDS = ['tp.hcm', 'tphcm', 'tp hcm', 'tp. hcm', 'hồ chí minh', 'sài gòn', 'đường', 'phường'];
-export const SIGNALS = ['dat_bo', 'chet_may', 'ket_xe', 'sau_30cm'];
+export const SIGNALS = ['dat_bo', 'chet_may', 'ket_xe', 'sau_30cm', 'nua_banh'];
 export const KEEP_DAYS = 90;
 const DAY = 86_400_000;
 const DEDUPE_M = 300;
@@ -103,15 +103,22 @@ function intersectionHint(a, b, waysOf) {
   return best.p;
 }
 
-export function mentionGeometry(m, waysOf) {
+const hotspotStreet = (g) => g.street ?? g.streets?.[0];
+
+// Street-only mention: reuse the chronic hotspot on that street (sourced stretch), never paint the whole street.
+export function mentionGeometry(m, waysOf, hotspots = []) {
   if (m.from && m.to) return { type: 'between', street: m.street, from: m.from, to: m.to, near: intersectionHint(m.street, m.from, waysOf) };
   const cross = m.cross ?? m.from ?? m.to;
-  if (!cross) throw new Error('no cross street or stretch');
+  if (!cross) {
+    const h = hotspots.find((x) => normalizeName(hotspotStreet(x.geometry) ?? '') === normalizeName(m.street));
+    if (h) return h.geometry;
+    throw new Error('no cross street or stretch');
+  }
   return { type: 'junction', streets: [m.street, cross], radiusM: JUNCTION_RADIUS_M, crossRadiusM: JUNCTION_CROSS_M, near: intersectionHint(m.street, cross, waysOf) };
 }
 
-export function resolveMention(m, { segs, waysOf }, bbox) {
-  const g = mentionGeometry(m, waysOf);
+export function resolveMention(m, { segs, waysOf, hotspots }, bbox) {
+  const g = mentionGeometry(m, waysOf, hotspots);
   const { names, contains } = resolveGeometry(g, waysOf);
   const lines = segs.filter((s) => names.has(normalizeName(s.n)) && contains(midpoint(s.c), normalizeName(s.n))).map((s) => s.c);
   if (!lines.length) throw new Error('0 road pieces');

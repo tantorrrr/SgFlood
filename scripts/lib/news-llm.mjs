@@ -43,7 +43,7 @@ Mỗi đoạn đường/giao lộ bị ngập được nhắc trong bài = 1 men
 - ward/oldDistrict: phường / quận cũ nếu bài ghi.
 - observedAt: thời điểm ngập theo bài, ISO 8601 có +07:00; dùng ngày đăng để hiểu "sáng nay", "tối qua"; không rõ giờ thì null.
 - depthCm: độ sâu nước nếu bài ghi số (cm).
-- signals: dat_bo (người dắt bộ xe), chet_may (xe chết máy), ket_xe (kẹt xe do ngập), sau_30cm (bài nói nước sâu trên 30 cm / ngập quá bánh xe / ngang đầu gối trở lên).
+- signals: dat_bo (người dắt bộ xe), chet_may (xe chết máy), ket_xe (kẹt xe do ngập), sau_30cm (bài nói nước sâu trên 30 cm / ngập quá bánh xe / ngang đầu gối trở lên), nua_banh (ngập khoảng nửa bánh xe / ~20–30 cm).
 - cause: rain (mưa), tide (triều cường), both, null nếu bài không nói.
 - quote: câu trích nguyên văn từ bài, tối đa 25 từ, chứng minh mention.
 Bỏ qua ngập ngoài TP.HCM, ngập trong nhà/hầm, dự báo hoặc danh sách điểm ngập chung chung không gắn với đợt ngập trong bài. Không có điểm nào thì mentions = [].`;
