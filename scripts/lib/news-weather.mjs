@@ -83,4 +83,7 @@ export async function enrichWeather(records, { tide = null, cache = {}, fetch: f
 }
 
 // One article URL per line; blank lines and `#` comments ignored.
-export const parseUrlList = (text) => text.split(/\r?\n/).map((l) => l.replace(/(^|\s)#.*/, '').trim()).filter(Boolean);
+const urlLines = (text) => text.split(/\r?\n/).map((l) => l.replace(/(^|\s)#.*/, '').trim()).filter(Boolean);
+// One URL per line, `#` comments; an optional second column `YYYY-MM-DD` sets the publish date for pages without one.
+export const parseUrlList = (text) => urlLines(text).map((l) => l.split(/\s+/)[0]);
+export const parseUrlDates = (text) => new Map(urlLines(text).map((l) => l.split(/\s+/)).filter(([, d]) => /^\d{4}-\d{2}-\d{2}$/.test(d ?? '')));

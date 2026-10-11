@@ -82,3 +82,17 @@ test('dedupe drops weather when the merged record hour moves', () => {
   const [k] = dedupe([a, rec({ id: 'news-z', observedAt: '2026-10-03T18:00:00+07:00', sources: [{ url: 'u2' }] })]);
   assert.equal(k.weather.r3, 1);
 });
+
+test('urls file: optional YYYY-MM-DD column sets the publish date', async () => {
+  const { parseUrlDates } = await import('../scripts/lib/news-weather.mjs');
+  const text = 'https://a.vn/x 2026-08-03\nhttps://b.vn/y\n';
+  assert.deepEqual(parseUrlList(text), ['https://a.vn/x', 'https://b.vn/y']);
+  assert.deepEqual([...parseUrlDates(text)], [['https://a.vn/x', '2026-08-03']]);
+});
+
+test('publishedFrom: meta, JSON-LD, URL-embedded dates; null when none', async () => {
+  const { publishedFrom } = await import('../scripts/lib/news.mjs');
+  assert.equal(new Date(publishedFrom('<script>{"datePublished": "2026-09-30T08:00:00+07:00"}</script>', 'https://x.vn/a')).toISOString(), '2026-09-30T01:00:00.000Z');
+  assert.equal(new Date(publishedFrom('', 'https://dantri.com.vn/thoi-su/a-20261008165058710.htm')).toISOString().slice(0, 10), '2026-10-08');
+  assert.equal(publishedFrom('<p>no date</p>', 'https://x.vn/a'), null);
+});

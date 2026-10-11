@@ -196,3 +196,25 @@ export function dedupe(records) {
 }
 
 export const withinDays = (now, days = KEEP_DAYS) => (r) => Date.parse(r.observedAt ?? r.publishedAt) >= now - days * DAY;
+
+// Publish time, first hit wins: article meta → JSON-LD datePublished → <time datetime> → 8/14-digit date in the URL
+// (Dân Trí …-20261008165058710.htm, Thanh Niên …-185261008…). null when none found: the caller must not invent "now".
+export function publishedFrom(html, url) {
+  const dec = (v) => v.replace(/&#x2B;|&#43;/gi, '+'); // Tuổi Trẻ entity-encodes the '+'
+  const candidates = [
+    html.match(/<meta[^>]+(?:property|name|itemprop)=["'](?:article:published_time|datePublished|pubdate|og:published_time)["'][^>]*content=["']([^"']+)["']/i)?.[1],
+    html.match(/"datePublished"\s*:\s*"([^"]+)"/i)?.[1],
+    html.match(/<time[^>]+datetime=["']([^"']+)["']/i)?.[1],
+  ];
+  for (const c of candidates) {
+    const t = c ? Date.parse(dec(c)) : NaN;
+    if (Number.isFinite(t)) return t;
+  }
+  const m = url.match(/(20\d{2})(\d{2})(\d{2})(?:\d{4,9})?(?:\.|$|\/)/) ?? url.match(/-1\d{2}(2\d)(\d{2})(\d{2})\d{6,}\.(?:html|htm)/);
+  if (m) {
+    const [y, mo, d] = m[1].length === 4 ? [m[1], m[2], m[3]] : [`20${m[1]}`, m[2], m[3]];
+    const t = Date.parse(`${y}-${mo}-${d}T12:00:00+07:00`);
+    if (Number.isFinite(t)) return t;
+  }
+  return null;
+}

@@ -12,8 +12,8 @@ import { existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { BBOX, CACHE, HEADERS, ROOT } from './lib/osm.mjs';
-import { FEEDS, parseFeed, isCandidate, articleText, isHeavy, buildNetwork, resolveMention, toRecord, dedupe, withinDays } from './lib/news.mjs';
-import { enrichWeather, parseUrlList } from './lib/news-weather.mjs';
+import { publishedFrom, FEEDS, parseFeed, isCandidate, articleText, isHeavy, buildNetwork, resolveMention, toRecord, dedupe, withinDays } from './lib/news.mjs';
+import { enrichWeather, parseUrlList, parseUrlDates } from './lib/news-weather.mjs';
 import { extractMentions, readMentions, responseFile, costUsd, MODEL } from './lib/news-llm.mjs';
 
 const OUT = new URL('public/data/news-floods.json', ROOT);
@@ -51,12 +51,12 @@ async function scanFeeds(seen, now) {
 }
 
 // Ad-hoc article: outlet from the host, published time from the page's article meta (fallback: now).
-async function directArticle(url, now) {
+async function directArticle(url, dateOverride) {
   const html = await get(url);
-  const meta = html.match(/<meta[^>]+(?:property|name|itemprop)=["'](?:article:published_time|datePublished|pubdate)["'][^>]*content=["']([^"']+)["']/i);
-  const published = Date.parse((meta?.[1] ?? '').replace(/&#x2B;|&#43;/gi, '+')); // Tuổi Trẻ entity-encodes the '+'
+  const published = dateOverride ? Date.parse(`${dateOverride}T12:00:00+07:00`) : publishedFrom(html, url);
+  if (published == null) throw new Error('no publish date found (add "<url> <YYYY-MM-DD>" in the urls file to set it)');
   const host = new URL(url).hostname.replace(/^www\./, '');
-  return { url, outlet: host, publishedAt: iso(Number.isFinite(published) ? published : now), text: articleText(html) };
+  return { url, outlet: host, publishedAt: iso(published), text: articleText(html) };
 }
 
 async function loadNetwork() {
@@ -103,7 +103,9 @@ async function main() {
   const seen = Object.fromEntries(Object.entries(await readJson(SEEN, {})).filter(([, at]) => withinDays(now)({ publishedAt: at })));
 
   const articles = [];
-  const fromFile = OPTS['urls-file'] ? parseUrlList(await readFile(OPTS['urls-file'], 'utf8')) : [];
+  const urlsText = OPTS['urls-file'] ? await readFile(OPTS['urls-file'], 'utf8') : '';
+  const fromFile = parseUrlList(urlsText);
+  const dates = parseUrlDates(urlsText);
   const direct = [...new Set([...(OPTS.url ?? []), ...fromFile])];
   let scanned = 0;
   let candidates = [];
@@ -111,7 +113,7 @@ async function main() {
     console.log(`Direct article(s): ${direct.length} (RSS scan skipped)`);
     for (const url of direct) {
       try {
-        articles.push(await directArticle(url, now));
+        articles.push(await directArticle(url, dates.get(url)));
       } catch (err) {
         console.warn(`  article ${url}: ${err.message}`);
       }
