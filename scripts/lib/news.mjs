@@ -20,7 +20,7 @@ export const FEEDS = [
 const FLOOD_WORDS = ['ngập', 'triều cường', 'mưa lớn', 'dắt bộ', 'chết máy', 'nước dâng'];
 const PLACE_WORDS = ['tp.hcm', 'tphcm', 'tp hcm', 'tp. hcm', 'hồ chí minh', 'sài gòn', 'đường', 'phường'];
 export const SIGNALS = ['dat_bo', 'chet_may', 'ket_xe', 'sau_30cm', 'nua_banh'];
-export const KEEP_DAYS = 90;
+export const KEEP_DAYS = 730; // = HISTORY_DAYS (public/js/cells.js): press backfill feeds 2 years of history
 const DAY = 86_400_000;
 const DEDUPE_M = 300;
 const JUNCTION_RADIUS_M = 120;
@@ -183,11 +183,13 @@ export function dedupe(records) {
       out.push(structuredClone(r));
       continue;
     }
+    const before = e.observedAt ?? e.publishedAt;
     e.level = Math.max(e.level, r.level);
     e.cause ??= r.cause;
     e.observedAt = earliest(e.observedAt, r.observedAt);
     e.publishedAt = earliest(e.publishedAt, r.publishedAt);
     e.signals = [...new Set([...e.signals, ...r.signals])];
+    if ((e.observedAt ?? e.publishedAt) !== before) delete e.weather; // its hour moved: recompute (news-weather.mjs)
     for (const s of r.sources) if (!e.sources.some((x) => x.url === s.url)) e.sources.push(s);
   }
   return out;

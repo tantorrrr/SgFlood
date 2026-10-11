@@ -149,11 +149,11 @@ test('toRecord + dedupe merge same street/day within 300 m and keep all sources'
   assert.equal(a.sources.length, 1); // inputs untouched
 });
 
-test('withinDays drops records older than 90 days', () => {
+test('withinDays drops records older than 730 days (= history window)', () => {
   const now = Date.parse('2026-10-08T00:00:00Z');
   const keep = withinDays(now);
-  assert.equal(keep({ observedAt: null, publishedAt: '2026-07-15T00:00:00+07:00' }), true);
-  assert.equal(keep({ observedAt: '2026-07-01T00:00:00+07:00', publishedAt: '2026-10-01T00:00:00+07:00' }), false);
+  assert.equal(keep({ observedAt: null, publishedAt: '2024-10-15T00:00:00+07:00' }), true);
+  assert.equal(keep({ observedAt: '2024-10-01T00:00:00+07:00', publishedAt: '2026-10-01T00:00:00+07:00' }), false);
   assert.ok(Math.abs(costUsd({ input: 1e6, output: 1e6 }) - 0.6) < 1e-9);
 });
 

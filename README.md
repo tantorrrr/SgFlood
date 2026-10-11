@@ -67,12 +67,16 @@ Hiệu chỉnh (research, 697 cặp đỉnh thực đo Phú An – Open-Meteo): 
 
 `scripts/fetch-news.mjs` (logic thuần ở `scripts/lib/news.mjs`, gọi LLM ở `scripts/lib/news-llm.mjs`):
 
-1. RSS của VnExpress, Tuổi Trẻ, Thanh Niên, VOH (Tin TP.HCM), SGGP, Dân Trí, VietNamNet, Người Lao Động (URL đã kiểm tra 08/10/2026; feed của NLĐ chậm ~1 ngày so với web). Lấy bài 24 giờ qua có từ khoá ngập (ngập, triều cường, mưa lớn, dắt bộ, chết máy, nước dâng) **và** nhắc TP.HCM/đường/phường. Bài đã xử lý lưu ở `data/cache/news-seen.json` (90 ngày).
+1. RSS của VnExpress, Tuổi Trẻ, Thanh Niên, VOH (Tin TP.HCM), SGGP, Dân Trí, VietNamNet, Người Lao Động (URL đã kiểm tra 08/10/2026; feed của NLĐ chậm ~1 ngày so với web). Lấy bài 24 giờ qua có từ khoá ngập (ngập, triều cường, mưa lớn, dắt bộ, chết máy, nước dâng) **và** nhắc TP.HCM/đường/phường. Bài đã xử lý lưu ở `data/cache/news-seen.json` (730 ngày).
 2. Tải HTML bài, chỉ lấy các đoạn `<p>` (≤ 8000 ký tự).
 3. Claude `claude-haiku-5-5` (Messages API, structured JSON output) trích các điểm ngập: đường, từ/đến, giao lộ, phường, giờ ngập, độ sâu, tín hiệu (`dat_bo`, `chet_may`, `ket_xe`, `sau_30cm`), nguyên nhân, trích ≤ 25 từ. Chỉ gửi text bài + ngày đăng.
 4. Chỉ giữ điểm có ít nhất 1 tín hiệu ("nặng mới tính"): level 3 nếu `sau_30cm` hoặc sâu > 30 cm, còn lại level 2.
 5. Đổi sang hình học §4b (`between` khi có từ/đến, `junction` 250 m khi có giao lộ) và giải bằng `scripts/lib/hotspot-geom.mjs` trên `roads.json` + các ô đường nhỏ nếu đã build. Bài chỉ nêu tên đường (không có đoạn/giao lộ), giao lộ không có trên OSM, hai đường cắt nhau ở nhiều chỗ cách > 2 km, hoặc ngoài bbox → bỏ và ghi log.
-6. Gộp: cùng đường + cùng ngày + cách ≤ 300 m → 1 điểm nhiều nguồn. Ghi `public/data/news-floods.json` (giữ 90 ngày). Nếu có `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` thì upsert vào bảng `news_reports` (schema ở cuối `supabase/schema.sql`; anon/auth chỉ đọc).
+6. Gộp: cùng đường + cùng ngày + cách ≤ 300 m → 1 điểm nhiều nguồn. Ghi `public/data/news-floods.json` (giữ 730 ngày = cửa sổ lịch sử). Nếu có `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` thì upsert vào bảng `news_reports` (schema ở cuối `supabase/schema.sql`; anon/auth chỉ đọc).
+
+7. Thời tiết riêng của mỗi tin (`scripts/lib/news-weather.mjs`): `weather = {r3, r3Src, paPeak, paSrc}` tại điểm + giờ của tin (`observedAt ?? publishedAt`). `r3` = mưa 3 h có trọng số (1/0,6/0,3) từ Open-Meteo ERA5 archive, chưa có thì Historical Forecast; `paPeak` = đỉnh Phú An thực đo 3 h trước đó từ `tide-phuan.json` (null khi bản tin chưa phủ giờ đó; tự điền lại ở lần chạy sau). Cache `data/cache/news-weather.json` (ô 0,05° + ngày). Client dùng `weather` (nguồn hiển thị "ERA5") nên tin cũ hơn 48 giờ vẫn góp vào ngưỡng học được. Trên Supabase, `weather` nằm trong jsonb `geometry` sẵn có của `news_reports` (không cần migration; chạy lại `schema.sql` để view `flood_cells` đọc nó). Chỉ điền weather cho file hiện có: `node scripts/fetch-news.mjs --enrich-weather`.
+
+Backfill nhiều bài: `node scripts/fetch-news.mjs --urls-file urls.txt --llm-responses <dir>` (mỗi dòng 1 URL, `#` là comment; 1 lần nạp mạng đường, 1 lần ghi, gộp với bản ghi cũ). Quy trình hằng tháng: `docs/backfill.md`.
 
 Cuối mỗi lần chạy script in số bài quét / khớp từ khoá / gọi LLM / mention / giữ lại / resolve được, token và chi phí ước tính.
 

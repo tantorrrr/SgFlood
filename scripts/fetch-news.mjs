@@ -5,19 +5,24 @@
 // Options: --hours N (RSS window, default 24) · --dump-candidates <dir> (write {url,outlet,publishedAt,text} per
 // article as <sha1(url)>.json, then exit) · --llm-responses <dir> (read <sha1(url)>.json instead of calling the API) ·
 // --ignore-seen (re-process articles already in the seen-cache; their records replace earlier ones with the same id) ·
-// --url <article> (repeatable: process these articles directly instead of scanning RSS, e.g. a link someone shared).
+// --url <article> (repeatable: process these articles directly instead of scanning RSS, e.g. a link someone shared) ·
+// --urls-file <file> (same, one URL per line, `#` comments; backfill: one road-network load, one merged write) ·
+// --enrich-weather (only fill per-record `weather` of the existing file, then exit; see scripts/lib/news-weather.mjs).
 import { existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { BBOX, CACHE, HEADERS, ROOT } from './lib/osm.mjs';
 import { FEEDS, parseFeed, isCandidate, articleText, isHeavy, buildNetwork, resolveMention, toRecord, dedupe, withinDays } from './lib/news.mjs';
+import { enrichWeather, parseUrlList } from './lib/news-weather.mjs';
 import { extractMentions, readMentions, responseFile, costUsd, MODEL } from './lib/news-llm.mjs';
 
 const OUT = new URL('public/data/news-floods.json', ROOT);
 const ROADS = new URL('public/data/roads.json', ROOT);
 const MINOR = new URL('public/data/minor/', ROOT);
 const SEEN = new URL('news-seen.json', CACHE);
-const { values: OPTS } = parseArgs({ options: { hours: { type: 'string', default: '24' }, 'dump-candidates': { type: 'string' }, 'llm-responses': { type: 'string' }, 'ignore-seen': { type: 'boolean', default: false }, url: { type: 'string', multiple: true } } });
+const WEATHER_CACHE = new URL('news-weather.json', CACHE);
+const TIDE = new URL('public/data/tide-phuan.json', ROOT);
+const { values: OPTS } = parseArgs({ options: { hours: { type: 'string', default: '24' }, 'dump-candidates': { type: 'string' }, 'llm-responses': { type: 'string' }, 'ignore-seen': { type: 'boolean', default: false }, url: { type: 'string', multiple: true }, 'urls-file': { type: 'string' }, 'enrich-weather': { type: 'boolean', default: false } } });
 const HOURS = Number(OPTS.hours);
 const WINDOW_MS = HOURS * 3_600_000;
 const iso = (ms) => new Date(ms + 7 * 3_600_000).toISOString().replace(/\.\d+Z$/, '+07:00');
@@ -67,7 +72,8 @@ async function upsertSupabase(records) {
   if (!url || !key) return console.log('Supabase: SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY not set → local file only');
   const rows = records.map((r) => ({
     id: r.id, level: r.level, cause: r.cause, street: r.street, observed_at: r.observedAt, published_at: r.publishedAt,
-    signals: r.signals, geometry: r.geometry, sources: r.sources,
+    // Per-record weather rides in the existing geometry jsonb (no schema migration; flood_cells reads geometry.weather).
+    signals: r.signals, geometry: r.weather ? { ...r.geometry, weather: r.weather } : r.geometry, sources: r.sources,
   }));
   const res = await fetch(`${url}/rest/v1/news_reports?on_conflict=id`, {
     method: 'POST',
@@ -78,12 +84,27 @@ async function upsertSupabase(records) {
   console.log(`Supabase: upserted ${rows.length} news_reports`);
 }
 
+// Fill `weather` on records that lack it (or a part of it). Network errors leave it null and are only logged.
+async function addWeather(reports) {
+  const cache = await readJson(WEATHER_CACHE, {});
+  const stats = await enrichWeather(reports, { tide: await readJson(TIDE, null), cache });
+  await mkdir(CACHE, { recursive: true });
+  await writeFile(WEATHER_CACHE, JSON.stringify(cache));
+  console.log(`Weather: ${stats.pending} pending (${stats.requests} requests, ${stats.failed} without rain) → r3 ${stats.r3}/${reports.length}, paPeak ${stats.paPeak}/${reports.length}`);
+}
+
 async function main() {
   const now = Date.now();
+  if (OPTS['enrich-weather']) {
+    const file = await readJson(OUT, { reports: [] });
+    await addWeather(file.reports);
+    return writeFile(OUT, JSON.stringify(file));
+  }
   const seen = Object.fromEntries(Object.entries(await readJson(SEEN, {})).filter(([, at]) => withinDays(now)({ publishedAt: at })));
 
   const articles = [];
-  const direct = OPTS.url ?? [];
+  const fromFile = OPTS['urls-file'] ? parseUrlList(await readFile(OPTS['urls-file'], 'utf8')) : [];
+  const direct = [...new Set([...(OPTS.url ?? []), ...fromFile])];
   let scanned = 0;
   let candidates = [];
   if (direct.length) {
@@ -169,6 +190,7 @@ Dumped ${articles.length} candidate(s) to ${dumpDir} (no LLM call, nothing else 
     return sources.length ? [{ ...r, sources }] : [];
   });
   const reports = dedupe([...kept, ...records]).filter(withinDays(now));
+  await addWeather(reports);
   await writeFile(OUT, JSON.stringify({ fetchedAt: iso(now), model: MODEL, reports }));
   await mkdir(CACHE, { recursive: true });
   await writeFile(SEEN, JSON.stringify(seen));

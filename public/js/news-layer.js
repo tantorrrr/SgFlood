@@ -12,14 +12,16 @@ const ICON_SVG = '<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="t
 export const newsMs = (r) => Date.parse(r.observedAt ?? r.publishedAt);
 export const newsActive = (r, t) => newsMs(r) <= t && t < newsMs(r) + NEWS_TTL_MS;
 
-// news-floods.json record → history event (cells.js shape). No weather of its own: see withWeather.
+// news-floods.json record → history event (cells.js shape). Rain/tide from the record's own `weather` (filled at
+// pipeline time from the ERA5 archive + observed Phú An, scripts/lib/news-weather.mjs); otherwise see withWeather.
 export function newsEvent(r) {
   const [lat, lng] = r.geometry?.point ?? [];
   if (!Number.isFinite(lat) || !Number.isFinite(lng) || !(r.level >= 1)) return null;
+  const w = r.weather;
   const outlets = [...new Set((r.sources ?? []).map((s) => s.outlet).filter(Boolean))];
   return {
     id: r.id, source: 'news', lat, lng, t: r.observedAt ?? r.publishedAt, level: r.level, net: null,
-    Rh: null, RhSrc: null, PAh: null, cause: r.cause ?? null, radarMmH: null, outlet: outlets.join(', ') || null,
+    Rh: w?.r3 ?? null, RhSrc: w?.r3 != null ? 'archive' : null, PAh: w?.paPeak ?? null, cause: r.cause ?? null, radarMmH: null, outlet: outlets.join(', ') || null,
   };
 }
 
@@ -36,7 +38,7 @@ export function withWeather(ev, weather) {
   for (let k = Math.max(0, ti - TIDE_LOOKBACK_H); k <= ti; k++) pas.push(phuAnAt(weather, k));
   const known = pas.filter((v) => v != null);
   const peak = known.length ? Math.max(...known) : null;
-  if (ev.source === 'news') return ev.Rh != null ? ev : { ...ev, Rh: rain3h(weather, [ev.lat, ev.lng], ti), RhSrc: 'ecmwf', PAh: peak };
+  if (ev.source === 'news') return ev.Rh != null ? (ev.PAh != null ? ev : { ...ev, PAh: peak }) : { ...ev, Rh: rain3h(weather, [ev.lat, ev.lng], ti), RhSrc: 'ecmwf', PAh: ev.PAh ?? peak };
   return peak == null ? ev : { ...ev, PAh: Math.max(peak, ev.PAh ?? -Infinity) };
 }
 

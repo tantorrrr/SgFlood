@@ -341,7 +341,8 @@ with report_ev as (
   having count(v.*) filter (where v.value = -1) < count(v.*) filter (where v.value = 1) + 2
 ),
 news_ev as (
-  select n.id, p.lat, p.lng, coalesce(n.observed_at, n.published_at) as t, n.level, n.cause, n.sources
+  select n.id, p.lat, p.lng, coalesce(n.observed_at, n.published_at) as t, n.level, n.cause, n.sources,
+    public.jsonb_num(n.geometry, '{weather,r3}') as r3, public.jsonb_num(n.geometry, '{weather,paPeak}') as pa_peak
   from public.news_reports n
   cross join lateral (select public.jsonb_num(n.geometry, '{point,0}') as lat, public.jsonb_num(n.geometry, '{point,1}') as lng) p
   where p.lat is not null and p.lng is not null and coalesce(n.observed_at, n.published_at) > now() - interval '730 days'
@@ -379,7 +380,7 @@ events as (
   union all
   select n.lat, n.lng, jsonb_build_object(
     'id', n.id, 'source', 'news', 'lat', n.lat, 'lng', n.lng, 't', n.t, 'level', n.level,
-    'net', null, 'Rh', null, 'RhSrc', null, 'PAh', null, 'cause', n.cause, 'radarMmH', null,
+    'net', null, 'Rh', n.r3, 'RhSrc', case when n.r3 is not null then 'archive' end, 'PAh', n.pa_peak, 'cause', n.cause, 'radarMmH', null,
     'trust', 'trusted', 'evidence', 'press',
     'outlet', (select string_agg(distinct s ->> 'outlet', ', ') from jsonb_array_elements(n.sources) s))
   from news_ev n

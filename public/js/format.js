@@ -50,7 +50,7 @@ export function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 }
 
-const RH_SOURCES = { ecmwf: 'ECMWF', gfs: 'GFS', radar: 'radar', obs: 'thực đo' };
+const RH_SOURCES = { ecmwf: 'ECMWF', gfs: 'GFS', radar: 'radar', obs: 'thực đo', archive: 'ERA5' };
 
 // §18 firing history cell (cells.js cellLevel hit): "Ô này ngập 3/4 lần khi mưa 3h ≥ 12.0 mm (nguồn: radar, ECMWF)".
 // §19b: only evidence-backed events are counted; "(k đã kiểm chứng)" = trusted (thực đo / báo chí / xác nhận chéo).
