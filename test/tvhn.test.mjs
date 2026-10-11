@@ -59,3 +59,13 @@ test('isTvhnTitle accepts the daily HCMC bulletin titles only', () => {
   assert.ok(!isTvhnTitle('TIN TRIỀU CƯỜNG TRÊN SÔNG SÀI GÒN - RA NGÀY 08-10-2026'));
   assert.ok(!isTvhnTitle('BẢN TIN DỰ BÁO HẢI VĂN VÙNG BIỂN TP.HỒ CHÍ MINH 10 NGÀY TỚI - NGÀY 08-10-2026'));
 });
+
+test('real bulletin HCMC_TVHN_20261006.pdf: blank first-peak column keeps values in their slots', () => {
+  const { observed, forecast } = parseBulletin(pdfTextRuns(readFileSync(new URL('./fixtures/HCMC_TVHN_20261006.pdf', import.meta.url))), '2026-10-06');
+  assert.deepEqual(observed, [
+    { t: '2026-10-05T00:00:00+07:00', h: 1.1, kind: 'peak' },
+    { t: '2026-10-05T18:00:00+07:00', h: -1.42, kind: 'low' },
+  ]);
+  assert.equal(forecast.length, 20);
+  assert.deepEqual(forecast.at(-4), { t: '2026-10-10T16:30:00+07:00', h: 1.54, kind: 'peak' });
+});

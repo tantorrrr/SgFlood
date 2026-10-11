@@ -76,8 +76,22 @@ export function dateFromLabel(label, bulletinDate) {
   return `${y}-${pad(m)}-${pad(d)}`;
 }
 
+// Height column x (peak 1, peak 2, low 1, low 2); each is followed by its clock cell.
+const HEIGHT_X = [180, 267, 358, 451];
+
+// Row cells → 8 tokens, slotted by x so blank cells (e.g. the 06/10 bulletin with no first peak
+// column filled) become '-' instead of shifting the remaining values left.
 function valuesAt(runs, y) {
-  return runs.filter((r) => r.x > VALUE_MIN_X && Math.abs(r.y - y) < ROW_TOL).sort((a, b) => a.x - b.x).map((r) => r.t);
+  const cells = runs.filter((r) => r.x > VALUE_MIN_X && Math.abs(r.y - y) < ROW_TOL).sort((a, b) => a.x - b.x);
+  if (cells.length % 2) return cells.map((r) => r.t); // unpaired: let rowEvents reject it
+  const out = Array(8).fill('-');
+  for (let i = 0; i < cells.length; i += 2) {
+    const k = HEIGHT_X.reduce((b, x, j) => (Math.abs(cells[i].x - x) < Math.abs(cells[i].x - HEIGHT_X[b]) ? j : b), 0);
+    if (out[2 * k] !== '-') return cells.map((r) => r.t);
+    out[2 * k] = cells[i].t;
+    out[2 * k + 1] = cells[i + 1].t;
+  }
+  return out;
 }
 
 // runs → { observed, forecast } for Phú An. Throws when the layout is not recognised.
@@ -95,9 +109,16 @@ export function parseBulletin(runs, bulletinDate) {
   const labels = runs.filter((r) => r.x < LABEL_MAX_X && r.t.normalize('NFC').startsWith(STATION));
   const inGroup = (y) => groups.find((g) => y <= g[0].y + 8 && y >= g.at(-1).y - 8);
 
-  const obsLabel = labels.find((l) => !inGroup(l.y) && valuesAt(runs, l.y).length >= 6);
-  if (!obsLabel) throw new Error('observed Phú An row not found');
-  const observed = rowEvents(valuesAt(runs, obsLabel.y), addDays(bulletinDate, -1));
+  // The observed row is the out-of-block Phú An label whose cells parse to at least one peak
+  // (the rainfall table also has a Phú An label, with unrelated numbers on the same line).
+  let observed;
+  for (const l of labels) {
+    if (inGroup(l.y)) continue;
+    let ev;
+    try { ev = rowEvents(valuesAt(runs, l.y), addDays(bulletinDate, -1)); } catch { continue; }
+    if (ev.some((e) => e.kind === 'peak')) { observed = ev; break; }
+  }
+  if (!observed) throw new Error('observed Phú An row not found');
 
   const fcLabel = labels.find((l) => inGroup(l.y));
   if (!fcLabel) throw new Error('forecast Phú An block not found');

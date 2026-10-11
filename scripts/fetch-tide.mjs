@@ -78,7 +78,7 @@ function seedEvents(text) {
 
 function mergeEvents(...lists) {
   const map = new Map();
-  for (const e of lists.flat()) map.set(`${e.t}|${e.kind}`, e);
+  for (const e of lists.flat(2)) if (e?.t && e.kind) map.set(`${e.t}|${e.kind}`, e);
   return [...map.values()].sort((a, b) => Date.parse(a.t) - Date.parse(b.t));
 }
 
