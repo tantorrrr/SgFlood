@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-toi-295-duong-ngap-sau-nguoi-dan-chan-song-cuu-nha-185250529192855183.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-05-29T19:47:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "9b470c70ceb050c9cd27bc7d37897d6b63596371f5f4b4511a878a2f817f5bf1",
+  "length": 571
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Sinco",
+    "from": null,
+    "to": null,
+    "cross": "Hồ Học Lãm",
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2025-05-29T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Đường ngập, xe chết máy trong cơn mưa chiều tối nay 29.5"
+   },
+   "status": "resolved",
+   "recordId": "news-24a623f65e81"
+  },
+  {
+   "mention": {
+    "street": "Hồ Học Lãm",
+    "from": null,
+    "to": null,
+    "cross": "Kinh Dương Vương",
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2025-05-29T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Đường ngập, xe chết máy trong cơn mưa chiều tối nay 29.5"
+   },
+   "status": "resolved",
+   "recordId": "news-45473f632a11"
+  }
+ ]
+}

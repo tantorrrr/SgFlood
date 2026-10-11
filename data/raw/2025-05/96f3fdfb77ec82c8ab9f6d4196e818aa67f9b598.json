@@ -1,0 +1,55 @@
+{
+ "url": "https://thanhnien.vn/thu-duc-ngap-nang-sau-mua-lon-nguoi-dan-chiu-tran-2-lan-ngay-bom-nuoc-ca-dem-1852505292313092.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-05-30T06:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "85633b9d2fdeb1d0ca3f9294370043bb7494623d6af21ec78c709123316d1400",
+  "length": 2475
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Linh Đông",
+    "from": null,
+    "to": null,
+    "cross": "Lý Tế Xuyên",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-29T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "tại đường Linh Đông, Lý Tế Xuyên có nơi ngập hơn bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-3421cd1f28b2"
+  },
+  {
+   "mention": {
+    "street": "Lý Tế Xuyên",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Linh Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-05-29T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "tại đường Linh Đông, Lý Tế Xuyên có nơi ngập hơn bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-f345893a9067"
+  }
+ ]
+}

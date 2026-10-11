@@ -1,0 +1,130 @@
+{
+ "url": "https://nongnghiepmoitruong.vn/tphcm-hung-tran-mua-lich-su-khien-nhieu-noi-ngap-sau-d752467.html",
+ "outlet": "nongnghiepmoitruong.vn",
+ "publishedAt": "2025-05-10T17:20:33+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "0aad2a5c27e87e6b198df716df32ad93690d23f5e06595e60f403ba9755042d5",
+  "length": 4569
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Kha Vạn Cân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "có nơi ngập sâu tới nửa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-a023d6ede680"
+  },
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "có nơi ngập sâu tới nửa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-3773b5f59c16"
+  },
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "có nơi ngập sâu tới nửa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-dcbc49d5ae3b"
+  },
+  {
+   "mention": {
+    "street": "Lê Đức Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "ngập sâu khiến hàng loạt xe chết máy, người dân dắt bộ vật vã."
+   },
+   "status": "resolved",
+   "recordId": "news-98d924aed61b"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "ngập sâu khiến hàng loạt xe chết máy, người dân dắt bộ vật vã."
+   },
+   "status": "resolved",
+   "recordId": "news-cbeedad30a1f"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Ảnh Thủ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "ngập sâu khiến hàng loạt xe chết máy, người dân dắt bộ vật vã."
+   },
+   "status": "resolved",
+   "recordId": "news-f5e98bd0a7ba"
+  }
+ ]
+}

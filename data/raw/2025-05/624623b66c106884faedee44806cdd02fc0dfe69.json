@@ -1,0 +1,72 @@
+{
+ "url": "https://tuoitre.vn/tp-hcm-co-noi-mua-hon-200mm-cho-thu-duc-cong-bung-nhieu-duong-ngap-nuoc-20250510074857635.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-05-10T08:09:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "3c29493a8ef3e2f3de4dad473e96c426a1f2a41a0d634b8b54675a75c4369e51",
+  "length": 5294
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Kha Vạn Cân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Một số trường hợp cố vượt qua bị chết máy phải dẫn bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-ab1a421e15c9"
+  },
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Một số trường hợp cố vượt qua bị chết máy phải dẫn bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-c0d110a11e75"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": "Lê Văn Thọ",
+    "ward": "Gò Vấp",
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T08:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "Trên đường có chỗ ngập hơn nửa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-d85c9c3d7856"
+  }
+ ]
+}

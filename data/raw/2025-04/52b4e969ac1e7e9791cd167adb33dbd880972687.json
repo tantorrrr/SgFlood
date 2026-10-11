@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/tphcm-bat-ngo-hung-mua-xoi-xa-chieu-nay-den-toi-con-tuyen-duong-van-ngap-nuoc-185250423190514693.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-04-23T19:10:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a83f1f0de39a0db1ec35e41936e327433cc83c8739a318916f534b4a119072ef",
+  "length": 2061
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "số 1",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Hưng",
+    "oldDistrict": null,
+    "observedAt": "2025-04-23T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có đoạn nước ngập hơn nửa bánh xe khiến cho việc di chuyển của người dân giờ tan tầm trở nên khó khăn."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

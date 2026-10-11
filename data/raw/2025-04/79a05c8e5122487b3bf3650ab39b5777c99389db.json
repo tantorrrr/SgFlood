@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/pho-nha-giau-thao-dien-lai-ngap-lenh-lang-sau-con-mua-trai-mua-chieu-nay-185250410201048503.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-04-10T20:37:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "7cc0feaf8f804a70e4de983c5c034e0c02f56d8b68e7a09ccf424fc6521a6cb7",
+  "length": 2648
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": "Xuân Thủy",
+    "to": "Thái Lý",
+    "cross": null,
+    "ward": "Thảo Điền",
+    "oldDistrict": null,
+    "observedAt": "2025-04-10T17:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều người đi xe máy qua đây cũng không tránh khỏi cảnh xe bị chết máy, phải đẩy bộ khó khăn."
+   },
+   "status": "resolved",
+   "recordId": "news-53b237c154c6"
+  }
+ ]
+}

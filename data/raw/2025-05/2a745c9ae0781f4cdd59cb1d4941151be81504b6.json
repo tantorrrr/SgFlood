@@ -1,0 +1,128 @@
+{
+ "url": "https://vtcnews.vn/nhieu-tuyen-duong-tp-hcm-ngap-gan-lut-banh-xe-trong-mua-lon-ar942463.html",
+ "outlet": "vtcnews.vn",
+ "publishedAt": "2025-05-10T11:55:55+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "fd8d5127d4ed254d7ee8463ed6e43314fa5e2f9fa45cbfc23131fa054a77ad5b",
+  "length": 3073
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Sinco",
+    "from": null,
+    "to": null,
+    "cross": "Hồ Học Lãm",
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "đoạn ngập kéo dài hơn 200m khiến hàng loạt xe chết máy, người dân lội bì bõm trong dòng nước đục ngầu."
+   },
+   "status": "resolved",
+   "recordId": "news-5e94d8031720"
+  },
+  {
+   "mention": {
+    "street": "Lê Cơ",
+    "from": null,
+    "to": null,
+    "cross": "Kinh Dương Vương",
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Tình trạng tương tự xảy ra trên đường Lê Cơ với đoạn ngập hơn 100m."
+   },
+   "status": "unresolved",
+   "reason": "0 road pieces"
+  },
+  {
+   "mention": {
+    "street": "Phan Văn Hớn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "bị ngập cục bộ, nước ngập gần lút bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-30ed80e35a62"
+  },
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "bị ngập cục bộ, nước ngập gần lút bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-2f8854fc2085"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "bị ngập cục bộ, nước ngập gần lút bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-66fec2288bb2"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Thọ",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Văn Khối",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "bị ngập cục bộ, nước ngập gần lút bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-af0c0baab2e9"
+  }
+ ]
+}

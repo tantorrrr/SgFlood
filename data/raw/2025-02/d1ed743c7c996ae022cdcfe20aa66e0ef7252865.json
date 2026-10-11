@@ -1,0 +1,32 @@
+{
+ "url": "https://tuoitre.vn/ham-chui-nguyen-van-linh-ngap-sau-mua-lon-chu-dau-tu-dang-khan-truong-xu-ly-20250213093309609.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-02-13T10:06:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "01c91be928eabbf98900f9495b7313fd0c11d85af46fb213c6c406f93836eb63",
+  "length": 4377
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Hữu Thọ",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-02-13T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "ngập khoảng 30-40cm, kéo dài 50m, khiến xe cộ đi lại khó khăn, có xe hơi bị hư động cơ dừng lại ở đầu hầm."
+   },
+   "status": "resolved",
+   "recordId": "news-da8e0abb37d6"
+  }
+ ]
+}

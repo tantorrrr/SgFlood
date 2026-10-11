@@ -1,0 +1,146 @@
+{
+ "url": "https://tuoitre.vn/nguoi-dan-tp-thu-duc-bi-bom-thu-don-do-dac-sau-tran-mua-ngap-den-nua-nha-20250510122244085.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-05-10T13:01:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e2e38684c6010c4792284a3b40eb5a297aa02280ed30371613efc54deb640979",
+  "length": 6376
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": 55,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "với mực nước dao động từ 0,25m đến 0,55m."
+   },
+   "status": "resolved",
+   "recordId": "news-6cb452adf2d3"
+  },
+  {
+   "mention": {
+    "street": "Kha Vạn Cân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": 55,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "với mực nước dao động từ 0,25m đến 0,55m."
+   },
+   "status": "resolved",
+   "recordId": "news-81d55b713ffa"
+  },
+  {
+   "mention": {
+    "street": "Hồ Văn Tư",
+    "from": null,
+    "to": null,
+    "cross": "Kha Vạn Cân",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": 55,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "với mực nước dao động từ 0,25m đến 0,55m."
+   },
+   "status": "resolved",
+   "recordId": "news-7797480a9e00"
+  },
+  {
+   "mention": {
+    "street": "Hiệp Bình",
+    "from": null,
+    "to": null,
+    "cross": "Phạm Văn Đồng",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": 55,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "với mực nước dao động từ 0,25m đến 0,55m."
+   },
+   "status": "resolved",
+   "recordId": "news-be9f13e6d8b7"
+  },
+  {
+   "mention": {
+    "street": "Lê Thị Hoa",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": 55,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "với mực nước dao động từ 0,25m đến 0,55m."
+   },
+   "status": "resolved",
+   "recordId": "news-a165660c74c6"
+  },
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": 55,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "với mực nước dao động từ 0,25m đến 0,55m."
+   },
+   "status": "resolved",
+   "recordId": "news-cc28be4ea456"
+  },
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": 55,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "với mực nước dao động từ 0,25m đến 0,55m."
+   },
+   "status": "resolved",
+   "recordId": "news-089952a62262"
+  }
+ ]
+}

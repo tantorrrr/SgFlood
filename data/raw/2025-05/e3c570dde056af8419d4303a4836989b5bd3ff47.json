@@ -1,0 +1,32 @@
+{
+ "url": "https://dtinews.dantri.com.vn/print/20250510092302688.htm",
+ "outlet": "dtinews.dantri.com.vn",
+ "publishedAt": "2025-05-10T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d1315b46f360dc63917b27565d882f1a43b25c49905750553080145087e45e34",
+  "length": 1668
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Linh Tây",
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Duong Van Cam Street was inundated with water nearly a metre deep, rendering it completely impassable."
+   },
+   "status": "resolved",
+   "recordId": "news-e6f803be11fc"
+  }
+ ]
+}

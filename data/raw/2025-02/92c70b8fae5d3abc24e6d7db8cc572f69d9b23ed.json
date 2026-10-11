@@ -1,0 +1,32 @@
+{
+ "url": "https://tienphong.vn/ly-do-ham-chui-nguyen-van-linh-ngap-nang-sau-2-thang-thong-xe-post1716693.html",
+ "outlet": "tienphong.vn",
+ "publishedAt": "2025-02-13T11:39:05+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b2c9143a3363ec09f65cd2b85fe38445420c6c0de68e91320573501086ddac89",
+  "length": 5596
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Hữu Thọ",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-02-13T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "đoạn hầm bị ngập dài khoảng 50m, nước ngập sâu từ 30-40cm, các phương tiện di chuyển khó khăn qua khu vực."
+   },
+   "status": "resolved",
+   "recordId": "news-c0f5f56bdfac"
+  }
+ ]
+}

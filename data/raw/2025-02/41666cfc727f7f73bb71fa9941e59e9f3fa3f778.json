@@ -1,0 +1,32 @@
+{
+ "url": "https://nguoiquansat.vn/ham-chui-nguyen-van-linh-ngap-nang-sau-2-thang-thong-xe-198276.html",
+ "outlet": "nguoiquansat.vn",
+ "publishedAt": "2025-02-13T10:45:01+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "5e791e00157d49201af09ac0c3e04896d82c6498bed24d8ef70e63f18579d6af",
+  "length": 1338
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Hữu Thọ",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-02-13T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "đã xảy ra ngập nặng trong trận mưa trái mùa sáng 13/2 khiến giao thông tê liệt."
+   },
+   "status": "resolved",
+   "recordId": "news-e955022cfa7f"
+  }
+ ]
+}

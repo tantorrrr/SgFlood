@@ -1,0 +1,34 @@
+{
+ "url": "https://vietbao.vn/mua-lon-tren-150mm-tu-sang-o-tphcm-nhieu-tuyen-duong-ngap-nang-541842.html",
+ "outlet": "vietbao.vn",
+ "publishedAt": "2025-05-10T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "fa4d42b2879c8da011736d915e08285bb0c84c878fefc54b79215e79a85bc8e3",
+  "length": 2348
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đặng Thùy Trâm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Thạnh",
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước sâu gần lút bánh xe máy, khiến nhiều phương tiện chết máy, người dân phải dẫn bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-ecef21c97ffa"
+  }
+ ]
+}

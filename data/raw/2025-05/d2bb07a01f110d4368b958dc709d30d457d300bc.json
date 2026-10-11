@@ -1,0 +1,52 @@
+{
+ "url": "https://thanhnien.vn/mua-dac-biet-to-o-tphcm-sang-nay-nhieu-noi-ngap-sau-nuoc-chay-xiet-185250510084336642.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-05-10T09:02:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "380e2331662ab3403558a6a5b3b95f43e7ee570a14c4270a0bd0b070a76bc544",
+  "length": 1599
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Linh Đông",
+    "from": null,
+    "to": null,
+    "cross": "Lý Tế Xuyên",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có nơi nước ngập lên hơn bánh xe. Rồi tôi đẩy bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-17fb17562b6d"
+  },
+  {
+   "mention": {
+    "street": "Lý Tế Xuyên",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-05-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "rất đông người bị kẹt giữa dòng nước mà không thể di chuyển."
+   },
+   "status": "resolved",
+   "recordId": "news-ae75c38b057d"
+  }
+ ]
+}
