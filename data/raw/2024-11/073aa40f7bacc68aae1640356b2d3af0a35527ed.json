@@ -1,0 +1,34 @@
+{
+ "url": "https://tuoitre.vn/trieu-cuong-ram-thang-10-tran-bo-dan-tp-hcm-dap-bao-chong-ngap-20241116180949843.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2024-11-16T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:24+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "fb7f694ff1e61f836b558db7e69bac6a0eef0404b2ae739ab8151d90bcacbc5a",
+  "length": 3879
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bến Phú Định",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "16",
+    "oldDistrict": "Quận 8",
+    "observedAt": "2024-11-16T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nước ngập hơn nửa bánh xe. Nhiều xe chết máy, người dân phải lội nước dắt bộ."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

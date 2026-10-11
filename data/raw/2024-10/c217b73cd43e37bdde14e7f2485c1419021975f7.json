@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-nuoc-cuon-cuon-nhu-thac-o-thu-duc-18524101400012598.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2024-10-14T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "2663ad946b515ad1880e32816efb7c5030e10ec2052e650c4958382bbbeeefd8",
+  "length": 2097
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Linh Đông",
+    "from": null,
+    "to": null,
+    "cross": "Lý Tế Xuyên",
+    "ward": "Linh Đông",
+    "oldDistrict": null,
+    "observedAt": "2024-10-13T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "ở đường Linh Đông nhiều phương tiện lại bị ùn ứ."
+   },
+   "status": "resolved",
+   "recordId": "news-e0caf900f609"
+  },
+  {
+   "mention": {
+    "street": "Lý Tế Xuyên",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Linh Đông",
+    "oldDistrict": null,
+    "observedAt": "2024-10-13T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều người đi xe máy khi đến đây rất khó để điều khiển, thậm chí bị ngã vì dòng nước xiết."
+   },
+   "status": "resolved",
+   "recordId": "news-c59292a5e92f"
+  }
+ ]
+}

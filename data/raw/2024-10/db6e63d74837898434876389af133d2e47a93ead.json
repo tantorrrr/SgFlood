@@ -1,0 +1,45 @@
+{
+ "url": "https://tuoitre.vn/mua-ngap-duong-nguyen-gia-tri-d5-quan-binh-thanh-5-nam-moi-co-1-lan-20241015162756491.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2024-10-15T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "c80f88f7ffae93a8139ac3fc905de03d103247f78efe0efaa1adef79b19cb67c",
+  "length": 4986
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Gia Trí",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Bình Thạnh",
+    "observedAt": "2024-10-08T15:00:00+07:00",
+    "depthCm": 25,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Đường Nguyễn Gia Trí ngập 0,25m, dài 180m trong 165 phút"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "D5",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Bình Thạnh",
+    "observedAt": "2024-10-08T15:00:00+07:00",
+    "depthCm": 15,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Cụ thể hơn, đường D5 ngập 0,15m, dài 300m trong 125 phút."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dat-dinh-hang-loat-tuyen-duong-tphcm-lai-thanh-song-185241018221756017.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2024-10-18T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "b08a7c66486301e5fc2bb4ccc441a392d84539981af980d0ac4a0e67306d28b5",
+  "length": 2260
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận Tây",
+    "oldDistrict": null,
+    "observedAt": "2024-10-18T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Mực nước ở đây ngập quá nửa bánh xe, có đoạn lên hơn bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-bb2a39e48d95"
+  },
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": "Phú Thuận",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-18T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Mực nước ở đây có nơi lên đến bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-47031ac2de4f"
+  }
+ ]
+}

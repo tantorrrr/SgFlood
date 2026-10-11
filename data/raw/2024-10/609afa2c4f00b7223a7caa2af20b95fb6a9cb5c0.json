@@ -1,0 +1,90 @@
+{
+ "url": "https://vnexpress.net/nha-dan-bi-co-lap-ngay-trieu-cuong-o-tp-hcm-cao-nhat-tu-dau-nam-4805869.html",
+ "outlet": "vnexpress.net",
+ "publishedAt": "2024-10-18T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "90aa349186b1ba8c9bb24f32f6869d2c66399804455f23d6ef1eb934b1d6c4ca",
+  "length": 2817
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Gò Ô Môi",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-18T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Triều cường khiến nhiều đường ở quận 7 mênh mông nước từ 16h, nhiều đoạn ngập gần nửa bánh xe."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Quỳ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-18T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Nước dâng nửa bánh khiến hàng loạt xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-059ba40b891c"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Nhà Bè",
+    "observedAt": "2024-10-18T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "Tại đường Nguyễn Bình, huyện Nhà Bè, nước triều dâng tới gần đầu gối, nhiều người phải dừng xe"
+   },
+   "status": "resolved",
+   "recordId": "news-1e7e2434c841"
+  },
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-18T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Đường Huỳnh Tấn Phát vẫn kẹt xe kéo dài do triều cường đúng giờ cao điểm."
+   },
+   "status": "resolved",
+   "recordId": "news-e0f60869e763"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/hem-tphcm-nhung-ngay-trieu-cuong-dang-cao-song-chung-voi-ngap-cho-noi-xuat-hien-185241019101954129.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2024-10-19T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "44e43b8b8e8b48cf4350f2bb938cea8e862bed19b53bf563c71f73000085dbb0",
+  "length": 3983
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-18T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Mỗi lần chạy ngang qua đây đều phải rồ hết ga, có khi tắt máy giữa chừng."
+   },
+   "status": "resolved",
+   "recordId": "news-142846f8608c"
+  }
+ ]
+}

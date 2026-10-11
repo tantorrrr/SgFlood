@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dang-cao-gio-tan-tam-nhieu-tuyen-duong-o-tphcm-bien-thanh-song-185241017182257793.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2024-10-19T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "1fc7a82e9972253022c026122b941e2d0ffde4e718eae163bdfeee8507994071",
+  "length": 1936
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-17T17:00:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "both",
+    "quote": "Đoạn ngập ở đây kéo dài khoảng vài trăm mét, mực nước lần này lên đến nửa mét khiến người đi đường vất vả."
+   },
+   "status": "resolved",
+   "recordId": "news-1f1d217fba44"
+  },
+  {
+   "mention": {
+    "street": "Phạm Hùng",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Văn Linh",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-17T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "both",
+    "quote": "Đoạn ngập và kẹt từ cầu Phạm Hùng kéo dài đến đường Nguyễn Văn Linh"
+   },
+   "status": "resolved",
+   "recordId": "news-0793ac29a47c"
+  }
+ ]
+}

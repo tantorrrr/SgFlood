@@ -1,0 +1,34 @@
+{
+ "url": "https://vnexpress.net/duong-ket-cung-nha-ngap-sau-mua-lon-o-tp-hcm-4801703.html",
+ "outlet": "vnexpress.net",
+ "publishedAt": "2024-10-08T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "779ae9d9e4d5572e13fc9aecd8aed94e230363048b5dc84d68ef5ae67228205c",
+  "length": 2910
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thảo Điền",
+    "oldDistrict": null,
+    "observedAt": "2024-10-08T14:30:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Tại đường Quốc Hương, phường Thảo Điền, TP Thủ Đức, nước ngập nửa mét, nhiều xe phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-318d1fff263b"
+  }
+ ]
+}

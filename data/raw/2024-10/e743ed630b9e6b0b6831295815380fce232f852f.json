@@ -1,0 +1,32 @@
+{
+ "url": "https://tuoitre.vn/quan-7-ngap-ca-met-vi-trieu-cuong-nguoi-phai-o-khach-san-nguoi-cong-con-di-hoc-20241018082948916.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2024-10-18T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:49+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "cf1104ee37a927c32df10e7657128a2afc62afa83dd4003443739ef3511cde61",
+  "length": 4863
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bùi Văn Ba",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2024-10-18T07:00:00+07:00",
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "Đến 7h sáng, nước ngập sâu cả mét."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

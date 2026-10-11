@@ -1,0 +1,93 @@
+{
+ "url": "https://thanhnien.vn/tphcm-co-mua-rat-to-gio-lon-hiem-co-ngay-cuoi-nam-nguoi-te-nga-xe-chet-may-hang-loat-185241227194446272.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2024-12-27T12:00:00+07:00",
+ "fetchedAt": "2026-10-11T18:35:21+07:00",
+ "extractor": "manual-responses",
+ "text": {
+  "sha256": "5e619baeabe25fd297faf2f7407c81acd868c849cf48f5106eb7a05c665347cd",
+  "length": 887
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2024-12-27T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập ngang bánh xe máy, nhiều người phải bì bõm lội nước dắt xe về nhà"
+   },
+   "status": "resolved",
+   "recordId": "news-a1b043b50b96"
+  },
+  {
+   "mention": {
+    "street": "Lê Đức Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2024-12-27T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập ngang bánh xe máy, nhiều người phải bì bõm lội nước dắt xe về nhà"
+   },
+   "status": "resolved",
+   "recordId": "news-018e15755eb1"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2024-12-27T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập ngang bánh xe máy, nhiều người phải bì bõm lội nước dắt xe về nhà"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2024-12-27T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập ngang bánh xe máy, nhiều người phải bì bõm lội nước dắt xe về nhà"
+   },
+   "status": "resolved",
+   "recordId": "news-095e5c5c24b0"
+  }
+ ]
+}
