@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/trieu-cuong-dang-cao-co-the-gay-ngap-o-tphcm-ngay-ram-thang-9-185241015132225363.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-15T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "b339ee8a19d3121bb7a5c86a2ddaacaec4aa3a63a5064ea8f36efb0c332b958f",
   "length": 3458

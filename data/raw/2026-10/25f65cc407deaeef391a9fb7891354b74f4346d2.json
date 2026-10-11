@@ -25,8 +25,8 @@
     "cause": "rain",
     "quote": "tại các tuyến Nguyễn Gia Trí, Ung Văn Khiêm, D5…, nước dâng cao khiến nhiều phương tiện chết máy."
    },
-   "status": "unresolved",
-   "reason": "no cross street or stretch"
+   "status": "resolved",
+   "recordId": "news-eff8c10bbfa3"
   },
   {
    "mention": {
@@ -63,8 +63,8 @@
     "cause": "rain",
     "quote": "tại các tuyến Nguyễn Gia Trí, Ung Văn Khiêm, D5…, nước dâng cao khiến nhiều phương tiện chết máy."
    },
-   "status": "unresolved",
-   "reason": "no cross street or stretch"
+   "status": "resolved",
+   "recordId": "news-c01d6c0e5489"
   }
  ]
 }

@@ -2,8 +2,8 @@
  "url": "https://tuoitre.vn/hom-nay-trieu-cuong-tp-hcm-dat-dinh-lich-su-1-8m-duong-nao-se-ngap-20241018122926389.htm",
  "outlet": "tuoitre.vn",
  "publishedAt": "2024-10-18T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "17bf996022655c3842be3557853ce113b9fa77ecd264c81f31f8f2e82a8a9adf",
   "length": 3658

@@ -1,9 +1,9 @@
 {
  "url": "https://vnexpress.net/duong-ket-cung-nha-ngap-sau-mua-lon-o-tp-hcm-4801703.html",
  "outlet": "vnexpress.net",
- "publishedAt": "2024-10-08T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "publishedAt": "2024-10-08T16:42:03+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "779ae9d9e4d5572e13fc9aecd8aed94e230363048b5dc84d68ef5ae67228205c",
   "length": 2910

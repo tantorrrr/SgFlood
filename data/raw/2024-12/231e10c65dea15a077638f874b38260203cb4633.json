@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/ngap-nuoc-duong-tran-xuan-soan-dan-khong-the-nang-nha-duoc-nua-185241202152515731.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-12-03T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:21+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "7d2ce1e847b27113ac6fe8483d3a9823a5cd253224cd0ade67d0633cc6ac75a8",
   "length": 3636

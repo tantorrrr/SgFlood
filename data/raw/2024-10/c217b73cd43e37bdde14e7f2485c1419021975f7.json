@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/mua-lon-o-tphcm-nuoc-cuon-cuon-nhu-thac-o-thu-duc-18524101400012598.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-14T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "2663ad946b515ad1880e32816efb7c5030e10ec2052e650c4958382bbbeeefd8",
   "length": 2097

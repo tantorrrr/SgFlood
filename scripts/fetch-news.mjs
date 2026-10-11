@@ -7,10 +7,13 @@
 // --ignore-seen (re-process articles already in the seen-cache; their records replace earlier ones with the same id) ·
 // --url <article> (repeatable: process these articles directly instead of scanning RSS, e.g. a link someone shared) ·
 // --urls-file <file> (same, one URL per line, `#` comments; backfill: one road-network load, one merged write) ·
+// --from-cand <dir> (repeatable: re-process the article JSON saved in <dir>/cand[2]/ instead of fetching pages; the
+// extraction is read from <dir>/resp unless --llm-responses is given; implies --ignore-seen) ·
 // --enrich-weather (only fill per-record `weather` of the existing file, then exit; see scripts/lib/news-weather.mjs).
 import { existsSync } from 'node:fs';
 import { parseArgs } from 'node:util';
-import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { BBOX, CACHE, HEADERS, ROOT } from './lib/osm.mjs';
 import { publishedFrom, FEEDS, parseFeed, isCandidate, articleText, isHeavy, buildNetwork, resolveMention, toRecord, dedupe, withinDays } from './lib/news.mjs';
 import { enrichWeather, parseUrlList, parseUrlDates } from './lib/news-weather.mjs';
@@ -23,7 +26,7 @@ const MINOR = new URL('public/data/minor/', ROOT);
 const SEEN = new URL('news-seen.json', CACHE);
 const WEATHER_CACHE = new URL('news-weather.json', CACHE);
 const TIDE = new URL('public/data/tide-phuan.json', ROOT);
-const { values: OPTS } = parseArgs({ options: { hours: { type: 'string', default: '24' }, 'dump-candidates': { type: 'string' }, 'llm-responses': { type: 'string' }, 'ignore-seen': { type: 'boolean', default: false }, url: { type: 'string', multiple: true }, 'urls-file': { type: 'string' }, 'enrich-weather': { type: 'boolean', default: false } } });
+const { values: OPTS } = parseArgs({ options: { hours: { type: 'string', default: '24' }, 'dump-candidates': { type: 'string' }, 'llm-responses': { type: 'string' }, 'ignore-seen': { type: 'boolean', default: false }, url: { type: 'string', multiple: true }, 'urls-file': { type: 'string' }, 'from-cand': { type: 'string', multiple: true }, 'enrich-weather': { type: 'boolean', default: false } } });
 const HOURS = Number(OPTS.hours);
 const WINDOW_MS = HOURS * 3_600_000;
 const iso = (ms) => new Date(ms + 7 * 3_600_000).toISOString().replace(/\.\d+Z$/, '+07:00');
@@ -58,6 +61,17 @@ async function directArticle(url, dateOverride) {
   if (published == null) throw new Error('no publish date found (add "<url> <YYYY-MM-DD>" in the urls file to set it)');
   const host = new URL(url).hostname.replace(/^www\./, '');
   return { url, outlet: host, publishedAt: iso(published), text: articleText(html) };
+}
+
+// Backfill working dir: cand/ (+ cand2/) hold {url,outlet,publishedAt,text}; resp/ the matching extractions.
+async function candArticles(dir) {
+  const out = [];
+  for (const sub of ['cand', 'cand2']) {
+    const d = join(dir, sub);
+    if (!existsSync(d)) continue;
+    for (const f of (await readdir(d)).filter((n) => n.endsWith('.json'))) out.push({ ...JSON.parse(await readFile(join(d, f), 'utf8')), respDir: join(dir, 'resp') });
+  }
+  return out;
 }
 
 async function loadNetwork() {
@@ -110,7 +124,11 @@ async function main() {
   const direct = [...new Set([...(OPTS.url ?? []), ...fromFile])];
   let scanned = 0;
   let candidates = [];
-  if (direct.length) {
+  const fromCand = OPTS['from-cand'] ?? [];
+  if (fromCand.length) {
+    for (const dir of fromCand) articles.push(...(await candArticles(dir)));
+    console.log(`Cand dir(s): ${fromCand.length} → ${articles.length} article(s) (no fetch)`);
+  } else if (direct.length) {
     console.log(`Direct article(s): ${direct.length} (RSS scan skipped)`);
     for (const url of direct) {
       try {
@@ -143,7 +161,8 @@ Dumped ${articles.length} candidate(s) to ${dumpDir} (no LLM call, nothing else 
   }
   const responsesDir = OPTS['llm-responses'];
   const apiKey = process.env.ANTHROPIC_API_KEY;
-  if (responsesDir) console.log(`LLM stage: reading responses from ${responsesDir} (no API call)`);
+  const offline = responsesDir || fromCand.length;
+  if (offline) console.log(`LLM stage: reading responses from ${responsesDir ?? 'each <dir>/resp'} (no API call)`);
   else if (!apiKey) {
     console.log('\nANTHROPIC_API_KEY is not set → stopping after the RSS/keyword stage (no LLM call, nothing written).');
     return;
@@ -158,7 +177,7 @@ Dumped ${articles.length} candidate(s) to ${dumpDir} (no LLM call, nothing else 
   for (const a of articles) {
     let res;
     try {
-      res = responsesDir ? await readMentions(a, responsesDir) : await extractMentions(a, { apiKey });
+      res = offline ? await readMentions(a, responsesDir ?? a.respDir) : await extractMentions(a, { apiKey });
       if (!res) {
         console.log(`  no response file for ${a.url} → skipped`);
         continue;
@@ -180,7 +199,7 @@ Dumped ${articles.length} candidate(s) to ${dumpDir} (no LLM call, nothing else 
       if (o.status === 'resolved') records.push(toRecord(m, resolveMention(m, net, BBOX), a));
       else console.warn(`  unresolved "${m.street}" (${[m.from, m.to, m.cross].filter(Boolean).join(' / ') || '—'}) ${a.url}: ${o.reason}`);
     }
-    await writeAudit(ROOT, a, auditEntry(a, outcomes, { fetchedAt: iso(now), extractor: responsesDir ? 'manual-responses' : MODEL }));
+    await writeAudit(ROOT, a, auditEntry(a, outcomes, { fetchedAt: iso(now), extractor: offline ? 'manual-responses' : MODEL }));
   }
 
   const prev = await readJson(OUT, { reports: [] });

@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/mua-lon-o-tphcm-ho-sau-gan-2-met-xuat-hien-tren-duong-au-co-18524100919550501.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-09T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "fadbdf24973dc804bf82c8f5643c62425cc767651480ed10d97327b04b762d3d",
   "length": 1900

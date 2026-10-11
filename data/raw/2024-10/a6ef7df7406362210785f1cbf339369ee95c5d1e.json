@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/met-moi-vi-to-hop-mua-lon-trieu-cuong-185241016220504118.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-17T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "ffbd020cd4c5967c68453ccd563af01c71569bd28d0aa503e50da639478f1df6",
   "length": 6395

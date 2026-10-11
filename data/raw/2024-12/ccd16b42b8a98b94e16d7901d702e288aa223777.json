@@ -2,8 +2,8 @@
  "url": "https://tuoitre.vn/cai-tao-he-thong-thoat-nuoc-duong-ket-noi-tan-son-nhat-tung-ngap-qua-dau-goi-20241230103126237.htm",
  "outlet": "tuoitre.vn",
  "publishedAt": "2024-12-30T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:21+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "2e0909542640bc963df52b482d564ae68a0570aecb15234398c4300b5eb53f6b",
   "length": 4023

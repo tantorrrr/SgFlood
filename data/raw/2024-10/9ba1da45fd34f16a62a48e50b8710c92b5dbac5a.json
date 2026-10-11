@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/nha-ngap-nuoc-suot-6-tieng-sau-tran-mua-lon-don-dep-toi-tan-nua-dem-185241008223740042.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-09T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "fd1f13d07ffbab7b9aba28cada9daf13ad3221c617fef2027f6b3db92cbcf5f8",
   "length": 908

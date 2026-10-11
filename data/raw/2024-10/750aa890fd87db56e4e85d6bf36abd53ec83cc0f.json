@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/hem-tphcm-nhung-ngay-trieu-cuong-dang-cao-song-chung-voi-ngap-cho-noi-xuat-hien-185241019101954129.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-19T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "44e43b8b8e8b48cf4350f2bb938cea8e862bed19b53bf563c71f73000085dbb0",
   "length": 3983

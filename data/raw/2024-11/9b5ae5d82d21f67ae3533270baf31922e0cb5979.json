@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/bay-chi-chit-tren-duong-lo-lu-nguoi-dan-chi-dat-bo-khong-dam-chay-xe-185241115030827724.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-11-18T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:24+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "df57a715f100c04eb4e33f97899efd86eecf59a88f9e091a05042225ba743d26",
   "length": 2099

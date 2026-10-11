@@ -2,8 +2,8 @@
  "url": "https://tuoitre.vn/mua-ngap-duong-nguyen-gia-tri-d5-quan-binh-thanh-5-nam-moi-co-1-lan-20241015162756491.htm",
  "outlet": "tuoitre.vn",
  "publishedAt": "2024-10-15T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "c80f88f7ffae93a8139ac3fc905de03d103247f78efe0efaa1adef79b19cb67c",
   "length": 4986

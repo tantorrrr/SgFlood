@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/trieu-cuong-dang-cao-gio-tan-tam-nhieu-tuyen-duong-o-tphcm-bien-thanh-song-185241017182257793.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-19T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "1fc7a82e9972253022c026122b941e2d0ffde4e718eae163bdfeee8507994071",
   "length": 1936

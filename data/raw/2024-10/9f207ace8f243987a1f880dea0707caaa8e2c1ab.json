@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/hem-ngap-u-dong-khong-thong-thoat-nuoc-ban-quan-ly-du-an-thu-duc-noi-gi-185241009222444327.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-12T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "00818fc8cce917397f7170528cc1d46061d5c2b72a7541af8d717e9964c29293",
   "length": 2489

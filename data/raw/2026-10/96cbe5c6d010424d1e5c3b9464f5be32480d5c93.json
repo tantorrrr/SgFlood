@@ -25,8 +25,8 @@
     "cause": "rain",
     "quote": "sau khoảng 30 phút mưa lớn, nước nhanh chóng dâng cao, khiến người dân phải dắt xe qua đoạn ngập."
    },
-   "status": "unresolved",
-   "reason": "no cross street or stretch"
+   "status": "resolved",
+   "recordId": "news-d9e3c5bc56b5"
   },
   {
    "mention": {
@@ -44,8 +44,8 @@
     "cause": "rain",
     "quote": "nhiều tuyến đường như D5, Nguyễn Gia Trí, Hoàng Văn Thụ ngập nặng, giao thông ùn tắc."
    },
-   "status": "unresolved",
-   "reason": "no cross street or stretch"
+   "status": "resolved",
+   "recordId": "news-1b182df284a0"
   },
   {
    "mention": {

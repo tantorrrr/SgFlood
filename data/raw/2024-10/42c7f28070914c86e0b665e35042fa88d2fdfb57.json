@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/mua-lon-nhieu-nguoi-hoang-hon-khi-duong-ngap-hon-banh-xe-o-tphcm-185241004161829885.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-04T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "9f4b95c3964e4e8fd375d7ee99d706a1550d75666f5b3aa420b52b6523e368de",
   "length": 599

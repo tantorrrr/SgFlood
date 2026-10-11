@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/tphcm-mua-lon-giong-set-am-am-185241003111035963.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-03T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "3d1b02332f88335d05cb12fff4e90fd9928d65d44afd3201662ec40e643fadc1",
   "length": 1203

@@ -2,8 +2,8 @@
  "url": "https://tuoitre.vn/mua-ca-dem-den-chieu-hom-sau-duong-ba-trieu-o-huyen-hoc-mon-van-con-ngap-20241021160654842.htm",
  "outlet": "tuoitre.vn",
  "publishedAt": "2024-10-21T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "a7a17983976cdd49253b9933d84680e416cca1982f9f45fe2101c62c308725e1",
   "length": 4468

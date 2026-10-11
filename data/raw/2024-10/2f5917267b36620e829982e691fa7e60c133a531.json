@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/mua-lon-nhieu-tuyen-duong-tai-tpdong-hoi-ngap-sau-185241021094249284.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-21T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "6a5499f2db800c30ad92b2a93c11153a8ad0354a5222e3daa76cce3793a6ffa2",
   "length": 982

@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/tphcm-de-phong-trieu-cuong-mua-lon-gay-ngap-trong-4-ngay-toi-185241018161804161.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-19T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "91ca0fb7475dba1ebd06615fe4a95bc7c6aad85d7cc341bf7609c8e23dca5f15",
   "length": 2433

@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/trieu-cuong-dat-dinh-hang-loat-tuyen-duong-tphcm-lai-thanh-song-185241018221756017.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-18T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "b08a7c66486301e5fc2bb4ccc441a392d84539981af980d0ac4a0e67306d28b5",
   "length": 2260

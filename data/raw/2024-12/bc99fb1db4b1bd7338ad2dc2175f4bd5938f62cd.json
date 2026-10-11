@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/tphcm-co-mua-rat-to-gio-lon-hiem-co-ngay-cuoi-nam-nguoi-te-nga-xe-chet-may-hang-loat-185241227194446272.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-12-27T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:21+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "5e619baeabe25fd297faf2f7407c81acd868c849cf48f5106eb7a05c665347cd",
   "length": 887
@@ -66,8 +66,8 @@
     "cause": "rain",
     "quote": "nước ngập ngang bánh xe máy, nhiều người phải bì bõm lội nước dắt xe về nhà"
    },
-   "status": "unresolved",
-   "reason": "no cross street or stretch"
+   "status": "resolved",
+   "recordId": "news-8db5cfa8eb03"
   },
   {
    "mention": {

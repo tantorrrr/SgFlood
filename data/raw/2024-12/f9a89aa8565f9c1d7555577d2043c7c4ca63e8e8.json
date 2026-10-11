@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/trong-mua-nang-tphcm-lai-xuat-hien-mua-to-gan-70-mm-185241227183724363.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-12-27T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:21+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "77f38bce60fedf002f8457db319116857d4c2968014f00ee99804ba1b5464680",
   "length": 1574

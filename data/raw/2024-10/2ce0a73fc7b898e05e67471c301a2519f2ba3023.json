@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/ngap-lien-mien-vi-trieu-cuong-nguoi-dan-can-rang-lau-don-nha-cua-tat-nuoc-nhu-com-bua-18524101919584297.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-20T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "922afe47b6a14fcfa6327fc367f34446a643324652e838f5c3f8f33fa9d1ce71",
   "length": 1485

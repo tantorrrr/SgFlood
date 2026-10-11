@@ -2,8 +2,8 @@
  "url": "https://tuoitre.vn/hai-hem-bi-ngap-ca-met-o-quan-7-se-duoc-nang-cap-20241108143147638.htm",
  "outlet": "tuoitre.vn",
  "publishedAt": "2024-11-08T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:24+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "8c4c78d2d65e96fec9aeb36875a466922f2c31e8fa62d5ada17908cf931f2119",
   "length": 4682

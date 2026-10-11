@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/3-ngay-lien-cu-mua-o-tphcm-la-duong-lai-ngap-trong-bien-nuoc-185241010172731498.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-10T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "1cc8e8273a6e5f32e9580424b200cf813904f773fa67844104aa118ce5d0fc02",
   "length": 620

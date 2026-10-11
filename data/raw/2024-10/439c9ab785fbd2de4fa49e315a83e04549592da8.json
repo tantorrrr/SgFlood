@@ -2,8 +2,8 @@
  "url": "https://thanhnien.vn/nhieu-tuyen-duong-o-tphcm-ngap-do-cong-nho-185241010224031132.htm",
  "outlet": "thanhnien.vn",
  "publishedAt": "2024-10-11T12:00:00+07:00",
- "fetchedAt": "2026-10-11T18:35:49+07:00",
- "extractor": "manual-responses",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
  "text": {
   "sha256": "8aa0043a7b85b5c294b500bdcc27c859853ea35f08373a5322f2b3c9406232c2",
   "length": 1712
