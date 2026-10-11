@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/csgt-tphcm-loi-nuoc-giup-nguoi-dan-qua-vung-ngap-do-trieu-cuong-185251023234844008.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-10-24T06:30:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "bb2e941d24a86e4573452c7f9be7bbd564893f311d90f245ce8fc860c8440e0b",
+  "length": 1968
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Lương Bằng",
+    "from": null,
+    "to": null,
+    "cross": "Hoàng Quốc Việt",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Giữa dòng nước ngập, các phương tiện di chuyển chậm chạp, một số xe chết máy giữa dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-def4f0a00a41"
+  }
+ ]
+}

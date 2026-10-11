@@ -1,0 +1,53 @@
+{
+ "url": "https://vietnamnet.vn/trieu-cuong-dang-ngap-hem-cut-nguoi-dan-tphcm-song-canh-ke-do-cho-nuoc-rut-2455310.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-10-22T20:39:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "68cd73f87e440669571bc08c84448ffde38e9e6f94d6cd498145685f787cd0d7",
+  "length": 1726
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-10-22T16:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Không ít xe chết máy giữa chừng, người điều khiển phải xuống dắt bộ, lội bì bõm trong dòng nước ngập ngang bắp chân."
+   },
+   "status": "resolved",
+   "recordId": "news-d41f4b41e817"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Lương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-22T16:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Tan ca, ông đã cố tránh tuyến đường Lê Văn Lương vì ngập nặng nhưng xe vẫn chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-89cf92479aff"
+  }
+ ]
+}

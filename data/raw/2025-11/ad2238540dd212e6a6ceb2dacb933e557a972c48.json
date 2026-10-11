@@ -1,0 +1,54 @@
+{
+ "url": "https://tuoitre.vn/nhieu-nguoi-dan-tp-hcm-uot-nhep-gio-tan-tam-du-troi-khong-mua-20251120181049793.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-20T19:31:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b43b92d7efeb2c2df3706d3e9a915ff09869f6c6084fc739d20a67ef755ee334",
+  "length": 3640
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Thị Thập",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-20T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Trên đường Nguyễn Văn Linh đoạn giao với đường Nguyễn Thị Thập khoảng 200m, nước ngập cao nửa bánh xe ở làn xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-172b8c621b1f"
+  },
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-20T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Trên đường Phạm Hữu Lầu, nước ngập đúng giờ tan tầm gây ùn ứ cục bộ. Có nơi nước ngập hơn nửa bánh xe"
+   },
+   "status": "resolved",
+   "recordId": "news-25a081e82b75"
+  }
+ ]
+}

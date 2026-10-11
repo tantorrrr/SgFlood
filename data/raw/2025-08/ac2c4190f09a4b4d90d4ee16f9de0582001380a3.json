@@ -1,0 +1,74 @@
+{
+ "url": "https://vtv.vn/mot-so-tuyen-duong-o-tp-ho-chi-minh-ngap-sau-sau-mua-lon-100250811071044839.htm",
+ "outlet": "vtv.vn",
+ "publishedAt": "2025-08-11T09:43:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "ab9b41de241405beccacfd67b0f00f56e1b9c12972cbd22c28ebea592b13f1ce",
+  "length": 1757
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đặng Thị Rành",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-10T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có nơi nước ngập hơn nửa bánh xe, khiến nhiều phương tiện bị chết máy, người dân phải bì bõm dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-e50b6bbf5c34"
+  },
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-10T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có nơi nước ngập hơn nửa bánh xe, khiến nhiều phương tiện bị chết máy, người dân phải bì bõm dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-b308909f04bb"
+  },
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Khánh",
+    "oldDistrict": null,
+    "observedAt": "2025-08-10T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "toàn bộ khu vực ngập sâu khoảng 300 m, nước mấp mé nửa bánh xe"
+   },
+   "status": "resolved",
+   "recordId": "news-c6ce181d3110"
+  }
+ ]
+}

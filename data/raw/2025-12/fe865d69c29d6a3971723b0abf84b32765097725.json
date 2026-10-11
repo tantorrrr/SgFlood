@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dat-dinh-toi-nay-512-nhieu-tuyen-duong-khu-nam-tphcm-ngap-nhu-song-185251205191802036.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-12-05T19:33:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "ae09db9396eb87afc1744f0a6833d1ec7f99904611ab689a219a93b98e609d62",
+  "length": 1390
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Mỹ",
+    "oldDistrict": null,
+    "observedAt": "2025-12-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Nhiều nơi nước ngập cao gần bánh xe máy, người dân di chuyển hết sức khó khăn."
+   },
+   "status": "resolved",
+   "recordId": "news-ac7d07b3b982"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Lương Bằng",
+    "from": null,
+    "to": null,
+    "cross": "Hoàng Quốc Việt",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-12-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Giao thông tại khu vực này bị ùn ứ vì nước ngập dù lực lượng CSGT đã túc trực, điều tiết phương tiện đi lại."
+   },
+   "status": "resolved",
+   "recordId": "news-7358fd6c24c7"
+  }
+ ]
+}

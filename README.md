@@ -194,3 +194,9 @@ Ngưỡng triều chưa hiệu chỉnh với độ sâu ngập thực. Mức: < 
 - `public/_headers`: cache dài cho `roads.json` và `data/minor/*`; code, `config.js` và dữ liệu cập nhật hằng ngày luôn revalidate (file không có hash).
 - Supabase → Authentication → URL Configuration: thêm domain `*.pages.dev` (hoặc domain riêng).
 - Dữ liệu hằng ngày: `.github/workflows/daily-data.yml` (10:30 giờ VN, chạy tay được qua *Run workflow*) chạy `fetch:tide`, `fetch:news`, `enrich` rồi commit `public/data/tide-phuan.json` và `news-floods.json`. Secrets cần thêm: `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` (thiếu thì bước tương ứng bỏ qua). `data/cache` được giữ giữa các lần chạy bằng `actions/cache`.
+
+## Audit dữ liệu crawl báo chí
+
+- `data/raw/YYYY-MM/<sha1(url)>.json` (có trong repo): URL, báo, ngày đăng/crawl, SHA-256 + độ dài văn bản bài, kết quả bóc tách (mention + trích ≤ 25 chữ) và số phận từng mention trong pipeline (`resolved` + id điểm / `unresolved` + lý do / `not_heavy`).
+- `data/raw-text/YYYY-MM/<sha1>.txt` (gitignore, chỉ trên máy chạy cron): toàn văn bài để đọc lại khi audit. Không commit vì repo public và nội dung thuộc bản quyền của báo.
+- `fetch-news` tự ghi cả hai mỗi lần chạy. Dữ liệu backfill cũ nhập bằng `node scripts/import-audit.mjs <thư mục có cand/ + resp/>`.

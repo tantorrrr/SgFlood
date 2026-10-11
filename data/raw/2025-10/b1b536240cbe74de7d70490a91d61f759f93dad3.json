@@ -1,0 +1,52 @@
+{
+ "url": "https://vnexpress.net/giao-thong-roi-loan-trong-mua-ngap-o-tp-hcm-4948989.html",
+ "outlet": "vnexpress.net",
+ "publishedAt": "2025-10-08T18:55:50+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "910201ac36f18d054ba6a502666f2bc64401c5b548b266688d749d7d6ab4c77c",
+  "length": 2593
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đỗ Xuân Hợp",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "Ở đoạn nước dâng cao hơn nửa mét, xe bị chết máy hàng loạt."
+   },
+   "status": "resolved",
+   "recordId": "news-7e31129faa9b"
+  },
+  {
+   "mention": {
+    "street": "Điện Biên Phủ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "both",
+    "quote": "hàng nghìn ôtô, xe máy xếp hàng dài khoảng một km."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

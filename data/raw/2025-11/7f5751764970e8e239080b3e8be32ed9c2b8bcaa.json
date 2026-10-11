@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/thoi-tiet-tphcm-hom-nay-611-trieu-cuong-bien-duong-thanh-song-co-nguoi-nga-song-soai-185251106085817982.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-06T09:15:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "c06b31fbab2e55bb4e7baa458e5582e22735780501ee939f8129fe516c8e58c2",
+  "length": 2361
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Lương Bằng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "phủ kín mặt đường Nguyễn Lương Bằng, có đoạn ngập sâu quá nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-0042817ae77b"
+  }
+ ]
+}

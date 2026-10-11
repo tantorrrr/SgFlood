@@ -1,0 +1,33 @@
+{
+ "url": "https://vietnamnet.vn/mua-lon-gay-ngap-ket-xe-khap-tphcm-dong-nguoi-nhich-tung-chut-2560206.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-09-30T15:26:40+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b78ade8621a917b124c92855bd06626001774e9ad9c58bf92674aa26c3138310",
+  "length": 1669
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": "Phạm Hùng",
+    "to": "cầu Ông Lớn",
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-09-30T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe",
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Do điểm ngập dưới chân cầu sâu khoảng 30–40cm, các phương tiện phải nhích từng chút một"
+   },
+   "status": "resolved",
+   "recordId": "news-2fb2048e1cc0"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/giua-duong-ngap-sau-mua-lon-o-tphcm-nguoi-nga-xe-chet-may-hang-loat-185260910192932078.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-09-10T19:50:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "5073dfaee58f4b1f32fe6190239340afca79ecce6913759604d39805d863f0a3",
+  "length": 1833
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bà Giang",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Linh Xuân",
+    "oldDistrict": null,
+    "observedAt": "2026-09-10T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều xe máy phải chạy chậm qua đoạn ngập, nhiều xe chết máy giữa đường."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

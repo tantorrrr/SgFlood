@@ -1,0 +1,32 @@
+{
+ "url": "https://vietnamnet.vn/nuoc-tran-qua-bo-ke-do-vao-trung-tam-tphcm-khien-nguoi-dan-tro-tay-khong-kip-2456097.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-10-24T20:30:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "042102f8110e54de6cc0d9ea270da3c76f8580893baea7e928da62935339e44c",
+  "length": 1766
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-24T18:00:00+07:00",
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "Nhiều đoạn đường ngập sâu gần 1m, nước đục ngầu chảy xiết"
+   },
+   "status": "resolved",
+   "recordId": "news-28d9d70f2112"
+  }
+ ]
+}

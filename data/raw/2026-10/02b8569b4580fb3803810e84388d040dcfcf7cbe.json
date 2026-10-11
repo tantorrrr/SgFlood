@@ -1,0 +1,61 @@
+{
+ "url": "https://tuoitre.vn/trieu-cuong-dat-dinh-sang-cuoi-tuan-nguoi-dan-thuc-tu-4h-sang-de-tat-nuoc-100261011064408103.htm",
+ "outlet": "Tuổi Trẻ",
+ "publishedAt": "2026-10-11T07:04:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "09a5f5572bec677f713cae3850c103607bab0115a5e14c55fdb8db83f9d2119e",
+  "length": 3471
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bùi Văn Ba",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2026-10-11T04:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "tide",
+    "quote": "khoảng 4h sáng, nước triều dâng tràn lên khiến đường Bùi Văn Ba, Võ Thị Nhờ (phường Tân Thuận)"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Võ Thị Nhờ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2026-10-11T04:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "tide",
+    "quote": "khoảng 4h sáng, nước triều dâng tràn lên khiến đường Bùi Văn Ba, Võ Thị Nhờ (phường Tân Thuận)"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Hiệp Phước",
+    "oldDistrict": null,
+    "observedAt": "2026-10-11T04:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "tide",
+    "quote": "Tại đường Nguyễn Bình (xã Hiệp Phước), triều cường dâng cao khiến nhiều đoạn đường ngập nước, người dân chật vật đi lại."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

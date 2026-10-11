@@ -1,0 +1,97 @@
+{
+ "url": "https://www.sggp.org.vn/tphcm-mua-lon-gay-ngap-nang-ket-xe-nghiem-trong-post813644.html",
+ "outlet": "sggp.org.vn",
+ "publishedAt": "2025-09-18T20:23:41+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "ec3276090c6becfa1799060398a8406f1facfcf66e57c172d2e49437006c0fb2",
+  "length": 2445
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tên Lửa",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước dâng cao đến đầu gối, nhiều xe máy chết máy la liệt, người dân phải dắt bộ bì bõm trong dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-dff2a526a37d"
+  },
+  {
+   "mention": {
+    "street": "Hồ Học Lãm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước dâng cao đến đầu gối, nhiều xe máy chết máy la liệt, người dân phải dắt bộ bì bõm trong dòng nước."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước dâng cao đến đầu gối, nhiều xe máy chết máy la liệt, người dân phải dắt bộ bì bõm trong dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-6a536dabac5c"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Lương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước dâng cao đến đầu gối, nhiều xe máy chết máy la liệt, người dân phải dắt bộ bì bõm trong dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-c52c4385dde3"
+  }
+ ]
+}

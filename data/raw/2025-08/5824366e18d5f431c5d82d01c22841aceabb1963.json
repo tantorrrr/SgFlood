@@ -1,0 +1,35 @@
+{
+ "url": "https://thanhnien.vn/sam-chop-kem-mua-lon-tai-tphcm-nhieu-phuong-tien-chet-may-185250805204243903.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-05T21:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e879b3d88d9cd112a86038f37735c5323f2981bd4a56faa2b1a7ddccef07d492",
+  "length": 1392
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Linh Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "ngập hơn nửa bánh xe, nhiều phương tiện chết máy từ ô tô cho đến xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-aac1818cf4fc"
+  }
+ ]
+}

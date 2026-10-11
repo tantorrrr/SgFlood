@@ -1,0 +1,153 @@
+{
+ "url": "https://laodong.vn/xa-hoi/mua-xoi-xa-khien-nhieu-tuyen-duong-tphcm-thanh-song-xe-may-ngap-gan-ca-banh-1585384.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-10-03T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "3b8d326d84b277008313d219f85c030e43144f743dd40dd12920019b40cc67de",
+  "length": 1758
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Quá",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-03T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường đã chìm sâu trong biển nước, có nơi ngập hơn nửa mét."
+   },
+   "status": "resolved",
+   "recordId": "news-b0f6ec426da4"
+  },
+  {
+   "mention": {
+    "street": "Phan Văn Hớn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-03T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường đã chìm sâu trong biển nước, có nơi ngập hơn nửa mét."
+   },
+   "status": "resolved",
+   "recordId": "news-df3752b19c88"
+  },
+  {
+   "mention": {
+    "street": "Song Hành",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-03T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường đã chìm sâu trong biển nước, có nơi ngập hơn nửa mét."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-03T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường đã chìm sâu trong biển nước, có nơi ngập hơn nửa mét."
+   },
+   "status": "resolved",
+   "recordId": "news-94b2c9767bc6"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-03T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường đã chìm sâu trong biển nước, có nơi ngập hơn nửa mét."
+   },
+   "status": "resolved",
+   "recordId": "news-1fabc0429f31"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-03T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường đã chìm sâu trong biển nước, có nơi ngập hơn nửa mét."
+   },
+   "status": "resolved",
+   "recordId": "news-04343ff14600"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-03T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường đã chìm sâu trong biển nước, có nơi ngập hơn nửa mét."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "url": "https://laodong.vn/xa-hoi/trieu-cuong-gay-ngap-sau-khu-vuc-gan-ham-thu-thiem-giao-thong-un-u-keo-dai-hang-km-1620794.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-12-05T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a6bf247739c2e0ca2571b2a2c07b49b5dad89ed953637eb74cb9b84a8ba7be31",
+  "length": 1041
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Mai Chí Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-12-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Đoạn đường ngập xảy ra đúng vào giờ tan tầm, khiến giao thông ùn ứ kéo dài hàng km"
+   },
+   "status": "resolved",
+   "recordId": "news-2343a5373e7f"
+  }
+ ]
+}

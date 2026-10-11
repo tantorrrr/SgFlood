@@ -1,0 +1,33 @@
+{
+ "url": "https://laodong.vn/xa-hoi/trieu-cuong-dang-cao-o-tphcm-hang-loat-xe-chet-may-giua-dong-nuoc-ngap-1588963.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-10-09T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "33aceb98c1677f4c9d24e6d470681cd4aaedd6be1f0e82a40f23ea9e564c7e2f",
+  "length": 1181
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bến Phú Định",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "hàng loạt xe máy bị chết máy giữa dòng nước, buộc người dân phải xuống xe dẫn bộ."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/nguoi-dan-tphcm-chat-vat-trong-con-mua-gio-tan-tam-20250904184016574.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-09-04T18:52:18+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "c31f981a97046a05cf7e417206d2348be4c990ee03a0177bea5c91cf3a4d76d4",
+  "length": 1306
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Linh Xuân",
+    "oldDistrict": null,
+    "observedAt": "2025-09-04T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Tại đường Dương Văn Cam, nước ngập gần đến ống pô xe, nhiều phương tiện chết máy, người dân phải dắt bộ qua điểm ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-5d2b5840e824"
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "url": "https://vietnamnet.vn/canh-nguoi-dan-nua-dem-canh-nuoc-ngap-tram-xe-may-xep-hang-cho-sua-o-tphcm-2560910.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-02T08:22:38+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "23b0c83a81d5d4db12a8f080f7917f47d3b97104180857a8b4b3ade9b536e485",
+  "length": 2589
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Gia Trí",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thạnh Mỹ Tây",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều đoạn đường Nguyễn Gia Trí, Nguyễn Văn Thương (phường Thạnh Mỹ Tây, TPHCM) vẫn chìm trong nước."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Thương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thạnh Mỹ Tây",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nhiều đoạn đường Nguyễn Gia Trí, Nguyễn Văn Thương (phường Thạnh Mỹ Tây, TPHCM) vẫn chìm trong nước."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

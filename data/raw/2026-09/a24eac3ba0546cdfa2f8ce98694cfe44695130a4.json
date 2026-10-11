@@ -1,0 +1,73 @@
+{
+ "url": "https://www.vietnamplus.vn/thanh-pho-ho-chi-minh-mua-lon-ket-hop-trieu-cuong-khien-nhieu-khu-vuc-ngap-sau-post1139295.vnp",
+ "outlet": "vietnamplus.vn",
+ "publishedAt": "2026-09-30T21:18:51+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "349001eb91b7b937bbab855c08269aa641d49d27aaefff72f7c450e45d80a124",
+  "length": 8000
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lý Tế Xuyên",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi nước ngập hơn 0,5m, chảy xiết khiến người đi xe máy mất thăng bằng, phải dừng phương tiện hoặc dắt bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-472405f2ca29"
+  },
+  {
+   "mention": {
+    "street": "Linh Đông",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi nước ngập hơn 0,5m, chảy xiết khiến người đi xe máy mất thăng bằng, phải dừng phương tiện hoặc dắt bộ"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "nhiều tuyến đường như Lý Tế Xuyên, Linh Đông, Tô Ngọc Vân ngập sâu sau mưa; có nơi nước ngập hơn 0,5m"
+   },
+   "status": "resolved",
+   "recordId": "news-780330a0089f"
+  }
+ ]
+}

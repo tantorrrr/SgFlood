@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-gay-ngap-nang-xe-chet-may-hang-loat-tren-duong-le-duc-anh-18526030618191059.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-03-06T18:36:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "71f7d15ebc68ce8acaa2df2c24db6ed39101b40a010b82fb54cf409fe71c3ce1",
+  "length": 2213
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lê Đức Anh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2026-03-06T16:30:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "chet_may",
+     "dat_bo",
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "mực nước dâng cao 0,5 m. Do nước ngập sâu, hàng loạt xe máy bị chết máy, người dân phải lội nước dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-78458e047ce7"
+  }
+ ]
+}

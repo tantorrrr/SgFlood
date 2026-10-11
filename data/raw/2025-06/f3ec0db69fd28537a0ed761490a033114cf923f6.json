@@ -1,0 +1,45 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-xoi-xa-giua-trua-duong-ngap-nguoi-dan-vat-lon-giua-bien-nuoc-1852506201351316.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-06-20T13:57:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "2234e78e2dfa87ad4de0dd0e4751ba4f6a932056f96c671242e5fb1be9ccef7e",
+  "length": 600
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Hồ Học Lãm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-20T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "bỗng chốc trở thành biển nước mênh mông"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Lê Cơ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-20T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "bỗng chốc trở thành biển nước mênh mông"
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

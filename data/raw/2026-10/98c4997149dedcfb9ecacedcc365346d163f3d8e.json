@@ -1,0 +1,112 @@
+{
+ "url": "https://vnexpress.net/nhieu-duong-tp-hcm-ngap-sau-do-trieu-cuong-cao-nhat-tu-dau-nam-5130779.html",
+ "outlet": "VnExpress",
+ "publishedAt": "2026-10-10T17:31:47+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e88ad7d64f49f19753ae0fed01e1a99c0a173572c1d4c5085b36337c85137cf3",
+  "length": 3271
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Quận 7",
+    "observedAt": "2026-10-10T16:00:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "khiến đường Phạm Hữu Lầu, quận 7 cũ, ngập sâu nửa mét, kéo dài khoảng 3 km."
+   },
+   "status": "resolved",
+   "recordId": "news-56270d3df248"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Quận 7",
+    "observedAt": "2026-10-10T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Đường Trần Xuân Soạn ngập đến nửa bánh xe, nhiều phương tiện chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-78ed954fef46"
+  },
+  {
+   "mention": {
+    "street": "Võ Văn Kiệt",
+    "from": null,
+    "to": null,
+    "cross": "Ký Con",
+    "ward": null,
+    "oldDistrict": "Quận 1",
+    "observedAt": "2026-10-10T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "giao lộ Võ Văn Kiệt - Ký Con (quận 1 cũ) ngập 30-40 cm."
+   },
+   "status": "resolved",
+   "recordId": "news-f625aa595308"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Hữu Thọ",
+    "from": null,
+    "to": null,
+    "cross": "Lê Thị Kỉnh",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 30,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Giao lộ Nguyễn Hữu Thọ - Lê Thị Kỉnh ngập khoảng 30 cm ở cả hai chiều."
+   },
+   "status": "resolved",
+   "recordId": "news-082ffdb8179f"
+  },
+  {
+   "mention": {
+    "street": "Hoàng Quốc Việt",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Quận 7",
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Triều cường gây ngập đường Hoàng Quốc Việt (quận 7 cũ), khiến nhiều phương tiện ùn ứ"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

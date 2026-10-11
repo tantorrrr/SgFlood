@@ -1,0 +1,73 @@
+{
+ "url": "https://tuoitre.vn/moi-16h-toan-trung-tam-tphcm-mua-xoi-xa-ngap-khap-noi-100260930180545202.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2026-09-30T18:18:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "81dd45b86103fa68145f6a875da53238efec1806080a2672cf07db8de5ec584c",
+  "length": 3521
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-09-30T17:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Đường Nguyễn Văn Khối, Phạm Văn Chiêu ngập một đoạn dài khiến nhiều xe chết máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-bc15842b2aaf"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-09-30T17:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Đường Nguyễn Văn Khối, Phạm Văn Chiêu ngập một đoạn dài khiến nhiều xe chết máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-17d77eb2e731"
+  },
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Tân Sơn",
+    "oldDistrict": null,
+    "observedAt": "2026-09-30T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều xe chết máy khiến người dân phải dắt bộ dưới mưa."
+   },
+   "status": "resolved",
+   "recordId": "news-524581858b33"
+  }
+ ]
+}

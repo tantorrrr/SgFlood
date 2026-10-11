@@ -1,0 +1,70 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-xe-chet-may-la-liet-nhieu-nguoi-te-nga-vi-ngap-sau-185251028155441874.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-10-28T16:11:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "1e5cb775fdb80bfff39582ccbb81fdd9e730fed4ca14d42f6681aed2f441de3f",
+  "length": 580
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2025-10-28T13:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập hơn nửa bánh xe, dòng xe di chuyển khó khăn, nhiều người trượt ngã"
+   },
+   "status": "resolved",
+   "recordId": "news-a01591e12b34"
+  },
+  {
+   "mention": {
+    "street": "Lê Đức Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2025-10-28T13:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập hơn nửa bánh xe, dòng xe di chuyển khó khăn, nhiều người trượt ngã"
+   },
+   "status": "resolved",
+   "recordId": "news-b23e403ed9b6"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2025-10-28T13:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập hơn nửa bánh xe, dòng xe di chuyển khó khăn, nhiều người trượt ngã"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

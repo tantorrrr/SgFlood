@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-chieu-nay-46-pho-nha-giau-thao-dien-ngap-nang-hon-2-tieng-185250604170130526.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-06-04T17:35:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "01e4fa6a21f5069a25aafcc1875c1f07759330fbb7c25000a0cffbf2d7ed779b",
+  "length": 1818
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thảo Điền",
+    "oldDistrict": null,
+    "observedAt": "2025-06-04T14:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước ở đây cao lên đến hơn bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-f43fa54c19e2"
+  }
+ ]
+}

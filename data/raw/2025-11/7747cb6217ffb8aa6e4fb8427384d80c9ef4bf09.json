@@ -1,0 +1,34 @@
+{
+ "url": "https://tuoitre.vn/duong-van-tien-dung-chim-trong-trieu-cuong-nguoi-dan-chung-tay-cang-bat-dap-cat-ngan-nuoc-20251106165831527.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-06T17:22:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "87280403900eed1ae2d3a0c88400291f2a09c31bb1a4f8c92a165336295fcbe4",
+  "length": 3557
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Văn Tiến Dũng",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Văn Linh",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T16:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "có đoạn nước ngập gần bằng bánh xe máy. Dòng người, xe nối dài, nhiều phương tiện chết máy giữa dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-fa9077df0463"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-duong-quoc-huong-ngap-nhu-song-nguoi-di-xe-may-loang-choang-18526061518542814.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-06-15T19:05:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b6d193647e23dc254c856030b24d1ae8fa6694d8d13735bad7c47b6b44335caa",
+  "length": 942
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Khánh",
+    "oldDistrict": null,
+    "observedAt": "2026-06-15T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều xe máy liên tục chết máy, người dân phải đẩy bộ hầu như suốt con đường."
+   },
+   "status": "resolved",
+   "recordId": "news-138b3ac98eb2"
+  }
+ ]
+}

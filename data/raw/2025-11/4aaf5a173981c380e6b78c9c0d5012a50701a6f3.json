@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/du-da-xay-tuong-thanh-nguoi-dan-binh-quoi-tan-my-van-kho-vi-trieu-cuong-20251107191006079.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-07T20:21:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "3366a0b10dd0f4e55d5f706bd0f1310ad99c19b35b08b5cb17e8903f9218197e",
+  "length": 4280
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": "Đường 15B",
+    "ward": "Tân Mỹ",
+    "oldDistrict": null,
+    "observedAt": "2025-11-07T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Triều cường dâng cao giờ tan tầm khiến nhiều xe chết máy, người dân phải dắt bộ giữa dòng nước ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-0d33ae4fb131"
+  }
+ ]
+}

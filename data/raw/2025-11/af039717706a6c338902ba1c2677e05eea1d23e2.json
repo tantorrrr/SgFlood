@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/nguoi-dan-tphcm-tro-tay-khong-kip-khi-mua-lon-ket-hop-trieu-cuong-gay-ngap-185251105073122097.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-05T07:31:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "69621507f30d31708b22d7feb941bb17b957c741315ba2c325e6239fab4dfd59",
+  "length": 1222
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đoàn Văn Bơ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 25,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "Một số phương tiện chết máy giữa đường, người dân phải dắt bộ trong mưa."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

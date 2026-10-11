@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/trua-nay-tphcm-toi-sam-nhu-ban-dem-mua-lon-khien-nhieu-tuyen-duong-ngap-nang-185260529135757766.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-05-29T14:15:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "513a6a16c122ba861056da0897c3c30a1546013c11598524431172229afb845b",
+  "length": 808
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Hồ Học Lãm",
+    "from": null,
+    "to": null,
+    "cross": "Võ Văn Kiệt",
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2026-05-29T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "mưa lớn trút nhiều khu vực tại TP.HCM khiến một số tuyến đường ngập nặng, người dân chật vật lội qua 'rốn ngập', nhiều xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-ec95a0b69de4"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-gay-ngap-nua-met-o-tphcm-co-noi-nguoi-dan-hang-gio-lien-song-cung-con-nuoc-185260929190400341.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-09-29T19:24:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "99b995d2d9ba1d3c89437492f2e12274c1180ccb8efafeb36fe029283e175a44",
+  "length": 1718
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": "cầu Bà Sáu",
+    "to": "cầu Bà Chiêm 1",
+    "cross": null,
+    "ward": "xã Hiệp Phước",
+    "oldDistrict": null,
+    "observedAt": "2026-09-29T16:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều xe máy phải giảm tốc độ, di chuyển chậm, thậm chí bị chết máy người dân phải đẩy bộ"
+   },
+   "status": "unresolved",
+   "reason": "no OSM ways named cầu Bà Chiêm 1"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/tphcm-ngap-sau-nguoi-di-duong-chon-chan-cho-nuoc-rut-18525082111441088.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-21T13:15:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "74b3fb00c4c15cc18bc0e44a8a9f7f770ad405225a343455586f492f6b822d12",
+  "length": 2233
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Sơn",
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T06:30:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "ngập nặng nhất là đường Phan Huy Ích đoạn qua phường Tân Sơn, nước ngập hơn nửa mét, kéo dài gần 2 km."
+   },
+   "status": "resolved",
+   "recordId": "news-39b03142244d"
+  }
+ ]
+}

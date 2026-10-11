@@ -1,0 +1,32 @@
+{
+ "url": "https://laodong.vn/xa-hoi/duong-o-tphcm-ngap-hon-nua-banh-xe-do-trieu-cuong-nguoi-dan-bi-bom-loi-nuoc-1595562.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-10-21T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "97da3e27b7bc25570ba29f46528eba3f3afecca542676b18408b790e0bd36d52",
+  "length": 1782
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Rạch Cùng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-10-21T16:30:00+07:00",
+    "depthCm": 60,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "mặt đường Rạch Cùng đã bị ngập sâu đến hơn nửa bánh xe, từ khoảng 40-60cm"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dang-cao-chieu-511-khu-nam-tphcm-ngap-nang-giao-thong-hon-loan-185251105185041287.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-05T19:46:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "09fbc57b3dea12dcf46655c8725e0729b4ff3064a12d0ae7ea342552396e097c",
+  "length": 1436
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Lương Bằng",
+    "from": null,
+    "to": null,
+    "cross": "Hoàng Quốc Việt",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "nước ngập đến đầu gối, hàng dài phương tiện đi từ hướng khu đô thị Phú Mỹ Hưng bị dồn ứ, di chuyển chậm"
+   },
+   "status": "resolved",
+   "recordId": "news-76b0ca4deb1c"
+  },
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Tại đây, nước ngập rất cao, kéo dài hầu hết cả con đường. Mực nước có nơi cao hơn đầu gối."
+   },
+   "status": "resolved",
+   "recordId": "news-c0fdb48bd217"
+  }
+ ]
+}

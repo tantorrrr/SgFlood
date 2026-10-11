@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-toi-nay-duong-ngap-lenh-lang-hang-rong-vat-va-muu-sinh-185250829194548567.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-29T19:47:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d3b5ea096f94e912613bca087fe93673acde7bc69951be4e5b7c6f4292b6f368",
+  "length": 1742
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Duy Trinh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Phú Hữu",
+    "oldDistrict": null,
+    "observedAt": "2025-08-29T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "Ở những đoạn đường trũng, nước không thoát kịp gây ngập gần nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-f0d7e3a8c4de"
+  },
+  {
+   "mention": {
+    "street": "Đỗ Xuân Hợp",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Phước Long",
+    "oldDistrict": null,
+    "observedAt": "2025-08-29T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "Ở những đoạn đường trũng, nước không thoát kịp gây ngập gần nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-11616f1f8935"
+  }
+ ]
+}

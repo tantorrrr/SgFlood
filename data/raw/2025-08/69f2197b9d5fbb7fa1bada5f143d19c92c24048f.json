@@ -1,0 +1,45 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/mua-lon-hon-100mm-o-tphcm-cho-thu-duc-ngap-nang-vi-thoat-nuoc-yeu-20250806091302464.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-08-06T12:30:48+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "30bc32de5487d302f573a691000783f25895d57c9c2e607e51cd81a67738108c",
+  "length": 4744
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đặng Thị Rành",
+    "from": "Dương Văn Cam",
+    "to": "Tô Ngọc Vân",
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:00:00+07:00",
+    "depthCm": 30,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Dương Văn Cam (từ Lê Văn Tách đến Kha Vạn Cân) ngập sâu khoảng 0,3m."
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": "Lê Văn Tách",
+    "to": "Kha Vạn Cân",
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:00:00+07:00",
+    "depthCm": 30,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Dương Văn Cam (từ Lê Văn Tách đến Kha Vạn Cân) ngập sâu khoảng 0,3m."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

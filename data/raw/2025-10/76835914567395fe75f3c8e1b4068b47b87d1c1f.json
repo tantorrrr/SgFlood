@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-nuoc-ngap-gan-3-tieng-tren-duong-quoc-huong-185251008182440274.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-10-08T19:23:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a00ad19db56cab1e5e0368cb28bb69a10344c2a90bb9ccaf08758fda8cd45b01",
+  "length": 1713
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nơi đây nước ngập lên đến hơn bánh xe máy. Có nơi nước ngập đến gần 1 m."
+   },
+   "status": "resolved",
+   "recordId": "news-0cd34125f952"
+  }
+ ]
+}

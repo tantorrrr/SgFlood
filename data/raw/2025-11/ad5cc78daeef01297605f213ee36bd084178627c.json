@@ -1,0 +1,110 @@
+{
+ "url": "https://vnexpress.net/nhieu-duong-tp-hcm-te-liet-do-trieu-cuong-lon-nhat-nam-4960469.html",
+ "outlet": "vnexpress.net",
+ "publishedAt": "2025-11-05T20:33:32+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "5395815f18b57a6465986d6a1a3f914d97288723c2b67e33a6db9f3fe92385d9",
+  "length": 2285
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Tất Thành",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T19:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Hơn 19h30, đường Nguyễn Tất Thành vẫn còn ùn tắc hơn 2 km."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Do nằm dọc bờ sông, đường Trần Xuân Soạn ngập sâu, nhiều xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-fd7610597bcd"
+  },
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T18:00:00+07:00",
+    "depthCm": 45,
+    "signals": [
+     "sau_30cm",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Nước dâng gần nửa mét khiến tuyến đường Huỳnh Tấn Phát (quận 7 cũ) kẹt xe kéo dài, giao thông khu vực này rối loạn."
+   },
+   "status": "resolved",
+   "recordId": "news-f16d653b1154"
+  },
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Ngập trên đường Phạm Hữu Lầu khiến xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-1f760f6c86bc"
+  },
+  {
+   "mention": {
+    "street": "Đặng Thùy Trâm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Lợi Trung",
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Ngập lút gần tới yên xe trên đường Đặng Thuỳ Trâm, phường Bình Lợi Trung (quận Bình Thạnh cũ)."
+   },
+   "status": "resolved",
+   "recordId": "news-24e6878c9c30"
+  }
+ ]
+}

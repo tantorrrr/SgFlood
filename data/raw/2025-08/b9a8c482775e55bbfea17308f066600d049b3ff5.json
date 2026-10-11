@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/duong-nguyen-xien-mua-lon-chut-la-ngap-tieu-thuong-ngan-ngam-khach-nuoc-ngoai-boi-roi-185250829221149231.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-29T22:11:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "86dc9018c625b222d5a35b7e4e76a270f95eab5c11e14e78a3155285260e6c14",
+  "length": 2517
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Xiển",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Long Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-08-29T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "đường Nguyễn Xiển ở phường Long Bình ngập kéo dài cả đoạn đường vài trăm mét."
+   },
+   "status": "resolved",
+   "recordId": "news-ed37b505c7d8"
+  }
+ ]
+}

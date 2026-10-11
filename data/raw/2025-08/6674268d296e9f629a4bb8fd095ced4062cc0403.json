@@ -1,0 +1,55 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-phuong-linh-dong-nuoc-chay-nhu-thac-do-xe-may-troi-la-liet-185250805210418509.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-05T21:32:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a4ba2d26cd7cf361249dcee4628f7c33ee11b3e54f780f54edab4c55d66ca0b2",
+  "length": 1080
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lý Tế Xuyên",
+    "from": null,
+    "to": null,
+    "cross": "Linh Đông",
+    "ward": "Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T17:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Một số đoạn nước ngập sâu gần cả bánh xe máy, khiến nhiều xe máy chết máy, giao thông ùn tắc nghiêm trọng."
+   },
+   "status": "resolved",
+   "recordId": "news-d4312cb81ab5"
+  },
+  {
+   "mention": {
+    "street": "Linh Đông",
+    "from": null,
+    "to": null,
+    "cross": "Lý Tế Xuyên",
+    "ward": "Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T17:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Một số đoạn nước ngập sâu gần cả bánh xe máy, khiến nhiều xe máy chết máy, giao thông ùn tắc nghiêm trọng."
+   },
+   "status": "resolved",
+   "recordId": "news-11a904f2c255"
+  }
+ ]
+}

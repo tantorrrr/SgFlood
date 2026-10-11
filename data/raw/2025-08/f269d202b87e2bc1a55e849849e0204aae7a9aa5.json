@@ -1,0 +1,32 @@
+{
+ "url": "https://vnexpress.net/ngap-lut-nguoi-va-xe-sau-mua-lon-o-tp-hcm-4923111.html",
+ "outlet": "vnexpress.net",
+ "publishedAt": "2025-08-05T19:20:47+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "0c768472e800da5dc83862cba3eb7961063e185167b7b65d6c848413ae49e5e8",
+  "length": 3375
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Chu Văn An",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Thạnh",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:30:00+07:00",
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "nhiều hẻm trên đường Chu Văn An, phường Bình Thạnh (quận Bình Thạnh cũ) ngập tới một mét."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

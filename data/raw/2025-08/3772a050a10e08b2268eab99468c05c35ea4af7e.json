@@ -1,0 +1,34 @@
+{
+ "url": "https://tuoitre.vn/hinh-anh-ket-xe-keo-dai-trong-mua-dong-o-tp-hcm-20250805204007567.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-08-05T21:24:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "4cfc97d2abbdc90e07a168b1ad3283cf035ae404c2e74347dd9f6bf86c7b9a28",
+  "length": 3842
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Hiệp Bình",
+    "from": null,
+    "to": null,
+    "cross": "quốc lộ 13",
+    "ward": "Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T19:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "xảy ra tình trạng kẹt xe do nước ngập sâu sau mưa lớn. Hàng loạt xe chết máy phải dắt bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-33ca4dc5f9fa"
+  }
+ ]
+}

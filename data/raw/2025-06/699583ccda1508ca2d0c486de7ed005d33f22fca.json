@@ -1,0 +1,51 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/dau-mua-mua-khu-vuc-cho-thu-duc-o-tphcm-lai-ngap-nang-20250611101554975.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-06-11T10:24:40+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "ff7c31908199fff2a53ad6eb8e15c31d56652487b1591b6283bf01f84c012536",
+  "length": 3015
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Kha Vạn Cân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-10T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Kha Vạn Cân, Dương Văn Cam, Nguyễn Thị Rành… ngập cục bộ. Nhiều phương tiện lưu thông bị chết máy"
+   },
+   "status": "resolved",
+   "recordId": "news-7bd5ec7cb710"
+  },
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-10T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Kha Vạn Cân, Dương Văn Cam, Nguyễn Thị Rành… ngập cục bộ. Nhiều phương tiện lưu thông bị chết máy"
+   },
+   "status": "resolved",
+   "recordId": "news-2787f8cce332"
+  }
+ ]
+}

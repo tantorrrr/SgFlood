@@ -1,0 +1,32 @@
+{
+ "url": "https://tuoitre.vn/mua-cuon-da-duong-sat-tran-ra-duong-pham-van-dong-tp-hcm-ket-xe-keo-dai-20250805202749494.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-08-05T20:34:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "802c6dd54ab5bdf88c28cd2824a3c3b8e8610ed9d8e4c0f1c22e567ed3010fc4",
+  "length": 3427
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Văn Đồng",
+    "from": "Kha Vạn Cân",
+    "to": "Tô Ngọc Vân",
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Phạm Văn Đồng hướng từ giao lộ với Kha Vạn Cân về giao lộ Tô Ngọc Vân bị ngập, gây kẹt xe nghiêm trọng."
+   },
+   "status": "unresolved",
+   "reason": "Phạm Văn Đồng × Kha Vạn Cân meet in several places"
+  }
+ ]
+}

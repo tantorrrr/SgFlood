@@ -1,0 +1,70 @@
+{
+ "url": "https://vietnamnet.vn/mua-lon-gio-tan-tam-o-tphcm-nguoi-dan-bi-bom-dat-xe-ve-nha-2560418.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-09-30T22:06:08+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "1bbd096cf85be6016c520a5c1c54715ba223e22fef6f17c72ef1f684d3640424",
+  "length": 1357
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Quá",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Đông Hưng Thuận",
+    "oldDistrict": null,
+    "observedAt": "2026-09-30T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "khiến nhiều đoạn đường ngập nặng, người dân phải chật vật dắt xe qua dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-9dd65a593ffd"
+  },
+  {
+   "mention": {
+    "street": "Phan Văn Hớn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Đông Hưng Thuận",
+    "oldDistrict": null,
+    "observedAt": "2026-09-30T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "mưa lớn trút xuống khu vực đường Nguyễn Văn Quá, Phan Văn Hớn (phường Đông Hưng Thuận), khiến nhiều đoạn đường ngập nặng"
+   },
+   "status": "resolved",
+   "recordId": "news-f42d292aaf51"
+  },
+  {
+   "mention": {
+    "street": "Mã Lò",
+    "from": "Chiến Lược",
+    "to": "Hương Lộ 2",
+    "cross": null,
+    "ward": "Bình Trị Đông",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "đoạn từ đường Chiến Lược đến Hương Lộ 2 (phường Bình Trị Đông), nước ngập sâu khiến người dân phải bì bõm dắt xe."
+   },
+   "status": "resolved",
+   "recordId": "news-61adb3ee18fc"
+  }
+ ]
+}

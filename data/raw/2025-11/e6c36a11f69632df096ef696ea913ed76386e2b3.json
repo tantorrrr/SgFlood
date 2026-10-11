@@ -1,0 +1,34 @@
+{
+ "url": "https://vietnamnet.vn/nguoi-dan-tphcm-vat-va-loi-nuoc-ve-nha-trong-ngay-trieu-cuong-dat-dinh-2460191.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-11-07T08:35:10+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d3801d152591064de64bed1651e73886cee180074fce6330870b2179dc4a7a6b",
+  "length": 254
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T18:00:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "mực nước ngập sâu khoảng 50cm, sóng đánh dạt cả hai bên đường. Hàng loạt phương tiện giao thông chết máy"
+   },
+   "status": "resolved",
+   "recordId": "news-64536105f32c"
+  }
+ ]
+}

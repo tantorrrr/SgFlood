@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/duong-ma-lo-ngap-sau-sau-mua-lon-nguoi-dan-cho-nuoc-rut-moi-dam-ve-nha-185260925205932103.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-09-25T20:59:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "c2cdabb82ba45c6720d1e47563ea6570aff11b8baf9f247b172bcd3e9c90ad4e",
+  "length": 1333
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Mã Lò",
+    "from": "Chiến Lược",
+    "to": "Hương Lộ 2",
+    "cross": null,
+    "ward": "phường Bình Trị Đông",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Có chỗ nước dâng gần nửa mét, phủ kín mặt đường. Hàng loạt xe máy cố chạy qua bị chết máy"
+   },
+   "status": "resolved",
+   "recordId": "news-62e9f867ecc1"
+  }
+ ]
+}

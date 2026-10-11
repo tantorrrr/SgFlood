@@ -1,0 +1,108 @@
+{
+ "url": "https://vietnamnet.vn/duong-o-tphcm-lai-ngap-nhu-song-nguoi-dan-bat-luc-nhin-nuoc-ban-tran-vao-nha-2454310.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-10-19T19:34:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a836779795a023751bdccf08f094c303709b9fce04ccc47a27ea60750946ed05",
+  "length": 1611
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Văn Hớn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-19T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập sâu khiến giao thông bị ảnh hưởng, hàng loạt xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-ac8034d05bd5"
+  },
+  {
+   "mention": {
+    "street": "Minh Phụng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-19T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập sâu khiến giao thông bị ảnh hưởng, hàng loạt xe chết máy."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-19T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập sâu khiến giao thông bị ảnh hưởng, hàng loạt xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-c947429307c5"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-19T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập sâu khiến giao thông bị ảnh hưởng, hàng loạt xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-ab3be05a84f7"
+  },
+  {
+   "mention": {
+    "street": "Lê Đức Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-19T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập sâu khiến giao thông bị ảnh hưởng, hàng loạt xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-dd40d90926ed"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "url": "https://vietnamnet.vn/tphcm-mua-lon-keo-dai-phu-huynh-loi-nuoc-gan-3km-de-don-con-tan-hoc-2562673.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-08T06:49:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "0d4ce007985686d32b418f58c204011301b18ec50253b24760fc04daa58f4706",
+  "length": 356
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Gia Trí",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "tại các tuyến Nguyễn Gia Trí, Ung Văn Khiêm, D5…, nước dâng cao khiến nhiều phương tiện chết máy."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Ung Văn Khiêm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "tại các tuyến Nguyễn Gia Trí, Ung Văn Khiêm, D5…, nước dâng cao khiến nhiều phương tiện chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-61eea88df585"
+  },
+  {
+   "mention": {
+    "street": "D5",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "tại các tuyến Nguyễn Gia Trí, Ung Văn Khiêm, D5…, nước dâng cao khiến nhiều phương tiện chết máy."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

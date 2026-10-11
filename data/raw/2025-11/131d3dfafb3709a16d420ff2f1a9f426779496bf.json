@@ -1,0 +1,34 @@
+{
+ "url": "https://laodong.vn/xa-hoi/trieu-cuong-vuot-moc-lich-su-o-tphcm-xe-chet-may-hang-loat-1604837.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-11-06T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b855a93497118632d370a9f2b776b3e89e90f68aa3015c286fc50af428227eeb",
+  "length": 2267
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T16:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nước ngập quá nửa bánh xe máy khiến người dân di chuyển chậm, nhiều phương tiện bị chết máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-9d627720cbb1"
+  }
+ ]
+}

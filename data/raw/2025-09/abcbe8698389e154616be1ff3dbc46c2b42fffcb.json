@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/tphcm-co-mua-lon-trong-dem-nguoi-dan-chat-vat-vuot-song-tren-quoc-lo-50-185250910221109327.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-09-11T05:45:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "4cff2f677fa060c3c56f661e300c139886aec6f85462a6af94773cf7328d79d4",
+  "length": 607
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc lộ 50",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Hưng",
+    "oldDistrict": null,
+    "observedAt": "2025-09-10T21:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "đoạn đường này ngập sâu. Nhiều xe chết máy, người dân chật vật dẫn bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-943689fd9c9c"
+  }
+ ]
+}

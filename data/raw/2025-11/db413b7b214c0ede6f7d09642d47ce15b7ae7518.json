@@ -1,0 +1,32 @@
+{
+ "url": "https://laodong.vn/xa-hoi/nuoc-dang-nhanh-trong-dem-nhieu-nha-dan-doc-kenh-ba-thon-o-tphcm-bi-ngap-1606985.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-11-10T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a6721343c1f4c65499014f7f4ed0555dfd2a415355383492158f9af59320c51b",
+  "length": 1009
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tỉnh lộ 37",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Phú Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-11-10T20:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Chỉ trong ít phút, nước đã ngập gần nửa bánh xe máy"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

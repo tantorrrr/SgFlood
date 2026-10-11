@@ -1,0 +1,133 @@
+{
+ "url": "https://lifestyle.zingnews.vn/canh-chua-tung-thay-o-tphcm-trong-tran-mua-lon-ngay-309-post1686689.html",
+ "outlet": "lifestyle.zingnews.vn",
+ "publishedAt": "2026-10-01T06:53:19+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d6a06fbe420488757118a8d1771317ebbf1794756c1b1f4af8f8556273193ee1",
+  "length": 7617
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường An Hội Tây",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "\"Nước lên tới mức gần lút xe máy. Tôi chạy giao hàng ở đây thường xuyên nhưng đây là lần đầu thấy ngập như vậy\""
+   },
+   "status": "resolved",
+   "recordId": "news-748de364369d"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-09-30T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Trên Nguyễn Văn Khối, Phạm Văn Chiêu, Lê Văn Thọ và Lê Đức Thọ, nước dâng khiến nhiều xe chết máy, người dân phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-33e81f36ce6e"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Trên Nguyễn Văn Khối, Phạm Văn Chiêu, Lê Văn Thọ và Lê Đức Thọ, nước dâng khiến nhiều xe chết máy"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Lê Đức Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Trên Nguyễn Văn Khối, Phạm Văn Chiêu, Lê Văn Thọ và Lê Đức Thọ, nước dâng khiến nhiều xe chết máy"
+   },
+   "status": "resolved",
+   "recordId": "news-fa09c98d0456"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Quá",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Đông Hưng Thuận",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "ngập sâu chỉ sau khoảng 30 phút mưa, có nơi nước cao hơn 50 cm"
+   },
+   "status": "resolved",
+   "recordId": "news-8e509b49c4c4"
+  },
+  {
+   "mention": {
+    "street": "Phan Văn Hớn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Đông Hưng Thuận",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "ngập sâu chỉ sau khoảng 30 phút mưa, có nơi nước cao hơn 50 cm"
+   },
+   "status": "resolved",
+   "recordId": "news-4264ba1655d3"
+  }
+ ]
+}

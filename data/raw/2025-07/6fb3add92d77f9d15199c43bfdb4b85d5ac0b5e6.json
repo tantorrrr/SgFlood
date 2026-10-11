@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-duong-ngap-nuoc-sau-nguoi-dan-bi-cuon-troi-tai-san-185250719161128496.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-07-19T21:47:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "03608ca6482bfae47090fe258149d13e46c5457a8be426c61b41d6c210ebad12",
+  "length": 4818
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc lộ 50",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Văn Linh",
+    "ward": "Bình Hưng",
+    "oldDistrict": null,
+    "observedAt": "2025-07-19T11:00:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có chỗ ngập hơn nửa mét khiến nhiều phương tiện xe máy qua đây bị chết máy phải dẫn bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-24690aaf2b95"
+  }
+ ]
+}

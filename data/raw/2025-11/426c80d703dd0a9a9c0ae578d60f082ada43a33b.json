@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-nhan-chim-nhieu-tuyen-duong-o-tphcm-nguoi-dan-vat-va-loi-nuoc-ve-nha-185251121141548451.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-21T20:14:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "8bd72bd2d3e979b0818107add93e61a94ceb6597285ebb93abee93d37c165578",
+  "length": 568
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": "Phú Thuận",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-21T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều xe máy chết máy phải dắt bộ qua dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-897f5a8ba725"
+  }
+ ]
+}

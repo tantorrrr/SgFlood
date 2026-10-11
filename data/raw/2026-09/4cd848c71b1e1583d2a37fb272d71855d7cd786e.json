@@ -1,0 +1,35 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-nguoi-dan-bi-bom-dat-xe-qua-doan-ngap-hanh-dong-cua-nhom-sinh-vien-gay-chu-y-185260910211120194.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-09-10T21:31:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "045edd08176f26bde26a1426ca367d03e6d832e429d0a4f902abfa531e78e8e5",
+  "length": 1561
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": "Linh Đông",
+    "ward": "phường Tam Bình",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Có đoạn nước dâng hơn nửa bánh xe, nhiều xe chết máy giữa dòng nước."
+   },
+   "status": "resolved",
+   "recordId": "news-a4db37c39c60"
+  }
+ ]
+}

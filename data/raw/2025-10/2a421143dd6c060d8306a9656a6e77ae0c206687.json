@@ -1,0 +1,53 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dang-cao-duong-tphcm-ngap-sau-nguoi-dan-bi-bom-ve-nha-18525102218323764.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-10-22T18:51:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "c5c9493e58db00b80f36024c7021b247fb42d634d916bf9bbb5bd7a3726a4539",
+  "length": 1215
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-22T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Đoạn ngập đường Nguyễn Xuân Soạn nằm dưới cầu Tân Thuận, kéo dài khoảng 400 m, có nơi ngập lút bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-811ddef77f72"
+  },
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": "Phú Thuận",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-22T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "trên một đoạn đường Phú Thuận bị ngập sâu, nước dâng lút xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-513f7ff47af1"
+  }
+ ]
+}

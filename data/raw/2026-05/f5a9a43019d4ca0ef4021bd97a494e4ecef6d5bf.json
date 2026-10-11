@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-chu-xe-bat-luc-bo-lai-o-to-ngap-giua-bien-nuoc-18526053022111607.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-05-31T05:25:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e5b6a76358d962e2fa605dfebdf17a3fa07421f787fbc9c8d2a9dcc136d12ca4",
+  "length": 2041
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "đường số 11",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Linh Xuân",
+    "oldDistrict": null,
+    "observedAt": "2026-05-30T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập dâng cao, có nơi hơn nửa bánh xe, làm hàng loạt phương tiện chết máy."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

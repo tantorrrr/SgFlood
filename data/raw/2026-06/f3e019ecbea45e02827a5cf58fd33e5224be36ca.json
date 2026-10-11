@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-nhieu-tuyen-duong-lai-ngap-sau-nguoi-dan-chat-vat-dat-bo-xe-185260611184706639.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-06-11T19:04:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "dea515148d128f522ae210b23a949bc2fde507a3dbb0be8cf042bbef88692c8a",
+  "length": 1554
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thông Tây Hội",
+    "oldDistrict": null,
+    "observedAt": "2026-06-11T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Có nơi nước ngập gần nửa bánh xe máy, nhiều phương tiện phải di chuyển chậm hoặc có người dắt bộ qua đoạn ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-e668bee3aa53"
+  }
+ ]
+}

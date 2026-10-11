@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/chan-cau-ba-son-o-tphcm-ngap-nang-xe-noi-dai-den-giua-cau-185260616185454398.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-06-16T19:11:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "23bfe5d3312cfa0ac18e5ce9b0e127d1bd8470485fd6f2be0a8606a24ba7d3cf",
+  "length": 1920
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "R12",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Khánh",
+    "oldDistrict": null,
+    "observedAt": "2026-06-16T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Có nơi, nước ngập lên đến nửa mét làm một số xe cộ chết máy nằm lại trên đường."
+   },
+   "status": "resolved",
+   "recordId": "news-f70ee3cc2912"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/hon-4-gio-song-cung-trieu-cuong-vuot-lich-su-tren-duong-pham-huu-lau-tphcm-185251106215624532.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-07T07:07:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e78c4638463e2ae3459f31aa31dd07a19e2cc6029be38d091e66713ee9754f22",
+  "length": 1137
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Trong suốt 4 giờ nước ngập do triều cường, hầu hết người đi xe máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-c1b3039e0765"
+  }
+ ]
+}

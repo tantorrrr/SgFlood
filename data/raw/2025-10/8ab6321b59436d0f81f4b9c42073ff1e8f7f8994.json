@@ -1,0 +1,149 @@
+{
+ "url": "https://sggp.org.vn/tphcm-mua-lon-ket-hop-trieu-cuong-gay-ngap-nhieu-noi-post817017.html",
+ "outlet": "sggp.org.vn",
+ "publishedAt": "2025-10-08T20:46:02+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "327cca5e2361c70f53b4d8ae91f93b9c1feecefedbff68e4fe6f15d3c32737fd",
+  "length": 2855
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": "Thảo Điền",
+    "ward": "An Khánh",
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "đường Quốc Hương ngập sâu từ 30-50cm, kéo dài khoảng 300m từ ngã ba Thảo Điền đến gần khu Masteri Thảo Điền."
+   },
+   "status": "unresolved",
+   "reason": "no intersection Quốc Hương × Thảo Điền"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Hưởng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "both",
+    "quote": "Đường Nguyễn Văn Hưởng - nhiều đoạn sát bờ sông Sài Gòn ngập gần nửa bánh xe"
+   },
+   "status": "resolved",
+   "recordId": "news-0ef5c64a24d0"
+  },
+  {
+   "mention": {
+    "street": "Tống Hữu Định",
+    "from": null,
+    "to": null,
+    "cross": "Thảo Điền",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "Đường Tống Hữu Định, khu vực gần cầu Thảo Điền ngập sâu, nhiều ô tô bị nước tràn vào gầm, chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-447dbcab78a0"
+  },
+  {
+   "mention": {
+    "street": "Thảo Điền",
+    "from": "Nguyễn Văn Hưởng",
+    "to": "Quốc Hương",
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": 40,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "both",
+    "quote": "Đường Thảo Điền, đoạn từ đường Nguyễn Văn Hưởng đến Quốc Hương bị ngập khoảng 40cm."
+   },
+   "status": "unresolved",
+   "reason": "no intersection Thảo Điền × Quốc Hương within 2000 m of near"
+  },
+  {
+   "mention": {
+    "street": "Đỗ Xuân Hợp",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Phước Long",
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "Tại đường Đỗ Xuân Hợp, phường Phước Long, nước dâng cao hơn nửa mét khiến hàng loạt xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-6c4ddbed83d3"
+  },
+  {
+   "mention": {
+    "street": "Võ Nguyên Giáp",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "both",
+    "quote": "đường Võ Nguyên Giáp đoạn từ trạm thu phí hướng từ Đồng Nai về cầu Sài Gòn nước ngập hơn nửa bánh xe"
+   },
+   "status": "resolved",
+   "recordId": "news-87bef23ff9bf"
+  },
+  {
+   "mention": {
+    "street": "Mai Chí Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "both",
+    "quote": "hướng quẹo vào cao tốc TPHCM - Long Thành, làn xe máy ngập hơn nửa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-3ffdef5df301"
+  }
+ ]
+}

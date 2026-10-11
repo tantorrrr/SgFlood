@@ -1,0 +1,35 @@
+{
+ "url": "https://tuoitre.vn/nld/clip-trieu-cuong-dang-cao-khu-vuc-cau-rach-chiec-ngap-sau-ket-xe-nghiem-trong-196251023205940573.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-10-23T21:27:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "5c11159665a69e0cc356ea2f257237ca215a6820d63303cf4f491dcd3bfc88ff",
+  "length": 3433
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Võ Nguyên Giáp",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "ket_xe",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Đến khoảng 18 giờ, mực nước dâng cao hơn nửa bánh xe máy, khiến hàng loạt phương tiện chết máy, di chuyển khó khăn."
+   },
+   "status": "resolved",
+   "recordId": "news-73e12263376d"
+  }
+ ]
+}

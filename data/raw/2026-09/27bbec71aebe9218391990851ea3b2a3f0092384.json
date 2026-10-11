@@ -1,0 +1,32 @@
+{
+ "url": "https://tuoitre.vn/duong-phan-huy-ich-ngap-nang-ky-luc-nuoc-tran-vao-khien-xe-buyt-chet-may-la-liet-10026093021260881.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2026-09-30T21:46:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "fe5de444a13d2341613fc8e593e1e1e0def8e5e487501116d0ddce599ce52b5f",
+  "length": 5768
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Tân Bình",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "Xe buýt, xe máy, ô tô gì đều chết máy la liệt khi đi qua đây."
+   },
+   "status": "resolved",
+   "recordId": "news-baaea18ae404"
+  }
+ ]
+}

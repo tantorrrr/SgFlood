@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-chieu-157-nhieu-tuyen-duong-ngap-sau-nguoi-dan-vat-va-don-bun-rac-185260715164111004.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-07-15T16:55:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "53d83df47e10fa034d47bc517dcb982baeb7c491ec2be80975a3cdf3d211b116",
+  "length": 1367
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Linh Đông",
+    "from": "Tô Ngọc Vân",
+    "to": "Lý Tế Xuyên",
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-07-15T15:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước ở đây lên đến hơn bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-24f894b4942c"
+  },
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-07-15T15:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "Có thời điểm ngập gần nửa bánh xe máy, khiến các phương tiện phải di chuyển chậm qua đoạn ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-d23195ac5da7"
+  }
+ ]
+}

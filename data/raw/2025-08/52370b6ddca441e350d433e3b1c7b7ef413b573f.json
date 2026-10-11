@@ -1,0 +1,55 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-to-keo-dai-nhieu-tuyen-duong-ngap-nang-185250805193849077.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-05T19:45:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d97886aa260ed01daf8fdde8e8b40466310f6ede8bb23c283debb8f8ea6fb060",
+  "length": 1085
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập sâu gần nửa xe máy, nhiều phương tiện bị chết máy, người dân phải dắt bộ, lội nước để di chuyển."
+   },
+   "status": "resolved",
+   "recordId": "news-5b392a5459b6"
+  },
+  {
+   "mention": {
+    "street": "Gò Dưa",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước ngập sâu gần nửa xe máy, nhiều phương tiện bị chết máy, người dân phải dắt bộ, lội nước để di chuyển."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

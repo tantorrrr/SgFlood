@@ -1,0 +1,29 @@
+{
+ "url": "https://vietnamnet.vn/mua-lon-nguoi-dan-tphcm-mac-ket-2-3-gio-tren-duong-ve-nha-2560852.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-02T07:14:22+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "476cc7c2b4757fe4d58ecb4374b7cae92e8f3b597f809d4885619e4dc5e677c6",
+  "length": 2147
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Sơn",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Trên đường Phan Huy Ích (phường Tân Sơn), nước chảy mạnh tại một số đoạn ngập sâu."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

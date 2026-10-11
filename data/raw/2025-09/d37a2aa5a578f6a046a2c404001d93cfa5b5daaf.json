@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-gio-tan-truong-buoi-trua-hoc-sinh-uot-ruot-cho-cha-me-don-185250922132436895.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-09-22T13:24:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b68c59c94f4829a3f1267e63c02bc295c7afb62ce8a4092a1fc92c25cedb8e41",
+  "length": 1469
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Xiển",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Long Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-09-22T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Combo vừa mưa to, ngập nặng vừa kẹt xe khiến người đi đường ngán ngẩm."
+   },
+   "status": "resolved",
+   "recordId": "news-5233ebd9274d"
+  }
+ ]
+}

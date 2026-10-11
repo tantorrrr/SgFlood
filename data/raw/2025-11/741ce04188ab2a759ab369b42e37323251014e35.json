@@ -1,0 +1,34 @@
+{
+ "url": "https://vietnamnet.vn/duong-thanh-song-ngay-trieu-cuong-dat-dinh-nguoi-dan-tphcm-tat-ta-bom-nuoc-2460155.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-11-06T19:44:47+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "f717189d464bc464583b3c79d4d288ec8a2e72284ade070b4be2c94cd0489bad",
+  "length": 2039
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T16:30:00+07:00",
+    "depthCm": 40,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Nước ngập khoảng 40cm, sóng đánh dạt hai bên, hàng loạt phương tiện chết máy, người dân phải dắt xe đi bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-d357f5c1bbb1"
+  }
+ ]
+}

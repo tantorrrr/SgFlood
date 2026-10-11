@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/saigontimes/trieu-cuong-dang-cao-nguoi-dan-hiep-phuoc-loi-nuoc-ve-nha-1061151816.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-10-24T20:12:52+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "35a6be500f189e526e3c34f966b38189ea542184084c64bec8c5ccb6be54ef74",
+  "length": 2795
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lê Văn Lương",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Bình",
+    "ward": "Hiệp Phước",
+    "oldDistrict": null,
+    "observedAt": "2025-10-24T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Nhiều người dân phải dắt bộ xe, bì bõm lội nước về nhà, trong khi nhiều xe chết máy giữa dòng."
+   },
+   "status": "resolved",
+   "recordId": "news-7f4ac36809d1"
+  }
+ ]
+}

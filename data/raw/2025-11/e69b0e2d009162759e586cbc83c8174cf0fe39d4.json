@@ -1,0 +1,33 @@
+{
+ "url": "https://vietnamnet.vn/nguoi-dan-tphcm-xan-quan-co-chan-vuot-duong-ngap-lenh-lang-vao-gio-cao-diem-2459435.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-11-05T10:02:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "5d8d9cb718bcbef4b53d36f5eb21131b5c6769303244967f410c1a35c42ed24a",
+  "length": 1962
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2025-11-04T23:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "gây ngập sâu nửa mét, đến 8h sáng nay vẫn chưa rút."
+   },
+   "status": "resolved",
+   "recordId": "news-1d37fc9f5990"
+  }
+ ]
+}

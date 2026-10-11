@@ -1,0 +1,34 @@
+{
+ "url": "https://cafef.vn/bi-bom-tren-nhieu-tuyen-duong-trung-tam-tp-hcm-toi-cuoi-tuan-xe-chet-may-nuoc-tran-vao-quan-188251109074138415.chn",
+ "outlet": "cafef.vn",
+ "publishedAt": "2025-11-09T07:41:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "be557bea1ea7b8a9a8378c0c3d0049f083fba3d1a6bb8137b3299b775c4be2f9",
+  "length": 3421
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Cô Bắc",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Khắc Nhu",
+    "ward": "Cầu Ông Lãnh",
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Một số phương tiện chết máy giữa dòng, chủ phương tiện phải dắt bộ, chật vật di chuyển trong làn nước đục."
+   },
+   "status": "resolved",
+   "recordId": "news-b40aa07a1699"
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "url": "https://lifestyle.zingnews.vn/trieu-cuong-o-tphcm-len-cao-1-86-m-nhieu-tuyen-duong-ngap-nang-post1688829.html",
+ "outlet": "lifestyle.zingnews.vn",
+ "publishedAt": "2026-10-10T17:33:18+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d5bb592df0c40ee31a44d41ea9377531fc6485c3e3b306496e75e695a5f8b850",
+  "length": 3720
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Hưng",
+    "oldDistrict": null,
+    "observedAt": "2026-10-10T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "tide",
+    "quote": "triều cường dâng khiến đường Trần Xuân Soạn (phường Tân Hưng) xảy ra tình trạng ngập, người dân chật vật di chuyển"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Lương Bằng",
+    "from": null,
+    "to": null,
+    "cross": "Hoàng Quốc Việt",
+    "ward": null,
+    "oldDistrict": "Quận 7",
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "Tại đường Nguyễn Lương Bằng, đoạn giao với đường Hoàng Quốc Việt (khu vực quận 7 cũ), nước ngập sâu, có nơi gần lút bánh xe"
+   },
+   "status": "resolved",
+   "recordId": "news-51a66dbbe84a"
+  },
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": "15B",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-10-10T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Xe cộ chết máy hàng loạt trước số 150 Phạm Hữu Lầu vì ngập sâu"
+   },
+   "status": "resolved",
+   "recordId": "news-507f127b380b"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Ở đường Nguyễn Bình, nước ngập khoảng nửa bánh xe"
+   },
+   "status": "resolved",
+   "recordId": "news-211b40b8e4a9"
+  }
+ ]
+}

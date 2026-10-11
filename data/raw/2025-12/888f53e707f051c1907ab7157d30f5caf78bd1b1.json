@@ -1,0 +1,33 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/duong-pho-o-tphcm-ngap-sau-trong-dem-trieu-cuong-dat-dinh-20251206203143496.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-12-06T20:52:37+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "70590bc52f5d8111ba678c446b744dd7380bee2ca16e26632cd916d79b3bd05d",
+  "length": 1305
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": null,
+    "to": null,
+    "cross": "cầu Phú Mỹ",
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-12-06T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "trên đường Nguyễn Văn Linh, đoạn qua khu vực cầu Phú Mỹ (phường Tân Thuận), nước ngập hơn nửa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-faa70cf308d5"
+  }
+ ]
+}

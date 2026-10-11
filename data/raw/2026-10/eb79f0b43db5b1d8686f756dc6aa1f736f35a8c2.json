@@ -1,0 +1,32 @@
+{
+ "url": "https://tuoitre.vn/duong-vao-san-bay-tan-son-nhat-ngap-hai-du-an-thoat-nuoc-bao-gio-xong-100261008175224008.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2026-10-08T18:17:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "1d0a37fce1750abdbe3d3c8ba27403999a2d71f22029265902421b460c20f997",
+  "length": 4264
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trường Sơn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "đường vào sân bay Tân Sơn Nhất và một số tuyến lân cận xảy ra ngập, gây kẹt xe cục bộ, nhất là vào giờ"
+   },
+   "status": "resolved",
+   "recordId": "news-21deb984bba4"
+  }
+ ]
+}

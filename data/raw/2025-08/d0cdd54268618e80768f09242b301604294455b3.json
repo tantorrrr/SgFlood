@@ -1,0 +1,65 @@
+{
+ "url": "https://danviet.vn/con-mua-lon-keo-dai-hon-mot-gio-dong-ho-khien-nhieu-tuyen-duong-o-tphcm-thanh-song-nguoi-dan-dat-bo-xe-may-d1353222.html",
+ "outlet": "danviet.vn",
+ "publishedAt": "2025-08-05T18:50:17+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "5c1da965929b98dc0167bee186c948c84532314698a389a1725e4a3949e6dc2d",
+  "length": 8000
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Ung Văn Khiêm",
+    "from": null,
+    "to": null,
+    "cross": "cầu Sài Gòn",
+    "ward": "Bình Thạnh",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "đường Ung Văn Khiêm đoạn gần cầu Sài Gòn, nước ngập sâu tới nửa mét, khiến giao thông tắc nghẽn cả đoạn dài."
+   },
+   "status": "unresolved",
+   "reason": "no intersection Ung Văn Khiêm × cầu Sài Gòn"
+  },
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thủ Đức",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "đường Gò Dưa, Tô Ngọc Vân (phường Thủ Đức) và Phan Văn Chiêu, Phan Văn Hớn (phường Gò Vấp)... tình trạng ngập nghiêm trọng"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Gò Dưa",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thủ Đức",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "đường Gò Dưa, Tô Ngọc Vân (phường Thủ Đức) và Phan Văn Chiêu, Phan Văn Hớn (phường Gò Vấp)... tình trạng ngập nghiêm trọng"
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

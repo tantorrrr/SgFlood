@@ -1,0 +1,33 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/mua-lon-duong-pham-van-dong-ket-xe-keo-dai-hon-3km-20250805202203048.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-08-05T21:48:58+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "33c12cf9b89c5a8e50bacaebbfd46247d832e17f824a17973e9e6134e81a8e08",
+  "length": 1648
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thủ Đức",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T19:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều phương tiện, đặc biệt là xe máy và xe chở hàng, bị chết máy nằm giữa đường, gây cản trở giao thông."
+   },
+   "status": "resolved",
+   "recordId": "news-d5ade35ca6ee"
+  }
+ ]
+}

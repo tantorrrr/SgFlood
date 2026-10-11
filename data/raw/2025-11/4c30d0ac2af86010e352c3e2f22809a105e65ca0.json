@@ -1,0 +1,93 @@
+{
+ "url": "https://vietnamnet.vn/trieu-cuong-chua-dat-dinh-nhieu-noi-tphcm-da-menh-mong-nuoc-2459742.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-11-05T20:34:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "bb4f6a9f5d2efaaea814b14ef21b93472fb84b0924bc04c9e3d3c90124efe0eb",
+  "length": 2646
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T17:30:00+07:00",
+    "depthCm": 45,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Vào giờ cao điểm, mực nước dâng gần nửa mét khiến giao thông hỗn loạn, nhiều xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-a01938316375"
+  },
+  {
+   "mention": {
+    "street": "Bến Bình Đông",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T17:30:00+07:00",
+    "depthCm": 45,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Vào giờ cao điểm, mực nước dâng gần nửa mét khiến giao thông hỗn loạn, nhiều xe chết máy."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T17:30:00+07:00",
+    "depthCm": 45,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Vào giờ cao điểm, mực nước dâng gần nửa mét khiến giao thông hỗn loạn, nhiều xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-0def4cc58dca"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Lương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T17:30:00+07:00",
+    "depthCm": 45,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Vào giờ cao điểm, mực nước dâng gần nửa mét khiến giao thông hỗn loạn, nhiều xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-620b802fb76e"
+  }
+ ]
+}

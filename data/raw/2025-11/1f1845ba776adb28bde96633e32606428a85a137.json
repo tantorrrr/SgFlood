@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-toi-411-nhieu-tuyen-duong-o-trung-tam-tphcm-menh-mong-nuoc-185251105002307463.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-05T08:10:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "08873be6cd9d6cfce264033978a57ae153d239c937bed0f7e1316b51289499e7",
+  "length": 1195
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lê Lai",
+    "from": "Phạm Hồng Thái",
+    "to": "Tôn Thất Tùng",
+    "cross": null,
+    "ward": "Bến Thành",
+    "oldDistrict": null,
+    "observedAt": "2025-11-04T20:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước sâu nhất tại đây có nơi cao hơn bánh xe máy. Nước tràn lên lề đường, hàng loạt xe máy bị chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-9c077bc2b6f6"
+  }
+ ]
+}

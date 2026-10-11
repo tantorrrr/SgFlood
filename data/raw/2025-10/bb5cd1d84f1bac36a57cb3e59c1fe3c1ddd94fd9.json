@@ -1,0 +1,53 @@
+{
+ "url": "https://vietnamnet.vn/hang-nghin-o-to-noi-duoi-dai-ca-km-chon-chan-giua-mua-lon-o-tphcm-2450613.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-10-08T20:38:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "85a07afe261734377a6acf72ce316bc341695612a2d29e09633750cae6d1ba80",
+  "length": 2282
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Hưng",
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T17:00:00+07:00",
+    "depthCm": 45,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "tuyến đường Trần Xuân Soạn, phường Tân Hưng ngập gần nửa mét, kéo dài gần 1km."
+   },
+   "status": "resolved",
+   "recordId": "news-b8d20c803e80"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Hữu Cảnh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "both",
+    "quote": "Đường Nguyễn Hữu Cảnh ùn tắc kéo dài đến 2km, từ cầu vượt Văn Thánh 2 đến nhà ga Tân Cảng."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "url": "https://tuoitre.vn/trieu-cuong-o-tp-hcm-den-hen-lai-len-vao-gio-tan-tam-20251130123021141.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-12-04T18:55:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "168ed5d9b502d40ee17f1f3eacd644d27641f68620983a32fa56c180daab4bb9",
+  "length": 4778
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Thị Thập",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-12-04T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "đoạn giao với Nguyễn Thị Thập nước dâng lên từ rất sớm, cao gần nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-ae465056813d"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-12-04T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Giờ tan tầm, các phương tiện di chuyển chậm chạp, khiến giao thông ở khu vực này trở nên ùn ứ."
+   },
+   "status": "resolved",
+   "recordId": "news-ff65d48cf211"
+  },
+  {
+   "mention": {
+    "street": "Đặng Thùy Trâm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-12-04T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Đến 17h30, nước dâng cao đến nửa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-5bf1e6aa65ee"
+  }
+ ]
+}

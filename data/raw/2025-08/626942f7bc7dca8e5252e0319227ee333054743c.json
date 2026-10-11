@@ -1,0 +1,32 @@
+{
+ "url": "https://tuoitre.vn/sau-mot-ngay-nang-tp-hcm-sam-chop-sang-troi-mua-ngap-nhieu-noi-20250805194816664.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-08-05T19:57:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "f328db8c58278c58476932b22ffdc840a3e21cef4e77e73f82d0b21ca5172955",
+  "length": 3710
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Văn Đồng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "trên đường Phạm Văn Đồng, hướng từ sân bay về cầu vượt Linh Xuân, kẹt xe kéo dài 6-7km, xe không thể di chuyển được."
+   },
+   "status": "resolved",
+   "recordId": "news-3c63fb3f6ef3"
+  }
+ ]
+}

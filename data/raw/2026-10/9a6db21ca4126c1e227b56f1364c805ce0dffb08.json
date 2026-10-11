@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/duong-ma-lo-ngap-sau-sau-mua-lon-ong-ba-cu-u80-mac-ket-hon-2-gio-185261004192423121.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-04T19:24:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "6290cd259603347b0301875405ddc3c11e94db6e2dcde327ef34a1c4bf12e5e6",
+  "length": 1141
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Mã Lò",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Trị Đông",
+    "oldDistrict": null,
+    "observedAt": "2026-10-04T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "đường Mã Lò , phường Bình Trị Đông, TP.HCM vẫn mênh mông nước. Nước rút chậm khiến việc đi lại của người dân gặp nhiều"
+   },
+   "status": "resolved",
+   "recordId": "news-96a39d464c81"
+  }
+ ]
+}

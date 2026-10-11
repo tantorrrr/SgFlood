@@ -1,0 +1,76 @@
+{
+ "url": "https://baotintuc.vn/anh/tp-ho-chi-minh-nhieu-tuyen-duong-vung-ven-ngap-sau-trong-mua-lon-20250918205445091.htm",
+ "outlet": "baotintuc.vn",
+ "publishedAt": "2025-09-18T20:55:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "7bd8d3211141fb98a67cb718c62576a3298d0c7c1b24d8155e082ab67a0b98dd",
+  "length": 2432
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Thới Hòa",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T19:00:00+07:00",
+    "depthCm": 30,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có đoạn nước ngập sâu hơn 30cm, tạo thành từng dòng chảy mạnh khi xe ô tô di chuyển"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Quách Điêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T19:00:00+07:00",
+    "depthCm": 30,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có đoạn nước ngập sâu hơn 30cm, tạo thành từng dòng chảy mạnh khi xe ô tô di chuyển"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Sáng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T19:00:00+07:00",
+    "depthCm": 30,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "có đoạn nước ngập sâu hơn 30cm, tạo thành từng dòng chảy mạnh khi xe ô tô di chuyển"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

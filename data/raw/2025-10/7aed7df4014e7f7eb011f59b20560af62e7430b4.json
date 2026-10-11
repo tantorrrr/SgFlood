@@ -1,0 +1,34 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/nhieu-tuyen-duong-o-tphcm-thanh-song-sau-mua-lon-20251012150839345.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-10-12T15:49:27+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "076d2c63e08f172c5dc491a1c4e349be8aad797aeeb3f049af2d1ce805bd4dd0",
+  "length": 1215
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-10-12T13:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "trên đường Tô Ngọc Vân (phường Hiệp Bình), nước ngập hơn nửa bánh xe, làm một số phương tiện chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-382b2347011e"
+  }
+ ]
+}

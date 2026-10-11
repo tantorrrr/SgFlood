@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dang-cao-o-tphcm-nuoc-tran-bo-de-cuon-cuon-chay-vao-nha-dan-khu-thanh-da-185251024194232344.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-10-24T20:11:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b8cbc7d4a8ed5c77068ca387c002d3696990457de440552d5f52d5df6388b913",
+  "length": 933
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-24T18:00:00+07:00",
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Xe máy chết máy hàng loạt, người dân phải lội nước đến đầu gối."
+   },
+   "status": "resolved",
+   "recordId": "news-ee2ce203588a"
+  }
+ ]
+}

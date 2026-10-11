@@ -1,0 +1,29 @@
+{
+ "url": "https://tuoitre.vn/nld/tp-hcm-mua-lon-dien-rong-nhieu-noi-ngap-nang-196250911192000624.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-09-11T19:58:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "eba6a4442b350308394b2e219bae98f9007604ddeb9909b38204ecbc4ad8bd7c",
+  "length": 3251
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Hội Tây",
+    "oldDistrict": null,
+    "observedAt": "2025-09-11T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Đường Phạm Văn Chiêu, phường An Hội Tây ngập nặng"
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

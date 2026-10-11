@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/nuoc-ngap-lut-banh-xe-ket-xe-gio-tan-tam-vi-trieu-cuong-tren-duong-binh-quoi-18526101022455871.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-11T04:49:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "580f31c38bccd501b24bf79d73094bc2856f996ff9c024d89c2e1ea9d8bc3031",
+  "length": 1961
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Quới",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Một số người phải xuống xe, dắt bộ qua khu vực nước sâu để tránh xe bị chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-76900b020711"
+  }
+ ]
+}

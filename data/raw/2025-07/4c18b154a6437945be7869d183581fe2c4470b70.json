@@ -1,0 +1,35 @@
+{
+ "url": "https://eva.vn/tin-tuc/mua-trang-troi-nhieu-tuyen-duong-o-tphcm-ngap-ung-giua-trua-c73a641208.html",
+ "outlet": "eva.vn",
+ "publishedAt": "2025-07-19T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "9aa6cf1642e2f4db1ec4602b0515575b82e3eeb24f6d8693ccd9688c25ffff3b",
+  "length": 4093
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Hồ Học Lãm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2025-07-19T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Nước dâng đến nửa bánh xe. Nhiều phương tiện chết máy, người dân phải dắt bộ qua đoạn ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

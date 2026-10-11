@@ -1,0 +1,74 @@
+{
+ "url": "https://tuoitre.vn/trieu-cuong-tp-hcm-dang-cao-may-la-khong-co-mua-20251023204123385.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-10-23T21:04:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "081cf2cb2221953b40a8dc00cc530de05c3484f230cd2e0d971a848464865e2c",
+  "length": 3980
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Rạch Cùng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "có đoạn mực nước ngập sâu gần bánh xe máy. Người dân phải lội nước bì bõm, nước ngập đến đầu gối."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Phạm Thế Hiển",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều xe bị chết máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-e4732176b6bc"
+  },
+  {
+   "mention": {
+    "street": "Trịnh Quang Nghị",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều xe bị chết máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-070c5cb65335"
+  }
+ ]
+}

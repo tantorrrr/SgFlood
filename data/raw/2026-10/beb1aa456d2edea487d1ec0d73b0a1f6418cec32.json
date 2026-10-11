@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/don-dinh-trieu-cuong-cao-nhat-thang-10-tphcm-va-mien-tay-nguy-co-ngap-sau-dai-ngay-18526101016453984.htm",
+ "outlet": "Thanh Niên",
+ "publishedAt": "2026-10-10T17:13:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "3b6de101aec3289d3b2e657a5e068f890fa9358978e0e809bac997f8a3d0a0ef",
+  "length": 4038
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Nước ngập lút bánh xe, kẹt xe giờ tan tầm vì triều cường trên đường Bình Quới"
+   },
+   "status": "resolved",
+   "recordId": "news-863e1bac499f"
+  }
+ ]
+}

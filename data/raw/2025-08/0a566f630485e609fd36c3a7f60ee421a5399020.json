@@ -1,0 +1,33 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/tphcm-chim-trong-bien-nuoc-sau-con-mua-lon-keo-dai-giao-thong-te-liet-20250805194821028.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-08-05T20:06:13+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "efa1eb881b57952996a5bb91957bf4e4cd41c89990db48fc3f1e4bb30f17a87a",
+  "length": 2179
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thủ Đức",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T19:00:00+07:00",
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "đường Dương Văn Cam (phường Thủ Đức) ngập sâu hơn 1m, khiến giao thông hoàn toàn tê liệt."
+   },
+   "status": "resolved",
+   "recordId": "news-312e693792c0"
+  }
+ ]
+}

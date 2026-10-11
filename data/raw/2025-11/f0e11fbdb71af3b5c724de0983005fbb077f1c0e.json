@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/canh-khu-nam-tphcm-ngap-sau-trieu-cuong-vuot-lich-su-nhin-tu-tren-cao-185251106175213532.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-06T18:02:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "02f5eebfea65d7e9b9d7522d730766a3808edffee7d9d6ea41fe1c2801f56b7b",
+  "length": 1330
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "Dù chưa đạt đỉnh triều nhưng có nơi mực nước đã cao hơn bánh xe máy, người đi đường rất chật vật."
+   },
+   "status": "resolved",
+   "recordId": "news-04dcebe2d33b"
+  }
+ ]
+}

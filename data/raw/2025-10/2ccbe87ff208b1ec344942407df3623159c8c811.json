@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/nld/hinh-anh-xe-loi-nuoc-song-danh-tren-mot-tuyen-duong-o-tp-hcm-196251008183308836.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-10-08T19:22:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "96ccc1adcc3e0f56504c5a7cb06cdb49e2de42eecb847b8278da87db364d56be",
+  "length": 4288
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-08T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "Nhiều vị trí trên đường này ngập quá nửa bánh xe, khiến nhiều phương tiện \"chết máy\"."
+   },
+   "status": "resolved",
+   "recordId": "news-3291c6625daf"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "url": "https://thanhnien.vn/con-duong-troi-ngap-nuoc-3-ngay-khong-thoat-xe-may-te-nhu-ra-185250906134757773.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-09-06T13:47:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "75f5a03d0229e19e1b804680dbcf7c56812668ce3f890b1de5f170a0fa363904",
+  "length": 932
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Xiển",
+    "from": null,
+    "to": null,
+    "cross": "cầu Gò Công",
+    "ward": "Long Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-09-02T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "con đường Nguyễn Xiển (đoạn dưới chân cầu Gò Công, phường Long Bình , TP.HCM) ngập sâu."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

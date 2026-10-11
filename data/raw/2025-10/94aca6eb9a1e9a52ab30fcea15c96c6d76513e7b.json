@@ -1,0 +1,33 @@
+{
+ "url": "https://laodong.vn/xa-hoi/trieu-cuong-chua-dat-dinh-duong-tran-xuan-soan-o-tphcm-da-ngap-dien-rong-1587663.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-10-07T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "2757048fc4c483a13681aba8dcc867feebd82bb9d386ba314aa8c6eb0c058577",
+  "length": 2176
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-07T17:30:00+07:00",
+    "depthCm": 20,
+    "signals": [
+     "chet_may",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Giao thông trên tuyến đường bị ùn ứ, nhiều người phải đi vòng qua các tuyến hẻm nhỏ để tránh khu vực ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-430c5a2a1ea9"
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "url": "https://nongnghiepmoitruong.vn/mua-lon-tren-dien-rong-nhieu-tuyen-duong-tai-tphcm-ngap-sau-d767099.html",
+ "outlet": "nongnghiepmoitruong.vn",
+ "publishedAt": "2025-08-10T22:05:24+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e0098db12a5bc36ec0ee6acb67e36f1b652e64fdf5c6622b4e8b2d71214dddbd",
+  "length": 4141
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Duy Trinh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-10T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Nguyễn Duy Trinh, Đỗ Xuân Hợp, Dương Đình Hội, Hiệp Bình… nhanh chóng bị ngập sâu chỉ sau khoảng 15 phút mưa."
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Kha Vạn Cân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-10T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Kha Vạn Cân và các hẻm dân sinh lân cận rơi vào tình trạng nước ngập tới nửa bánh xe máy"
+   },
+   "status": "resolved",
+   "recordId": "news-6a860c84ec86"
+  }
+ ]
+}

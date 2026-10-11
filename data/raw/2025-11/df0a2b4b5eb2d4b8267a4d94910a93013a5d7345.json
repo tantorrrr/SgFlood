@@ -1,0 +1,53 @@
+{
+ "url": "https://tuoitre.vn/ngap-nang-trung-tam-tp-hcm-sau-mua-nguoi-di-duong-giat-dien-nghi-tu-moi-noi-ho-nha-dan-20251108180413471.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-08T18:55:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "7cb3be2b80e78a4be7d5e62fbb161827b13031ad25cb59c8609dee2f07c63e06",
+  "length": 5223
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đặng Thùy Trâm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Lợi Trung",
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T16:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "ngập sâu lút bánh xe máy. Nhiều người đi đường phải dắt bộ, dựng xe lên vỉa hè chờ nước rút."
+   },
+   "status": "resolved",
+   "recordId": "news-53a3d4a69674"
+  },
+  {
+   "mention": {
+    "street": "Cống Quỳnh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bến Thành",
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "Nhiều người dân phải dắt bộ, tìm chỗ cao tránh ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

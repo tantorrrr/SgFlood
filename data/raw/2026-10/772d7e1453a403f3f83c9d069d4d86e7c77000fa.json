@@ -1,0 +1,45 @@
+{
+ "url": "https://vietnamnet.vn/mua-lon-gay-ngap-giua-trua-o-trung-tam-tphcm-khach-tay-ngo-ngang-2562167.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-06T14:54:09+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d13aeda4f1685c19c553bb1d50fa07854847b2ff69a07d3695b37086b6be2487",
+  "length": 1511
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lê Lợi",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bến Thành",
+    "oldDistrict": null,
+    "observedAt": "2026-10-06T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Tại giao lộ Lê Lợi (phường Bến Thành), đường ngập khiến việc đi lại gặp nhiều khó khăn."
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Bùi Viện",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-10-06T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Phố Bùi Viện bị ngập nước khiến người dân và du khách gặp khó khăn khi di chuyển."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

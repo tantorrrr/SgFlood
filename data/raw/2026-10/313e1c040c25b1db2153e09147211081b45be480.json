@@ -1,0 +1,32 @@
+{
+ "url": "https://vietnamnet.vn/vi-sao-duong-tphcm-ngap-sau-hon-1m-sau-tran-mua-lon-chieu-30-9-2560679.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-01T13:41:01+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "8071063a0c7a0b82094de601bd366eeb36acf352eba193a57ad432ad0c0f8c0c",
+  "length": 4084
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "both",
+    "quote": "tại tuyến đường Phan Huy Ích, tình hình ngập năm nay ghi nhận diễn biến nghiêm trọng hơn so với các năm trước, mực nước"
+   },
+   "status": "resolved",
+   "recordId": "news-98190ee23031"
+  }
+ ]
+}

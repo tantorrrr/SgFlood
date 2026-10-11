@@ -1,0 +1,54 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-tu-chieu-den-toi-nhieu-tuyen-duong-o-tphcm-ngap-nuoc-lenh-lang-185250610224901037.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-06-11T05:30:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "56bed4d22a969a57a15505f2af7ff276bb606894659d624986ee54de1c189071",
+  "length": 1587
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lê Cơ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2025-06-10T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "lên đến gần bánh xe máy. Vì nước ngập nên nhiều người đi xe máy đến đây hết sức khó khăn, xe bị chết máy"
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Sinco",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-10T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "nước cũng ngập gần nửa bánh xe máy khiến nhiều phương tiện bị chết máy, người dân phải dắt bộ để về nhà."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

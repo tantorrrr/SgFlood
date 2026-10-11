@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-nhieu-tuyen-duong-ngap-sau-den-1-m-keo-dai-2-tieng-1852605021809295.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-05-02T18:20:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "662e655a0900dd5c13fbad65eeb83fd613d733ba5e2f3567ad382f52f0096150",
+  "length": 2189
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Linh Đông",
+    "from": "Tô Ngọc Vân",
+    "to": "Lý Tế Xuyên",
+    "cross": null,
+    "ward": "Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": "2026-05-02T15:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Ở giao lộ Tô Ngọc Vân – Linh Đông, nước ngập lên đến yên xe máy (khoảng 1 m)"
+   },
+   "status": "resolved",
+   "recordId": "news-e2bec35ea610"
+  },
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thủ Đức",
+    "oldDistrict": null,
+    "observedAt": "2026-05-02T15:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "chỉ sau 15 phút mưa lớn, nước đã dâng cao nửa mét và sau 20 phút lên đến 1 m."
+   },
+   "status": "resolved",
+   "recordId": "news-1bd98de4882d"
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-duong-nguyen-van-khoi-ngap-nhu-song-hon-2-tieng-nuoc-chua-rut-18526100119441804.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-01T19:53:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "230da4d0d6287503f610992d83c858a7f47a730c3a935623533465450d2dccf8",
+  "length": 1362
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thông Tây Hội",
+    "oldDistrict": null,
+    "observedAt": "2026-10-01T17:15:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước ngập tại đây lên đến hơn nửa mét khiến người dân khi qua đoạn này đều ái ngại"
+   },
+   "status": "resolved",
+   "recordId": "news-830045fd3718"
+  },
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "cơn mưa lớn đổ xuống làm một số tuyến đường như Nguyễn Văn Khối, Phan Huy Ích bị ngập."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

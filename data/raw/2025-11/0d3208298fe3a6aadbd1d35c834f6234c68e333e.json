@@ -1,0 +1,33 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/duong-trung-tam-tphcm-ngap-sau-mua-lon-nguoi-dan-bi-bom-dat-xe-20251108193318781.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-11-08T19:52:44+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "9ea2d86cb03d5e5f37a95ab5ec8f3477fa1bd03ebf36961d4b75abbe7b649e63",
+  "length": 1184
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Cống Quỳnh",
+    "from": null,
+    "to": null,
+    "cross": "Nguyễn Cư Trinh",
+    "ward": "Bến Thành",
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T17:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "Nhiều phương tiện qua khu vực chết máy, người dân phải đẩy bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-043cc2370e48"
+  }
+ ]
+}

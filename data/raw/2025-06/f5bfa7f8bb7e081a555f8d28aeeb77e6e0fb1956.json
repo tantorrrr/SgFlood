@@ -1,0 +1,29 @@
+{
+ "url": "https://thanhnien.vn/cam-canh-ngap-nuoc-la-dong-cua-cua-nhieu-hang-quan-o-tphcm-mua-mua-185250627062711007.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-06-27T13:50:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "709a9d7022903a66a28690ccf6c7e8b22aea87b5d4139d5bb9e1461031d68712",
+  "length": 3263
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lê Cơ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-26T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Mưa xối xả khiến đường ngập, nước tràn vào trong quán."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

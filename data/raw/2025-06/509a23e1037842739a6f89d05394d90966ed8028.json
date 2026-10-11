@@ -1,0 +1,51 @@
+{
+ "url": "https://tuoitre.vn/dieu-gi-khien-pho-nha-giau-thao-dien-cu-mua-la-ngap-2025060422024249.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-06-05T10:35:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "30ec402c4ffc45fc21ef05314ffe68866209b5525e56f93029da502a9b97312e",
+  "length": 4977
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Hưởng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thảo Điền",
+    "oldDistrict": null,
+    "observedAt": "2025-06-04T14:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Quốc Hương, Nguyễn Văn Hưởng, Thảo Điền bị ngập lút bánh xe, đoạn ngập sâu nhất ngay trước Trường đại học Văn hóa TP.HCM."
+   },
+   "status": "resolved",
+   "recordId": "news-4b9633d344c7"
+  },
+  {
+   "mention": {
+    "street": "Thảo Điền",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-04T14:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Quốc Hương, Nguyễn Văn Hưởng, Thảo Điền bị ngập lút bánh xe, đoạn ngập sâu nhất ngay trước Trường đại học Văn hóa TP.HCM."
+   },
+   "status": "resolved",
+   "recordId": "news-e3c4904a0c00"
+  }
+ ]
+}

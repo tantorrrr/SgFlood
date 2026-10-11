@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-toi-cuoi-tuan-duong-nguyen-van-khoi-nuoc-tran-vao-tang-ham-nha-dan-185260530202538411.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-05-30T20:43:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "9a0e4dbcb8e05a15fa1e1715b1d5eb7f25164a3f70a8d5d6676f72954e45a044",
+  "length": 1176
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thông Tây Hội",
+    "oldDistrict": null,
+    "observedAt": "2026-05-30T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước ngập tại đây lên đến khoảng gần bánh xe máy khiến người dân khi qua đoạn này đều ái ngại"
+   },
+   "status": "resolved",
+   "recordId": "news-501a3baa7e4d"
+  }
+ ]
+}

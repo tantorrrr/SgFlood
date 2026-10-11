@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/trieu-cuong-vuot-bo-chan-thanh-da-lut-nua-xe-o-hiep-phuoc-20251106174156822.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-06T18:13:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "6a6d1972d8fc4986509954acb679d72bb94cccc8e2b8724e9209fd44800434a4",
+  "length": 4098
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Hiệp Phước",
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "Đến hơn 16h, khu vực này đã hóa thành sông. Xe tải, xe máy chết máy la liệt"
+   },
+   "status": "resolved",
+   "recordId": "news-f9e5a5444c20"
+  }
+ ]
+}

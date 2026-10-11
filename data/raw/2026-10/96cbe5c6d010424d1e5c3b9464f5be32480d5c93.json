@@ -1,0 +1,89 @@
+{
+ "url": "https://vietnamnet.vn/tphcm-lai-mua-lon-kem-sam-set-nghin-nguoi-chat-vat-vi-ngap-va-ket-xe-2562648.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-07T22:19:09+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "97cbe89976f8c8b6405dcdb0f67347841f45cea74f0bd6f872690ce650199ac1",
+  "length": 1684
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "D5",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thạnh Mỹ Tây",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "sau khoảng 30 phút mưa lớn, nước nhanh chóng dâng cao, khiến người dân phải dắt xe qua đoạn ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Gia Trí",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường như D5, Nguyễn Gia Trí, Hoàng Văn Thụ ngập nặng, giao thông ùn tắc."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Hoàng Văn Thụ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "nhiều tuyến đường như D5, Nguyễn Gia Trí, Hoàng Văn Thụ ngập nặng, giao thông ùn tắc."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Trường Sơn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Sơn Hòa",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Đường Trường Sơn (phường Tân Sơn Hòa), lối ra sân bay, ngập nặng sau mưa lớn, khiến xe máy di chuyển chậm qua khu vực."
+   },
+   "status": "resolved",
+   "recordId": "news-f9b79ba548f7"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-o-tphcm-nguoi-dan-thanh-da-lai-kho-so-chong-choi-trong-dem-185251106210051224.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-07T04:11:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "df146de4946cffc28f7f7044693e542e5115965dc157e306c0929fdd1578c5ad",
+  "length": 458
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "có nơi ngập sâu đến ngang bụng."
+   },
+   "status": "resolved",
+   "recordId": "news-4ac3f0dc65d6"
+  }
+ ]
+}

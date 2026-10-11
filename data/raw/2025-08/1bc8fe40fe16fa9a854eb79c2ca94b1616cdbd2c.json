@@ -1,0 +1,65 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/tphcm-mua-hon-100mm-nhieu-tuyen-duong-ngap-20250821113617387.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-08-21T11:50:54+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "543265582878b6540cf30568edb04b9dd01b2960f59b0098a35d856fd4200571",
+  "length": 1203
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Khoảng 7h cùng ngày, tại đường Phan Huy Ích, nước ngập gần đến yên xe máy. Nhiều phương tiện bị chết máy"
+   },
+   "status": "resolved",
+   "recordId": "news-7c6b2947e27f"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "một số tuyến đường như Phan Huy Ích, Phạm Văn Chiêu, quốc lộ 50, Bà Triệu, Ngô Quyền... ngập sâu."
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Quốc lộ 50",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "một số tuyến đường như Phan Huy Ích, Phạm Văn Chiêu, quốc lộ 50, Bà Triệu, Ngô Quyền... ngập sâu."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

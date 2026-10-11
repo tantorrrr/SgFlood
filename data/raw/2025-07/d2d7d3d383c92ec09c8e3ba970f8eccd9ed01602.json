@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-gay-ngap-sau-duoi-chan-cau-nguoi-dan-re-song-vuot-qua-185250712172155262.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-07-12T17:31:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "3cd42d990f54caef74d7cde82406586d17581223e88a377684c578ecd559c6f3",
+  "length": 1632
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Xiển",
+    "from": null,
+    "to": null,
+    "cross": "cầu Gò Công",
+    "ward": "Long Bình",
+    "oldDistrict": null,
+    "observedAt": "2025-07-12T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "cơn mưa rất lớn chiều 12.7 khiến đoạn ngập kéo dài thêm, mực nước cũng cao hơn, đến quá nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-9885dd717485"
+  }
+ ]
+}

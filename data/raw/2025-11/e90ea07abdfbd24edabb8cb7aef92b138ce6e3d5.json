@@ -1,0 +1,32 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/canh-ngap-nuoc-hiem-thay-giua-trung-tam-tphcm-20251108210412376.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-11-08T21:39:43+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "f867aeace0f75e16ca376f4ed7c92d8add5239aeb14d835deab3533351540b40",
+  "length": 2262
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Calmette",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "both",
+    "quote": "Chỉ còn hàng dài ô tô nối đuôi nhau, nhích từng chút qua đoạn ngập sâu."
+   },
+   "status": "resolved",
+   "recordId": "news-9da6d974b9d8"
+  }
+ ]
+}

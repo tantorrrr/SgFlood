@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dang-cao-nguoi-dan-binh-quoi-lo-xe-chet-may-khong-dam-ve-nha-185251105212131702.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-06T06:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "6ffd729627fa9241447495815a319fcb0c74a46e83d956c0b64eb4f64280f942",
+  "length": 1433
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "xe chết máy liên tiếp, nhiều người bì bõm dắt xe qua dòng nước ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-cf89450698c4"
+  }
+ ]
+}

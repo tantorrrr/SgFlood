@@ -1,0 +1,32 @@
+{
+ "url": "https://sggp.org.vn/nguoi-dan-tphcm-vat-lon-voi-trieu-cuong-cao-post819730.html",
+ "outlet": "sggp.org.vn",
+ "publishedAt": "2025-10-24T15:28:28+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a1d6fa8c995a0fe51ce7998e9fa171ccdb5697472a5efb16755ea54c5214ff69",
+  "length": 2985
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "khoảng 19 giờ ngày 23-10, triều cường dâng cao ngập cả bánh xe khiến việc lưu thông, buôn bán bị đảo lộn."
+   },
+   "status": "resolved",
+   "recordId": "news-e501ebd343de"
+  }
+ ]
+}

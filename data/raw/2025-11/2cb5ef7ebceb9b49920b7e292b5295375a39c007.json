@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-ngay-711-o-tphcm-ban-dao-thanh-da-bot-am-anh-canh-ngap-nuoc-185251107200838958.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-07T20:43:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "c5091c3a01820b09644a90091c10e219932432328fbdaaaf950b359dd3f794cb",
+  "length": 1239
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-07T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Tại đây, nước cao tới nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-3481aa882ebd"
+  }
+ ]
+}

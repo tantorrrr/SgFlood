@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/giai-cuu-duong-ngap-gan-5-tieng-o-tphcm-dieu-xe-bon-den-hut-nuoc-trong-dem-18526100723151409.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-08T06:15:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b9aa08485230fa1376c1e65459b36c47321a0fd8dcfe66ecc2af6fd5b5896c2f",
+  "length": 2099
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bạch Đằng",
+    "from": null,
+    "to": null,
+    "cross": "Đinh Bộ Lĩnh",
+    "ward": "Gia Định",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "đoạn giao lộ đường Đinh Bộ Lĩnh - Bạch Đằng (phường Gia Định) ngập sâu, kéo dài."
+   },
+   "status": "resolved",
+   "recordId": "news-39750c275d58"
+  }
+ ]
+}

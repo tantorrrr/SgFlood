@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/nuoc-trieu-dang-gay-ngap-nhieu-tuyen-duong-tphcm-xe-may-quay-dau-leo-le-tranh-nuoc-185260928203250298.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-09-28T20:35:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "0c25734860363ab47488c52baddd1362056cbb41223607981ad4947251529323",
+  "length": 2197
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": null,
+    "to": null,
+    "cross": "Lê Văn Lương",
+    "ward": "xã Nhà Bè",
+    "oldDistrict": null,
+    "observedAt": "2026-09-28T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Tại đường Nguyễn Bình giao Lê Văn Lương, xã Nhà Bè, TP.HCM nước dâng hơn nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-ee4db19d86a7"
+  }
+ ]
+}

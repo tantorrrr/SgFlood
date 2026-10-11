@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/csgt-dung-xe-dac-chung-cho-nguoi-dan-vuot-duong-ngap-sau-giua-mua-lon-o-tphcm-185260602212349664.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-06-02T21:29:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d613dbda35c79f835611ad7a5d3f365683fad91dd37a903a58717f5ade3d0fee",
+  "length": 2615
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Ảnh Thủ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Trung Mỹ Tây",
+    "oldDistrict": null,
+    "observedAt": "2026-06-02T15:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Một số người dân phải dắt bộ phương tiện giữa dòng nước, tiềm ẩn nguy cơ mất an toàn giao thông và tai nạn."
+   },
+   "status": "resolved",
+   "recordId": "news-0e048e480b5c"
+  }
+ ]
+}

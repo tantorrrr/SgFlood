@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-nuot-duong-tran-xuan-soan-nguoi-dan-tphcm-bi-bom-gio-tan-tam-185250910230044306.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-09-11T05:40:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "7ea9f6c4c52da16a75cc91049d72427b0cfc243a2ed780d9d8e8cee7488ffed7",
+  "length": 1908
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-09-10T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "người dân phải bì bõm nhích từng chút một qua dòng nước ngập ngang ống pô."
+   },
+   "status": "resolved",
+   "recordId": "news-55fec0175e5e"
+  }
+ ]
+}

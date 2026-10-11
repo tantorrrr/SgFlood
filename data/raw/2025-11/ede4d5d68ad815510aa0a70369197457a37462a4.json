@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/nld/tp-hcm-mua-lon-keo-dai-trong-dem-ngap-nang-xe-co-chet-dung-1962511042338452.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-04T23:52:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "788df2f144271fbbcc95797ff5a4469564029969bbe2d0c6815344168b8e8bc6",
+  "length": 3774
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Duy Trinh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Trưng",
+    "oldDistrict": null,
+    "observedAt": "2025-11-04T23:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Loạt người đi xe máy dắt bộ trên đường Nguyễn Duy Trinh, phường Bình Trưng"
+   },
+   "status": "resolved",
+   "recordId": "news-3b729e41456d"
+  }
+ ]
+}

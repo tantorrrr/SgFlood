@@ -1,0 +1,33 @@
+{
+ "url": "https://znews.vn/canh-nguoi-dan-tphcm-co-lao-qua-doan-nuoc-ngap-gan-lut-xe-may-post1673661.html",
+ "outlet": "znews.vn",
+ "publishedAt": "2026-07-30T18:08:03+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d0a3df996caa2273e8d7be9ab1a1bb802d654cd13f0b1ab0a69a1f16f5304810",
+  "length": 4669
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Xa lộ Hà Nội",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-07-29T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập khá sâu, nhiều xe máy chết máy nên ai cũng phải đi rất chậm."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

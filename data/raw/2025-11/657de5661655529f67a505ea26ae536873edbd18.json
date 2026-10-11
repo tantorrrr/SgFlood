@@ -1,0 +1,32 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/giua-trua-nang-dan-tphcm-bi-bom-loi-nuoc-suot-20-ngay-20251111145349250.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-11-11T15:13:26+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b701bd3cb5008136d5b404fa59338351424852c3c1d76875dc905909f0c3e4b8",
+  "length": 2203
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Đại Nghĩa",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Tạo",
+    "oldDistrict": null,
+    "observedAt": "2025-11-11T10:30:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "both",
+    "quote": "do đường ngập sâu hơn 0,5m, nước tràn vào nhà, gây khó khăn cho việc đi lại và mua sắm."
+   },
+   "status": "resolved",
+   "recordId": "news-d787a90c82cb"
+  }
+ ]
+}

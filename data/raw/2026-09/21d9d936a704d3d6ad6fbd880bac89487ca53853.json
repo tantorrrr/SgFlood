@@ -1,0 +1,29 @@
+{
+ "url": "https://tuoitre.vn/mua-lon-giua-trua-chu-nhat-duong-binh-chieu-o-tphcm-ngap-nua-banh-xe-sau-15-phut-100260920114248528.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2026-09-20T12:48:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "f4808c9e4a5697c7e141b7d2d84f1a64afae0232af0fe9cb4a0996fe120ff6ef",
+  "length": 3886
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lý Tế Xuyên",
+    "from": null,
+    "to": null,
+    "cross": "Linh Đông",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-09-18T20:15:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Nước từ nhiều hướng dồn về đường Lý Tế Xuyên, gần đường Linh Đông, tạo thành dòng chảy xiết khiến nhiều xe cộ bị xô ngã"
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "url": "https://vietnamnet.vn/tphcm-ngap-nang-sau-mua-lon-loat-phuong-tien-chet-may-nuoc-tran-vao-ca-xe-buyt-2561597.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-04T20:36:18+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "75253bcc7ee8188ee22c214c06ec016690a198b0957f16f128ddc37044a5a3a0",
+  "length": 3291
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Mã Lò",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Trị Đông",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": 60,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "nước trên đường Mã Lò (phường Bình Trị Đông) có thời điểm dâng cao khoảng 0,6m"
+   },
+   "status": "resolved",
+   "recordId": "news-969d9a9a7372"
+  }
+ ]
+}

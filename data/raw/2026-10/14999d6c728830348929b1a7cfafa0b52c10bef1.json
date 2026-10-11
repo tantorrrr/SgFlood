@@ -1,0 +1,51 @@
+{
+ "url": "https://thanhnien.vn/trieu-cuong-dat-dinh-chieu-1010-duong-khu-nam-tphcm-ngap-sau-nguoi-dan-chat-vat-185261010175904498.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-10T18:22:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "60d77b63ae3144551f744015f30b899bfcd20b98079d6362de5a108cf881814a",
+  "length": 1373
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": "15B",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-10-10T15:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Mực nước hôm nay tại đường này có nơi cao hơn bánh xe máy, kéo dài gần như hết tuyến đường."
+   },
+   "status": "resolved",
+   "recordId": "news-476083c1af96"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2026-10-10T15:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "tide",
+    "quote": "tại đường Trần Xuân Soạn (đoạn cầu Tân Thuận, phường Tân Thuận), nước từ phía sông Sài Gòn đã tràn lên khắp mặt đường."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

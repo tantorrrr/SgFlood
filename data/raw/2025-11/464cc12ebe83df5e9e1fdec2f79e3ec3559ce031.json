@@ -1,0 +1,133 @@
+{
+ "url": "https://sggp.org.vn/tphcm-nhieu-tuyen-duong-tai-trung-tam-ngap-sau-sau-mua-lon-post822534.html",
+ "outlet": "sggp.org.vn",
+ "publishedAt": "2025-11-08T22:56:05+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "ae3f238772bb73e686fc3888c30a275b16e2f59e7e7360cfb4500f38a3f2a831",
+  "length": 1421
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Công Trứ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi ngập sâu đến nửa bánh xe, người dân phải dắt bộ hoặc nhờ hỗ trợ đẩy xe qua các đoạn ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Lê Thị Hồng Gấm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi ngập sâu đến nửa bánh xe, người dân phải dắt bộ hoặc nhờ hỗ trợ đẩy xe qua các đoạn ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Calmette",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi ngập sâu đến nửa bánh xe, người dân phải dắt bộ hoặc nhờ hỗ trợ đẩy xe qua các đoạn ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-db522639613a"
+  },
+  {
+   "mention": {
+    "street": "Yersin",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi ngập sâu đến nửa bánh xe, người dân phải dắt bộ hoặc nhờ hỗ trợ đẩy xe qua các đoạn ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Thái Học",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi ngập sâu đến nửa bánh xe, người dân phải dắt bộ hoặc nhờ hỗ trợ đẩy xe qua các đoạn ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Phan Văn Trường",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "both",
+    "quote": "có nơi ngập sâu đến nửa bánh xe, người dân phải dắt bộ hoặc nhờ hỗ trợ đẩy xe qua các đoạn ngập."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

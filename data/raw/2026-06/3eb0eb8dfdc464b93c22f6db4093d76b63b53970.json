@@ -1,0 +1,29 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-o-tphcm-chieu-26-pho-tay-bui-vien-nuoc-ngap-lenh-lang-185260602174656231.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-06-02T18:01:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "1a732782b2e3359e5fe1ebede25256df133bc43039f548316eed3d5f540bd679",
+  "length": 1474
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bùi Viện",
+    "from": "Đỗ Quang Đẩu",
+    "to": "Cống Quỳnh",
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-06-02T15:30:00+07:00",
+    "depthCm": 40,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Nước ngập lên đến 30 - 40 cm trên đoạn từ giao lộ đường Bùi Viện - Đỗ Quang Đẩu đến Cống Quỳnh."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

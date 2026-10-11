@@ -15,6 +15,7 @@ import { BBOX, CACHE, HEADERS, ROOT } from './lib/osm.mjs';
 import { publishedFrom, FEEDS, parseFeed, isCandidate, articleText, isHeavy, buildNetwork, resolveMention, toRecord, dedupe, withinDays } from './lib/news.mjs';
 import { enrichWeather, parseUrlList, parseUrlDates } from './lib/news-weather.mjs';
 import { extractMentions, readMentions, responseFile, costUsd, MODEL } from './lib/news-llm.mjs';
+import { auditEntry, mentionOutcomes, writeAudit } from './lib/news-audit.mjs';
 
 const OUT = new URL('public/data/news-floods.json', ROOT);
 const ROADS = new URL('public/data/roads.json', ROOT);
@@ -171,14 +172,15 @@ Dumped ${articles.length} candidate(s) to ${dumpDir} (no LLM call, nothing else 
     usage.output += res.usage.output_tokens;
     seen[a.url] = iso(now);
     mentions += res.mentions.length;
-    for (const m of res.mentions.filter(isHeavy)) {
+    const outcomes = mentionOutcomes(a, res.mentions, net, BBOX);
+    for (const o of outcomes) {
+      if (o.status === 'not_heavy') continue;
       heavy++;
-      try {
-        records.push(toRecord(m, resolveMention(m, net, BBOX), a));
-      } catch (err) {
-        console.warn(`  unresolved "${m.street}" (${[m.from, m.to, m.cross].filter(Boolean).join(' / ') || '—'}) ${a.url}: ${err.message}`);
-      }
+      const m = o.mention;
+      if (o.status === 'resolved') records.push(toRecord(m, resolveMention(m, net, BBOX), a));
+      else console.warn(`  unresolved "${m.street}" (${[m.from, m.to, m.cross].filter(Boolean).join(' / ') || '—'}) ${a.url}: ${o.reason}`);
     }
+    await writeAudit(ROOT, a, auditEntry(a, outcomes, { fetchedAt: iso(now), extractor: responsesDir ? 'manual-responses' : MODEL }));
   }
 
   const prev = await readJson(OUT, { reports: [] });

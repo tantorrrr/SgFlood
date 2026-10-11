@@ -1,0 +1,33 @@
+{
+ "url": "https://dantri.com.vn/ban-doc/tphcm-chim-trong-bien-nuoc-do-trieu-cuong-nguoi-dan-chat-vat-di-chuyen-20251206194514437.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-12-06T19:58:47+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "2a10b1db9159e1e713b941e1a1a94dceef19a9fcd844c86071cdff456fccd4e2",
+  "length": 1938
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Mỹ",
+    "oldDistrict": null,
+    "observedAt": "2025-12-06T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "nhiều đoạn trên đường Phạm Hữu Lầu ngập sâu hơn nửa mét."
+   },
+   "status": "resolved",
+   "recordId": "news-9b98af3e5ab3"
+  }
+ ]
+}

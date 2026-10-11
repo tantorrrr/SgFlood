@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-gio-tan-tam-o-tphcm-nhieu-nguoi-xuong-xe-day-bo-qua-duong-ngap-185260910192552828.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-09-10T19:33:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b48f5c6e55ef230b62e886f4acc85457f0be42a275f82a3fc867be113a76fedc",
+  "length": 1014
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Ung Văn Khiêm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "có nơi nước ngập gần lút bánh xe máy. Nhiều phương tiện lưu thông qua khu vực này phải đẩy bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-7fccbb80bcbf"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-noi-tiep-co-doan-duong-nay-o-tpthu-duc-mai-khong-het-ngap-185250610165508063.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-06-10T17:51:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "ff791786ca0ca894846203045bde7ae70de692c063051fe5c2f0a9dda61eea17",
+  "length": 1683
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Xiển",
+    "from": null,
+    "to": null,
+    "cross": "cầu Gò Công",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-10T07:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "nước vẫn lênh láng kể từ khi cơn mưa lớn trút xuống sáng nay."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

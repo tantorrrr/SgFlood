@@ -1,0 +1,82 @@
+{
+ "url": "https://tuoitre.vn/plo/tphcm-mua-lon-rang-sang-nhieu-tuyen-duong-ngap-sau-nguoi-dan-vat-va-di-lam-109866662.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-08-21T10:01:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "857bf11d8e7b65e897c002c97eae302520135a53ebe68c7838a4e35c12bbce79",
+  "length": 3707
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T04:00:00+07:00",
+    "depthCm": 50,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "đường Phan Huy Ích (quận Gò Vấp cũ), nước ngập hơn nửa mét, kéo dài gần 2km."
+   },
+   "status": "resolved",
+   "recordId": "news-a90ed02c8259"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Quá",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Đông Hưng Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T04:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Chỉ trong vòng nửa giờ, hàng loạt tuyến đường như Song Hành, Nguyễn Văn Quá (phường Đông Hưng Thuận), Phạm Văn Chiêu, Lê Đức Thọ"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T04:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Chỉ trong vòng nửa giờ, hàng loạt tuyến đường như Song Hành, Nguyễn Văn Quá (phường Đông Hưng Thuận), Phạm Văn Chiêu, Lê Đức Thọ"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Lê Đức Thọ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-08-21T04:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Chỉ trong vòng nửa giờ, hàng loạt tuyến đường như Song Hành, Nguyễn Văn Quá (phường Đông Hưng Thuận), Phạm Văn Chiêu, Lê Đức Thọ"
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

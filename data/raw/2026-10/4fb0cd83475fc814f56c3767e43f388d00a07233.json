@@ -1,0 +1,68 @@
+{
+ "url": "https://vietnamnet.vn/duong-pho-tphcm-ngap-sau-do-trieu-cuong-nguoi-dan-tat-ta-loi-nuoc-ve-nha-2563570.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-10T19:32:54+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "1f81a834ebefa7ea19468ace6147427c830cf7554c6daf7ed9ae63eaba6d7254",
+  "length": 1763
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Hữu Lầu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Quận 7",
+    "observedAt": "2026-10-10T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nước triều dâng cao hơn nửa mét trên đường Phạm Hữu Lầu, khu vực quận 7 cũ, khiến người dân bì bõm dắt xe"
+   },
+   "status": "resolved",
+   "recordId": "news-43f2e468aedd"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Lương Bằng",
+    "from": null,
+    "to": null,
+    "cross": "Hoàng Quốc Việt",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [],
+    "cause": "tide",
+    "quote": "Tại đường Nguyễn Lương Bằng, đoạn giao Hoàng Quốc Việt, nước ngập gần bánh xe máy."
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Trên đường Trần Xuân Soạn, nước từ kênh Tàu Hủ dâng lên, có nơi ngập đến nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-32e49da1ddff"
+  }
+ ]
+}

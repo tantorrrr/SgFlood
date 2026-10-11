@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/xe-chet-may-hang-loat-sau-mua-lon-nguoi-dan-bi-bom-dat-bo-xuyen-dem-185260530235036831.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-05-31T08:01:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "2ede3019a91c936889f208766a1659f0c303e196f3c64acb14ee0dfc080cb7c8",
+  "length": 1209
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Chiến Lược",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Trị Đông",
+    "oldDistrict": null,
+    "observedAt": "2026-05-30T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Có thời điểm, mực nước ngập hơn nửa bánh xe, khiến nhiều xe máy gần như không thể tiếp tục di chuyển."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  }
+ ]
+}

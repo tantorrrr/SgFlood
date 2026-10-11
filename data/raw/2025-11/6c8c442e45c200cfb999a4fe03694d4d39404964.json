@@ -1,0 +1,76 @@
+{
+ "url": "https://laodong.vn/xa-hoi/tphcm-mua-dong-kem-sam-chop-giua-dem-nhieu-noi-ngap-nang-1603772.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-11-04T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "29762c1b76f31963f531673365a6f769be424f59fd87c3fff78fb25909181dfa",
+  "length": 723
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Kỳ Đồng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-04T22:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều đoạn đường nước dâng cao tới nửa bánh xe, khiến phương tiện di chuyển khó khăn, hàng loạt xe chết máy phải dắt bộ."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Duy Trinh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-04T22:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều đoạn đường nước dâng cao tới nửa bánh xe, khiến phương tiện di chuyển khó khăn, hàng loạt xe chết máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-d3349a91f69d"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-04T22:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều đoạn đường nước dâng cao tới nửa bánh xe, khiến phương tiện di chuyển khó khăn, hàng loạt xe chết máy phải dắt bộ."
+   },
+   "status": "resolved",
+   "recordId": "news-a07af1035e0b"
+  }
+ ]
+}

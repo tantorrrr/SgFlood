@@ -1,0 +1,48 @@
+{
+ "url": "https://tuoitre.vn/mua-nhu-trut-binh-tan-thu-duc-nuoc-ngap-lenh-lang-20250610195453276.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-06-10T20:11:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "f714b392a8efce1025e0888895c3293f4cf9272f0f0302caac49d867436caaaf",
+  "length": 3928
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Lê Cơ",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "An Lạc",
+    "oldDistrict": null,
+    "observedAt": "2025-06-10T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Tại đường Lê Cơ (phường An Lạc), nước ngập đến đầu gối người lớn."
+   },
+   "status": "unresolved",
+   "reason": "no cross street or stretch"
+  },
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-06-10T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Tại đường Quốc Hương, \"rốn ngập\" của khu nhà giàu Thảo Điền cũng ngập nặng sau trận mưa kéo dài."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

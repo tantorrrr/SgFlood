@@ -1,0 +1,34 @@
+{
+ "url": "https://tuoitre.vn/mua-lon-nhieu-tuyen-duong-tphcm-ngap-nang-nguoi-dan-chat-vat-ve-nha-100260910184001121.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2026-09-10T18:52:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a67977ab69e5d4fffe80f6e0a0f6e6e5dcb88774631f8acb86f4ced8b63e804a",
+  "length": 5439
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Tô Ngọc Vân",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "phường Hiệp Bình",
+    "oldDistrict": null,
+    "observedAt": "2026-09-10T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Có nơi nước dâng cao quá đầu gối, khiến việc đi lại của người dân gặp nhiều khó khăn."
+   },
+   "status": "resolved",
+   "recordId": "news-1603bd183b01"
+  }
+ ]
+}

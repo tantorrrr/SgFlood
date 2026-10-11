@@ -1,0 +1,34 @@
+{
+ "url": "https://vietnamnet.vn/canh-tuong-chua-tung-thay-o-ban-dao-thanh-da-khi-trieu-cuong-dang-suot-dem-2456155.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-10-25T08:21:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "abc97479d2e674a1c5e104236e5dfd5c43b993245f8ffbb477e7588fc8ad84ed",
+  "length": 1918
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-24T20:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "khu vực ven bờ sông nước đã ngập tới bụng, nhiều xe chết máy nằm la liệt."
+   },
+   "status": "resolved",
+   "recordId": "news-900bb4faaeaa"
+  }
+ ]
+}

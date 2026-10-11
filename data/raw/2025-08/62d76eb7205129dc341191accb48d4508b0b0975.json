@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/tphcm-ngap-nuoc-hon-1-m-suot-2-tieng-o-to-chet-may-la-liet-185250810203416004.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-10T21:16:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "5fbe792aa05946c57b3c79e9e7c4d3c686ecc30dd8c84000f30947db8619287b",
+  "length": 1609
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Duy Trinh",
+    "from": "Nguyễn Từ Nghiêm",
+    "to": "Nguyễn Tuyển",
+    "cross": null,
+    "ward": "Bình Trưng",
+    "oldDistrict": null,
+    "observedAt": "2025-08-10T17:30:00+07:00",
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước sâu nhất có nơi lên đến khoảng 1 m."
+   },
+   "status": "unresolved",
+   "reason": "no intersection Nguyễn Duy Trinh × Nguyễn Tuyển within 2000 m of near"
+  }
+ ]
+}

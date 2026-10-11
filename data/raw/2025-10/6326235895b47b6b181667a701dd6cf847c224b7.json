@@ -1,0 +1,33 @@
+{
+ "url": "https://laodong.vn/xa-hoi/trieu-cuong-o-tphcm-dang-cao-nuoc-tran-qua-bo-ke-thanh-da-1597280.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-10-24T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "9eb145cacbbaa0f17033eaf8a92a58283ae2c7f41c61229a782af9ba4e2b0bcd",
+  "length": 2008
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Thanh Đa",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-24T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Trên đường Thanh Đa, nhiều đoạn bị ngập gần nửa bánh xe, người dân phải lội nước hoặc dắt xe qua những đoạn ngập sâu."
+   },
+   "status": "resolved",
+   "recordId": "news-b64f6dc95acd"
+  }
+ ]
+}

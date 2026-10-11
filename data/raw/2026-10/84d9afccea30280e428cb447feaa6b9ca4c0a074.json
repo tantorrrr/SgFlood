@@ -1,0 +1,53 @@
+{
+ "url": "https://tuoitre.vn/trieu-cuong-171m-nhieu-tuyen-duong-tphcm-ngap-gan-lut-banh-xe-100261010150026581.htm",
+ "outlet": "Tuổi Trẻ",
+ "publishedAt": "2026-10-10T18:57:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "dbdfb46d6b42ba4f19c71f900289e6c349901fc6d34ba82f52c3a562cd2f34e5",
+  "length": 4560
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Hiệp Phước",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [
+     "dat_bo",
+     "chet_may",
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "có đoạn ngập gần lút bánh xe máy. Nhiều người phải đẩy xe qua dòng nước, trong khi hàng loạt xe bị chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-4333483d1b54"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-10-10T16:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Từ 16h30, nước triều trên đường Trần Xuân Soạn dâng cao hơn nửa bánh xe máy"
+   },
+   "status": "resolved",
+   "recordId": "news-5af1f44cf9ed"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+ "url": "https://vietnamnet.vn/trieu-cuong-dang-lien-tiep-nguoi-dan-tphcm-ngao-ngan-vi-muc-nuoc-cao-bat-thuong-2459818.html",
+ "outlet": "vietnamnet.vn",
+ "publishedAt": "2025-11-08T09:17:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "245abebd8cc9303973406ebcbd0b0a7db1d629400878ae566fe2ed6fcf801795",
+  "length": 1970
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bình Quới",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-07T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "tide",
+    "quote": "nhiều đoạn trên đường Bình Quới ngập lút bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-cec907652844"
+  }
+ ]
+}

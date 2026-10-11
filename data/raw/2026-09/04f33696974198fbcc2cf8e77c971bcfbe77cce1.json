@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/kho-so-vi-trieu-cuong-dang-cao-o-tphcm-nguoi-dan-chat-vat-cho-nuoc-rut-185260929211436707.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-09-29T21:20:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e986bfc18460be0efeb532c3374fdb5561b07a2f489d031689f0b252a7b192d6",
+  "length": 1718
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": "cầu Bà Sáu",
+    "to": "cầu Bà Chiêm 1",
+    "cross": null,
+    "ward": "xã Hiệp Phước",
+    "oldDistrict": null,
+    "observedAt": "2026-09-29T16:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều xe máy phải giảm tốc độ, di chuyển chậm, thậm chí bị chết máy người dân phải đẩy bộ"
+   },
+   "status": "unresolved",
+   "reason": "no OSM ways named cầu Bà Chiêm 1"
+  }
+ ]
+}

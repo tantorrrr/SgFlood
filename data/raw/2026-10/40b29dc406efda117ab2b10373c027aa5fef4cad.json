@@ -1,0 +1,34 @@
+{
+ "url": "https://vietnamnet.vn/canh-ham-biet-thu-ngap-1-5m-xe-may-nhan-vien-ngan-hang-chim-trong-nuoc-o-tphcm-2562835.html",
+ "outlet": "VietNamNet",
+ "publishedAt": "2026-10-08T14:14:32+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "68cce99c4d0d01cd2867553714001080bc138675ec1eddf6b623bdd650ba9f15",
+  "length": 3000
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2026-10-08T12:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Đến trưa 8/10, đường Nguyễn Văn Khối vẫn bị ngập sâu gần nửa mét, kéo dài hơn 500m"
+   },
+   "status": "resolved",
+   "recordId": "news-99fd45f64079"
+  }
+ ]
+}

@@ -1,0 +1,33 @@
+{
+ "url": "https://laodong.vn/xa-hoi/chat-vat-di-lam-sang-dau-tuan-do-trieu-cuong-o-tphcm-1621804.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-12-08T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "3e09349c2a7827635d08b745368137f413cbcc1822dc3454dd25ba6540b687d8",
+  "length": 1482
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phạm Thế Hiển",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Đông",
+    "oldDistrict": null,
+    "observedAt": "2025-12-08T07:00:00+07:00",
+    "depthCm": 30,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Đến 7h, mặt đường nhiều đoạn vẫn đang ngập từ 20-30cm."
+   },
+   "status": "resolved",
+   "recordId": "news-31748e8a15c7"
+  }
+ ]
+}

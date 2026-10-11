@@ -1,0 +1,33 @@
+{
+ "url": "https://laodong.vn/xa-hoi/nguoi-tre-o-tphcm-xong-pha-dieu-tiet-giao-thong-giup-dan-vuot-ngap-do-trieu-cuong-1604940.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-11-06T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b21c3d008016c0fad91e5561ff90a7c322aa1b1467ded50b6f4249f8611e75a2",
+  "length": 1397
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Hữu Thọ",
+    "from": null,
+    "to": null,
+    "cross": "Lê Văn Lương",
+    "ward": "Tân Hưng",
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "Nước lên rất nhanh, có lúc ngập đến giữa bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-9e491d61416c"
+  }
+ ]
+}

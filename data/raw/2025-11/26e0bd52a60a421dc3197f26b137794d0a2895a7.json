@@ -1,0 +1,73 @@
+{
+ "url": "https://sggp.org.vn/tphcm-trieu-cuong-dang-cao-nhieu-tuyen-duong-ngap-sau-post822156.html",
+ "outlet": "sggp.org.vn",
+ "publishedAt": "2025-11-06T19:39:25+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "23e691722e26856704212ba87c389bf87598965c5684cc1fd6cf28201e4d03a5",
+  "length": 2554
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đào Sư Tích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Nhà Bè",
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Có nơi nước dâng ngập nửa bánh xe, dẫn đến giao thông lộn xộn. Nhiều phương tiện bị chết máy giữa dòng nước"
+   },
+   "status": "resolved",
+   "recordId": "news-c91885a03c61"
+  },
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Hưng",
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Có nơi nước dâng ngập nửa bánh xe, dẫn đến giao thông lộn xộn. Nhiều phương tiện bị chết máy giữa dòng nước"
+   },
+   "status": "resolved",
+   "recordId": "news-c0d1ecb4aeb1"
+  },
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": "Phú Thuận",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Có nơi nước dâng ngập nửa bánh xe, dẫn đến giao thông lộn xộn. Nhiều phương tiện bị chết máy giữa dòng nước"
+   },
+   "status": "resolved",
+   "recordId": "news-cf29327d7350"
+  }
+ ]
+}

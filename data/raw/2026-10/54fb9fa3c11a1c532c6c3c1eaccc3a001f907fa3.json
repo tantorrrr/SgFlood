@@ -1,0 +1,29 @@
+{
+ "url": "https://thanhnien.vn/khong-mua-van-ngap-nguoi-dan-hoc-mon-chat-vat-qua-nut-giao-dang-thi-cong-185261004202232874.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-04T20:31:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "9a77279b69c77964d644efde1ed22849d8187ffe352497ca58c0653969a87871",
+  "length": 1899
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bà Triệu",
+    "from": null,
+    "to": null,
+    "cross": "song hành quốc lộ 22",
+    "ward": "Hóc Môn",
+    "oldDistrict": null,
+    "observedAt": null,
+    "depthCm": null,
+    "signals": [],
+    "cause": null,
+    "quote": "Đây là khu vực nút giao giữa đường song hành quốc lộ 22 và đường Bà Triệu, xã Hóc Môn , TP.HCM."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

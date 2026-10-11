@@ -3,3 +3,4 @@ data/cache/
 data/logs/
 .env
 *.log
+data/raw-text/

@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-giua-trua-o-tphcm-duong-nguyen-duy-trinh-ngap-nuoc-keo-dai-185250909160531261.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-09-09T16:56:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "036be90c5b814417d9f0c761c101531080132191a2ba182cf1da02d3f17f5b97",
+  "length": 2374
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Duy Trinh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Trưng",
+    "oldDistrict": null,
+    "observedAt": "2025-09-09T13:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "rain",
+    "quote": "Nơi đây, ngập nước cao đến gần bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-d7d10780ed6e"
+  }
+ ]
+}

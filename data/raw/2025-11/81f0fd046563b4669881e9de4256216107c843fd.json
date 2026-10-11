@@ -1,0 +1,51 @@
+{
+ "url": "https://suckhoedoisong.vn/trieu-cuong-o-tphcm-dat-dinh-nhieu-khu-vuc-thanh-song-169251106191859258.htm",
+ "outlet": "suckhoedoisong.vn",
+ "publishedAt": "2025-11-06T20:12:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "715a01ea05d0c4fdd85e87831f630db00f0abbd77fbdd31bcce84f2d46283188",
+  "length": 4276
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Bình",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Hiệp Phước",
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T16:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "xe máy và ô tô chết máy hàng loạt."
+   },
+   "status": "resolved",
+   "recordId": "news-7ad3926156fd"
+  },
+  {
+   "mention": {
+    "street": "Huỳnh Tấn Phát",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-06T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "Tại đường Huỳnh Tấn Phát (Quận 7 trước đây), nước ngập sâu, dòng người kẹt cứng."
+   },
+   "status": "resolved",
+   "recordId": "news-e306dae09879"
+  }
+ ]
+}

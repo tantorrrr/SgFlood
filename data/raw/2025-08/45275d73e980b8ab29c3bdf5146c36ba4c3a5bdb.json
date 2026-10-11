@@ -1,0 +1,51 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/nhieu-tuyen-duong-o-tphcm-ngap-sau-do-mua-lon-20250805191121918.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-08-05T19:19:23+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "65b98aaaf1f228d16be6938794b4f76f48ae1db188253fed4fb0980ccf0aaee5",
+  "length": 1467
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Dương Văn Cam",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thủ Đức",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "các tuyến đường như Dương Văn Cam, Đặng Thị Rành,... bị ngập sâu, nhiều phương tiện chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-78a60c11a289"
+  },
+  {
+   "mention": {
+    "street": "Đặng Thị Rành",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thủ Đức",
+    "oldDistrict": null,
+    "observedAt": "2025-08-05T18:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "các tuyến đường như Dương Văn Cam, Đặng Thị Rành,... bị ngập sâu, nhiều phương tiện chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-dde13b636c62"
+  }
+ ]
+}

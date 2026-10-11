@@ -1,0 +1,33 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-giua-trua-111-duong-le-van-luong-ngap-sau-185251101130358551.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-01T13:20:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "2da6eebdc8cab182fd96549646efd3ccb493225813fb8974741baa952d408f87",
+  "length": 1227
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Thị Thập",
+    "from": null,
+    "to": null,
+    "cross": "Lê Văn Lương",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-01T11:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "tại giao lộ đường Nguyễn Thị Thập &ndash; Lê Văn Lương , mực nước lên đến gần nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-c530c9d88d57"
+  }
+ ]
+}

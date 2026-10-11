@@ -1,0 +1,33 @@
+{
+ "url": "https://cafef.vn/mua-lon-ket-hop-trieu-cuong-duong-tran-xuan-soan-ngap-sau-188250911210044866.chn",
+ "outlet": "cafef.vn",
+ "publishedAt": "2025-09-11T21:22:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "97c9622d7befadc2992d85300252c7d6899e1bc0b02ca46adc9f126a84d03a54",
+  "length": 1320
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-09-11T19:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "ket_xe"
+    ],
+    "cause": "both",
+    "quote": "nước dâng cao, tràn lên mặt đường khiến nhiều đoạn ngập sâu quá nửa bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-ec7828119a13"
+  }
+ ]
+}

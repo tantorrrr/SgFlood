@@ -1,0 +1,67 @@
+{
+ "url": "https://thanhnien.vn/mua-lon-chieu-toi-nay-duong-o-tphcm-ngap-nuoc-hon-2-tieng-sau-con-mua-185250911195423262.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-09-11T20:11:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "a259d8eb93adfcfb2fd851f54cec93af44c6228246e53749d2c187474ab8fb90",
+  "length": 1591
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": "Lê Văn Thọ",
+    "ward": "Thông Tây Hội",
+    "oldDistrict": null,
+    "observedAt": "2025-09-11T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước có nơi lên đến đầu gối hoặc ngang với bánh xe máy và ngập kéo dài đến hơn 2 tiếng."
+   },
+   "status": "resolved",
+   "recordId": "news-d72f74b168d4"
+  },
+  {
+   "mention": {
+    "street": "Phạm Văn Chiêu",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-11T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Các tuyến đường bị ngập nước kéo dài như: Nguyễn Văn Khối, Phạm Văn Chiêu, Phan Văn Hớn"
+   },
+   "status": "not_heavy"
+  },
+  {
+   "mention": {
+    "street": "Phan Văn Hớn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-11T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "Các tuyến đường bị ngập nước kéo dài như: Nguyễn Văn Khối, Phạm Văn Chiêu, Phan Văn Hớn"
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

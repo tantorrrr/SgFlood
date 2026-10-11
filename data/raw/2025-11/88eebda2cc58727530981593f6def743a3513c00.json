@@ -1,0 +1,53 @@
+{
+ "url": "https://vnexpress.net/pho-tay-bui-vien-ngap-nang-sau-mua-lon-4961688.html",
+ "outlet": "vnexpress.net",
+ "publishedAt": "2025-11-08T20:42:38+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "f21b378dfda1aade6f8ffea3b6ddea056d8065181ca91b9d55862ff057e8e53e",
+  "length": 2273
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Bùi Viện",
+    "from": null,
+    "to": null,
+    "cross": "Trần Hưng Đạo",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "phố Bùi Viện ở trung tâm TP HCM ngập gần lút bánh xe, nước tràn vào quán"
+   },
+   "status": "resolved",
+   "recordId": "news-442eb94d3e47"
+  },
+  {
+   "mention": {
+    "street": "Cống Quỳnh",
+    "from": null,
+    "to": null,
+    "cross": "Trần Hưng Đạo",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-08T18:00:00+07:00",
+    "depthCm": 45,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "both",
+    "quote": "khu vực đường Cống Quỳnh nước ngập gần nửa mét khiến hàng loạt xe chết máy."
+   },
+   "status": "resolved",
+   "recordId": "news-123e36b319ea"
+  }
+ ]
+}

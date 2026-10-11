@@ -1,0 +1,33 @@
+{
+ "url": "https://laodong.vn/xa-hoi/trieu-cuong-gay-ngap-sau-o-chan-cau-phu-my-nguoi-dan-chat-vat-di-chuyen-1621248.ldo",
+ "outlet": "laodong.vn",
+ "publishedAt": "2025-12-06T12:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "2c444a9d4d2f170bc59ee198eb953a4b7db569a7a518c82984c8558a8cbcb854",
+  "length": 2723
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Linh",
+    "from": null,
+    "to": null,
+    "cross": "cầu Phú Mỹ",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-12-06T18:00:00+07:00",
+    "depthCm": 20,
+    "signals": [
+     "ket_xe",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "khoảng 1 km mặt đường bị ngập 15-20 cm, khiến phương tiện di chuyển khó khăn, giao thông ùn ứ kéo dài."
+   },
+   "status": "resolved",
+   "recordId": "news-a082322c9546"
+  }
+ ]
+}

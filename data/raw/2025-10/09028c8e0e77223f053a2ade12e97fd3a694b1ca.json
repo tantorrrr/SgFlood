@@ -1,0 +1,76 @@
+{
+ "url": "https://tuoitre.vn/nld/trieu-cuong-dang-cao-nhieu-tuyen-duong-o-tp-hcm-ngap-nang-196251023190259846.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-10-23T20:10:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "cb131acb39ee23267ed8d4f1ab2531aa9f47747833e5a46647a67c186d9a4460",
+  "length": 4265
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều đoạn ngập sâu gần nửa bánh xe máy. Hàng loạt phương tiện chết máy, người dân phải dắt bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-1601b82d5d89"
+  },
+  {
+   "mention": {
+    "street": "Lê Văn Lương",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều đoạn ngập sâu gần nửa bánh xe máy. Hàng loạt phương tiện chết máy, người dân phải dắt bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-15f2d6b1496d"
+  },
+  {
+   "mention": {
+    "street": "Nguyễn Lương Bằng",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-10-23T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "tide",
+    "quote": "nhiều đoạn ngập sâu gần nửa bánh xe máy. Hàng loạt phương tiện chết máy, người dân phải dắt bộ"
+   },
+   "status": "resolved",
+   "recordId": "news-cc49193adf4d"
+  }
+ ]
+}

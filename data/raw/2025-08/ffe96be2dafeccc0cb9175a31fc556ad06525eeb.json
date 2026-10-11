@@ -1,0 +1,34 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-vao-gio-tan-tam-duong-ngap-gan-2-tieng-185250814200200589.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-08-14T20:20:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e27bc6056013606cdd546b0afd6bc3ce49fa06dc855aaa253f4c7e15d42f511e",
+  "length": 1530
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Quốc Hương",
+    "from": "Xuân Thủy",
+    "to": "Thái Ly",
+    "cross": null,
+    "ward": "An Khánh",
+    "oldDistrict": null,
+    "observedAt": "2025-08-14T17:45:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may",
+     "dat_bo"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước ở đây cao lên đến hơn bánh xe máy."
+   },
+   "status": "resolved",
+   "recordId": "news-9afd0039c4e9"
+  }
+ ]
+}

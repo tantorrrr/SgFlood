@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/tphcm-mua-lon-cuoi-tuan-duong-nguyen-van-khoi-ngap-hon-4-tieng-van-chua-rut-18525110919353676.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-11-09T20:16:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "4e89c4d5c79693f64de512a56d2da7702707fe7c8bb92fe517ee6a8405294c5f",
+  "length": 1227
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2025-11-09T15:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "rain",
+    "quote": "Mực nước tại đây cao hơn bánh xe máy, lên đến đầu gối khiến việc đi lại của người dân hết sức khó khăn."
+   },
+   "status": "resolved",
+   "recordId": "news-12316f50aca6"
+  }
+ ]
+}

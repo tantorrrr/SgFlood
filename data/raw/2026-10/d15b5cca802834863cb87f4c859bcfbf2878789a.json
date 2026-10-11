@@ -1,0 +1,29 @@
+{
+ "url": "https://thanhnien.vn/duong-tphcm-ngap-hon-6-tieng-shipper-dat-xe-chet-may-van-co-giao-hang-185261004214607609.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-05T06:00:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "b39c1a39d87ab7ba89cd750913f3f9cbe888bae9cbdc9495020f1d213cbfc18d",
+  "length": 575
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Mã Lò",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Trị Đông",
+    "oldDistrict": null,
+    "observedAt": "2026-10-04T20:30:00+07:00",
+    "depthCm": null,
+    "signals": [],
+    "cause": "rain",
+    "quote": "dù đã hơn 20 giờ 30 phút nhưng đường Mã Lò ở phường Bình Trị Đông (TP.HCM) vẫn mênh mông nước."
+   },
+   "status": "not_heavy"
+  }
+ ]
+}

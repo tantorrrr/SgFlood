@@ -1,0 +1,32 @@
+{
+ "url": "https://tuoitre.vn/hoc-sinh-tp-hcm-loi-nuoc-gio-tan-truong-do-trieu-cuong-dat-dinh-20251121180032745.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-21T19:07:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "19f8f51db529de2f13279e0254c4fcc66acd43173384cd515fdb94f509462a97",
+  "length": 4362
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đặng Thùy Trâm",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Bình Lợi Trung",
+    "oldDistrict": null,
+    "observedAt": "2025-11-21T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh"
+    ],
+    "cause": "tide",
+    "quote": "Giờ tan trường, nhiều học sinh phải đi qua đoạn đường này để về nhà nên gặp cảnh nước ngập bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-7b615b73aed2"
+  }
+ ]
+}

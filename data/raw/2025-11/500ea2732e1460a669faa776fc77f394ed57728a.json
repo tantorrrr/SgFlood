@@ -1,0 +1,32 @@
+{
+ "url": "https://dantri.com.vn/thoi-su/cu-ba-bi-bom-dat-xe-ve-nha-trong-dem-ngap-do-trieu-cuong-o-tphcm-20251105224935009.htm",
+ "outlet": "dantri.com.vn",
+ "publishedAt": "2025-11-05T23:41:38+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "0ba89797d8f2a09e29c9185955c008ee4af13a15c7aecb8f73ff02e72ec130bb",
+  "length": 1993
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Đường 15B",
+    "from": null,
+    "to": null,
+    "cross": "Phạm Hữu Lầu",
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-11-05T17:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "ket_xe"
+    ],
+    "cause": "tide",
+    "quote": "giao lộ đường 15B - Phạm Hữu Lầu, tình trạng ngập sâu do triều cường khiến hàng loạt xe máy phải di chuyển chậm chạp."
+   },
+   "status": "resolved",
+   "recordId": "news-d9dc2a3cf61b"
+  }
+ ]
+}

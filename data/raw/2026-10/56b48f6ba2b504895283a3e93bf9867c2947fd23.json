@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/mua-ca-dem-sang-nay-duong-nguyen-van-khoi-tphcm-nuoc-ngap-menh-mong-10026100808374636.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2026-10-08T09:03:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "d60fa39642c2e415755554ae870e58c7a3ef44497f601869b16b8311f3cfc83e",
+  "length": 3221
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Thông Tây Hội",
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2026-10-08T08:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Nước ngập hơn nửa bánh xe khiến nhiều xe máy bị chết máy phải nhờ sự trợ giúp của cơ quan chức năng."
+   },
+   "status": "resolved",
+   "recordId": "news-048cb543555a"
+  }
+ ]
+}

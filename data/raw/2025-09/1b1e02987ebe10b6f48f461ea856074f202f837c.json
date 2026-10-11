@@ -1,0 +1,35 @@
+{
+ "url": "https://thanhnien.vn/ngap-nang-sau-mua-lon-o-tphcm-hang-dai-nguoi-ket-tren-duong-hon-1-tieng-18525091820335649.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2025-09-18T20:56:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "e22f11b17d4200092071bebbfd9b50a542c38baf175f7d5dc608e4d1c6cb0d9c",
+  "length": 1820
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Duy Trinh",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": null,
+    "observedAt": "2025-09-18T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may",
+     "dat_bo",
+     "ket_xe"
+    ],
+    "cause": "rain",
+    "quote": "Nhiều người chật vật giữa dòng nước khi xe chết máy, phải đẩy bộ hầu như suốt tuyến đường ngập."
+   },
+   "status": "resolved",
+   "recordId": "news-e61cf704ad65"
+  }
+ ]
+}

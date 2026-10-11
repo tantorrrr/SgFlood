@@ -1,0 +1,32 @@
+{
+ "url": "https://thanhnien.vn/duong-phan-huy-ich-ngap-sau-ca-met-o-tphcm-nhieu-nguoi-mac-ket-toi-nua-dem-185261001015701988.htm",
+ "outlet": "thanhnien.vn",
+ "publishedAt": "2026-10-01T06:24:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "884daf55fabc22873cd2f13d5d398f6cb59c2bd780f70921f03f1f7067b02c7d",
+  "length": 818
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Phan Huy Ích",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Sơn",
+    "oldDistrict": null,
+    "observedAt": "2026-10-01T00:00:00+07:00",
+    "depthCm": 100,
+    "signals": [
+     "sau_30cm"
+    ],
+    "cause": "both",
+    "quote": "đoạn ngập nặng nhất vẫn giữ mực nước khoảng 1 mét khiến người dân phải chấp nhận ướt quần áo lội nước về nhà"
+   },
+   "status": "resolved",
+   "recordId": "news-92372b3b2141"
+  }
+ ]
+}

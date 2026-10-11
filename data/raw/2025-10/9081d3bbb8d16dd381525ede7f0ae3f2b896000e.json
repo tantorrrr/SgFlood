@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/khap-tp-hcm-mua-to-go-vap-cu-ngap-lenh-lang-dan-khieng-xe-khoi-cho-ngap-20251026222837424.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-10-26T22:47:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "65e612b88dd455c223c57161938394c3112575a381f9f7e4971e9497fe4a8128",
+  "length": 3164
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Nguyễn Văn Khối",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": null,
+    "oldDistrict": "Gò Vấp",
+    "observedAt": "2025-10-26T20:00:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "nua_banh",
+     "chet_may"
+    ],
+    "cause": "rain",
+    "quote": "Đặc biệt đường Nguyễn Văn Khối ngập hơn nửa bánh xe, xe chết máy hàng loạt."
+   },
+   "status": "resolved",
+   "recordId": "news-e66b7c14d2c4"
+  }
+ ]
+}

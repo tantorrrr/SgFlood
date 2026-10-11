@@ -1,0 +1,33 @@
+{
+ "url": "https://tuoitre.vn/nld/trieu-cuong-dang-cao-nhieu-tuyen-duong-tp-hcm-ngap-sau-196251107203504968.htm",
+ "outlet": "tuoitre.vn",
+ "publishedAt": "2025-11-07T21:36:00+07:00",
+ "fetchedAt": null,
+ "extractor": "manual-responses (backfill import)",
+ "text": {
+  "sha256": "f78471551fb16bfb6c79792c538724226cc38481a327add57781511ea1b54266",
+  "length": 3797
+ },
+ "outcomes": [
+  {
+   "mention": {
+    "street": "Trần Xuân Soạn",
+    "from": null,
+    "to": null,
+    "cross": null,
+    "ward": "Tân Thuận",
+    "oldDistrict": null,
+    "observedAt": "2025-11-07T17:30:00+07:00",
+    "depthCm": null,
+    "signals": [
+     "sau_30cm",
+     "chet_may"
+    ],
+    "cause": "tide",
+    "quote": "Tại nhiều đoạn đường trũng thấp và ngõ hẻm, nước ngập khuất cả bánh xe."
+   },
+   "status": "resolved",
+   "recordId": "news-382eb5ee64b3"
+  }
+ ]
+}
