@@ -103,6 +103,7 @@ function intersectionHint(a, b, waysOf) {
   return best.p;
 }
 
+const HOTSPOT_FALLBACK_M = 400;
 const hotspotStreet = (g) => g.street ?? g.streets?.[0];
 
 // Street-only mention: reuse the chronic hotspot on that street (sourced stretch), never paint the whole street.
@@ -111,15 +112,30 @@ export function mentionGeometry(m, waysOf, hotspots = []) {
   const cross = m.cross ?? m.from ?? m.to;
   if (!cross) {
     const h = hotspots.find((x) => normalizeName(hotspotStreet(x.geometry) ?? '') === normalizeName(m.street));
-    if (h) return h.geometry;
+    if (h) return { ...h.geometry, hotspot: true };
     throw new Error('no cross street or stretch');
   }
   return { type: 'junction', streets: [m.street, cross], radiusM: JUNCTION_RADIUS_M, crossRadiusM: JUNCTION_CROSS_M, near: intersectionHint(m.street, cross, waysOf) };
 }
 
+// A hotspot's stretch is resolved on OSM node ids at build time; here intersections match by coordinates and can
+// miss (bridge/gap). Fall back to the pieces of that street around the hotspot's reference point.
+function hotspotFallback(g) {
+  const point = g.near ?? g.point;
+  return point ? { type: 'near', street: hotspotStreet(g), point, radiusM: HOTSPOT_FALLBACK_M } : null;
+}
+
 export function resolveMention(m, { segs, waysOf, hotspots }, bbox) {
   const g = mentionGeometry(m, waysOf, hotspots);
-  const { names, contains } = resolveGeometry(g, waysOf);
+  let resolved;
+  try {
+    resolved = resolveGeometry(g, waysOf);
+  } catch (err) {
+    const fb = g.hotspot && hotspotFallback(g);
+    if (!fb) throw err;
+    resolved = resolveGeometry(fb, waysOf);
+  }
+  const { names, contains } = resolved;
   const lines = segs.filter((s) => names.has(normalizeName(s.n)) && contains(midpoint(s.c), normalizeName(s.n))).map((s) => s.c);
   if (!lines.length) throw new Error('0 road pieces');
   const mids = lines.map(midpoint);
