@@ -49,7 +49,7 @@ async function scanFeeds(seen, now) {
 async function directArticle(url, now) {
   const html = await get(url);
   const meta = html.match(/<meta[^>]+(?:property|name|itemprop)=["'](?:article:published_time|datePublished|pubdate)["'][^>]*content=["']([^"']+)["']/i);
-  const published = Date.parse(meta?.[1] ?? '');
+  const published = Date.parse((meta?.[1] ?? '').replace(/&#x2B;|&#43;/gi, '+')); // Tuổi Trẻ entity-encodes the '+'
   const host = new URL(url).hostname.replace(/^www\./, '');
   return { url, outlet: host, publishedAt: iso(Number.isFinite(published) ? published : now), text: articleText(html) };
 }
@@ -159,8 +159,16 @@ Dumped ${articles.length} candidate(s) to ${dumpDir} (no LLM call, nothing else 
   }
 
   const prev = await readJson(OUT, { reports: [] });
+  // A re-processed article replaces its own records, but sources other articles merged into them are kept
+  // (the fresh record is merged back by dedupe); otherwise re-running one URL would drop those sources.
   const fresh = new Set(records.map((r) => r.id));
-  const reports = dedupe([...prev.reports.filter((r) => !fresh.has(r.id)), ...records]).filter(withinDays(now));
+  const freshUrls = new Set(articles.map((a) => a.url));
+  const kept = prev.reports.flatMap((r) => {
+    if (!fresh.has(r.id)) return [r];
+    const sources = r.sources.filter((s) => !freshUrls.has(s.url));
+    return sources.length ? [{ ...r, sources }] : [];
+  });
+  const reports = dedupe([...kept, ...records]).filter(withinDays(now));
   await writeFile(OUT, JSON.stringify({ fetchedAt: iso(now), model: MODEL, reports }));
   await mkdir(CACHE, { recursive: true });
   await writeFile(SEEN, JSON.stringify(seen));
