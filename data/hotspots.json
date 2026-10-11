@@ -679,7 +679,7 @@
         106.709969
       ]
     },
-    "maxKm": 4.0
+    "maxKm": 4
   },
   {
     "id": "q7-nguyen-van-quy-cau-phu-my",
@@ -1494,7 +1494,7 @@
         106.746376
       ]
     },
-    "maxKm": 10.0
+    "maxKm": 10
   },
   {
     "id": "td-vo-truong-toan-song-hanh-vng",
@@ -1936,7 +1936,7 @@
   {
     "id": "q8-pham-the-hien-hem-2695-le-boi",
     "title": "Phạm Thế Hiển (hẻm 2695 → Lê Bôi)",
-    "area": "Phường Phú Định (Quận 8 cũ)",
+    "area": "Phường Bình Đông (Quận 8 cũ)",
     "cause": "rain",
     "years": [
       2026
@@ -1961,8 +1961,8 @@
       },
       "to": "Lê Bôi",
       "near": [
-        10.718524,
-        106.632115
+        10.7178,
+        106.6329
       ]
     }
   },
@@ -2131,7 +2131,7 @@
         106.65595
       ]
     },
-    "maxKm": 3.0
+    "maxKm": 3
   },
   {
     "id": "gv-le-duc-tho",
@@ -3390,6 +3390,387 @@
         106.623092
       ],
       "radiusM": 500
+    }
+  },
+  {
+    "id": "gv-le-van-tho",
+    "title": "Lê Văn Thọ (đoạn qua P. An Hội Đông)",
+    "area": "Phường An Hội Đông (Gò Vấp cũ)",
+    "cause": "rain",
+    "years": [
+      2024,
+      2025,
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://thanhnien.vn/tphcm-co-mua-rat-to-gio-lon-hiem-co-ngay-cuoi-nam-nguoi-te-nga-xe-chet-may-hang-loat-185241227194446272.htm",
+        "date": "2024-12-27",
+        "quote": "Nguyễn Văn Khối, Lê Đức Thọ, Lê Văn Thọ, Phạm Văn Chiêu (quận Gò Vấp)"
+      },
+      {
+        "url": "https://thanhnien.vn/mua-lon-o-tphcm-xe-chet-may-la-liet-nhieu-nguoi-te-nga-vi-ngap-sau-185251028155441874.htm",
+        "date": "2025-10-28",
+        "quote": "Lê Văn Thọ (phường An Hội Đông, Q.Gò Vấp cũ), nước ngập hơn nửa bánh xe"
+      },
+      {
+        "url": "https://tuoitre.vn/duong-nguyen-van-khoi-le-van-tho-ngap-nang-dan-dap-bao-cat-khong-an-thua-20251109170409177.htm",
+        "date": "2025-11-09",
+        "quote": "Còn trên đường Lê Văn Thọ, nước dâng cao quá nửa đầu gối khiến người dân khó khăn."
+      },
+      {
+        "url": "https://lifestyle.zingnews.vn/canh-chua-tung-thay-o-tphcm-trong-tran-mua-lon-ngay-309-post1686689.html",
+        "date": "2026-10-01",
+        "quote": "Trên Nguyễn Văn Khối, Phạm Văn Chiêu, Lê Văn Thọ và Lê Đức Thọ, nước dâng khiến nhiều xe chết máy"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lê Văn Thọ",
+      "point": [
+        10.85275,
+        106.65607
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "q8-rach-cung",
+    "title": "Rạch Cùng (sát kênh Đôi, gần bến phà Phú Định)",
+    "area": "Phường Bình Đông (Quận 8 cũ)",
+    "cause": "tide",
+    "years": [
+      2025
+    ],
+    "status": "confirmed",
+    "sources": [
+      {
+        "url": "https://laodong.vn/xa-hoi/duong-o-tphcm-ngap-hon-nua-banh-xe-do-trieu-cuong-nguoi-dan-bi-bom-loi-nuoc-1595562.ldo",
+        "date": "2025-10-21",
+        "quote": "Chỉ sau khoảng 30 phút, mặt đường Rạch Cùng đã bị ngập sâu đến hơn nửa bánh xe, từ khoảng 40-60cm"
+      },
+      {
+        "url": "https://laodong.vn/xa-hoi/trieu-cuong-dang-cao-o-tphcm-hang-loat-xe-chet-may-giua-dong-nuoc-ngap-1588963.ldo",
+        "date": "2025-10-09",
+        "quote": "Khu vực ngập nặng nhất là đoạn sát bờ kênh gần bến phà Phú Định."
+      },
+      {
+        "url": "https://tuoitre.vn/trieu-cuong-tp-hcm-dang-cao-may-la-khong-co-mua-20251023204123385.htm",
+        "date": "2025-10-23",
+        "quote": "Tại đường Rạch Cùng, có đoạn mực nước ngập sâu gần bánh xe máy."
+      },
+      {
+        "url": "https://laodong.vn/xa-hoi/hoc-sinh-nguoi-dan-tphcm-thao-giay-xan-quan-loi-nuoc-ve-nha-1605475.ldo",
+        "date": "2025-11-07",
+        "quote": "tại đường Rạch Cùng (phường Bình Đông), nước từ tuyến kênh gần đó tràn lên mặt đường, gây ngập sâu 40-60cm"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Rạch Cùng",
+      "point": [
+        10.70929,
+        106.61915
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q8-ben-phu-dinh",
+    "title": "Bến Phú Định (đường Phú Định, kênh Đôi)",
+    "area": "Phường Phú Định (Quận 8 cũ; bài 2024 ghi P.16)",
+    "cause": "tide",
+    "years": [
+      2024,
+      2025
+    ],
+    "status": "uncertain",
+    "aliases": [
+      "Bến Phú Định"
+    ],
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/trieu-cuong-ram-thang-10-tran-bo-dan-tp-hcm-dap-bao-chong-ngap-20241116180949843.htm",
+        "date": "2024-11-16",
+        "quote": "triều cường đã dâng cao trên đường Phú Định (phường 16, quận 8), nhiều đoạn nước tràn vào nhà dân"
+      },
+      {
+        "url": "https://laodong.vn/xa-hoi/trieu-cuong-dang-cao-o-tphcm-hang-loat-xe-chet-may-giua-dong-nuoc-ngap-1588963.ldo",
+        "date": "2025-10-09",
+        "quote": "Khu vực ngập nặng nhất là đoạn sát bờ kênh gần bến phà Phú Định."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Phú Định",
+      "point": [
+        10.71079,
+        106.6182
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "bth-d5",
+    "title": "D5 (đoạn qua P. Thạnh Mỹ Tây)",
+    "area": "Phường Thạnh Mỹ Tây (Bình Thạnh cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/mua-lon-gio-cao-diem-tai-tphcm-nhieu-tuyen-duong-ngap-sau-giao-thong-cau-vuot-hang-xanh-un-u-100260922185755797.htm",
+        "date": "2026-09-22",
+        "quote": "Tại đường D5, nước cao hơn cả bánh xe, người đi xe máy di chuyển rất khó khăn."
+      },
+      {
+        "url": "https://vietnamnet.vn/tphcm-lai-mua-lon-kem-sam-set-nghin-nguoi-chat-vat-vi-ngap-va-ket-xe-2562648.html",
+        "date": "2026-10-07",
+        "quote": "Tại đường D5 (phường Thạnh Mỹ Tây), sau khoảng 30 phút mưa lớn, nước nhanh chóng dâng cao"
+      },
+      {
+        "url": "https://vietnamnet.vn/tphcm-mua-lon-keo-dai-phu-huynh-loi-nuoc-gan-3km-de-don-con-tan-hoc-2562673.html",
+        "date": "2026-10-08",
+        "quote": "tại các tuyến Nguyễn Gia Trí, Ung Văn Khiêm, D5…, nước dâng cao khiến nhiều phương tiện chết máy."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "D5",
+      "point": [
+        10.80585,
+        106.71597
+      ],
+      "radiusM": 350
+    }
+  },
+  {
+    "id": "bth-nguyen-gia-tri",
+    "title": "Nguyễn Gia Trí (đoạn qua P. Thạnh Mỹ Tây)",
+    "area": "Phường Thạnh Mỹ Tây (Bình Thạnh cũ)",
+    "cause": "rain",
+    "years": [
+      2026
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/canh-nguoi-dan-nua-dem-canh-nuoc-ngap-tram-xe-may-xep-hang-cho-sua-o-tphcm-2560910.html",
+        "date": "2026-10-02",
+        "quote": "nhiều đoạn đường Nguyễn Gia Trí, Nguyễn Văn Thương (phường Thạnh Mỹ Tây, TPHCM) vẫn chìm trong nước."
+      },
+      {
+        "url": "https://vietnamnet.vn/tphcm-lai-mua-lon-kem-sam-set-nghin-nguoi-chat-vat-vi-ngap-va-ket-xe-2562648.html",
+        "date": "2026-10-07",
+        "quote": "nhiều tuyến đường như D5, Nguyễn Gia Trí, Hoàng Văn Thụ ngập nặng, giao thông ùn tắc."
+      },
+      {
+        "url": "https://vietnamnet.vn/tphcm-mua-lon-keo-dai-phu-huynh-loi-nuoc-gan-3km-de-don-con-tan-hoc-2562673.html",
+        "date": "2026-10-08",
+        "quote": "tại các tuyến Nguyễn Gia Trí, Ung Văn Khiêm, D5…, nước dâng cao khiến nhiều phương tiện chết máy."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Gia Trí",
+      "point": [
+        10.80585,
+        106.71597
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "bt-le-co",
+    "title": "Lê Cơ (đoạn qua P. An Lạc)",
+    "area": "Phường An Lạc (Bình Tân cũ)",
+    "cause": "rain",
+    "years": [
+      2025
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/mua-nhu-trut-binh-tan-thu-duc-nuoc-ngap-lenh-lang-20250610195453276.htm",
+        "date": "2025-06-10",
+        "quote": "Tại đường Lê Cơ (phường An Lạc), nước ngập đến đầu gối người lớn."
+      },
+      {
+        "url": "https://thanhnien.vn/mua-lon-tu-chieu-den-toi-nhieu-tuyen-duong-o-tphcm-ngap-nuoc-lenh-lang-185250610224901037.htm",
+        "date": "2025-06-11",
+        "quote": "Khoảng 19 giờ trên đường Lê Cơ (P.An Lạc, Q.Bình Tân) có đoạn nước ngập sâu, lên đến gần bánh xe máy."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Lê Cơ",
+      "point": [
+        10.72734,
+        106.61267
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "q7-go-o-moi",
+    "title": "Gò Ô Môi (khoảng 500 m lênh láng nước)",
+    "area": "Phường Phú Thuận (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2024
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://vnexpress.net/nha-dan-bi-co-lap-ngay-trieu-cuong-o-tp-hcm-cao-nhat-tu-dau-nam-4805869.html",
+        "date": "2024-10-18",
+        "quote": "Trong ảnh là 500 m đường Gò Ô Môi lênh láng nước."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Gò Ô Môi",
+      "point": [
+        10.73007,
+        106.73768
+      ],
+      "radiusM": 350
+    }
+  },
+  {
+    "id": "q7-bui-van-ba",
+    "title": "Bùi Văn Ba (các hẻm)",
+    "area": "Phường Tân Thuận (Quận 7 cũ)",
+    "cause": "tide",
+    "years": [
+      2024
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://tuoitre.vn/quan-7-ngap-ca-met-vi-trieu-cuong-nguoi-phai-o-khach-san-nguoi-cong-con-di-hoc-20241018082948916.htm",
+        "date": "2024-10-18",
+        "quote": "nước bắt đầu tràn lên từ cống thoát tại các con hẻm thuộc đường Bùi Văn Ba, quận 7."
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Bùi Văn Ba",
+      "point": [
+        10.75054,
+        106.73528
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "q8-ben-binh-dong",
+    "title": "Bến Bình Đông (đường Bình Đông)",
+    "area": "Quận 8 cũ (bài ghi phường Bình Đông; OSM đặt đoạn này ở phường Phú Định)",
+    "cause": "tide",
+    "years": [
+      2025
+    ],
+    "status": "uncertain",
+    "aliases": [
+      "Bến Bình Đông"
+    ],
+    "sources": [
+      {
+        "url": "https://vietnamnet.vn/trieu-cuong-chua-dat-dinh-nhieu-noi-tphcm-da-menh-mong-nuoc-2459742.html",
+        "date": "2025-11-05",
+        "quote": "Bến Bình Đông (phường Bình Đông), đường Trần Xuân Soạn (phường Tân Hưng)"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Bình Đông",
+      "point": [
+        10.73464,
+        106.63631
+      ],
+      "radiusM": 400
+    }
+  },
+  {
+    "id": "q1-yersin",
+    "title": "Yersin (khu trung tâm Q1)",
+    "area": "Phường Bến Thành (Quận 1 cũ)",
+    "cause": "both",
+    "years": [
+      2025
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://sggp.org.vn/tphcm-nhieu-tuyen-duong-tai-trung-tam-ngap-sau-sau-mua-lon-post822534.html",
+        "date": "2025-11-08",
+        "quote": "Nguyễn Công Trứ, Lê Thị Hồng Gấm, Calmette, Yersin, Nguyễn Thái Học, Phan Văn Trường… nước mưa kết hợp thủy triều"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Yersin",
+      "point": [
+        10.76721,
+        106.69738
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q1-nguyen-cong-tru",
+    "title": "Nguyễn Công Trứ (khu trung tâm Q1)",
+    "area": "Phường Bến Thành (Quận 1 cũ)",
+    "cause": "both",
+    "years": [
+      2025
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://sggp.org.vn/tphcm-nhieu-tuyen-duong-tai-trung-tam-ngap-sau-sau-mua-lon-post822534.html",
+        "date": "2025-11-08",
+        "quote": "Nguyễn Công Trứ, Lê Thị Hồng Gấm, Calmette, Yersin, Nguyễn Thái Học, Phan Văn Trường… nước mưa kết hợp thủy triều"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Công Trứ",
+      "point": [
+        10.76588,
+        106.69816
+      ],
+      "radiusM": 300
+    }
+  },
+  {
+    "id": "q1-nguyen-thai-hoc",
+    "title": "Nguyễn Thái Học (khu trung tâm Q1)",
+    "area": "Phường Bến Thành (Quận 1 cũ)",
+    "cause": "both",
+    "years": [
+      2025
+    ],
+    "status": "uncertain",
+    "sources": [
+      {
+        "url": "https://sggp.org.vn/tphcm-nhieu-tuyen-duong-tai-trung-tam-ngap-sau-sau-mua-lon-post822534.html",
+        "date": "2025-11-08",
+        "quote": "Nguyễn Công Trứ, Lê Thị Hồng Gấm, Calmette, Yersin, Nguyễn Thái Học, Phan Văn Trường… nước mưa kết hợp thủy triều"
+      }
+    ],
+    "geometry": {
+      "type": "near",
+      "street": "Nguyễn Thái Học",
+      "point": [
+        10.76637,
+        106.69643
+      ],
+      "radiusM": 300
     }
   }
 ]

@@ -111,7 +111,9 @@ export function mentionGeometry(m, waysOf, hotspots = []) {
   if (m.from && m.to) return { type: 'between', street: m.street, from: m.from, to: m.to, near: intersectionHint(m.street, m.from, waysOf) };
   const cross = m.cross ?? m.from ?? m.to;
   if (!cross) {
-    const h = hotspots.find((x) => normalizeName(hotspotStreet(x.geometry) ?? '') === normalizeName(m.street));
+    const want = normalizeName(m.street);
+    // `aliases`: names the press uses that differ from the OSM name (e.g. "Bến Phú Định" for OSM "Phú Định").
+    const h = hotspots.find((x) => [hotspotStreet(x.geometry), ...(x.aliases ?? [])].some((n) => normalizeName(n ?? '') === want));
     if (h) return { ...h.geometry, hotspot: true };
     throw new Error('no cross street or stretch');
   }

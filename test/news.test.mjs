@@ -201,4 +201,5 @@ test('nua_banh counts as heavy (level 2); street-only mention reuses the chronic
   const g = { type: 'between', street: 'Nguyễn Bình', from: 'A', to: 'B', near: [10.7, 106.7] };
   assert.deepEqual(mentionGeometry({ street: 'Đường Nguyễn Bình', signals: ['nua_banh'] }, () => [], [{ id: 'nb', geometry: g }]), { ...g, hotspot: true });
   assert.throws(() => mentionGeometry({ street: 'Khác', signals: ['nua_banh'] }, () => [], [{ id: 'nb', geometry: g }]), /no cross street/);
+  assert.deepEqual(mentionGeometry({ street: 'Bến Nguyễn Bình', signals: ['nua_banh'] }, () => [], [{ id: 'nb', aliases: ['Bến Nguyễn Bình'], geometry: g }]), { ...g, hotspot: true });
 });

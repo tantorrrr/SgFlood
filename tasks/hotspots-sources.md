@@ -230,3 +230,32 @@ Cột "km tô" là ước tính từ lần validate: các đoạn ≤100 m có m
 1. **`selectBetween` chỉ cắt trên một chain**, và chain bị đứt ở way cầu (ví dụ "Cầu Phước Long", "Cầu D1", "Cầu Rạch Đỉa 2") hoặc ở chỗ đường tách nhánh. Nếu nối chain qua khoảng hở dưới 60 m, hoặc coi way cầu là một phần của đường, thì có thể dùng lại đúng mốc cầu.
 2. **Km cộng mọi carriageway cùng tên.** Ví dụ Võ Nguyên Giáp đoạn cầu Trắng → Rạch Chiếc thực dài khoảng 2,4 km nhưng được tô khoảng 9,2 km vì có 4 làn song song (đã đặt `maxKm` 10). Song hành QL22 (Đỗ Mười → Bà Triệu) theo nguồn dài khoảng 4,7 km (`maxKm` 5,5). Giao lộ trên đại lộ (Võ Văn Kiệt, Mai Chí Thọ) đã giảm bán kính xuống 200 m để không vượt 2,5 km.
 3. Các tên cắt ngang dùng trong `between` đều có trên OSM, gồm cả các tên viết hoa lẫn lộn như "Song Hành Quốc Lộ 22" và "Tỉnh Lộ 10". `normalizeName` trùng khớp.
+
+## Bổ sung 2026-10-11 — hotspot mạn mạn từ các mention "chỉ có tên đường" (+12)
+
+Nguồn: `data/raw/**` các outcome `unresolved` / `no cross street or stretch` (54 mention, xếp theo số bài). Thêm 12 entry `near` (+ `aliases` cho 2 tên báo viết khác tên OSM), `status` `uncertain` trừ Rạch Cùng. Mọi quote là chuỗi con nguyên văn của text bài trong `data/raw-text`, ≤ 25 từ (kiểm tự động lúc tạo). Toạ độ đều là node/đường OSM (Overpass 08/10 + Nominatim reverse để xác định phường; bến phà Phú Định lấy từ Overpass `route=ferry`), không ước lượng.
+
+| id | street (OSM) | điểm `near` | bán kính | km tô | ghi chú |
+|---|---|---|---|---|---|
+| gv-le-van-tho | Lê Văn Thọ | 10.85275, 106.65607 | 400 | 0.70 | chỉ 1 bài ghi phường (An Hội Đông); node Lê Văn Thọ thuộc P. An Hội Đông theo Nominatim |
+| q8-rach-cung | Rạch Cùng | 10.70929, 106.61915 | 300 | 0.27 | confirmed: 3 bài; "đoạn sát bờ kênh gần bến phà Phú Định" — đầu bắc Rạch Cùng cách pier Phà Phú Định (10.71061, 106.61902) ~160 m |
+| q8-ben-phu-dinh | Phú Định (alias "Bến Phú Định") | 10.71079, 106.6182 | 400 | 0.41 + 0.40 (minor) | OSM đặt tên đường là "Phú Định" (địa chỉ "Hẻm 112 Bến Phú Định"); điểm cách pier phà ~80 m, gần Cống ngăn triều Phú Định |
+| bth-d5 | D5 | 10.80585, 106.71597 | 350 | 0.69 | P. Thạnh Mỹ Tây; node giữa đường D5, trùng giao với Nguyễn Gia Trí |
+| bth-nguyen-gia-tri | Nguyễn Gia Trí | 10.80585, 106.71597 | 400 | 0.93 | giữa đường Nguyễn Gia Trí (cùng node D5 × Nguyễn Gia Trí); bài nêu phường Thạnh Mỹ Tây |
+| bt-le-co | Lê Cơ | 10.72734, 106.61267 | 400 | 1.21 | P. An Lạc, giữa đường |
+| q7-go-o-moi | Gò Ô Môi | 10.73007, 106.73768 | 350 | 0.69 | bài chỉ nói "500 m đường Gò Ô Môi"; điểm giữa đường (OSM không có xưởng gas có tên) |
+| q7-bui-van-ba | Bùi Văn Ba | 10.75054, 106.73528 | 400 | 0.89 | bài chỉ nói "các hẻm thuộc đường Bùi Văn Ba"; điểm giữa đường, P. Tân Thuận |
+| q8-ben-binh-dong | Bình Đông (alias "Bến Bình Đông") | 10.73464, 106.63631 | 400 | 0.72 | OSM tên đường "Bình Đông" (hẻm "Bến Bình Đông"), điểm = trạm xe buýt "Bến Bình Đông". Bài ghi "phường Bình Đông" nhưng Nominatim xếp đoạn này vào P. Phú Định (ranh phường mới) — **chưa đối chiếu được** |
+| q1-yersin / q1-nguyen-cong-tru / q1-nguyen-thai-hoc | Yersin / Nguyễn Công Trứ / Nguyễn Thái Học | 10.76721,106.69738 / 10.76588,106.69816 / 10.76637,106.69643 | 300 | 0.60 / 0.36 / 1.09 | một câu SGGP 08/11/2025 liệt kê chung (mưa + triều), không có đoạn; điểm là node mỗi đường trong P. Bến Thành gần cụm 3 đường nhất |
+
+Không thêm: **Nguyễn Hữu Cảnh** (bài nói ùn tắc, không phải ngập), **Hồ Học Lãm / Linh Đông** (đã có hotspot giao lộ; mention không có đường cắt nên vẫn unresolved), **Hoàng Văn Thụ** (1 bài, chưa có địa điểm).
+
+`scripts/lib/news.mjs`: hotspot có thể khai `aliases: ["Bến Phú Định"]` để mention "chỉ tên đường" của báo khớp tên OSM khác.
+
+## Phạm Thế Hiển (đối chiếu 2026-10-11)
+
+Nguồn PC08 06/10/2026: "Đoạn từ hẻm 2695 đến giao lộ Lê Bôi" và "Chân cầu Bà Tàng, trước số 2377". Đối chiếu Nominatim/OSM:
+- Hẻm 2695 Phạm Thế Hiển (Nominatim 10.72478, 106.63737, P. Bình Đông); điểm đầu mút của entry (10.724917, 106.636301) nằm trên đường Phạm Thế Hiển, "Trường THCS Bình An, số 2673" → hợp lệ (cách miệng hẻm < 100 m).
+- Giao lộ Lê Bôi × Phạm Thế Hiển = node OSM chung (10.71213, 106.62793), P. Bình Đông. Đoạn 1,68 km khớp địa lý.
+- Cầu Bà Tàng (10.73113, 106.64042, hẻm 2444 Phạm Thế Hiển, P. Bình Đông) khớp entry `q8-pham-the-hien-cau-ba-tang`; không tìm được số 2377 trên OSM, giữ điểm tại chân cầu.
+- **Sai đã sửa:** `near` của `q8-pham-the-hien-hem-2695-le-boi` (10.718524, 106.632115) nằm cách đường 110 m (Nominatim: KP 25, P. Phú Định) và `area` ghi "Phường Phú Định". Đổi `near` thành (10.7178, 106.6329) (trên đường, "2969 Phạm Thế Hiển, P. Bình Đông") và `area` thành "Phường Bình Đông (Quận 8 cũ)". Hình học `between` (17 piece, 1,68 km) không đổi.
