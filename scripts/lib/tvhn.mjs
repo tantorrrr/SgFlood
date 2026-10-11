@@ -141,3 +141,45 @@ export function isTvhnTitle(title) {
   return /thuy van/.test(t) && /(tp\.?\s*hcm|tphcm|ho chi minh)/.test(t)
     && !/(hai van|trieu cuong|canh bao|nhan dinh|lien ho|thang|10 ngay)/.test(t);
 }
+
+// ---- backfill helpers (RSS paging by date) ----
+
+// Joomla RSS xml → [{title, link, date(ms)}] (newest first).
+export function parseFeedItems(xml) {
+  return [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(([, it]) => ({
+    title: it.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? '',
+    link: (it.match(/<link>([\s\S]*?)<\/link>/)?.[1] ?? '').replace(/^https:/, 'http:'),
+    date: Date.parse(it.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1] ?? ''),
+  }));
+}
+
+// Loose title filter for backfill: any "thủy văn" item that is not obviously another product.
+// The attachment name (HCMC_TVHN_YYYYMMDD.pdf) on the article page is the real test.
+export function isCandidateTitle(title) {
+  const t = fold(title);
+  return /thuy van/.test(t) && !/(hai van|trieu cuong|canh bao|lien ho|dong nai|la nga)/.test(t);
+}
+
+// HCMC_TVHN attachments on an article page → [[yyyymmdd, relativePath]].
+export function tvhnAttachments(html) {
+  return [...html.matchAll(/(attachments\/article\/\d+\/HCMC_TVHN_(\d{8})\.pdf)/g)].map(([, path, ymd]) => [ymd, path]);
+}
+
+// Feed is newest-first. Smallest page offset (multiple of `step`) whose first item is dated <= toMs,
+// so scanning forward from it covers everything older. firstDate(offset) → ms | null (past the end).
+export async function firstOffsetAtOrBefore(firstDate, toMs, step = 10) {
+  let hi = step;
+  let lo = 0;
+  for (;;) { // exponential probe for an offset that is old enough (or past the end)
+    const d = await firstDate(hi);
+    if (d == null || d <= toMs) break;
+    lo = hi;
+    hi *= 2;
+  }
+  while (hi - lo > step) {
+    const mid = lo + Math.floor((hi - lo) / step / 2) * step;
+    const d = await firstDate(mid);
+    if (d == null || d <= toMs) hi = mid; else lo = mid;
+  }
+  return (await firstDate(lo)) <= toMs ? lo : hi;
+}

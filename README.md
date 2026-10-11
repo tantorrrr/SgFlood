@@ -57,7 +57,8 @@ Danh sách 107 điểm (mưa 65, triều 37, cả hai 5) lấy từ bài gốc. 
 1. Đọc RSS chuyên mục Thủy văn của Đài KTTV Nam Bộ (`http://kttvnb.vn`, **HTTP** vì chứng chỉ HTTPS hết hạn), lọc bài "dự báo thủy văn … TP HCM" trong 14 ngày, mở từng bài lấy file đính kèm `HCMC_TVHN_YYYYMMDD.pdf` (id bài không suy ra được từ ngày, không dò id). PDF cache ở `data/cache/tvhn/`.
 2. Parse PDF bằng `node:zlib` (`scripts/lib/tvhn.mjs`): thực đo hôm trước tại Phú An (2 đỉnh + 2 chân) và dự báo 5 ngày. Bố cục bản tin thay đổi theo thời gian → file không nhận ra được thì bỏ qua và log, không dừng script.
 3. Lấy Open-Meteo marine tại (10.375, 106.958) cùng khoảng ngày, tính `bias = median(OM_peak(t − 3h) − PA_đỉnh_thực_đo)` trên các đỉnh ≥ 1.0 m (mặc định 0.60 nếu < 3 cặp).
-4. Ghi `public/data/tide-phuan.json` (`observed` cộng dồn qua các lần chạy; bản commit sẵn được seed từ ~360 bản tin 09/2024–10/2026 bằng `--seed obs.jsonl`).
+4. Lấp khoảng trống lịch sử: `node scripts/fetch-tide.mjs --backfill <từ> <đến>` (ngày đăng bản tin, `YYYY-MM-DD`) lật RSS lưu trữ theo ngày (`limitstart`, nhị phân tìm trang), mở từng bài, tải PDF (cache, ~0,4 s/request), gộp `observed`; không đổi `forecast`. Ngày thực đo D nằm trong bản tin D+1.
+5. Ghi `public/data/tide-phuan.json` (`observed` cộng dồn qua các lần chạy; bản commit sẵn được seed từ ~360 bản tin 09/2024–10/2026 bằng `--seed obs.jsonl`).
 
 Frontend: `PA(t) = OM(t − 3h) − bias` (m, hệ Hòn Dấu); ngày nào có dự báo chính thức thì cả ngày được cộng một hiệu chỉnh để đỉnh cao nhất khớp đỉnh dự báo (`public/js/tide.js`). Timeline vẽ đường PA, 3 vạch BĐ I/II/III (1.40/1.50/1.60 m, QĐ 05/2020/QĐ-TTg) và chấm đỉnh dự báo chính thức.
 

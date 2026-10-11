@@ -69,3 +69,35 @@ test('real bulletin HCMC_TVHN_20261006.pdf: blank first-peak column keeps values
   assert.equal(forecast.length, 20);
   assert.deepEqual(forecast.at(-4), { t: '2026-10-10T16:30:00+07:00', h: 1.54, kind: 'peak' });
 });
+
+import { parseFeedItems, isCandidateTitle, tvhnAttachments, firstOffsetAtOrBefore } from '../scripts/lib/tvhn.mjs';
+
+test('parseFeedItems reads title/link/date', () => {
+  const xml = '<item><title>A</title><link>https://x/1</link><pubDate>Sun, 21 Dec 2025 02:33:07 +0000</pubDate></item><item><title>B</title><link>http://x/2</link><pubDate>bad</pubDate></item>';
+  const items = parseFeedItems(xml);
+  assert.equal(items.length, 2);
+  assert.equal(items[0].link, 'http://x/1');
+  assert.equal(items[0].date, Date.parse('2025-12-21T02:33:07Z'));
+  assert.ok(Number.isNaN(items[1].date));
+});
+
+test('isCandidateTitle keeps thuy van items, drops other products', () => {
+  assert.ok(isCandidateTitle('TIN DỰ BÁO THỦY VĂN TP.HCM NGÀY 04-08-2022'));
+  assert.ok(isCandidateTitle('BẢN TIN DỰ BÁO THỦY VĂN HẠN NGẮN KHU VỰC TP. HỒ CHÍ MINH'));
+  assert.ok(!isCandidateTitle('TIN TRIỀU CƯỜNG TRÊN SÔNG SÀI GÒN'));
+  assert.ok(!isCandidateTitle('TIN CẢNH BÁO LŨ TRÊN HỆ THỐNG SÔNG LA NGÀ'));
+});
+
+test('tvhnAttachments extracts date + path', () => {
+  assert.deepEqual(tvhnAttachments('<a href="/attachments/article/29319/HCMC_TVHN_20261011.pdf">x</a> HOCM_XTND_20250921_1400.pdf'), [['20261011', 'attachments/article/29319/HCMC_TVHN_20261011.pdf']]);
+});
+
+test('firstOffsetAtOrBefore finds the page where the target date starts', async () => {
+  // newest-first feed, 10 items/page, one item per hour descending from t=1000h
+  const total = 3000;
+  const firstDate = async (o) => (o >= total ? null : (1000 * 1 - o) * 3600e3);
+  const target = (1000 - 1234) * 3600e3; // item index 1234
+  assert.equal(await firstOffsetAtOrBefore(firstDate, target, 10), 1240); // first page whose head is <= target (caller steps back one page)
+  assert.equal(await firstOffsetAtOrBefore(firstDate, 5000 * 3600e3, 10), 0);
+  assert.equal(await firstOffsetAtOrBefore(firstDate, -1e15, 10), 3000); // past the end
+});

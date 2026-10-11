@@ -1,8 +1,8 @@
 // Fetch Phú An bulletins (Đài KTTV Nam Bộ) + Open-Meteo marine, fit the bias, write public/data/tide-phuan.json.
-// Run daily: `npm run fetch:tide`.  `--seed <obs.jsonl>` imports previously parsed observations once.
+// Run daily: `npm run fetch:tide`.  `--backfill <from> <to>` (bulletin dates YYYY-MM-DD) walks the RSS archive and merges older observed events.  `--seed <obs.jsonl>` imports previously parsed observations once.
 import { existsSync } from 'node:fs';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
-import { pdfTextRuns, parseBulletin, isTvhnTitle } from './lib/tvhn.mjs';
+import { pdfTextRuns, parseBulletin, isTvhnTitle, parseFeedItems, isCandidateTitle, tvhnAttachments, firstOffsetAtOrBefore } from './lib/tvhn.mjs';
 import { computeBias, DEFAULT_TIDE, HOUR } from '../public/js/tide.js';
 
 const ROOT = new URL('..', import.meta.url);
@@ -34,11 +34,7 @@ async function discoverBulletins() {
   const articles = [];
   for (let page = 0; page < MAX_FEED_PAGES; page++) {
     const xml = await get(`${FEED}&limitstart=${page * FEED_PAGE}`);
-    const items = [...xml.matchAll(/<item>([\s\S]*?)<\/item>/g)].map(([, it]) => ({
-      title: it.match(/<title>([\s\S]*?)<\/title>/)?.[1] ?? '',
-      link: it.match(/<link>([\s\S]*?)<\/link>/)?.[1] ?? '',
-      date: Date.parse(it.match(/<pubDate>([\s\S]*?)<\/pubDate>/)?.[1] ?? ''),
-    }));
+    const items = parseFeedItems(xml);
     if (!items.length) break;
     articles.push(...items.filter((i) => isTvhnTitle(i.title) && i.date >= since));
     if (items.every((i) => i.date < since)) break;
@@ -55,9 +51,36 @@ async function discoverBulletins() {
   return [...urls.entries()].sort(([a], [b]) => b.localeCompare(a)).slice(0, MAX_DAYS);
 }
 
+const RATE_MS = 400; // polite pause between requests to kttvnb.vn
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+// Bulletins published in [from, to] (YYYY-MM-DD): page the RSS archive (newest first) by date.
+async function discoverRange(from, to) {
+  const fromMs = Date.parse(`${from}T00:00:00+07:00`);
+  const toMs = Date.parse(`${to}T23:59:59+07:00`);
+  const page = async (offset) => { await sleep(RATE_MS); return parseFeedItems(await get(`${FEED}&limitstart=${offset}`)); };
+  const start = await firstOffsetAtOrBefore(async (o) => (await page(o))[0]?.date ?? null, toMs, FEED_PAGE);
+  const urls = new Map();
+  for (let offset = Math.max(0, start - FEED_PAGE); ; offset += FEED_PAGE) {
+    const items = await page(offset);
+    if (!items.length) break;
+    for (const a of items.filter((i) => i.date >= fromMs && i.date <= toMs && isCandidateTitle(i.title))) {
+      try {
+        await sleep(RATE_MS);
+        for (const [ymd, path] of tvhnAttachments(await get(a.link))) urls.set(ymd, `${SITE}/${path}`);
+      } catch (err) {
+        console.warn(`  article ${a.link}: ${err.message}`);
+      }
+    }
+    if (items.every((i) => i.date < fromMs)) break;
+  }
+  return [...urls.entries()].sort(([a], [b]) => b.localeCompare(a));
+}
+
 async function loadPdf(ymd, url) {
   const file = new URL(`HCMC_TVHN_${ymd}.pdf`, PDF_CACHE);
   if (existsSync(file)) return readFile(file);
+  await sleep(RATE_MS);
   const buf = await get(url, 'buffer');
   await mkdir(PDF_CACHE, { recursive: true });
   await writeFile(file, buf);
@@ -98,8 +121,11 @@ async function main() {
   const seeded = seedIdx > 0 ? seedEvents(await readFile(process.argv[seedIdx + 1], 'utf8')) : [];
   if (seeded.length) console.log(`Seeded ${seeded.length} observed events from ${process.argv[seedIdx + 1]}`);
 
-  console.log('Discovering bulletins (RSS listing)…');
-  const found = await discoverBulletins();
+  const bf = process.argv.indexOf('--backfill');
+  const range = bf > 0 ? process.argv.slice(bf + 1, bf + 3) : null;
+  if (range && !range.every((d) => /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/.test(d))) throw new Error('usage: --backfill <from YYYY-MM-DD> <to YYYY-MM-DD>');
+  console.log(range ? `Discovering bulletins ${range[0]}..${range[1]} (RSS archive)…` : 'Discovering bulletins (RSS listing)…');
+  const found = range ? await discoverRange(...range) : await discoverBulletins();
   console.log(`  ${found.length} bulletin(s): ${found.map(([d]) => d).join(', ')}`);
 
   const parsed = [];
@@ -114,7 +140,7 @@ async function main() {
   console.log(`  parsed ${parsed.length}/${found.length}`);
 
   const observed = mergeEvents(prev.observed ?? [], seeded, parsed.map((p) => p.observed));
-  const latest = parsed[0];
+  const latest = range ? null : parsed[0]; // a backfill must not replace the current forecast
   const forecast = latest ? latest.forecast : (prev.forecast ?? []);
   if (!observed.length) throw new Error('no observations at all');
 
@@ -132,7 +158,7 @@ async function main() {
     biasN: n,
     observed,
     forecast,
-    bulletins: parsed.length ? parsed.map((p) => p.url) : (prev.bulletins ?? []),
+    bulletins: !range && parsed.length ? parsed.map((p) => p.url) : (prev.bulletins ?? []),
   };
   await writeFile(OUT, JSON.stringify(out));
 
