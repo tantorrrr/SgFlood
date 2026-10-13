@@ -98,3 +98,54 @@ test('paPeakBefore: highest Phu An level within the lookback window (peak inside
   const later = paPeakBefore(obs, Date.parse('2026-10-10T21:00:00+07:00')); // window 18:00–21:00, falling
   assert.ok(later < 1.65 && later > 0);
 });
+
+import { fitLagBias, stationFor, stationBlock } from '../public/js/tide.js';
+
+test('§20a fitLagBias picks the lag with the tightest exact-hour residuals, bias at that lag', () => {
+  // OM peaks at 13:00 with a different amplitude each day; the shape scales with it, so only the right lag
+  // gives a constant OM − obs offset.
+  const amps = [2.0, 2.4, 1.8, 2.2];
+  const om = (t) => {
+    const d = Math.floor((t - T0) / (24 * HOUR));
+    if (d < 0 || d > 3) return null;
+    const h = (t - T0) / HOUR - d * 24;
+    return amps[d] * (1 - 0.08 * Math.abs(h - 13));
+  };
+  // Station peaking 2 h after OM, 0.55 m lower, with small noise.
+  const obs = amps.map((a, d) => ({ t: new Date(T0 + d * 24 * HOUR + 15 * HOUR).toISOString(), h: a - 0.55 + [0, 0.01, -0.01, 0][d], kind: 'peak' }));
+  const fit = fitLagBias(obs, om);
+  assert.equal(fit.lagH, 2);
+  assert.ok(Math.abs(fit.bias - 0.55) < 0.03);
+  assert.equal(fit.n, 4);
+  assert.equal(fitLagBias(obs, om, { lags: [3] }).lagH, 3); // Phú An: fixed lag
+  assert.deepEqual(fitLagBias(obs.slice(0, 2), om), { lagH: 3, bias: 0.6, n: 0, mad: null }); // < 3 pairs → defaults
+});
+
+test('§20a stationFor: south (Q7/Nhà Bè/Q8/Bình Chánh, south Q4–Q6) → NB, else PA', () => {
+  assert.equal(stationFor(10.732, 106.721), 'NB'); // Q7 Phú Mỹ Hưng
+  assert.equal(stationFor(10.746, 106.650), 'NB'); // Q8
+  assert.equal(stationFor(10.760, 106.680), 'NB'); // Q5 south, west of 106.70
+  assert.equal(stationFor(10.760, 106.705), 'PA'); // Q4 east of 106.70
+  assert.equal(stationFor(10.772, 106.698), 'PA'); // Bến Thành
+  assert.equal(stationFor(10.789, 106.718), 'PA'); // Nguyễn Hữu Cảnh
+  assert.equal(stationFor(NaN, 106.7), 'PA');
+});
+
+test('§20a tideParams per station; legacy file (no stations) → Phú An fields for both', () => {
+  const now = Date.parse('2026-10-10T12:00:00+07:00');
+  const json = {
+    fetchedAt: '2026-10-10T08:00:00+07:00', bias: 0.62, lagH: 3, observed: [{ t: '2026-10-09T16:00:00+07:00', h: 1.6, kind: 'peak' }], forecast: [],
+    stations: { PA: { bias: 0.62, lagH: 3, observed: [], forecast: [] }, NB: { bias: 0.6, lagH: 2, observed: [{ t: '2026-10-09T15:00:00+07:00', h: 1.7, kind: 'peak' }], forecast: [{ t: 'x', h: 1, kind: 'peak' }] } },
+  };
+  const nb = tideParams(json, now, undefined, 'NB');
+  assert.equal(nb.station, 'NB');
+  assert.equal(nb.name, 'Nhà Bè');
+  assert.equal(nb.lagH, 2);
+  assert.equal(nb.observedPeaks[0].h, 1.7);
+  assert.equal(nb.forecast.length, 1);
+  assert.equal(tideParams(json, now).lagH, 3);
+  const legacy = { ...json, stations: undefined };
+  assert.equal(tideParams(legacy, now, undefined, 'NB').bias, 0.62);
+  assert.equal(stationBlock(legacy, 'NB'), legacy);
+  assert.equal(tideParams(json, now + 5 * 24 * HOUR, undefined, 'NB').stale, true);
+});

@@ -1,8 +1,9 @@
 // Parser for Đài KTTV Nam Bộ "HCMC_TVHN_YYYYMMDD.pdf" (Excel → PDF, FlateDecode streams, WinAnsi literals).
-// Extracts Phú An observed peaks/lows of the previous day and the 5-day Phú An forecast.
+// Extracts per-station (Phú An, Nhà Bè) observed peaks/lows of the previous day and the 5-day forecast.
 import { inflateSync } from 'node:zlib';
 
-const STATION = 'Phú An';
+// §20a stations read from the bulletin: code → label in the station-name column.
+export const STATIONS = { PA: 'Phú An', NB: 'Nhà Bè' };
 const LABEL_MAX_X = 100; // station names column
 const DATE_X = [110, 150]; // forecast date column
 const VALUE_MIN_X = 150;
@@ -94,8 +95,8 @@ function valuesAt(runs, y) {
   return out;
 }
 
-// runs → { observed, forecast } for Phú An. Throws when the layout is not recognised.
-export function parseBulletin(runs, bulletinDate) {
+// runs → { observed, forecast } for one station (default Phú An). Throws when the layout is not recognised.
+export function parseBulletin(runs, bulletinDate, station = STATIONS.PA) {
   const dateRuns = runs
     .filter((r) => r.x >= DATE_X[0] && r.x <= DATE_X[1] && /^\d\d\/\d\d$/.test(r.t))
     .sort((a, b) => b.y - a.y);
@@ -106,31 +107,40 @@ export function parseBulletin(runs, bulletinDate) {
     if (g && g.at(-1).y - r.y <= GROUP_GAP && !g.some((x) => x.t === r.t)) g.push(r);
     else groups.push([r]);
   }
-  const labels = runs.filter((r) => r.x < LABEL_MAX_X && r.t.normalize('NFC').startsWith(STATION));
+  const labels = runs.filter((r) => r.x < LABEL_MAX_X && r.t.normalize('NFC').startsWith(station));
   const inGroup = (y) => groups.find((g) => y <= g[0].y + 8 && y >= g.at(-1).y - 8);
 
-  // The observed row is the out-of-block Phú An label whose cells parse to at least one peak
-  // (the rainfall table also has a Phú An label, with unrelated numbers on the same line).
+  // The observed row is the out-of-block station label whose cells parse to at least one event
+  // (the rainfall table also has a station label, with unrelated numbers on the same line that fail to parse).
+  // A row with only lows is kept (e.g. Nhà Bè 05/10/2026: both peak cells "ct").
   let observed;
   for (const l of labels) {
     if (inGroup(l.y)) continue;
     let ev;
     try { ev = rowEvents(valuesAt(runs, l.y), addDays(bulletinDate, -1)); } catch { continue; }
-    if (ev.some((e) => e.kind === 'peak')) { observed = ev; break; }
+    if (ev.length) { observed = ev; break; }
   }
-  if (!observed) throw new Error('observed Phú An row not found');
+  if (!observed) throw new Error(`observed ${station} row not found`);
 
   const fcLabel = labels.find((l) => inGroup(l.y));
-  if (!fcLabel) throw new Error('forecast Phú An block not found');
+  if (!fcLabel) throw new Error(`forecast ${station} block not found`);
   const forecast = [];
   for (const r of inGroup(fcLabel.y)) {
     try {
       forecast.push(...rowEvents(valuesAt(runs, r.y), dateFromLabel(r.t, bulletinDate)));
     } catch { /* one incomplete forecast day: skip the row, keep the rest */ }
   }
-  if (!observed.some((e) => e.kind === 'peak')) throw new Error('no observed peak');
   if (!forecast.some((e) => e.kind === 'peak')) throw new Error('no forecast peak');
   return { observed, forecast };
+}
+
+// Every station of STATIONS: { PA: {observed, forecast} | {error}, NB: … } (one station failing keeps the other).
+export function parseStations(runs, bulletinDate) {
+  const out = {};
+  for (const [code, name] of Object.entries(STATIONS)) {
+    try { out[code] = parseBulletin(runs, bulletinDate, name); } catch (err) { out[code] = { error: err.message }; }
+  }
+  return out;
 }
 
 const fold = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/đ/gi, 'd').toLowerCase();

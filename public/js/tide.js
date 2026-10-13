@@ -84,18 +84,63 @@ export function latestPeakBefore(peaks, t) {
   return (peaks ?? []).reduce((a, e) => (Date.parse(e.t) <= t && (!a || Date.parse(e.t) > Date.parse(a.t)) ? e : a), null);
 }
 
+// §20a Stations of tide-phuan.json `stations`. Alert marks are the same for both (1.40/1.50/1.60).
+export const STATION_NAMES = { PA: 'Phú An', NB: 'Nhà Bè' };
+export const STATION_CODES = Object.keys(STATION_NAMES);
+
+// §20a Station by zone, NO interpolation between the two. Nhà Bè covers the south (Q7, Nhà Bè, Q8, Bình Chánh and the
+// parts of Q4/Q5/Q6 south of the Tàu Hũ–Bến Nghé canal); everything else Phú An.
+// APPROXIMATE boundary (lat < 10.755, or lat < 10.765 west of lng 106.70) — to be refined.
+export function stationFor(lat, lng) {
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return 'PA';
+  return lat < 10.755 || (lat < 10.765 && lng < 106.70) ? 'NB' : 'PA';
+}
+
+// One station's block of tide-phuan.json: `stations[code]`, else the legacy top-level fields (= Phú An) so a file
+// written before §20 keeps working (Nhà Bè then falls back to the Phú An curve).
+export function stationBlock(json, code = 'PA') {
+  return json?.stations?.[code] ?? json?.stations?.PA ?? json;
+}
+
+// §20a Lag + bias fit for one station. Lag: for each candidate, residuals OM(t − lag) − obs peak at the exact hour
+// (omPeakNear's ±2 h max would blur the timing) over peaks ≥ minH; the smallest median absolute deviation wins
+// (ties → the earlier candidate). Bias: computeBias at that lag (same rule as Phú An §10b).
+export function fitLagBias(observed, omAt, { lags = [1, 2, 3, 4, 5], minH = 1.0, minN = 3, fallback = DEFAULT_TIDE } = {}) {
+  let best = null;
+  for (const lagH of lags) {
+    const diffs = [];
+    for (const e of observed ?? []) {
+      if (e.kind !== 'peak' || e.h < minH) continue;
+      const om = omAt(Math.round((Date.parse(e.t) - lagH * HOUR) / HOUR) * HOUR);
+      if (om != null) diffs.push(om - e.h);
+    }
+    if (diffs.length < minN) continue;
+    const c = median(diffs);
+    const mad = Math.round(median(diffs.map((d) => Math.abs(d - c))) * 1000) / 1000;
+    if (!best || mad < best.mad) best = { lagH, mad };
+  }
+  if (!best) return { lagH: fallback.lagH, bias: fallback.bias, n: 0, mad: null };
+  const { bias, n } = computeBias(observed, omAt, { lagH: best.lagH, minH, minN, fallback: fallback.bias });
+  return { lagH: best.lagH, bias, n, mad: best.mad };
+}
+
 // Effective parameters from tide-phuan.json: missing or older than staleDays → default bias, no bulletin.
-export function tideParams(json, now = Date.now(), defaults = DEFAULT_TIDE) {
+// `station` picks a §20a block (stationBlock); fetchedAt/alerts stay file-level.
+export function tideParams(json, now = Date.now(), defaults = DEFAULT_TIDE, station = 'PA') {
   const fetched = json?.fetchedAt ? Date.parse(json.fetchedAt) : NaN;
   const stale = !(now - fetched <= defaults.staleDays * 24 * HOUR);
-  if (stale) return { stale, bias: defaults.bias, lagH: defaults.lagH, alerts: defaults.alerts, forecast: [], observedPeaks: [] };
-  const peaks = (json.observed ?? []).filter((e) => e.kind === 'peak');
+  const name = STATION_NAMES[station] ?? STATION_NAMES.PA;
+  if (stale) return { station, name, stale, bias: defaults.bias, lagH: defaults.lagH, alerts: defaults.alerts, forecast: [], observedPeaks: [] };
+  const b = stationBlock(json, station);
+  const peaks = (b.observed ?? []).filter((e) => e.kind === 'peak');
   return {
+    station,
+    name,
     stale,
-    bias: typeof json.bias === 'number' ? json.bias : defaults.bias,
-    lagH: json.lagH ?? defaults.lagH,
+    bias: typeof b.bias === 'number' ? b.bias : defaults.bias,
+    lagH: b.lagH ?? defaults.lagH,
     alerts: json.alerts ?? defaults.alerts,
-    forecast: json.forecast ?? [],
+    forecast: b.forecast ?? [],
     observedPeaks: peaks,
   };
 }

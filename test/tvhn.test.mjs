@@ -101,3 +101,31 @@ test('firstOffsetAtOrBefore finds the page where the target date starts', async 
   assert.equal(await firstOffsetAtOrBefore(firstDate, 5000 * 3600e3, 10), 0);
   assert.equal(await firstOffsetAtOrBefore(firstDate, -1e15, 10), 3000); // past the end
 });
+
+import { parseStations, STATIONS } from '../scripts/lib/tvhn.mjs';
+
+test('§20a parseBulletin reads the Nhà Bè rows (synthetic + real 08/10 bulletin)', () => {
+  const runs = pdfTextRuns(readFileSync(new URL('./fixtures/HCMC_TVHN_20261008.pdf', import.meta.url)));
+  const { observed, forecast } = parseBulletin(runs, '2026-10-08', STATIONS.NB);
+  assert.deepEqual(observed, [
+    { t: '2026-10-07T12:00:00+07:00', h: 1.0, kind: 'peak' },
+    { t: '2026-10-07T01:00:00+07:00', h: 1.4, kind: 'peak' },
+    { t: '2026-10-07T19:30:00+07:00', h: -1.69, kind: 'low' },
+    { t: '2026-10-07T07:30:00+07:00', h: 0.01, kind: 'low' },
+  ]);
+  assert.equal(forecast.filter((e) => e.kind === 'peak').length, 10);
+  assert.ok(forecast.some((e) => e.t === '2026-10-10T15:30:00+07:00' && e.h === 1.62));
+  // PA unchanged by the station parameter
+  assert.equal(parseBulletin(runs, '2026-10-08').observed[0].h, 1.02);
+});
+
+test('§20a Nhà Bè row with blank ("ct") peak cells keeps its lows; parseStations isolates failures', () => {
+  const runs = pdfTextRuns(readFileSync(new URL('./fixtures/HCMC_TVHN_20261006.pdf', import.meta.url)));
+  const st = parseStations(runs, '2026-10-06');
+  assert.deepEqual(st.NB.observed, [{ t: '2026-10-05T17:00:00+07:00', h: -1.7, kind: 'low' }]);
+  assert.ok(st.NB.forecast.some((e) => e.t === '2026-10-08T12:00:00+07:00' && e.h === 1.14));
+  assert.equal(st.PA.observed[0].h, 1.1);
+  const bad = parseStations(runs.filter((r) => !r.t.normalize('NFC').startsWith('Nhà Bè')), '2026-10-06');
+  assert.match(bad.NB.error, /not found/);
+  assert.ok(bad.PA.observed.length);
+});
