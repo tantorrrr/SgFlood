@@ -132,3 +132,12 @@ test('history cells follow ANALOG_MIN_NET, drop denied / withdrawn / no-snapshot
   assert.equal(ok([pastReport({ level: 0 })], 0), 0);
   assert.equal(ok([pastReport({ snapshot: null })], 0), 0);
 });
+
+test('§20a segmentRisk takes the tide of the segment station (south → Nhà Bè)', () => {
+  const w = weather([uniform(0)], [1.3]);
+  w.stations = { PA: { pa: [1.3] }, NB: { pa: [2.0] } };
+  const south = segmentRisk([10.73, 106.72], { cause: 'tide' }, w, 0, MODEL);
+  assert.deepEqual([south.reason.station, south.reason.pa, south.level], ['NB', 2.0, 3]);
+  const north = segmentRisk([10.79, 106.72], { cause: 'tide' }, w, 0, MODEL);
+  assert.deepEqual([north.reason.station, north.reason.pa, north.level], ['PA', 1.3, 0]);
+});

@@ -1,6 +1,7 @@
 import { weightedR3 } from './risk.js';
 import { LATE_MS } from './reports.js';
-import { alertLevel, latestPeakBefore } from './tide.js';
+import { alertLevel, latestPeakBefore, stationFor, STATION_NAMES } from './tide.js';
+import { stationTide } from './risk.js';
 import { rgbaToDbz, dbzToMmH, radarAccumMm } from './radar-rate.js';
 
 const TIMEOUT_MS = 6000;
@@ -104,21 +105,33 @@ async function captureRadar(lat, lng, signal, t) {
   };
 }
 
-export function tideAt(weather, t) {
+// §20a `station`/`stationName`/`level`/`levelSource`/`bias`/`lagH`/`alert`/`latestObservedPeak` are for the station of
+// the point (stationFor); `phuAn`/`phuAnSource` stay the Phú An values for older readers.
+export function tideAt(weather, t, point = null) {
   const sea = weather?.sea;
   const idx = weather?.times?.indexOf(Math.floor(t / HOUR) * HOUR) ?? -1;
   if (!sea || idx < 0) return null;
-  const tide = weather.tide ?? {};
+  const round = (v) => (v == null ? null : Math.round(v * 100) / 100);
+  const station = point ? stationFor(point.lat, point.lng) : 'PA';
+  const st = stationTide(weather, station);
+  const pa = stationTide(weather, 'PA');
+  const tide = st.tide ?? {};
   const lagH = tide.lagH ?? 3;
-  const phuAn = weather.pa?.[idx] ?? null;
+  const level = st.pa?.[idx] ?? null;
+  const src = (s) => `om+${(s.tide ?? {}).lagH ?? 3}h−bias${s.paCorrected?.[idx] ? '+bulletin' : ''}`;
   return {
     source: TIDE_SOURCE,
     seaLevel: sea[idx] ?? null,
     seaLevelLagged: sea[idx - lagH] ?? null,
-    phuAn: phuAn == null ? null : Math.round(phuAn * 100) / 100,
-    phuAnSource: weather.paCorrected?.[idx] ? 'om+3h−bias+bulletin' : 'om+3h−bias',
+    station,
+    stationName: STATION_NAMES[station],
+    level: round(level),
+    levelSource: src(st),
+    lagH,
+    phuAn: round(pa.pa?.[idx] ?? null),
+    phuAnSource: src(pa),
     bias: tide.bias ?? null,
-    alert: alertLevel(phuAn, tide.alerts),
+    alert: alertLevel(level, tide.alerts),
     latestObservedPeak: latestPeakBefore(tide.observedPeaks, t),
   };
 }
@@ -148,7 +161,7 @@ export async function captureSnapshot({ lat, lng }, { weather, observedAt, creat
     models: models.value?.models ?? null,
     features: models.value?.features ?? null,
     radar: radar.value ?? null,
-    tide: tideAt(weather, t),
+    tide: tideAt(weather, t, { lat, lng }),
     gps, // { accuracyM, distanceM, at } when a device fix was used (informational only), else null
   };
   if (models.error) snap.modelsError = models.error;

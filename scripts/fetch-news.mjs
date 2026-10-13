@@ -105,7 +105,7 @@ async function addWeather(reports) {
   const stats = await enrichWeather(reports, { tide: await readJson(TIDE, null), cache });
   await mkdir(CACHE, { recursive: true });
   await writeFile(WEATHER_CACHE, JSON.stringify(cache));
-  console.log(`Weather: ${stats.pending} pending (${stats.requests} requests, ${stats.failed} without rain) → r3 ${stats.r3}/${reports.length}, paPeak ${stats.paPeak}/${reports.length}`);
+  console.log(`Weather: ${stats.pending} pending (${stats.requests} requests, ${stats.failed} without rain) → r3 ${stats.r3}/${reports.length}, paPeak ${stats.paPeak}/${reports.length} (Nhà Bè ${stats.nb ?? 0})`);
 }
 
 async function main() {

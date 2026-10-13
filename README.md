@@ -62,6 +62,8 @@ Danh sách 107 điểm (mưa 65, triều 37, cả hai 5) lấy từ bài gốc. 
 
 Frontend: `PA(t) = OM(t − 3h) − bias` (m, hệ Hòn Dấu); ngày nào có dự báo chính thức thì cả ngày được cộng một hiệu chỉnh để đỉnh cao nhất khớp đỉnh dự báo (`public/js/tide.js`). Timeline vẽ đường PA, 3 vạch BĐ I/II/III (1.40/1.50/1.60 m, QĐ 05/2020/QĐ-TTg) và chấm đỉnh dự báo chính thức.
 
+**Trạm Nhà Bè (§20).** Parser đọc thêm dòng Nhà Bè (thực đo + dự báo 5 ngày, kể cả ô trống "ct"). `tide-phuan.json` có `stations: { PA, NB }`, mỗi trạm `observed`, `forecast`, `lagH`, `bias`, `biasN`; các field top-level vẫn = Phú An cho client cũ. Phú An giữ trễ 3 giờ và chỉ fit bias; Nhà Bè fit trễ (độ lệch tuyệt đối trung vị nhỏ nhất trên các đỉnh ≥ 1.0 m) + bias — hiện ≈ 2 giờ, 0.60 m. `node scripts/fetch-tide.mjs --reparse` parse lại toàn bộ PDF đã cache, không cần mạng (trừ Open-Meteo). Mỗi điểm dùng **một** trạm, không nội suy: `stationFor(lat, lng)` trong `public/js/tide.js` (Nhà Bè khi lat < 10.755, hoặc lat < 10.765 và lng < 106.70 — ranh xấp xỉ) cho dự báo đoạn đường, snapshot báo cáo (`tide.station`, `tide.level`; `phuAn` giữ để tương thích), `paPeak` của tin báo (`paStation`), `pa_obs` của enrich và biểu đồ timeline (triều theo trạm của điểm đang xem; zoom xa → Phú An).
+
 Hiệu chỉnh (research, 697 cặp đỉnh thực đo Phú An – Open-Meteo): trễ ≈ 3 giờ, bias ≈ 0.60 m (sd 0.12), RMSE ≈ 0.08 m cho các đỉnh cao. Open-Meteo marine là mô hình triều thiên văn + khí tượng thô, không có lũ thượng nguồn/xả hồ → ngày xả lũ lớn có thể thấp hơn thực.
 
 ## Quét báo chí hằng ngày (`npm run fetch:news`)

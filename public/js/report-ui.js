@@ -24,8 +24,9 @@ function weatherAtReport(snap) {
   const radar = !snap.radar ? 'không có dữ liệu'
     : typeof snap.radar.maxMmH === 'number' ? (snap.radar.maxMmH > 0 ? `tối đa ${snap.radar.maxMmH.toFixed(1)} mm/h trong 1 giờ trước${accum != null ? ` (≈ ${accum.toFixed(1)} mm/giờ)` : ''}` : 'không mưa')
       : snap.radar.rgba[3] > 0 ? 'có mưa' : 'không mưa';
-  const tide = typeof snap.tide?.phuAn === 'number'
-    ? `Phú An ${snap.tide.phuAn.toFixed(2)} m${snap.tide.alert && snap.tide.alert !== '<I' ? ` (BĐ ${snap.tide.alert})` : ''}`
+  const lv = typeof snap.tide?.level === 'number' ? snap.tide.level : snap.tide?.phuAn; // §20a station level (old: Phú An)
+  const tide = typeof lv === 'number'
+    ? `${snap.tide.stationName ?? 'Phú An'} ${lv.toFixed(2)} m${snap.tide.alert && snap.tide.alert !== '<I' ? ` (BĐ ${snap.tide.alert})` : ''}`
     : typeof snap.tide?.seaLevel === 'number' ? `Vũng Tàu ${snap.tide.seaLevel.toFixed(2)} m` : '—';
   return `<div class="snap"><b>Thời tiết lúc ngập</b>
     <div>Mưa 3h ECMWF: ${r3('ecmwf_ifs')} · GFS: ${r3('gfs_global')}</div>

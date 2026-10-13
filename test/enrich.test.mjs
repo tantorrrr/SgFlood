@@ -40,6 +40,12 @@ test('enrichReports: only 2–10 day old, not yet enriched; ERA5 first, Historic
   assert.deepEqual(rows.map((r) => [r.report_id, r.r3_obs, r.source]), [['a', 3.8, 'open-meteo era5'], ['b', 1.9, 'open-meteo historical-forecast']]);
   assert.equal(rows[0].pa_obs > 1.2 && rows[0].pa_obs < 1.6, true, 'pa_obs from observed tide at 14:40');
   assert.equal(rows[1].pa_obs, null, 'outside the observed record');
+  // §20a report a at 10.78 → Phú An; with a stations block the Nhà Bè record is not used for it
+  const both = { ...tide, stations: { PA: { observed: tide.observed }, NB: { observed: [{ t: '2026-10-03T12:00:00+07:00', h: 2.0 }, { t: '2026-10-03T17:00:00+07:00', h: 2.0 }] } } };
+  reports[0] = { ...reports[0], lat: 10.73, lng: 106.72 }; // move a south → Nhà Bè
+  const rowsNB = await enrichReports({ url: 'https://x.supabase.co', key: 'service', now: NOW, fetch: fakeFetch, log: () => {}, tide: both });
+  assert.equal(rowsNB[0].pa_obs, 2.0);
+  reports[0] = { ...reports[0], lat: 10.78, lng: 106.7 };
   const list = calls[0].url;
   assert.match(list, new RegExp(`observed_at=gte\.${new Date(NOW - 10 * DAY).toISOString()}`));
   assert.match(list, new RegExp(`observed_at=lte\.${new Date(NOW - 2 * DAY).toISOString()}`));

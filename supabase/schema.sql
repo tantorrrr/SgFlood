@@ -279,7 +279,7 @@ create table if not exists public.report_enrichment (
   fetched_at timestamptz not null default now()
 );
 
--- §19b observed Phú An level (m, Hòn Dấu) at observed_at, from public/data/tide-phuan.json bulletins.
+-- §19b observed tide level (m, Hòn Dấu) at observed_at, from public/data/tide-phuan.json bulletins (§20a: station of the report point).
 alter table public.report_enrichment add column if not exists pa_obs double precision;
 
 alter table public.report_enrichment enable row level security;
@@ -331,7 +331,8 @@ with report_ev as (
          from jsonb_array_elements(case when jsonb_typeof(r.snapshot #> '{radar,frames}') = 'array'
                                         then r.snapshot #> '{radar,frames}' else '[]'::jsonb end) f)) as radar,
     public.jsonb_num(r.snapshot, '{radar,maxMmH}') as radar_max,
-    public.jsonb_num(r.snapshot, '{tide,phuAn}') as pa,
+    -- §20a station level (Phú An / Nhà Bè by point); snapshots before §20 only have phuAn.
+    coalesce(public.jsonb_num(r.snapshot, '{tide,level}'), public.jsonb_num(r.snapshot, '{tide,phuAn}')) as pa,
     e.r3_obs, e.pa_obs, (e.report_id is not null) as enriched
   from public.reports r
   left join public.votes v on v.report_id = r.id

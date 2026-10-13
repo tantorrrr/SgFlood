@@ -1,4 +1,4 @@
-import { phuAnModel, tideParams } from './tide.js';
+import { phuAnModel, tideParams, STATION_CODES } from './tide.js';
 
 const GRID_N = 6;
 const TIDE_POINT = [10.375, 106.958];
@@ -43,7 +43,9 @@ export function emptyWeather(bbox, now = Date.now()) {
   const times = Array.from({ length: 97 }, (_, i) => start + i * HOUR);
   const grid = { rows: 2, cols: 2, lats: [s, n], lngs: [w, e] };
   const none = times.map(() => null);
-  return { times, grid, precip: times.map(() => new Float32Array(4)), sea: none, pa: none, paCorrected: none, tide: tideParams(null, now) };
+  const tide = tideParams(null, now);
+  const stations = Object.fromEntries(STATION_CODES.map((code) => [code, { pa: none, paCorrected: none, tide: tideParams(null, now, undefined, code) }]));
+  return { times, grid, precip: times.map(() => new Float32Array(4)), sea: none, pa: none, paCorrected: none, tide, stations };
 }
 
 async function loadTideFile() {
@@ -71,17 +73,25 @@ export async function loadWeather(bbox) {
   if (tide.status === 'fulfilled') {
     tide.value.hourly.time.forEach((t, i) => seaByTime.set(toEpoch(t), tide.value.hourly.sea_level_height_msl[i]));
   }
-  const params = tideParams(tideFile.status === 'fulfilled' ? tideFile.value : null);
-  const model = phuAnModel((t) => seaByTime.get(t) ?? null, params);
-  const pa = times.map((t) => model.at(t));
+  // §20a one hourly curve per station (Phú An, Nhà Bè), each with its own lag/bias/forecast correction.
+  const json = tideFile.status === 'fulfilled' ? tideFile.value : null;
+  const stations = {};
+  for (const code of STATION_CODES) {
+    const params = tideParams(json, Date.now(), undefined, code);
+    const model = phuAnModel((t) => seaByTime.get(t) ?? null, params);
+    const curve = times.map((t) => model.at(t));
+    stations[code] = { pa: curve.map((p) => p?.h ?? null), paCorrected: curve.map((p) => p?.corrected ?? null), tide: params };
+  }
   return {
     times,
     grid: { rows: GRID_N, cols: GRID_N, lats, lngs },
     precip,
     sea: times.map((t) => seaByTime.get(t) ?? null), // Vũng Tàu coast (Open-Meteo, MSL)
-    pa: pa.map((p) => p?.h ?? null), // Phú An, Hòn Dấu datum
-    paCorrected: pa.map((p) => p?.corrected ?? null),
-    tide: params,
+    // Legacy Phú An fields (Hòn Dấu datum); station-aware code goes through stationTide / phuAnAt(…, station).
+    pa: stations.PA.pa,
+    paCorrected: stations.PA.paCorrected,
+    tide: stations.PA.tide,
+    stations,
     tideOk: tide.status === 'fulfilled',
   };
 }

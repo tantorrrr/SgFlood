@@ -40,7 +40,8 @@ export function reportEvent(r, enrichment = null) {
   const { Rh, src } = rhEff({ ...client, r3Obs });
   return {
     id: r.id, source: 'report', lat: r.lat, lng: r.lng, t: new Date(observedMs(r)).toISOString(), level: r.level,
-    net: (r.confirms ?? 0) - (r.denies ?? 0), Rh, RhSrc: src, PAh: num(s.tide?.phuAn), cause: null, radarMmH,
+    net: (r.confirms ?? 0) - (r.denies ?? 0), Rh, RhSrc: src, PAh: num(s.tide?.level ?? s.tide?.phuAn), // §20a station level; snapshots before §20 only have phuAn
+    cause: null, radarMmH,
     uid: r.user_id ?? null, enriched: enr != null, r3Obs, paObs: num(enr?.pa_obs), RhClient: rhEff(client).Rh,
   };
 }

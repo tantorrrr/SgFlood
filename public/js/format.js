@@ -53,10 +53,11 @@ export function escapeHtml(s) {
 const RH_SOURCES = { ecmwf: 'ECMWF', gfs: 'GFS', radar: 'radar', obs: 'thực đo', archive: 'ERA5' };
 
 // §18 firing history cell (cells.js cellLevel hit): "Ô này ngập 3/4 lần khi mưa 3h ≥ 12.0 mm (nguồn: radar, ECMWF)".
+// §20a h.station = tide station name (default Phú An).
 // §19b: only evidence-backed events are counted; "(k đã kiểm chứng)" = trusted (thực đo / báo chí / xác nhận chéo).
 export function cellTrigger(h) {
   const v = h.verified ? ` (${h.verified} đã kiểm chứng)` : '';
-  if (h.cause === 'tide') return `Ô này ngập ${h.n}/${h.m} lần${v} khi triều Phú An ≥ ${h.threshold.toFixed(2)} m`;
+  if (h.cause === 'tide') return `Ô này ngập ${h.n}/${h.m} lần${v} khi triều ${h.station ?? 'Phú An'} ≥ ${h.threshold.toFixed(2)} m`;
   const src = h.srcs?.length ? ` (nguồn: ${h.srcs.map((s) => RH_SOURCES[s] ?? s).join(', ')})` : '';
   // Floor ANALOG_RAIN_MIN can lift the threshold above every recorded flood (n = 0): say so instead of "0/0".
   if (!h.n) return `Ô này từng ngập ${h.total} lần với mưa 3h thấp hơn; dự báo từ ngưỡng tối thiểu ${h.threshold.toFixed(1)} mm${src}`;

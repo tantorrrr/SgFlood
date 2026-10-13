@@ -1,5 +1,6 @@
 import { pointToPathM } from './geo.js';
 import { cellLevel } from './cells.js';
+import { stationFor, STATION_NAMES } from './tide.js';
 
 export const ANALOG_RADIUS_M = 60; // matches INFLUENCE_M
 export const ANALOG_AREA_M = 500;
@@ -40,8 +41,14 @@ export function rain3h(weather, mid, ti) {
   return weightedR3(rainAt(weather, mid, ti), rainAt(weather, mid, ti - 1), rainAt(weather, mid, ti - 2));
 }
 
-export function phuAnAt(weather, ti) {
-  return weather.pa?.[ti] ?? null;
+// §20a station curve block { pa, paCorrected, tide } (falls back to the legacy Phú An fields).
+export function stationTide(weather, station = 'PA') {
+  return weather?.stations?.[station] ?? weather?.stations?.PA ?? { pa: weather?.pa, paCorrected: weather?.paCorrected, tide: weather?.tide };
+}
+
+// Tide level (m, Hòn Dấu) at hour ti at `station` ('PA' Phú An | 'NB' Nhà Bè).
+export function phuAnAt(weather, ti, station = 'PA') {
+  return stationTide(weather, station).pa?.[ti] ?? null;
 }
 
 export function levelOf(risk) {
@@ -58,27 +65,28 @@ export function susceptibility(hotspot, model) {
 
 export function segmentRisk(mid, hotspot, weather, ti, model, analogs = []) {
   const R3 = rain3h(weather, mid, ti);
-  const pa = phuAnAt(weather, ti);
+  const station = stationFor(mid[0], mid[1]);
+  const pa = phuAnAt(weather, ti, station);
   const rainF = smoothstep(model.RAIN_START, model.RAIN_FULL, R3);
   const tideF = pa == null ? 0 : smoothstep(model.TIDE_START, model.TIDE_FULL, pa);
   const s = susceptibility(hotspot, model);
   const rainRisk = s.sRain * rainF;
   const tideRisk = s.sTide * tideF;
   const risk = Math.max(rainRisk, tideRisk);
-  const hit = bestAnalog(analogs, R3, pa, model);
+  const hit = bestAnalog(analogs, R3, pa, model, STATION_NAMES[station]);
   const heuristic = levelOf(risk);
   const byAnalog = hit && hit.level > heuristic;
   return {
     risk,
     level: byAnalog ? hit.level : heuristic,
     cause: byAnalog ? hit.cause : tideRisk > rainRisk ? 'tide' : 'rain',
-    reason: { R3, pa, hotspot: hotspot ?? null, analog: hit },
+    reason: { R3, pa, station, hotspot: hotspot ?? null, analog: hit },
   };
 }
 
 // analogs = §18 history cells (cells.js prepareCell); the strongest firing one wins.
-function bestAnalog(analogs, R3, pa, model) {
-  const hits = analogs.map((analog) => ({ analog, ...cellLevel(analog, R3, pa, model) })).filter((h) => h.level > 0);
+function bestAnalog(analogs, R3, pa, model, station) {
+  const hits = analogs.map((analog) => ({ analog, ...cellLevel(analog, R3, pa, model), station })).filter((h) => h.level > 0);
   if (!hits.length) return null;
   const best = hits.reduce((a, b) => (b.level > a.level ? b : a));
   return { ...best, count: hits.length };

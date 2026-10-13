@@ -1,6 +1,7 @@
 // §17 press layer: resolved news-floods.json records drawn newspaper-style (dark outline + level colour + icon),
 // shown on the timeline for NEWS_TTL_MS from observedAt, and turned into history events (§18 cells) like a report.
 import { rain3h, phuAnAt } from './risk.js';
+import { stationFor } from './tide.js';
 import { LEVELS, escapeHtml, fmtDateTime } from './format.js';
 
 const HOUR = 3600_000;
@@ -13,7 +14,7 @@ export const newsMs = (r) => Date.parse(r.observedAt ?? r.publishedAt);
 export const newsActive = (r, t) => newsMs(r) <= t && t < newsMs(r) + NEWS_TTL_MS;
 
 // news-floods.json record → history event (cells.js shape). Rain/tide from the record's own `weather` (filled at
-// pipeline time from the ERA5 archive + observed Phú An, scripts/lib/news-weather.mjs); otherwise see withWeather.
+// pipeline time from the ERA5 archive + observed tide at the point's station (§20a), scripts/lib/news-weather.mjs); otherwise see withWeather.
 export function newsEvent(r) {
   const [lat, lng] = r.geometry?.point ?? [];
   if (!Number.isFinite(lat) || !Number.isFinite(lng) || !(r.level >= 1)) return null;
@@ -35,7 +36,8 @@ export function withWeather(ev, weather) {
   const ti = weather.times.indexOf(Math.floor(Date.parse(ev.t) / HOUR) * HOUR);
   if (ti < 0) return ev;
   const pas = [];
-  for (let k = Math.max(0, ti - TIDE_LOOKBACK_H); k <= ti; k++) pas.push(phuAnAt(weather, k));
+  const station = stationFor(ev.lat, ev.lng); // §20a tide of the event's own station
+  for (let k = Math.max(0, ti - TIDE_LOOKBACK_H); k <= ti; k++) pas.push(phuAnAt(weather, k, station));
   const known = pas.filter((v) => v != null);
   const peak = known.length ? Math.max(...known) : null;
   if (ev.source === 'news') return ev.Rh != null ? (ev.PAh != null ? ev : { ...ev, PAh: peak }) : { ...ev, Rh: rain3h(weather, [ev.lat, ev.lng], ti), RhSrc: 'ecmwf', PAh: ev.PAh ?? peak };

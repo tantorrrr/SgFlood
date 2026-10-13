@@ -17,9 +17,9 @@ import { captchaToken } from './captcha.js';
 import { captureSnapshot } from './snapshot.js';
 import { groupCells, prepareCell } from './cells.js';
 import { TRUST_DEFAULTS, isLearnable } from './trust.js';
-import { alertLevel } from './tide.js';
+import { alertLevel, stationFor, STATION_NAMES } from './tide.js';
 import { LEVELS, escapeHtml, cellTrigger } from './format.js';
-import { rainAt, nearestRoadName } from './risk.js';
+import { rainAt, nearestRoadName, stationTide } from './risk.js';
 
 const L = window.L;
 const CONFIG = window.FLOOD_CONFIG;
@@ -70,7 +70,7 @@ function createMap() {
   L.control.zoom({ position: 'topright' }).addTo(map);
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Mưa/triều: <a href="https://open-meteo.com">Open-Meteo</a> (ECMWF) · Triều Phú An: Đài KTTV Nam Bộ',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors · Mưa/triều: <a href="https://open-meteo.com">Open-Meteo</a> (ECMWF) · Triều Phú An / Nhà Bè: Đài KTTV Nam Bộ',
   }).addTo(map);
   return map;
 }
@@ -101,7 +101,7 @@ async function main() {
     return emptyWeather(roads.bbox);
   });
   if (weather.tideOk === false) banner('Không tải được dữ liệu triều — dự báo chỉ dựa trên mưa.');
-  else if (weather.tide.stale) banner('Số liệu triều Phú An chưa cập nhật — dùng hiệu chỉnh mặc định (Vũng Tàu trễ 3 giờ − 0.60 m).');
+  else if (weather.tide.stale) banner('Số liệu triều Phú An / Nhà Bè chưa cập nhật — dùng hiệu chỉnh mặc định (Vũng Tàu trễ 3 giờ − 0.60 m).');
 
   const { times } = weather;
   const nowHour = Math.floor(Date.now() / HOUR) * HOUR;
@@ -219,7 +219,7 @@ async function main() {
     const h = d.reason.hotspot;
     const lines = [
       `Mưa 3 giờ ≈ ${d.reason.R3.toFixed(1)} mm`,
-      d.reason.pa == null ? 'Triều: không có dữ liệu' : `Triều Phú An ≈ ${d.reason.pa.toFixed(2)} m (${alertText(d.reason.pa)})`,
+      d.reason.pa == null ? 'Triều: không có dữ liệu' : `Triều ${STATION_NAMES[d.reason.station] ?? 'Phú An'} ≈ ${d.reason.pa.toFixed(2)} m (${alertText(d.reason.pa)})`,
     ];
     if (d.reason.analog) lines.push(analogText(d.reason.analog));
     if (h) lines.push(hotspotHtml(h));
@@ -313,17 +313,35 @@ async function main() {
   });
 
   const meanRain = weather.precip.map((p) => p.reduce((a, b) => a + b, 0) / p.length);
-  const peaks = weather.tide.forecast
-    .filter((e) => e.kind === 'peak')
-    .map((e) => ({ ti: (Date.parse(e.t) - times[0]) / HOUR, h: e.h }));
-  const tideChart = { pa: weather.pa, alerts: weather.tide.alerts, peaks };
+  // §20a tide chart of one station: hourly curve + official forecast peaks.
+  const tideChartOf = (station) => {
+    const st = stationTide(weather, station);
+    const peaks = st.tide.forecast
+      .filter((e) => e.kind === 'peak')
+      .map((e) => ({ ti: (Date.parse(e.t) - times[0]) / HOUR, h: e.h }));
+    return { pa: st.pa, alerts: st.tide.alerts, peaks };
+  };
+  const tideChart = tideChartOf('PA');
   const timeline = new Timeline(document.getElementById('timeline'), { times, nowIdx, fromIdx, toIdx, meanRain, tide: tideChart }, render);
-  // Viewing an area (zoom ≥ RAIN_LOCAL_ZOOM): the rain bars show the forecast at the map centre, not the city mean.
+  // Viewing an area (zoom ≥ RAIN_LOCAL_ZOOM): the rain bars show the forecast at the map centre, not the city mean,
+  // and the tide curve is the station of that point (§20a); zoomed out → city mean rain + Phú An.
   // A tap/click on the map pins the sample point (small marker) until the pin is tapped again.
   let rainPin = null;
+  // Point being viewed: the pin, else the map centre at zoom ≥ RAIN_LOCAL_ZOOM, else none (city view).
+  const viewPoint = () => (rainPin ? rainPin.getLatLng() : map.getZoom() >= RAIN_LOCAL_ZOOM ? map.getCenter() : null);
+  let chartStation = 'PA';
+  const syncTide = (station) => {
+    if (station === chartStation) return;
+    chartStation = station;
+    timeline.setTide(tideChartOf(station), `triều ${STATION_NAMES[station]}`);
+  };
   const syncRainChart = () => {
-    if (!rainPin && map.getZoom() < RAIN_LOCAL_ZOOM) return timeline.setRain(meanRain, 'mưa TB toàn TP');
-    const c = rainPin ? rainPin.getLatLng() : map.getCenter();
+    const c = viewPoint();
+    if (!c) {
+      syncTide('PA');
+      return timeline.setRain(meanRain, 'mưa TB toàn TP');
+    }
+    syncTide(stationFor(c.lat, c.lng));
     const road = nearestRoadName(c.lat, c.lng, segs, index);
     timeline.setRain(times.map((_, ti) => rainAt(weather, [c.lat, c.lng], ti)), road ? `mưa gần ${road}` : 'mưa tại điểm xem');
   };

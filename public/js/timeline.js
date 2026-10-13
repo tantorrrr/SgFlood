@@ -22,6 +22,7 @@ export class Timeline {
     this.tide = tide;
     this.chart = root.querySelector('#tl-chart');
     this.rainLabel = root.querySelector('#tl-rain-label');
+    this.tideLabel = root.querySelector('#tl-tide-label');
     this.bindScrub(root.querySelector('.tl-track'));
     this.playBtn.addEventListener('click', () => this.toggle());
     root.querySelector('#tl-now').addEventListener('click', () => this.set(this.nowIdx));
@@ -75,6 +76,13 @@ export class Timeline {
     this.drawChart(this.chart, this.rain, this.tide);
   }
 
+  // §20a tide curve of the station of the point being viewed (Phú An / Nhà Bè).
+  setTide(tide, label) {
+    this.tide = tide;
+    if (this.tideLabel) this.tideLabel.textContent = label;
+    this.drawChart(this.chart, this.rain, this.tide);
+  }
+
   bindScrub(track) {
     const tip = this.root.querySelector('#tl-tip');
     const indexAt = (e) => {
@@ -85,7 +93,7 @@ export class Timeline {
     const showTip = (e) => {
       const ti = indexAt(e);
       const pa = this.tide.pa[ti];
-      tip.textContent = `${fmtDateTime(this.times[ti])} · ${this.rainLabel.textContent} ${this.rain[ti].toFixed(1)} mm` + (pa == null ? '' : ` · triều ${pa.toFixed(2)} m`);
+      tip.textContent = `${fmtDateTime(this.times[ti])} · ${this.rainLabel.textContent} ${this.rain[ti].toFixed(1)} mm` + (pa == null ? '' : ` · ${this.tideLabel?.textContent ?? 'triều'} ${pa.toFixed(2)} m`);
       tip.style.left = `${this.xOf(ti)}%`;
       tip.hidden = false;
     };
@@ -139,7 +147,7 @@ export class Timeline {
     this.drawTide(ctx, w, h, bw, tide);
   }
 
-  // Phú An curve (Hòn Dấu) with alert lines BĐ I/II/III and official forecast peaks as dots.
+  // Station tide curve (Hòn Dấu) with alert lines BĐ I/II/III and official forecast peaks as dots.
   drawTide(ctx, w, h, bw, { pa, alerts, peaks }) {
     const vals = pa.slice(this.from, this.to + 1);
     const valid = vals.filter((v) => v != null);

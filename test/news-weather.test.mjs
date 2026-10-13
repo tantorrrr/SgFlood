@@ -20,14 +20,17 @@ test('pure helpers: hour, grid point, cache key, needsWeather, url list', () => 
   assert.equal(cacheKey({ lat: 10.8, lng: 106.75 }, Date.parse('2026-10-03T23:30:00+07:00')), '10.80,106.75:2026-10-03');
   assert.equal(needsWeather(rec()), true);
   assert.equal(needsWeather(rec({ weather: { r3: 1, paPeak: null } })), true);
-  assert.equal(needsWeather(rec({ weather: { r3: 1, paPeak: 1.2 } })), false);
+  assert.equal(needsWeather(rec({ weather: { r3: 1, paPeak: 1.2, paStation: 'PA' } })), false);
+  // §20a: tide taken before stations (no paStation) or at the wrong station → recompute
+  assert.equal(needsWeather(rec({ weather: { r3: 1, paPeak: 1.2 } })), true);
+  assert.equal(needsWeather(rec({ weather: { r3: 1, paPeak: 1.2, paStation: 'PA' }, geometry: { point: [10.73, 106.72] } })), true);
   assert.deepEqual(parseUrlList('# month 2025-10\nhttps://a.vn/x\n\n  https://b.vn/y  # note\nhttps://a.vn/x#frag\n'), ['https://a.vn/x', 'https://b.vn/y', 'https://a.vn/x#frag']);
 });
 
 test('mergeWeather never downgrades a known part to null', () => {
   const old = { r3: 5, r3Src: 'era5', paPeak: null, paSrc: null };
   assert.deepEqual(mergeWeather(old, null), old);
-  assert.deepEqual(mergeWeather(old, { r3: null, r3Src: null, paPeak: 1.5, paSrc: 'tvhn' }), { r3: 5, r3Src: 'era5', paPeak: 1.5, paSrc: 'tvhn' });
+  assert.deepEqual(mergeWeather(old, { r3: null, r3Src: null, paPeak: 1.5, paSrc: 'tvhn', paStation: 'NB' }), { r3: 5, r3Src: 'era5', paPeak: 1.5, paSrc: 'tvhn', paStation: 'NB' });
   assert.equal(mergeWeather(null, null), null);
 });
 
@@ -56,7 +59,7 @@ test('enrichWeather: ERA5 R3 + Phú An peak, cache reused, falls back to histori
   const seq = [okJson(empty), okJson(rainBody({ 14: 4 }))];
   const c = rec({ id: 'news-c' });
   await enrichWeather([c], { tide: null, cache: {}, fetch: async () => seq.shift(), sleep: async () => {}, log: () => {} });
-  assert.deepEqual(c.weather, { r3: 4, r3Src: 'historical-forecast', paPeak: null, paSrc: null });
+  assert.deepEqual(c.weather, { r3: 4, r3Src: 'historical-forecast', paPeak: null, paSrc: null, paStation: null });
 
   // Network down → weather stays null, nothing thrown.
   const d = rec({ id: 'news-d' });
@@ -95,4 +98,27 @@ test('publishedFrom: meta, JSON-LD, URL-embedded dates; null when none', async (
   assert.equal(new Date(publishedFrom('<script>{"datePublished": "2026-09-30T08:00:00+07:00"}</script>', 'https://x.vn/a')).toISOString(), '2026-09-30T01:00:00.000Z');
   assert.equal(new Date(publishedFrom('', 'https://dantri.com.vn/thoi-su/a-20261008165058710.htm')).toISOString().slice(0, 10), '2026-10-08');
   assert.equal(publishedFrom('<p>no date</p>', 'https://x.vn/a'), null);
+});
+
+test('§20a enrichWeather takes the tide at the point station and re-takes old PA tide without a request', async () => {
+  const tide = {
+    observed: [{ t: '2026-10-03T13:00:00+07:00', h: 1.5, kind: 'peak' }], // legacy top-level = Phú An
+    stations: {
+      PA: { observed: [{ t: '2026-10-03T13:00:00+07:00', h: 1.5, kind: 'peak' }] },
+      NB: { observed: [{ t: '2026-10-03T12:00:00+07:00', h: 1.7, kind: 'peak' }] },
+    },
+  };
+  const south = rec({ id: 'news-s', geometry: { point: [10.73, 106.72] }, weather: { r3: 2, r3Src: 'era5', paPeak: 1.5, paSrc: 'tvhn' } });
+  const north = rec({ id: 'news-n', weather: { r3: 2, r3Src: 'era5', paPeak: 1.5, paSrc: 'tvhn' } });
+  const fetchFn = async () => { throw new Error('no request expected'); };
+  const stats = await enrichWeather([south, north], { tide, fetch: fetchFn, sleep: async () => {}, log: () => {} });
+  assert.equal(stats.requests, 0);
+  assert.deepEqual([south.weather.paPeak, south.weather.paStation, south.weather.r3], [1.7, 'NB', 2]);
+  assert.deepEqual([north.weather.paPeak, north.weather.paStation], [1.5, 'PA']);
+  assert.equal(stats.nb, 1);
+  assert.equal(needsWeather(south), false);
+  // No Nhà Bè observation at that hour → null, the old Phú An value is not kept as a fallback.
+  const gap = rec({ id: 'news-g', observedAt: '2026-10-05T14:40:00+07:00', geometry: { point: [10.73, 106.72] }, weather: { r3: 2, r3Src: 'era5', paPeak: 1.5, paSrc: 'tvhn' } });
+  await enrichWeather([gap], { tide, fetch: fetchFn, sleep: async () => {}, log: () => {} });
+  assert.deepEqual([gap.weather.paPeak, gap.weather.paStation, gap.weather.r3], [null, null, 2]);
 });

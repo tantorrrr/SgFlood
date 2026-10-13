@@ -2,6 +2,7 @@ import { midpoint } from './geo.js';
 import { segmentRisk, segmentAnalogs, nearestRoadName, rain3h, phuAnAt } from './risk.js';
 import { cellLevel } from './cells.js';
 import { cellTrigger } from './format.js';
+import { stationFor, STATION_NAMES } from './tide.js';
 
 const CAUSE_TIDE = 1;
 
@@ -62,7 +63,8 @@ export class Forecast {
   }
 
   analogLevelAt(a, ti) {
-    return cellLevel(a, rain3h(this.weather, [a.lat, a.lng], ti), phuAnAt(this.weather, ti), this.model);
+    const station = stationFor(a.lat, a.lng);
+    return { ...cellLevel(a, rain3h(this.weather, [a.lat, a.lng], ti), phuAnAt(this.weather, ti, station), this.model), station: STATION_NAMES[station] };
   }
 
   summary(fromTi, toTi) {

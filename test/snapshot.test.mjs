@@ -24,6 +24,7 @@ test('tideAt records Phú An level, alert, source and latest observed peak', () 
   const at = (h) => Date.parse(`2026-10-08T${h}:30:00+07:00`);
   assert.deepEqual(tideAt(weather, at(12)), {
     source: 'open-meteo-marine@10.375,106.958', seaLevel: 2.2, seaLevelLagged: 1.1,
+    station: 'PA', stationName: 'Phú An', level: 1.56, levelSource: 'om+3h−bias+bulletin', lagH: 3,
     phuAn: 1.56, phuAnSource: 'om+3h−bias+bulletin', bias: 0.6, alert: 'II',
     latestObservedPeak: weather.tide.observedPeaks[1],
   });
@@ -58,4 +59,17 @@ test('radarRates decodes each frame and keeps the max mm/h', () => {
   assert.deepEqual(r.frames.map((f) => [f.dBZ, f.mmH]), [[null, 0], [40, 11.53], [20, 0.65]]);
   assert.equal(r.maxMmH, 11.53);
   assert.equal(radarRates([]).maxMmH, null);
+});
+
+test('§20a tideAt at a southern point uses the Nhà Bè curve, keeps phuAn = Phú An', () => {
+  const alerts = { I: 1.4, II: 1.5, III: 1.6 };
+  const times = [0, 1, 2, 3].map((i) => Date.parse('2026-10-08T09:00:00+07:00') + i * 3600_000);
+  const PA = { pa: [0.9, 1.2, 1.4, 1.45], paCorrected: [false, false, false, false], tide: { lagH: 3, bias: 0.62, alerts, observedPeaks: [] } };
+  const NB = { pa: [1.0, 1.3, 1.5, 1.62], paCorrected: [false, false, false, true], tide: { lagH: 2, bias: 0.6, alerts, observedPeaks: [] } };
+  const weather = { times, sea: [1.1, 1.5, 2.0, 2.2], pa: PA.pa, paCorrected: PA.paCorrected, tide: PA.tide, stations: { PA, NB } };
+  const t = Date.parse('2026-10-08T12:10:00+07:00');
+  const s = tideAt(weather, t, { lat: 10.73, lng: 106.72 });
+  assert.deepEqual([s.station, s.stationName, s.level, s.levelSource, s.alert, s.bias, s.lagH, s.seaLevelLagged], ['NB', 'Nhà Bè', 1.62, 'om+2h−bias+bulletin', 'III', 0.6, 2, 1.5]);
+  assert.deepEqual([s.phuAn, s.phuAnSource], [1.45, 'om+3h−bias']);
+  assert.equal(tideAt(weather, t, { lat: 10.79, lng: 106.72 }).level, 1.45);
 });
