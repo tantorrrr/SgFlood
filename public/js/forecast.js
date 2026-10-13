@@ -1,10 +1,30 @@
-import { midpoint } from './geo.js';
+import { midpoint, distanceM, pointToPathM } from './geo.js';
 import { segmentRisk, segmentAnalogs, nearestRoadName, rain3h, phuAnAt } from './risk.js';
 import { cellLevel } from './cells.js';
 import { cellTrigger } from './format.js';
 import { stationFor, STATION_NAMES } from './tide.js';
 
 const CAUSE_TIDE = 1;
+
+// §20b distance (m) from the view point to a panel row: its own latlng (history cell / cluster), else the nearest of
+// its segments (`segs` = road segments with `.c` coords). Infinity when the row has neither.
+export function rowDistanceM(row, point, segs) {
+  if (row.latlng) return distanceM(point, row.latlng);
+  let best = Infinity;
+  for (const i of row.segIdx ?? []) best = Math.min(best, pointToPathM(point, segs[i].c));
+  return best;
+}
+
+// Default panel order: level desc, then earliest peak hour.
+export const bySeverity = (a, b) => b.level - a.level || a.peakTi - b.peakTi;
+
+// §20b panel order. With a view point every row gets `distM`; mode 'near' sorts by distance asc (ties → severity),
+// 'severe' keeps the default order. No view point (zoomed out, no pin) → default order, no distance.
+export function sortRows(rows, point, mode, distanceOf) {
+  if (!point) return rows.map(({ distM, ...r }) => r).sort(bySeverity);
+  const withD = rows.map((r) => ({ ...r, distM: distanceOf(r, point) }));
+  return withD.sort(mode === 'near' ? (a, b) => a.distM - b.distM || bySeverity(a, b) : bySeverity);
+}
 
 // Panel label naming where a history cell's floods come from (§14 crowd report / §17 press).
 export const analogTitle = (a) => (a.source === 'news' ? `Điểm từng ngập (báo chí${a.outlet ? `: ${a.outlet}` : ''})` : 'Điểm từng ngập (người dân báo)');
@@ -108,6 +128,6 @@ export class Forecast {
         level: best.level, peakTi: best.ti, causes: new Set([best.cause]), segIdx: [], latlng: [a.lat, a.lng],
       });
     }
-    return [...groups.values()].sort((a, b) => b.level - a.level || a.peakTi - b.peakTi);
+    return [...groups.values()].sort(bySeverity);
   }
 }

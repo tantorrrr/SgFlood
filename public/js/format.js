@@ -35,6 +35,13 @@ export function fmtDay(ms) {
   return `${WEEKDAYS[d.getUTCDay()]} ${pad(d.getUTCDate())}/${pad(d.getUTCMonth() + 1)}`;
 }
 
+// §20b "≈ 350 m" (rounded to 50 m) / "≈ 1.2 km".
+export function fmtDistance(m) {
+  if (!Number.isFinite(m)) return '';
+  if (m < 950) return `≈ ${Math.max(50, Math.round(m / 50) * 50)} m`;
+  return `≈ ${(m / 1000).toFixed(m < 9950 ? 1 : 0)} km`;
+}
+
 export function isMidnight(ms) {
   return local(ms).getUTCHours() === 0;
 }

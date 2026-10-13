@@ -1,5 +1,5 @@
 import { BucketIndex } from './geo.js';
-import { Forecast } from './forecast.js';
+import { Forecast, rowDistanceM } from './forecast.js';
 import { loadWeather, emptyWeather } from './weather.js';
 import { crowdEffects, applyCrowd, reportState, observedMs } from './reports.js';
 import { createStore, LocalStore, RECENT_MS } from './store.js';
@@ -305,6 +305,7 @@ async function main() {
   const renderPanel = (hours) => panel.render(forecast.summary(nowIdx, Math.min(toIdx, nowIdx + hours)), times);
   const panel = new Panel(document.getElementById('panel'), {
     onWindowChange: renderPanel,
+    distanceOf: (row, point) => rowDistanceM(row, point, segs),
     onPick: (row) => {
       if (row.latlng) map.setView(row.latlng, 16);
       else map.fitBounds(L.latLngBounds(row.segIdx.flatMap((i) => segs[i].c)), { padding: [40, 40], maxZoom: 16 });
@@ -337,6 +338,7 @@ async function main() {
   };
   const syncRainChart = () => {
     const c = viewPoint();
+    panel.setViewPoint(c ? [c.lat, c.lng] : null); // §20b nearest-first list
     if (!c) {
       syncTide('PA');
       return timeline.setRain(meanRain, 'mưa TB toàn TP');
