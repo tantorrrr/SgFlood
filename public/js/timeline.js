@@ -18,14 +18,18 @@ export class Timeline {
     Object.assign(this.slider, { min: fromIdx, max: toIdx, step: 1 });
 
     this.slider.addEventListener('input', () => this.set(+this.slider.value));
-    this.bindScrub(root.querySelector('.tl-track'), meanRain, tide);
+    this.rain = meanRain;
+    this.tide = tide;
+    this.chart = root.querySelector('#tl-chart');
+    this.rainLabel = root.querySelector('#tl-rain-label');
+    this.bindScrub(root.querySelector('.tl-track'));
     this.playBtn.addEventListener('click', () => this.toggle());
     root.querySelector('#tl-now').addEventListener('click', () => this.set(this.nowIdx));
     document.addEventListener('keydown', (e) => this.onKey(e));
 
-    this.drawChart(root.querySelector('#tl-chart'), meanRain, tide);
+    this.drawChart(this.chart, this.rain, this.tide);
     this.drawTicks(root.querySelector('#tl-ticks'));
-    new ResizeObserver(() => this.drawChart(root.querySelector('#tl-chart'), meanRain, tide)).observe(this.slider);
+    new ResizeObserver(() => this.drawChart(this.chart, this.rain, this.tide)).observe(this.slider);
   }
 
   get value() {
@@ -64,7 +68,14 @@ export class Timeline {
   }
 
   // Windy-style: drag anywhere on the chart/ticks to scrub; hover shows the hour's rain and tide.
-  bindScrub(track, meanRain, tide) {
+  // Rain bars follow the area being viewed (main.js passes the series at the map centre, or the city mean).
+  setRain(series, label) {
+    this.rain = series;
+    this.rainLabel.textContent = label;
+    this.drawChart(this.chart, this.rain, this.tide);
+  }
+
+  bindScrub(track) {
     const tip = this.root.querySelector('#tl-tip');
     const indexAt = (e) => {
       const r = track.getBoundingClientRect();
@@ -73,8 +84,8 @@ export class Timeline {
     };
     const showTip = (e) => {
       const ti = indexAt(e);
-      const pa = tide.pa[ti];
-      tip.textContent = `${fmtDateTime(this.times[ti])} · mưa ${meanRain[ti].toFixed(1)} mm` + (pa == null ? '' : ` · triều ${pa.toFixed(2)} m`);
+      const pa = this.tide.pa[ti];
+      tip.textContent = `${fmtDateTime(this.times[ti])} · ${this.rainLabel.textContent} ${this.rain[ti].toFixed(1)} mm` + (pa == null ? '' : ` · triều ${pa.toFixed(2)} m`);
       tip.style.left = `${this.xOf(ti)}%`;
       tip.hidden = false;
     };

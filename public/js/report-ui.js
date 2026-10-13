@@ -89,6 +89,11 @@ export class ReportUI {
     });
   }
 
+  // True while a report flow owns map clicks (picking a spot, placing the pin, editing).
+  get busy() {
+    return this.picking || Boolean(this.pin) || Boolean(this.editing) || Boolean(this.locating);
+  }
+
   startPicking() {
     const keep = this.keep;
     this.beforeReport();

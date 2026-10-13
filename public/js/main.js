@@ -19,10 +19,12 @@ import { groupCells, prepareCell } from './cells.js';
 import { TRUST_DEFAULTS, isLearnable } from './trust.js';
 import { alertLevel } from './tide.js';
 import { LEVELS, escapeHtml, cellTrigger } from './format.js';
+import { rainAt, nearestRoadName } from './risk.js';
 
 const L = window.L;
 const CONFIG = window.FLOOD_CONFIG;
 const HOUR = 3600_000;
+const RAIN_LOCAL_ZOOM = 13;
 const POLL_MS = 60_000;
 const ERRORS = {
   rate_limited: 'Bạn vừa gửi báo cáo. Vui lòng đợi 1 phút (tối đa 10 báo cáo mỗi giờ).',
@@ -316,6 +318,26 @@ async function main() {
     .map((e) => ({ ti: (Date.parse(e.t) - times[0]) / HOUR, h: e.h }));
   const tideChart = { pa: weather.pa, alerts: weather.tide.alerts, peaks };
   const timeline = new Timeline(document.getElementById('timeline'), { times, nowIdx, fromIdx, toIdx, meanRain, tide: tideChart }, render);
+  // Viewing an area (zoom ≥ RAIN_LOCAL_ZOOM): the rain bars show the forecast at the map centre, not the city mean.
+  // A tap/click on the map pins the sample point (small marker) until the pin is tapped again.
+  let rainPin = null;
+  const syncRainChart = () => {
+    if (!rainPin && map.getZoom() < RAIN_LOCAL_ZOOM) return timeline.setRain(meanRain, 'mưa TB toàn TP');
+    const c = rainPin ? rainPin.getLatLng() : map.getCenter();
+    const road = nearestRoadName(c.lat, c.lng, segs, index);
+    timeline.setRain(times.map((_, ti) => rainAt(weather, [c.lat, c.lng], ti)), road ? `mưa gần ${road}` : 'mưa tại điểm xem');
+  };
+  map.on('moveend', () => !rainPin && syncRainChart());
+  map.on('click', (e) => {
+    if (reportUI.busy) return; // picking / placing / editing a report owns map clicks
+    rainPin?.remove();
+    rainPin = L.circleMarker(e.latlng, { radius: 5, color: '#1e88e5', weight: 2, fillColor: '#fff', fillOpacity: 1 })
+      .bindTooltip('Điểm xem mưa · chạm để bỏ')
+      .on('click', (ev) => { L.DomEvent.stop(ev); rainPin.remove(); rainPin = null; syncRainChart(); })
+      .addTo(map);
+    syncRainChart();
+  });
+  syncRainChart();
 
   document.getElementById('tg-hotspots').addEventListener('change', (e) => roadLayer.setShowHotspots(e.target.checked));
   document.getElementById('tg-hotspots').addEventListener('change', (e) => crowdOverlay.setVisible('chronic', e.target.checked));
